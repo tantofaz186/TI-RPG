@@ -7,6 +7,9 @@ namespace IA
     {
         [SerializeField] protected float velocidade = 5f;
         
-        
+        public void Mover(Vector3 ponto)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, ponto, velocidade * Time.deltaTime);
+        }
     }
 }
