@@ -4,27 +4,57 @@ using UnityEngine;
 
 namespace IA
 {
+    [RequireComponent(typeof(ConeDeVisão))]
     public class InimigoQuePersegue : Agente
     {
         [SerializeField] private List<Vector3> pontos;
-        [SerializeField] private Transform alvo;
         public List<Vector3> Pontos => pontos;
+        private ConeDeVisão coneDeVisão;
 
         private void Awake()
         {
-            SetState(new PatrulhaState(this, pontos));
+            coneDeVisão = GetComponent<ConeDeVisão>();
+            coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
+            SetStatePatrulha();
         }
+
 
         protected override void Update()
         {
             base.Update();
+            //se eu encontrar o player pelo campo de visão, eu mudo de patrulha para encontrar o player
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (currentState.GetType() == typeof(PatrulhaState)) SetState(new PerseguindoState(this, alvo));
-                else SetState(new PatrulhaState(this, pontos));
+                if (currentState.GetType() == typeof(PatrulhaState)) SetStatePerseguindo();
+                else SetStatePatrulha();
             }
         }
+        void EncontreiOPlayerNoCampoDeVisão()
+        {
+            if (currentState.GetType() == typeof(PerseguindoState)) return;
+            if (currentState.GetType() != typeof(EncontrandoPlayerState))
+            {
+                EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState();
+                Mover(coneDeVisão.Alvo.position);
+                encontrandoPlayerState.OnFoundPlayer +=  SetStatePerseguindo;
+                encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
+                SetState(encontrandoPlayerState);
+            }
+            ((EncontrandoPlayerState)currentState).Encontrando();
+        }
 
+        void SetStatePerseguindo()
+        {
+            coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
+            SetState(new PerseguindoState(this, coneDeVisão.Alvo));
+        }
+
+        void SetStatePatrulha()
+        {
+            coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
+            SetState(new PatrulhaState(this, pontos));
+        }
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
@@ -36,7 +66,7 @@ namespace IA
             Gizmos.color = Color.red;
             try
             {
-                Gizmos.DrawSphere(alvo.position, 0.5f);
+                Gizmos.DrawSphere(coneDeVisão.Alvo.position, 0.5f);
             }
             catch (Exception e)
             {
