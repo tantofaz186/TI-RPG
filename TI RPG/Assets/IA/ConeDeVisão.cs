@@ -22,8 +22,7 @@ public class ConeDeVisão : MonoBehaviour
         float anguloPlayer = Vector3.Angle(direcaoPlayer, transform.forward);
 
         if (!(anguloPlayer < angulo / 2f)) return;
-        RaycastHit hit;
-        if (!Physics.Raycast(transform.position, direcaoPlayer, out hit, raio)) return;
+        if (!Physics.Raycast(transform.position, direcaoPlayer, out var hit, raio)) return;
         if (!hit.collider.CompareTag("Player")) return;
         OnFoundPlayer?.Invoke();
         Debug.Log("Encontrado");
