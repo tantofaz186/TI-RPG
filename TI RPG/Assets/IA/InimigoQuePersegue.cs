@@ -49,11 +49,11 @@ namespace IA
 
         IEnumerator MoverAtéOALvo()
         {
-            Vector3 lastPosition = coneDeVisão.Alvo.position;
+            Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
             yield return new WaitForSeconds(0.5f);
             while(Vector3.Distance(transform.position, coneDeVisão.Alvo.position) > 0.5f && currentState.GetType() == typeof(EncontrandoPlayerState))
             {
-                Mover(lastPosition);
+                Mover(lastKnownPosition);
                 yield return null;
             }
         }
