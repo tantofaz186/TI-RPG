@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,14 +37,26 @@ namespace IA
             if (currentState.GetType() != typeof(EncontrandoPlayerState))
             {
                 EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState();
-                Mover(coneDeVisão.Alvo.position);
                 encontrandoPlayerState.OnFoundPlayer +=  SetStatePerseguindo;
                 encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
+                
                 SetState(encontrandoPlayerState);
+                StartCoroutine(MoverAtéOALvo());
+
             }
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
 
+        IEnumerator MoverAtéOALvo()
+        {
+            Vector3 lastPosition = coneDeVisão.Alvo.position;
+            yield return new WaitForSeconds(0.5f);
+            while(Vector3.Distance(transform.position, coneDeVisão.Alvo.position) > 0.5f && currentState.GetType() == typeof(EncontrandoPlayerState))
+            {
+                Mover(lastPosition);
+                yield return null;
+            }
+        }
         void SetStatePerseguindo()
         {
             coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
