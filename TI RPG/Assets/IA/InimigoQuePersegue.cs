@@ -41,13 +41,13 @@ namespace IA
                 encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
                 
                 SetState(encontrandoPlayerState);
-                StartCoroutine(MoverAtéOALvo());
+                StartCoroutine(MoverAtéOAlvo());
 
             }
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
 
-        IEnumerator MoverAtéOALvo()
+        IEnumerator MoverAtéOAlvo()
         {
             Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
             yield return new WaitForSeconds(0.5f);
