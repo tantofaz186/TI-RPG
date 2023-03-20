@@ -17,7 +17,7 @@ namespace Player
         protected override void Update()
         {
             base.Update();
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 targetPosition = transform.position;
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
