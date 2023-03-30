@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Controllers;
 using IA;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,7 +14,6 @@ namespace Player
         private Camera mainCamera;
              
         [SerializeField] private int vidas =2;
-        private GameObject Gameoverscreen;
         public int Vidas
         {
             get { return vidas; }
@@ -24,7 +24,7 @@ namespace Player
                 {
                     Time.timeScale = 0;
                     Debug.Log("Game Over");
-                    Gameoverscreen.SetActive(true);
+                    GameOverController.Instance.GameOver();
                 }
             }
         }
