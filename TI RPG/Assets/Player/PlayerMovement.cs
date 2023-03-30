@@ -1,17 +1,18 @@
-﻿using System;
 using IA;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Player
 {
     public class PlayerMovement : Agente
     {
+   
         private Vector3 targetPosition;
         private Camera mainCamera;
+        
         private void Awake()
         {
             mainCamera = Camera.main;
+            targetPosition = transform.position;
         }
 
         protected override void Update()
