@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using Controllers;
 using IA;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Player
 {
