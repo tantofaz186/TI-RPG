@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 319089622}
   - component: {fileID: 319089627}
   - component: {fileID: 319089626}
+  - component: {fileID: 319089628}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -256,8 +257,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff0e9e94def94c7ea484c404d91dc1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
+  velocidade: 8
   agente: {fileID: 319089626}
+  vidas: 3
+--- !u!54 &319089628
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319089621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,9 +598,10 @@ GameObject:
   - component: {fileID: 1368589122}
   - component: {fileID: 1368589127}
   - component: {fileID: 1368589128}
+  - component: {fileID: 1368589129}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,3 +741,19 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1368589129
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368589121}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
