@@ -19,7 +19,7 @@ namespace IA
             Debug.Log("Patrulhando");
             
             self.Mover(waypoints[currentWaypoint]);
-            if(Vector3.Distance(self.transform.position, waypoints[currentWaypoint]) < 0.5f)
+            if(Vector3.Distance(self.transform.position, waypoints[currentWaypoint]) < 0.6f)
             {
                 currentWaypoint++;
                 currentWaypoint %= waypoints.Count;

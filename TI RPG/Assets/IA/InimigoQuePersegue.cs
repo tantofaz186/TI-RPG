@@ -19,10 +19,18 @@ namespace IA
             SetStatePatrulha();
         }
 
-
         protected override void Update()
         {
             base.Update();
+            /*if (currentState.GetType() == typeof(PerseguindoState))
+            {
+                
+            }*/
+        }
+
+        /*protected override void Update()
+        {
+            
             //se eu encontrar o player pelo campo de visão, eu mudo de patrulha para encontrar o player
             
             if (Input.GetKeyDown(KeyCode.Space))
@@ -30,7 +38,7 @@ namespace IA
                 if (currentState.GetType() == typeof(PatrulhaState)) SetStatePerseguindo();
                 else SetStatePatrulha();
             }
-        }
+        }*/
         void EncontreiOPlayerNoCampoDeVisão()
         {
             if (currentState.GetType() == typeof(PerseguindoState)) return;
@@ -83,6 +91,7 @@ namespace IA
             }
             catch (Exception e)
             {
+                Debug.LogWarning(e);
             }
         }
     }
