@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1085,7 +1085,6 @@ GameObject:
   - component: {fileID: 1525122124}
   - component: {fileID: 1525122123}
   - component: {fileID: 1525122122}
-  - component: {fileID: 1525122125}
   m_Layer: 5
   m_Name: 'Sair '
   m_TagString: Untagged
@@ -1158,7 +1157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525122125}
+      - m_Target: {fileID: 1533380536}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
         m_MethodName: Sair
         m_Mode: 1
@@ -1208,19 +1207,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525122120}
   m_CullTransparentMesh: 1
---- !u!114 &1525122125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525122120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeCena: 
 --- !u!1 &1529788401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1300,7 @@ GameObject:
   - component: {fileID: 1533380532}
   - component: {fileID: 1533380531}
   - component: {fileID: 1533380535}
+  - component: {fileID: 1533380536}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1416,6 +1403,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 692010026}
+--- !u!114 &1533380536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533380530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomeCena: Cena1
 --- !u!1 &1638110911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,8 +1427,8 @@ GameObject:
   - component: {fileID: 1638110912}
   - component: {fileID: 1638110915}
   - component: {fileID: 1638110914}
-  - component: {fileID: 1638110913}
   - component: {fileID: 1638110916}
+  - component: {fileID: 1638110913}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged

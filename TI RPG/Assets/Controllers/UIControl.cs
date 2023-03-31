@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIControl : MonoBehaviour
-{
+public class UIControl : Singleton<UIControl> {
     public string nomeCena;
 
     //Carrega uma cena
