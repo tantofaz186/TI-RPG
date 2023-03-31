@@ -16,6 +16,9 @@ namespace IA
             {
                 transform.position = Vector3.MoveTowards(transform.position, ponto, velocidade * Time.deltaTime);    
             }
+            Vector3 relativePos = ponto - transform.position;
+            Quaternion toRotation = Quaternion.LookRotation(relativePos);
+            transform.rotation = Quaternion.Lerp( transform.rotation, toRotation, 3 * Time.deltaTime );
         }
     }
 }
