@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraFollowTarget : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField]Vector3 basePosition;
+    Vector3 basePosition;
     // Update is called once per frame
     private void Awake()
     {
