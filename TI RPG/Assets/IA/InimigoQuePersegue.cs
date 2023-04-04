@@ -9,6 +9,7 @@ namespace IA
     public class InimigoQuePersegue : Agente
     {
         [SerializeField] private List<Vector3> pontos;
+        [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
         public List<Vector3> Pontos => pontos;
         private ConeDeVisão coneDeVisão;
 
@@ -58,12 +59,9 @@ namespace IA
         IEnumerator MoverAtéOAlvo()
         {
             Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
-            yield return new WaitForSeconds(0.5f);
-            while(Vector3.Distance(transform.position, coneDeVisão.Alvo.position) > 0.5f && currentState.GetType() == typeof(EncontrandoPlayerState))
-            {
-                Mover(lastKnownPosition);
-                yield return null;
-            }
+            yield return new WaitForSeconds(waitTimeWhenSuspicious);
+            Mover(lastKnownPosition);
+
         }
         void SetStatePerseguindo()
         {
