@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using Controllers;
+using IA;
 using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(PlayerMovement))]
     public class PlayerDano : MonoBehaviour
     {
         [SerializeField] private int vidas = 2;
+        [SerializeField] private float speedBoostMultiplier = 2f;
+        [SerializeField] private float speedBoostTime = 2f;
         public int Vidas
         {
             get { return vidas; }
@@ -25,7 +29,6 @@ namespace Player
         {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
-                Debug.Log("oi");
                 Vidas -= 1;
                 StartCoroutine(TomarDano());
             }
@@ -35,6 +38,7 @@ namespace Player
             MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();
             Color selfColor = mr.material.color;
             Color damageColor = Color.red;
+            GetComponent<PlayerMovement>().GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
             for (int i = 0; i < 3; i++)
             {
                 yield return new WaitForSeconds(0.3f);
