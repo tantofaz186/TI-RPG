@@ -1,11 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Player
+namespace Objetos
 {
-    using UnityEngine;
-
-    public class Esconder : MonoBehaviour
+    public class ObjetoEscondível : MonoBehaviour
     {
         public GameObject player; 
         public float distanciaMinima = 2f; 
