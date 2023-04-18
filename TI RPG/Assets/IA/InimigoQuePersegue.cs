@@ -10,6 +10,8 @@ namespace IA
     {
         [SerializeField] private List<Vector3> pontos;
         [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
+        [SerializeField] private float forgetTime = 5f;
+        private float forgetTimer = 0f;
         public List<Vector3> Pontos => pontos;
         private ConeDeVisão coneDeVisão;
 
@@ -23,35 +25,20 @@ namespace IA
         protected override void Update()
         {
             base.Update();
-            /*if (currentState.GetType() == typeof(PerseguindoState))
-            {
-                
-            }*/
+            if (currentState.GetType() != typeof(PerseguindoState)) return;
+            forgetTimer += Time.deltaTime;
+            if (!(forgetTimer >= forgetTime)) return;
+            SetStatePatrulha();
+            SetStateEncontrandoPlayer(.8f);
+            forgetTimer = 0f;
         }
-
-        /*protected override void Update()
-        {
-            
-            //se eu encontrar o player pelo campo de visão, eu mudo de patrulha para encontrar o player
-            
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (currentState.GetType() == typeof(PatrulhaState)) SetStatePerseguindo();
-                else SetStatePatrulha();
-            }
-        }*/
+        
         void EncontreiOPlayerNoCampoDeVisão()
         {
             if (currentState.GetType() == typeof(PerseguindoState)) return;
             if (currentState.GetType() != typeof(EncontrandoPlayerState))
             {
-                EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState();
-                encontrandoPlayerState.OnFoundPlayer +=  SetStatePerseguindo;
-                encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
-                
-                SetState(encontrandoPlayerState);
-                StartCoroutine(MoverAtéOAlvo());
-
+                SetStateEncontrandoPlayer();
             }
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
@@ -73,6 +60,14 @@ namespace IA
         {
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetState(new PatrulhaState(this, pontos));
+        }
+        void SetStateEncontrandoPlayer(float percentage = 0f)
+        {
+            EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState(percentage);
+            encontrandoPlayerState.OnFoundPlayer += SetStatePerseguindo;
+            encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
+            SetState(encontrandoPlayerState);
+            StartCoroutine(MoverAtéOAlvo());
         }
         private void OnDrawGizmosSelected()
         {

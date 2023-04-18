@@ -3,21 +3,28 @@ using UnityEngine;
 
 namespace Player
 {
+    using UnityEngine;
+
     public class Esconder : MonoBehaviour
     {
-        //Player esconde dentro de objetos
-        //Quando o player estiver escondido, ele não pode ser visto pelo inimigo
-        //Ao clicar no botão de esconder, o player deve esconder-se no objeto mais próximo
-        //Ao clicar no botão de esconder novamente, o player deve sair do objeto onde está escondido
+        public GameObject player; 
+        public float distanciaMinima = 2f; 
+        private bool estaEscondido = false; 
 
         private void Awake()
         {
-            
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        private void Update()
+        void Update()
         {
-            
+            if (!Input.GetKeyDown(KeyCode.E)) return;
+            // Verifica se o jogador está perto o suficiente do objeto para se esconder
+            float distancia = Vector3.Distance(transform.position, player.transform.position);
+            if (!(distancia <= distanciaMinima)) return;
+            player.SetActive(estaEscondido); 
+            estaEscondido = !estaEscondido;
+
         }
     }
 }

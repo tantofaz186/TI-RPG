@@ -9,7 +9,7 @@ namespace IA
         public void SetState(IState state)
         {
             currentState?.OnExit();
-            
+
             currentState = state;
             currentState.OnEnter();
         }
