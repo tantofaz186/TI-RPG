@@ -23,7 +23,6 @@ public class ConeDeVisão : MonoBehaviour
         if (!Physics.Raycast(transform.position, direcaoPlayer, out var hit, raio)) return;
         if (!hit.collider.CompareTag("Player")) return;
         OnFoundPlayer?.Invoke();
-        Debug.Log("Encontrado");
     }
 
     private void OnDrawGizmosSelected()

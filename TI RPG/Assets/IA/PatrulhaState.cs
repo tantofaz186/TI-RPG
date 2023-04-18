@@ -10,14 +10,10 @@ namespace IA
         private Agente self;
         public void OnEnter()
         {
-            currentWaypoint = GetClosestWaypoint();
-            Debug.Log("Entrou Patrulha");
-        }
+            currentWaypoint = GetClosestWaypoint(); }
         
         public void OnUpdate()
         {
-            Debug.Log("Patrulhando");
-            
             self.Mover(waypoints[currentWaypoint]);
             if(Vector3.Distance(self.transform.position, waypoints[currentWaypoint]) < 0.6f)
             {
@@ -28,7 +24,6 @@ namespace IA
         }
         public void OnExit()
         {
-            Debug.Log("Saiu Patrulha");
         }
         public PatrulhaState(Agente self, List<Vector3> waypoints)
         {

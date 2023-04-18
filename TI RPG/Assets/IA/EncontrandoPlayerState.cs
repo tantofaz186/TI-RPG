@@ -11,12 +11,10 @@ namespace IA
         public event Action OnForgetPlayer;
         public void OnEnter()
         {
-            Debug.Log("Entrou no estado de encontrando player");
         }
 
         public void OnUpdate()
         {
-            Debug.Log($"Econtrando player {percentage}%");
             switch (percentage)
             {
                 case >= 1:
@@ -39,7 +37,6 @@ namespace IA
         
         public void OnExit()
         {
-            Debug.Log("Saiu do estado de encontrando player");
         }
         public EncontrandoPlayerState(float percentage = 0)
         {
