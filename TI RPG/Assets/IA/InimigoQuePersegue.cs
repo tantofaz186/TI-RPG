@@ -14,6 +14,7 @@ namespace IA
         private float forgetTimer = 0f;
         public List<Vector3> Pontos => pontos;
         private ConeDeVisão coneDeVisão;
+	[SerializeField] private InimigoUI inimigoUI;
 
         private void Awake()
         {
@@ -45,9 +46,12 @@ namespace IA
 
         IEnumerator MoverAtéOAlvo()
         {
+            inimigoUI.MostrarImagem(true);
             Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
+            Mover(transform.position);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
             Mover(lastKnownPosition);
+            inimigoUI.MostrarImagem(false);
 
         }
         void SetStatePerseguindo()
