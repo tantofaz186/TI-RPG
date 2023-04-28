@@ -1751,6 +1751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 317007745884200449, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4181670477067513066, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: raio
       value: 25.59
@@ -1882,6 +1886,14 @@ PrefabInstance:
     - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: pontos.Array.data[8].z
       value: -12.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948631440662461208, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948631440662461208, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}

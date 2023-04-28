@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class InimigoUI : MonoBehaviour
 {
 	[SerializeField] private Image exclamação;
-	
+
+	private void Awake()
+	{
+		GetComponent<Canvas>().worldCamera = Camera.main;
+	}
 	public void MostrarImagem(bool mostrar){
 		exclamação.gameObject.SetActive(mostrar);
 		}
