@@ -23,5 +23,10 @@ namespace Objetos
             estaEscondido = !estaEscondido;
 
         }
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, distanciaMinima);
+        }
     }
 }
