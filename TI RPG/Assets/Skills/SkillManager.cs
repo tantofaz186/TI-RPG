@@ -12,7 +12,12 @@ namespace Skills
         public SkillUI[] skillButtons;
         public Skill activateSkill;
         public XpPlayer pontosPlayer;
-    
+        
+        
+        public void ResetSkills()
+        {
+            
+        }
         public void feedbackUpgrade()
         {
             for(int i=0; i < skills.Length; i++)
