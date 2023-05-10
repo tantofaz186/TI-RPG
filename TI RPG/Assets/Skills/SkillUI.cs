@@ -18,17 +18,5 @@ public class SkillUI : MonoBehaviour
         skillNameText.text = SkillManager.instance.skills[skillButtonId].nomeSkill;
         skillDesText.text = SkillManager.instance.skills[skillButtonId].skillDescricao;
     }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
