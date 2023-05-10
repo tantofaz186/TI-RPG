@@ -7,5 +7,9 @@ namespace Player
         [SerializeField]
         public int _xpAtual;
     
+        public void AddXp()
+        {
+            _xpAtual += 1;
+        }
     }
 }

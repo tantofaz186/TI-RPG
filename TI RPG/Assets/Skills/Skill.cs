@@ -12,5 +12,7 @@ namespace Skills
         public bool isUpgrade;
         public Skill[] skillAnterior;
         public abstract void Update();
+        public abstract void OnEnable();
+        public abstract void OnDisable();
     }
 }
