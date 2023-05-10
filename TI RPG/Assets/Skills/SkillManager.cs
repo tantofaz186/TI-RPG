@@ -1,68 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controllers;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class SkillManager : MonoBehaviour
+namespace Skills
 {
-    public static SkillManager instance;
-    public Skill[] skills;
-    public SkillUI[] skillButtons;
-    public Skill activateSkill;
-    public XpPlayer pontosPlayer;
-
-    private void Awake()
+    public class SkillManager : Singleton<SkillManager>
     {
-        if (instance == null)
+        public static SkillManager instance;
+        public Skill[] skills;
+        public SkillUI[] skillButtons;
+        public Skill activateSkill;
+        public XpPlayer pontosPlayer;
+    
+        public void feedbackUpgrade()
         {
-            instance = this;
-        }
-        else
-        {
-            if (instance != this)
+            for(int i=0; i < skills.Length; i++)
             {
-                Destroy(gameObject);
-            }
-        }
-        DontDestroyOnLoad(gameObject);
-    }
-    public void feedbackUpgrade()
-    {
-        for(int i=0; i < skills.Length; i++)
-        {
-            if (skills[i].isUpgrade)
-            {
-                skills[i].GetComponent<Image>().color = new Vector4(1,1,1,1);
-            }
-            else
-            {
-                skills[i].GetComponent<Image>().color = new Vector4(0.94f, 0.94f, 0.94f, 0.94f);
-            }
-        }
-    }
-    public void UpgradeButton()
-    {
-        if (!activateSkill.isUpgrade==false && pontosPlayer._xpAtual>1)
-        {
-            for (int i=1; i< activateSkill.skillAnterior.Length;i++)//coloquei como 1 para que uma das skills sempre esteja ativada para ter um ponto de partida
-            {
-                if (activateSkill.skillAnterior[i].isUpgrade)
+                if (skills[i].isUpgrade)
                 {
-                    activateSkill.isUpgrade = true;
-                    pontosPlayer._xpAtual -= 1;
+                    skills[i].GetComponent<Image>().color = new Vector4(1,1,1,1);
                 }
                 else
                 {
-                    Debug.Log("Você não pode desbloquear essa skill sem desbloquear as anteriores");
+                    skills[i].GetComponent<Image>().color = new Vector4(0.94f, 0.94f, 0.94f, 0.94f);
                 }
             }
-
         }
-        else
+        public void UpgradeButton()
         {
-            Debug.Log("Essa skill não pode ser adiquirida");
+            if (!activateSkill.isUpgrade==false && pontosPlayer._xpAtual>1)
+            {
+                for (int i=1; i< activateSkill.skillAnterior.Length;i++)//coloquei como 1 para que uma das skills sempre esteja ativada para ter um ponto de partida
+                {
+                    if (activateSkill.skillAnterior[i].isUpgrade)
+                    {
+                        activateSkill.isUpgrade = true;
+                        pontosPlayer._xpAtual -= 1;
+                    }
+                    else
+                    {
+                        Debug.Log("VocÃª nÃ£o pode desbloquear essa skill sem desbloquear as anteriores");
+                    }
+                }
+
+            }
+            else
+            {
+                Debug.Log("Essa skill nÃ£o pode ser adiquirida");
+            }
+            feedbackUpgrade();
         }
-        feedbackUpgrade();
     }
 }

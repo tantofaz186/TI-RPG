@@ -1,21 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class XpPlayer : MonoBehaviour
+namespace Player
 {
-    [SerializeField]
-    public int _xpAtual;
-
-    // Start is called before the first frame update
-    void Start()
+    public class XpPlayer : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField]
+        public int _xpAtual;
+    
     }
 }
