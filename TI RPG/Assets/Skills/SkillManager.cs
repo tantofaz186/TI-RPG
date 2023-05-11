@@ -26,8 +26,7 @@ namespace Skills
             //skillUi.skillNameText.text = skills[index].nomeSkill;
             //skillUi.skillDesText.text = skills[index].skillDescricao;
             activateSkill = skillUi.skill;
-            skillUi.skillImage.color = Color.red;
-            UpgradeButton();
+            UpgradeButton(skillUi);
             return activateSkill;
         } 
         public void ResetSkills()
@@ -61,7 +60,7 @@ namespace Skills
                 }
             }
         }*/
-        public void UpgradeButton()
+        public void UpgradeButton(SkillUI skillUi)
         {
             Debug.Log(!activateSkill.enabled);
             Debug.Log(pontosPlayer._xpAtual>=1);
@@ -78,7 +77,7 @@ namespace Skills
                 if (!canUnlock) return;
                 pontosPlayer._xpAtual -= 1;
                 activateSkill.enabled = true;
-                
+                skillUi.skillImage.color = Color.red;
                 return;
             }
             Debug.Log("Essa skill não pode ser adiquirida");
