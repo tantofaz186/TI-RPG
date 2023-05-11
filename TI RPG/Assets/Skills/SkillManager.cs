@@ -21,10 +21,6 @@ namespace Skills
 
         public Skill SetActivateSkill(SkillUI skillUi)
         {
-            //int index = skills.FindIndex(x => skillUi.skill.name == x.name);
-            //skillUi.skillImage.sprite = skills[index].skillSprite;
-            //skillUi.skillNameText.text = skills[index].nomeSkill;
-            //skillUi.skillDesText.text = skills[index].skillDescricao;
             activateSkill = skillUi.skill;
             UpgradeButton(skillUi);
             return activateSkill;
@@ -43,23 +39,6 @@ namespace Skills
             }
             pontosPlayer._xpAtual += refundSkillPoints;
         }
-
-
-
-        /*public void feedbackUpgrade()
-        {
-            for(int i=0; i < skills.Count; i++)
-            {
-                if (skills[i].enabled)
-                {
-                    skills[i].GetComponent<Image>().color = new Vector4(1,1,1,1);
-                }
-                else
-                {
-                    skills[i].GetComponent<Image>().color = new Vector4(0.94f, 0.94f, 0.94f, 0.94f);
-                }
-            }
-        }*/
         public void UpgradeButton(SkillUI skillUi)
         {
             Debug.Log(!activateSkill.enabled);
