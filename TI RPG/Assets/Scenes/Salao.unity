@@ -4913,15 +4913,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8ea231a907dffd04abd02b85a73dcefe, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8231,6 +8231,7 @@ GameObject:
   - component: {fileID: 6557822185163481739}
   - component: {fileID: 6557822185163481740}
   - component: {fileID: 6557822185163481741}
+  - component: {fileID: 6557822185163481748}
   - component: {fileID: 6557822185163481745}
   - component: {fileID: 6557822185163481744}
   - component: {fileID: 6557822185163481747}
@@ -8380,6 +8381,24 @@ MonoBehaviour:
   skillSprite: {fileID: 0}
   skillDescricao: 
   skillAnterior: []
+--- !u!114 &6557822185163481748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557822185163481730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc477a9c50161440947372495bbf7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomeSkill: 
+  skillSprite: {fileID: 0}
+  skillDescricao: 
+  skillAnterior: []
+  armadilha: {fileID: 238824383648831911, guid: 8f9a0afe4dd18c64fa8fc479de5af0d4, type: 3}
+  player: {fileID: 0}
 --- !u!4 &6557822185798738979
 Transform:
   m_ObjectHideFlags: 0
