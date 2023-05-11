@@ -43,6 +43,11 @@ namespace Skills
 
         public override void OnDisable()
         {
+            isActive = false;
+            foreach (var outline in outlines)
+            {
+                outline.enabled = isActive;
+            }
             Debug.Log("Premonição Desativada");
         }
     }
