@@ -12,6 +12,7 @@ namespace Skills
         private bool invisivel = false;
         public override void OnEnable()
         {
+            Debug.Log("Invisibilidade Ativada");
             player = GameObject.FindGameObjectWithTag("Player");
             m_MeshRenderer = player.GetComponent<MeshRenderer>();
             m_Collider = player.GetComponent<Collider>();
@@ -37,6 +38,8 @@ namespace Skills
 
         public override void OnDisable()
         {
+            Debug.Log("Invisibilidade Desativada");
+
             StopAllCoroutines();
             invisivel = false;
             m_MeshRenderer.enabled = !invisivel;

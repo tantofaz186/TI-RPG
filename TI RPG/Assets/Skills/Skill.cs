@@ -9,7 +9,6 @@ namespace Skills
 
         [TextArea(1, 3)]
         public string skillDescricao;
-        public bool isUpgrade;
         public Skill[] skillAnterior;
         public abstract void Update();
         public abstract void OnEnable();

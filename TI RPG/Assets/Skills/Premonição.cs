@@ -12,6 +12,7 @@ namespace Skills
 
         public override void OnEnable()
         {
+            Debug.Log("Premonição Ativada");
             inimigos = GameObject.FindGameObjectsWithTag("Inimigo");
             foreach (var inimigo in inimigos)
             {
@@ -42,7 +43,7 @@ namespace Skills
 
         public override void OnDisable()
         {
-            
+            Debug.Log("Premonição Desativada");
         }
     }
 }
