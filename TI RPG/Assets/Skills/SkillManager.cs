@@ -21,6 +21,11 @@ namespace Skills
 
         public Skill SetActivateSkill(SkillUI skillUi)
         {
+            if (skillUi.skill.Equals(null))
+            {
+                Debug.LogWarning("Skill não implementada");
+                return null;
+            }
             activateSkill = skillUi.skill;
             UpgradeButton(skillUi);
             return activateSkill;
@@ -41,8 +46,6 @@ namespace Skills
         }
         public void UpgradeButton(SkillUI skillUi)
         {
-            Debug.Log(!activateSkill.enabled);
-            Debug.Log(pontosPlayer._xpAtual>=1);
             if (!activateSkill.enabled && pontosPlayer._xpAtual>=1)
             {
                 bool canUnlock = true;
