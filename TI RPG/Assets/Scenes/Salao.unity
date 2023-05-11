@@ -1689,7 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6508d11a32aad4783682f79a389a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 0}
+  skill: {fileID: 6557822185163481748}
 --- !u!114 &543148574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6488,7 +6488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6508d11a32aad4783682f79a389a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 0}
+  skill: {fileID: 6557822185163481749}
 --- !u!114 &1641625998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8235,6 +8235,7 @@ GameObject:
   - component: {fileID: 6557822185163481745}
   - component: {fileID: 6557822185163481744}
   - component: {fileID: 6557822185163481747}
+  - component: {fileID: 6557822185163481749}
   m_Layer: 0
   m_Name: 'player '
   m_TagString: Player
@@ -8331,7 +8332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeSkill: 
-  skillSprite: {fileID: 0}
   skillDescricao: 
   skillAnterior:
   - {fileID: 6557822185163481747}
@@ -8350,10 +8350,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeSkill: 
-  skillSprite: {fileID: 0}
   skillDescricao: 
   skillAnterior:
   - {fileID: 6557822185163481744}
+  - {fileID: 6557822185163481749}
 --- !u!114 &6557822185163481746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8380,7 +8380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeSkill: 
-  skillSprite: {fileID: 0}
   skillDescricao: 
   skillAnterior: []
 --- !u!114 &6557822185163481748
@@ -8396,12 +8395,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeSkill: 
-  skillSprite: {fileID: 0}
   skillDescricao: 
   skillAnterior:
-  - {fileID: 6557822185163481745}
+  - {fileID: 6557822185163481749}
   armadilha: {fileID: 238824383648831911, guid: 8f9a0afe4dd18c64fa8fc479de5af0d4, type: 3}
   player: {fileID: 0}
+--- !u!114 &6557822185163481749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557822185163481730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576991348274ff24a87a8a5d0604dd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomeSkill: 
+  skillDescricao: 
+  skillAnterior:
+  - {fileID: 6557822185163481747}
 --- !u!4 &6557822185798738979
 Transform:
   m_ObjectHideFlags: 0
