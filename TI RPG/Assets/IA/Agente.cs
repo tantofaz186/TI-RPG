@@ -18,8 +18,27 @@ namespace IA
         public void Mover(Vector3 ponto)
         {
             agente.SetDestination(ponto);
+            //StartCoroutine(RotateToNextPosition());
+        }
+        /*private IEnumerator RotateToNextPosition()
+        {
+            agente.isStopped = true;
+            while (Mathf.Abs(rotateAngle) > 0.1f)
+            {
+                transform.Rotate(Vector3.up, rotateAngle * 20 * Time.deltaTime);
+                yield return null;
+            }
+            agente.isStopped = false;
         }
 
+        private float rotateAngle
+        {
+            get
+            {
+                Vector3 direction = agente.transform.forward - transform.position;
+                return Vector3.SignedAngle(transform.forward, direction, transform.up) / 180f;
+            }
+        }*/
         public IEnumerator GetSpeedBoost(float time, float multiplier)
         {
             agente.speed = velocidade * multiplier;

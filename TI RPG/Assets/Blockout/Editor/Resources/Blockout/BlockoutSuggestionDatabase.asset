@@ -3,12 +3,16 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12cee7fa11d96cc458376237fc722407, type: 3}
   m_Name: BlockoutSuggestionDatabase
   m_EditorClassIdentifier: 
-  Database: []
+  Database:
+  - name: 
+    prefab: {fileID: 1404993611282002, guid: 90ff05ffd01250b46b8c9176faf61247, type: 3}
+    previewImage: {fileID: 2800000, guid: daf5ca51201f1614a9d137a0ef355201, type: 3}
