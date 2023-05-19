@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FadeObjectBlockingObject : MonoBehaviour
@@ -29,7 +30,25 @@ public class FadeObjectBlockingObject : MonoBehaviour
 
     private void OnEnable()
     {
+        Camera = Camera == null ? Camera.main : Camera;
+        AddWallsToObjectsBlockingView();
         StartCoroutine(CheckForObjects());
+    }
+    private void AddWallsToObjectsBlockingView()
+    {
+        GameObject[] paredes = GameObject.FindGameObjectsWithTag("ObjetoCameraEsconder");
+        foreach (GameObject parede in paredes)
+        {
+            FadingObject fadingObject = parede.GetComponent<FadingObject>();
+            if (fadingObject == null)
+            {
+                fadingObject  = parede.AddComponent<FadingObject>();
+            }
+            if (!ObjectsBlockingView.Contains(fadingObject))
+            {
+                ObjectsBlockingView.Add(fadingObject);
+            }
+        }
     }
 
     private IEnumerator CheckForObjects()

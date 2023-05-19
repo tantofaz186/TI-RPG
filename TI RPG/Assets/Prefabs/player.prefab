@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6092335344105618014}
   - component: {fileID: 7710890735289583531}
   - component: {fileID: 4388394652266304103}
+  - component: {fileID: 18612880176030158}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -285,6 +286,28 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+--- !u!114 &18612880176030158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557822184550138281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fab4b08cbbcae94eb988edf4aed376c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  Target: {fileID: 0}
+  Camera: {fileID: 0}
+  FadedAlpha: 0.33
+  RetainShadows: 1
+  TargetPositionOffset: {x: 0, y: 1, z: 0}
+  FadeSpeed: 1
+  ObjectsBlockingView: []
 --- !u!1 &7159469360447235136
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +370,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b2d7777a13cebe44daf0ba0f5f0c6c59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,7 +468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b2d7777a13cebe44daf0ba0f5f0c6c59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
