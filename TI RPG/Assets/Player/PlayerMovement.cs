@@ -1,11 +1,11 @@
 using IA;
+using Skills;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerMovement : Agente
     {
-   
         private Vector3 targetPosition;
         private Camera mainCamera;
         

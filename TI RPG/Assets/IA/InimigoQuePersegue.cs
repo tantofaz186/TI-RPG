@@ -91,5 +91,12 @@ namespace IA
                 Debug.LogWarning(e);
             }
         }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Armadilha"))
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }
