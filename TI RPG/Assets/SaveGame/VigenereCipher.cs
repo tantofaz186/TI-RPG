@@ -13,17 +13,8 @@ namespace SaveGame
             foreach (char currentChar in input)
             {
                 int keyChar = encryptionKey[keyIndex % encryptionKey.Length];
-
-                if (char.IsLetter(currentChar))
-                {
-                    char encryptedChar = (char)((currentChar + keyChar - 2 * 'A') % 26 + 'A');
-                    encryptedText += encryptedChar;
-                }
-                else
-                {
-                    encryptedText += currentChar;
-                }
-
+                char encryptedChar = (char)(currentChar + keyChar);
+                encryptedText += encryptedChar;
                 keyIndex++;
             }
 
@@ -39,16 +30,8 @@ namespace SaveGame
             {
                 int keyChar = encryptionKey[keyIndex % encryptionKey.Length];
 
-                if (char.IsLetter(currentChar))
-                {
-                    char decryptedChar = (char)((currentChar - keyChar + 26) % 26 + 'A');
-                    decryptedText += decryptedChar;
-                }
-                else
-                {
-                    decryptedText += currentChar;
-                }
-
+                char decryptedChar = (char)(currentChar - keyChar);
+                decryptedText += decryptedChar;
                 keyIndex++;
             }
 
