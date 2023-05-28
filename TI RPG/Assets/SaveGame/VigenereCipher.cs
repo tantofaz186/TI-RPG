@@ -3,16 +3,15 @@ namespace SaveGame
     public static class VigenereCipher
     {
         // Chave utilizada para criptografar e descriptografar
-        private const string encryptionKey = "MY_ENCRYPTION_KEY";
+        private const string encryptionKey = "TI_RPG";
 
         public static string Encrypt(string input)
         {
             string encryptedText = "";
             int keyIndex = 0;
 
-            for (int i = 0; i < input.Length; i++)
+            foreach (char currentChar in input)
             {
-                char currentChar = input[i];
                 int keyChar = encryptionKey[keyIndex % encryptionKey.Length];
 
                 if (char.IsLetter(currentChar))
@@ -36,9 +35,8 @@ namespace SaveGame
             string decryptedText = "";
             int keyIndex = 0;
 
-            for (int i = 0; i < input.Length; i++)
+            foreach (char currentChar in input)
             {
-                char currentChar = input[i];
                 int keyChar = encryptionKey[keyIndex % encryptionKey.Length];
 
                 if (char.IsLetter(currentChar))
