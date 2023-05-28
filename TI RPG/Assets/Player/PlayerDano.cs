@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Controllers;
-using IA;
 using UnityEngine;
 
 namespace Player
