@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InimigoUI : MonoBehaviour
+namespace IA
 {
-	[SerializeField] private Image exclamação;
-
-	private void Awake()
+	public class InimigoUI : MonoBehaviour
 	{
-		GetComponent<Canvas>().worldCamera = Camera.main;
-	}
-	public void MostrarImagem(bool mostrar){
-		exclamação.gameObject.SetActive(mostrar);
+		[SerializeField] private Image exclamação;
+
+		private void Awake()
+		{
+			GetComponent<Canvas>().worldCamera = Camera.main;
 		}
+
+		public void MostrarImagem(bool mostrar)
+		{
+			exclamação.gameObject.SetActive(mostrar);
+		}
+	}
 }

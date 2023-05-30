@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : Singleton<DialogueManager>
 {
+    public TextMeshProUGUI dialogueTitle;
     public TextMeshProUGUI dialogueText;
+    public Image dialogueImage;
     public GameObject dialoguePanel;
 
     private Queue<string> sentences;
