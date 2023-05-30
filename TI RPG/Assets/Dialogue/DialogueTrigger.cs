@@ -12,17 +12,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     public void TriggerDialogue()
     {
-        //if (!Input.GetKeyDown(KeyCode.F)) return;
-        //float distancia = Vector3.Distance(transform.position, player.transform.position);
-       // if (!(distancia <= distanciaMinima)) return;
-        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
         if (Input.GetMouseButtonDown(0)) 
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
@@ -45,5 +37,5 @@ public class DialogueTrigger : MonoBehaviour
     {
         TriggerDialogue();
     }
-
+    
 }
