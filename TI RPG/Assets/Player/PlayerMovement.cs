@@ -24,9 +24,9 @@ namespace Player
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
                 {
                     targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    Mover(targetPosition);
                 }
             }
-            Mover(targetPosition);
         }
     }
 
