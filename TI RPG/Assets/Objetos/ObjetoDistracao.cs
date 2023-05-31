@@ -1,49 +1,64 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjetoDistracao : MonoBehaviour
+namespace Objetos
 {
-    public delegate void contactPoint(Vector3 contactpoint);
-    public event contactPoint onhitground;
-    
-    [SerializeField]
-    private bool isPicked = false;
-
-    private void OnCollisionEnter(Collision collision)
+    public class ObjetoDistracao : MonoBehaviour
     {
-        onhitground?.Invoke(collision.contacts[0].point);
-    }
+        public delegate void OnHitGroundHandler(Vector3 contactpoint);
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F) && !isPicked)
+        public event OnHitGroundHandler OnHitGround;
+
+        [SerializeField] private bool isPicked = false;
+        private Rigidbody rb;
+
+        private void Awake()
         {
-            PickUpObject();
+            rb = GetComponent<Rigidbody>();
         }
-        else if (Input.GetKeyDown(KeyCode.G) && isPicked)
-        {
-            ThrowObject();
-        }
-    }
 
-    private void PickUpObject()
-    {
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, 3f, Vector3.up, out hit, LayerMask.GetMask("Player")))
-        {       
-                GetComponent<Rigidbody>().isKinematic = true;
-                transform.SetParent(hit.collider.transform);
+        private void OnCollisionEnter(Collision collision)
+        {
+            OnHitGround?.Invoke(collision.contacts[0].point);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F) && !isPicked)
+            {
+                PickUpObject();
+            }
+            else if (Input.GetKeyDown(KeyCode.G) && isPicked)
+            {
+                ThrowObject();
+            }
+        }
+
+        private void PickUpObject()
+        {
+            try
+            {
+                Collider col = Physics.OverlapSphere(transform.position, 3f, LayerMask.GetMask("Player"))[0];
+                rb.isKinematic = true;
+                transform.SetParent(col.transform);
                 transform.localPosition = Vector3.forward;
                 isPicked = true;
-           }
-    }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.Log("Não há nenhum objeto próximo para ser pego");
+            }
+        }
 
-    private void ThrowObject()
-    {
-        GetComponent<Rigidbody>().isKinematic = false;
-        transform.SetParent(null);
-        GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
-        isPicked = false;
+        private void ThrowObject()
+        {
+            rb.isKinematic = false;
+            Vector3 throwDir = transform.parent.forward;
+            transform.SetParent(null);
+            rb.AddForce(throwDir * 500f);
+            isPicked = false;
+        }
     }
 }

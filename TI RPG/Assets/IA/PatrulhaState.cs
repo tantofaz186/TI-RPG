@@ -11,7 +11,7 @@ namespace IA
         public void OnEnter()
         {
             currentWaypoint = GetClosestWaypoint();
-            self.ComeçarAEscutar();
+            self.ComeÃ§arAEscutar();
         }
         
         public void OnUpdate()

@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using Objetos;
 
 namespace IA
 {
@@ -28,17 +28,17 @@ namespace IA
             agente.speed = velocidade;
         }
 
-        public void ComeçarAEscutar(){
+        public void ComeÃ§arAEscutar(){
             foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
             {
-                objectdistraction.onhitground += ouvirObjeto;
+                objectdistraction.OnHitGround += ouvirObjeto;
             }
         }
         
         public void PararDeEscutar(){
             foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
             {
-                objectdistraction.onhitground -= ouvirObjeto;
+                objectdistraction.OnHitGround -= ouvirObjeto;
             }
         }
         protected virtual void ouvirObjeto(Vector3 objetoOuvido)
