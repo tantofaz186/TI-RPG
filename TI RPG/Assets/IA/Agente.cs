@@ -9,6 +9,7 @@ namespace IA
     {
         [SerializeField] protected float velocidade = 5f;
         [SerializeField] protected NavMeshAgent agente;
+        [SerializeField] protected float audioDetectionRadius = 10f;
 
         private void Start()
         {
@@ -18,32 +19,34 @@ namespace IA
         public void Mover(Vector3 ponto)
         {
             agente.SetDestination(ponto);
-            //StartCoroutine(RotateToNextPosition());
         }
-        /*private IEnumerator RotateToNextPosition()
-        {
-            agente.isStopped = true;
-            while (Mathf.Abs(rotateAngle) > 0.1f)
-            {
-                transform.Rotate(Vector3.up, rotateAngle * 20 * Time.deltaTime);
-                yield return null;
-            }
-            agente.isStopped = false;
-        }
-
-        private float rotateAngle
-        {
-            get
-            {
-                Vector3 direction = agente.transform.forward - transform.position;
-                return Vector3.SignedAngle(transform.forward, direction, transform.up) / 180f;
-            }
-        }*/
+        
         public IEnumerator GetSpeedBoost(float time, float multiplier)
         {
             agente.speed = velocidade * multiplier;
             yield return new WaitForSeconds(time);
             agente.speed = velocidade;
+        }
+
+        public void ComeçarAEscutar(){
+            foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
+            {
+                objectdistraction.onhitground += ouvirObjeto;
+            }
+        }
+        
+        public void PararDeEscutar(){
+            foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
+            {
+                objectdistraction.onhitground -= ouvirObjeto;
+            }
+        }
+        protected virtual void ouvirObjeto(Vector3 objetoOuvido)
+        {
+            if (Vector3.Distance(objetoOuvido, transform.position) <= audioDetectionRadius)
+            {
+                Mover(objetoOuvido);
+            }
         }
     }
 }

@@ -10,7 +10,9 @@ namespace IA
         private Agente self;
         public void OnEnter()
         {
-            currentWaypoint = GetClosestWaypoint(); }
+            currentWaypoint = GetClosestWaypoint();
+            self.ComeçarAEscutar();
+        }
         
         public void OnUpdate()
         {
@@ -24,7 +26,9 @@ namespace IA
         }
         public void OnExit()
         {
+            self.PararDeEscutar();
         }
+
         public PatrulhaState(Agente self, List<Vector3> waypoints)
         {
             this.waypoints = waypoints;
