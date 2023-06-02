@@ -7,9 +7,11 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject player;
     public float distanciaMinima = 2f;
     public Dialogue dialogue;
+    private Camera mainCamera;
 	float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
     private void Awake()
     {
+        mainCamera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
         Outline outline;
         if (TryGetComponent(out outline))
@@ -25,13 +27,17 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        
+        Debug.Log("hello");
         if (distanciaDoPlayer > distanciaMinima) return;
+        Debug.Log("it's me");
         if (!Input.GetMouseButtonDown(0)) return;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
-        RaycastHit hit;
+        Debug.Log("pick up");
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
+        RaycastHit hit;        
+        Debug.Log("b");
         if (Physics.Raycast(ray, out hit)) // Check if the ray hits any collider
         {
+            Debug.Log("a");
             if (hit.collider.gameObject.Equals(this.gameObject)) // Check if the hit collider belongs to this object
             {
                 DialogueManager.Instance.StartDialogue(dialogue);
