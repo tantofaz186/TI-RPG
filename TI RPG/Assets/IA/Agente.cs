@@ -43,9 +43,12 @@ namespace IA
         }
         protected virtual void ouvirObjeto(Vector3 objetoOuvido)
         {
+            Debug.Log("Ouvi");
             if (Vector3.Distance(objetoOuvido, transform.position) <= audioDetectionRadius)
             {
                 Mover(objetoOuvido);
+                Debug.Log("Ouvi dentro do range");
+
             }
         }
     }

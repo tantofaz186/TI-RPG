@@ -10,6 +10,7 @@ namespace Objetos
         public delegate void OnHitGroundHandler(Vector3 contactpoint);
 
         public event OnHitGroundHandler OnHitGround;
+        [SerializeField] private float forcePower = 400f;
 
         [SerializeField] private bool isPicked = false;
         private Rigidbody rb;
@@ -55,9 +56,9 @@ namespace Objetos
         private void ThrowObject()
         {
             rb.isKinematic = false;
-            Vector3 throwDir = transform.parent.forward;
+            Vector3 throwDir = (transform.parent.forward + Vector3.up).normalized;
             transform.SetParent(null);
-            rb.AddForce(throwDir * 500f);
+            rb.AddForce(throwDir * forcePower);
             isPicked = false;
         }
     }
