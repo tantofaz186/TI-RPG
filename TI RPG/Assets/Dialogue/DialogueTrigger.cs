@@ -27,17 +27,12 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        Debug.Log("hello");
         if (distanciaDoPlayer > distanciaMinima) return;
-        Debug.Log("it's me");
         if (!Input.GetMouseButtonDown(0)) return;
-        Debug.Log("pick up");
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
         RaycastHit hit;        
-        Debug.Log("b");
         if (Physics.Raycast(ray, out hit)) // Check if the ray hits any collider
         {
-            Debug.Log("a");
             if (hit.collider.gameObject.Equals(this.gameObject)) // Check if the hit collider belongs to this object
             {
                 DialogueManager.Instance.StartDialogue(dialogue);
