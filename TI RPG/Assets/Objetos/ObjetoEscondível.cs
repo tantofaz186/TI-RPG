@@ -11,6 +11,16 @@ namespace Objetos
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            Outline outline;
+            if (TryGetComponent(out outline))
+            {
+                SetOutline(outline);
+            }
+            else
+            {
+                outline = gameObject.AddComponent<Outline>();
+                SetOutline(outline);
+            }
         }
 
         void Update()
@@ -27,6 +37,11 @@ namespace Objetos
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, distanciaMinima);
+        }
+        private void SetOutline(Outline outline)
+        {
+            outline.OutlineColor = Color.blue;
+            outline.OutlineMode = Outline.Mode.OutlineVisible;
         }
     }
 }
