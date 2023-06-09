@@ -33,8 +33,6 @@ namespace Player
                     Mover(targetPosition);
                 }
             }
-            //Mover(targetPosition);
-
             #region Movimentacao/Mecanim
             if (agente.destination == transform.position)
             {
