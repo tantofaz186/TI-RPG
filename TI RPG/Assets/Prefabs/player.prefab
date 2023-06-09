@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6557822184550138282}
   - component: {fileID: 6557822184550138272}
   - component: {fileID: 6557822184550138279}
+  - component: {fileID: 3406911441445836350}
   - component: {fileID: 6557822184550138278}
   - component: {fileID: 3095986943593971547}
   - component: {fileID: 6912923288059692202}
@@ -141,6 +142,26 @@ MonoBehaviour:
   velocidade: 2
   agente: {fileID: 6557822184550138278}
   audioDetectionRadius: 10
+--- !u!95 &3406911441445836350
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557822184550138281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 383cc05bfec12e14fa66a8264ac57151, type: 3}
+  m_Controller: {fileID: 9100000, guid: b975767cb72bc1d4990010fb1aea2b8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!195 &6557822184550138278
 NavMeshAgent:
   m_ObjectHideFlags: 0

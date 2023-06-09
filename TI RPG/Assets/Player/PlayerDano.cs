@@ -34,17 +34,44 @@ namespace Player
         }
         IEnumerator TomarDano()
         {
-            MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();
-            Color selfColor = mr.material.color;
+            Color selfColor;
             Color damageColor = Color.red;
-            GetComponent<PlayerMovement>().GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
-            for (int i = 0; i < 3; i++)
+            SkinnedMeshRenderer smr;
+            MeshRenderer mr;
+
+            if (this.gameObject.GetComponent<MeshRenderer>() == null)
+            {
+                smr = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
+                selfColor = smr.material.color;
+                mr = null;
+            }
+            else
+            {
+               mr = gameObject.GetComponent<MeshRenderer>();
+               selfColor = mr.material.color;
+               smr = null;
+            }
+
+           GetComponent<PlayerMovement>().GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
+
+            if (this.gameObject.GetComponent<MeshRenderer>() == null)
             {
                 yield return new WaitForSeconds(0.3f);
-                mr.material.color = damageColor;
+                smr.material.color = damageColor;
                 yield return new WaitForSeconds(0.3f);
-                mr.material.color = selfColor;   
+                smr.material.color = selfColor;
             }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    yield return new WaitForSeconds(0.3f);
+                    mr.material.color = damageColor;
+                    yield return new WaitForSeconds(0.3f);
+                    mr.material.color = selfColor;
+                }
+            }
+            
         }
     }
 }
