@@ -21,12 +21,12 @@ public class SerraMove : MonoBehaviour
         if (proxPos.position == ponto1.transform.position)
         {
             rot = rot + Time.deltaTime * vel_r;
-            transform.rotation = Quaternion.Euler(0, 0, rot);
+            transform.localRotation = Quaternion.Euler(0, 0, rot);
         }
         else
         {
             rot = rot + Time.deltaTime * -vel_r;
-            transform.rotation = Quaternion.Euler(0, 0, rot);
+            transform.localRotation = Quaternion.Euler(0, 0, rot);
         }
     }
     private void Awake()
