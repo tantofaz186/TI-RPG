@@ -42,6 +42,7 @@ namespace Objetos
         {
             outline.OutlineColor = Color.blue;
             outline.OutlineMode = Outline.Mode.OutlineVisible;
+            outline.OutlineWidth = 6f;
         }
     }
 }

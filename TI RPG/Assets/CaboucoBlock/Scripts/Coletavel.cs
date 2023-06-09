@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coletavel : MonoBehaviour
 {
-    [SerializeField]private GameObject player;
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject mao;
     [SerializeField] public string maoNome;
     bool carregada=false;
@@ -17,7 +17,7 @@ public class Coletavel : MonoBehaviour
     void Pegar()
     {
         carregada = true;
-        this.transform.parent = mao.transform;
+        transform.parent = mao.transform;
         gameObject.transform.position= transform.parent.position;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
         
@@ -26,7 +26,7 @@ public class Coletavel : MonoBehaviour
 
     void Largar()
     {
-        this.transform.parent = null;
+        transform.parent = null;
         gameObject.GetComponent<Rigidbody>().isKinematic = false; ;
         carregada = false;
     }
@@ -60,12 +60,11 @@ public class Coletavel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.E) == true && (transform.position - player.transform.position).magnitude <= 2.0f && carregada == false )
+         if (Input.GetKeyDown(KeyCode.E) && (transform.position - player.transform.position).magnitude <= 2.0f && carregada == false )
          {
             Pegar();
          }
-
-        else if (carregada == true && Input.GetKeyDown(KeyCode.E) == true)
+         else if (carregada && Input.GetKeyDown(KeyCode.E))
         {
             Largar();
         }

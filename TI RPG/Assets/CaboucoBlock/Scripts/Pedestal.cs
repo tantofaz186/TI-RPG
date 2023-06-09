@@ -11,14 +11,20 @@ public class Pedestal : MonoBehaviour
     {
         get=> ativado;
     }
+    MeshRenderer mr;
+    private void Start()
+    {
+        mr = gameObject.GetComponent<MeshRenderer>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject==peca)
         {
-            gameObject.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+            mr.material.EnableKeyword("_EMISSION");
             ativado = true;
             Puzzle.puzzle.CompletarPuzzle();
             Debug.Log("Ativou");
+
         }
         
     }
@@ -27,7 +33,7 @@ public class Pedestal : MonoBehaviour
     {
         if (collision.gameObject == peca)
         {
-            gameObject.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+            mr.material.DisableKeyword("_EMISSION");
             ativado = false;
             Debug.Log("Desativou");
         }

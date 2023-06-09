@@ -45,18 +45,22 @@ namespace Player
                 velocidade = 3.0f;
                 StartCoroutine(LerpValue("Mover", 0.5f));
             }
+            else{
+                corpo_fsm.SetBool("movimentando", true);
+            }
             if (Input.GetKey(KeyCode.LeftControl))//Agachar
             {
                 corpo_fsm.SetBool("agachado", true);
                 velocidade = 1.75f;
                 StartCoroutine(LerpValue("Mover", 0f));
             }
-            else corpo_fsm.SetBool("agachado", false);// Desagachar
-
-            if (Input.GetKey(KeyCode.LeftShift))//Correr
+            else if (Input.GetKey(KeyCode.LeftShift))//Correr
             {
                 velocidade = 4.25f;
                 StartCoroutine(LerpValue("Mover", 1f));
+            }
+            else if (!Input.GetKey(KeyCode.LeftControl)) {
+                corpo_fsm.SetBool("agachado", false);// Desagachar
             }
 
 

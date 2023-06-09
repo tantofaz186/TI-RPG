@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplodeParede : MonoBehaviour
 {
-    [SerializeField] GameObject[] peças;
+    [SerializeField] GameObject[] peÃ§as;
     [SerializeField] GameObject player;
     [SerializeField] bool explodiu = false;
 
@@ -12,7 +12,7 @@ public class ExplodeParede : MonoBehaviour
     {
         explodiu = true;
 
-        foreach(GameObject i in peças)
+        foreach(GameObject i in peÃ§as)
         {
             i.GetComponent<Rigidbody>().isKinematic = false;
             i.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position, 10.0f, 2.0f);
@@ -25,11 +25,11 @@ public class ExplodeParede : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        peças = new GameObject[gameObject.transform.childCount - 1];
+        peÃ§as = new GameObject[gameObject.transform.childCount - 1];
 
         for(int i = 0; i < gameObject.transform.childCount - 1; i++)
         {
-            peças[i] = gameObject.transform.GetChild(i).gameObject;
+            peÃ§as[i] = gameObject.transform.GetChild(i).gameObject;
         }
     }
 

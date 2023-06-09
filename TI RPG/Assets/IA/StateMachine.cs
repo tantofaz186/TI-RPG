@@ -11,6 +11,7 @@ namespace IA
             currentState?.OnExit();
 
             currentState = state;
+
             currentState.OnEnter();
         }
         protected virtual void Update()
