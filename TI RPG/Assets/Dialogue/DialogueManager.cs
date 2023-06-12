@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Controllers;
@@ -5,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[DefaultExecutionOrder(int.MinValue)]
 public class DialogueManager : Singleton<DialogueManager>
 {
     public TextMeshProUGUI dialogueTitle;

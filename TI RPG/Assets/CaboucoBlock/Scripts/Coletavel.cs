@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class Coletavel : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private PlayerMovement player;
     [SerializeField] private GameObject mao;
     [SerializeField] public string maoNome;
+    public float distanciaMinima = 2f;
     bool carregada=false;
-   
+    private Rigidbody rb;
+    private Camera mainCamera;
+    float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
+
     public bool Carregada
     {
         get { return carregada; }
@@ -18,29 +23,28 @@ public class Coletavel : MonoBehaviour
     {
         carregada = true;
         transform.parent = mao.transform;
-        gameObject.transform.position= transform.parent.position;
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        
+        transform.position= transform.parent.position;
+        rb.isKinematic = true;
         Debug.Log("pegou");
     }
 
     void Largar()
     {
         transform.parent = null;
-        gameObject.GetComponent<Rigidbody>().isKinematic = false; ;
+        rb.isKinematic = false; ;
         carregada = false;
     }
 
-    GameObject EncontrarMao(GameObject player, string nome)
+    GameObject EncontrarMao(GameObject _player, string nome)
     {
-        for(int i = 0; i < (player.transform.childCount); i++)
+        for(int i = 0; i < (_player.transform.childCount); i++)
         {
-            if(player.transform.GetChild(i).name == nome)
+            if(_player.transform.GetChild(i).name == nome)
             {
-                return player.transform.GetChild(i).gameObject;
+                return _player.transform.GetChild(i).gameObject;
             }
 
-            GameObject aux = EncontrarMao(player.transform.GetChild(i).gameObject, maoNome);
+            GameObject aux = EncontrarMao(_player.transform.GetChild(i).gameObject, maoNome);
 
             if (aux != null)
             {
@@ -53,18 +57,32 @@ public class Coletavel : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        mao=EncontrarMao(player, maoNome);
+        rb = gameObject.GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        mao=EncontrarMao(player.gameObject, maoNome);
+        mainCamera = Camera.main;
     }
 
+    public IEnumerator IrAtéObjeto()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit)) yield break; // Check if the ray hits any collider
+        if (!hit.collider.gameObject.Equals(gameObject)) yield break; // Check if the hit collider belongs to this object
+        player.Mover(transform.position);
+        while (distanciaDoPlayer > distanciaMinima) yield return null;
+        Pegar();
+    }
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.E) && (transform.position - player.transform.position).magnitude <= 2.0f && carregada == false )
-         {
-            Pegar();
-         }
-         else if (carregada && Input.GetKeyDown(KeyCode.E))
+        if (!Input.GetMouseButtonDown(0)) return;
+        StopAllCoroutines();
+        if (!carregada)
+        {
+            StartCoroutine(IrAtéObjeto());
+        }
+        else
         {
             Largar();
         }
