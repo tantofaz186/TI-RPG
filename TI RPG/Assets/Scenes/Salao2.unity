@@ -4957,13 +4957,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492007062}
     m_Modifications:
+    - target: {fileID: 918084285117336025, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234205130626916166, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561875958651588303, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651109548613355280, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668386653047160938, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839910138162176474, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386890036994056299, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016760995964592773, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_RootOrder
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.913666
+      value: 85.71364
       objectReference: {fileID: 0}
     - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5001,9 +5037,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3652949355676100353, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4170728330514713382, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_Name
       value: ParedeQuebravel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170728330514713382, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796160005816965931, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378600599686727693, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983802007606731151, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454241588698677330, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354884863258625560, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814426309192309431, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
@@ -5986,8 +6054,8 @@ MonoBehaviour:
     image: {fileID: 0}
     sentences:
     - Que hotel mais estranho
-    - "Um bilhete no ch\xE3o"
-    - "\"Use o bot\xE3o direito do mouse para se mover\""
+    - Eu deveria investigar esse quadro a minha frente
+    - "Eu posso usar o bot\xE3o esquerdo do mouse para interagir com objetos"
 --- !u!4 &906120496
 Transform:
   m_ObjectHideFlags: 0
@@ -6001,7 +6069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &916227377
 PrefabInstance:
@@ -12862,6 +12930,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4511497438870090449, guid: 827a8feca7f1e2045aee9593b379167b, type: 3}
   m_PrefabInstance: {fileID: 1683698408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1690896169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1523480289}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.image
+      value: 
+      objectReference: {fileID: 21300000, guid: b52a46d08e66bba4c8bee38a13c80317, type: 3}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.title
+      value: Detetive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: distanciaMinima
+      value: 6.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Eu posso usar o bot\xE3o do meio do mouse para mover a c\xE2mera"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "Eu posso usar o bot\xE3o direito do mouse para me mover"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Use G para agarrar e soltar um item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "Com um item na m\xE3o, clique com o bot\xE3o esquerdo para jogar o
+        objeto"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8000698
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24.98151
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106797589906099445, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_Name
+      value: "Pintura Dialog\xE1vel (1)"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
 --- !u!1 &1694560951
 GameObject:
   m_ObjectHideFlags: 0
