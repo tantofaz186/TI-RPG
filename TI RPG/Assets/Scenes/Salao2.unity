@@ -1488,6 +1488,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6344206199986991612, guid: a20c2c7d488e7ee4eada54d8afb32439, type: 3}
+      propertyPath: corDoGizmos.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344206199986991612, guid: a20c2c7d488e7ee4eada54d8afb32439, type: 3}
+      propertyPath: corDoGizmos.g
+      value: 0.9203187
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344206199986991612, guid: a20c2c7d488e7ee4eada54d8afb32439, type: 3}
+      propertyPath: corDoGizmos.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a20c2c7d488e7ee4eada54d8afb32439, type: 3}
 --- !u!1001 &263177071
@@ -2508,6 +2520,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1523480289}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.r
+      value: 0.95662296
+      objectReference: {fileID: 0}
     - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
       propertyPath: dialogue.image
       value: 
@@ -4994,10 +5018,6 @@ PrefabInstance:
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650932745867923868, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 85.71364
       objectReference: {fileID: 0}
@@ -5045,13 +5065,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParedeQuebravel
       objectReference: {fileID: 0}
-    - target: {fileID: 4170728330514713382, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4796160005816965931, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363261938576591618, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: corDoOutline.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363261938576591618, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: corDoOutline.g
+      value: 0.8915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363261938576591618, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: corDoOutline.r
+      value: 0.8915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363261938576591618, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
+      propertyPath: distanciaMinima
+      value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: 5378600599686727693, guid: 001721591f4306d45be4a50c9cb38ea6, type: 3}
       propertyPath: m_Layer
@@ -6078,9 +6110,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492007062}
     m_Modifications:
+    - target: {fileID: 1555704889151062467, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658056630417993259, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3406070395349017697, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
       propertyPath: m_Name
       value: Marco_ComPorta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406070395349017697, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794867775912173983, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6985818843799125431, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
       propertyPath: m_RootOrder
@@ -6124,6 +6172,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6985818843799125431, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028512279934836292, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348769140948314335, guid: 463ea6ad8a593c044a63c48c00d04c4d, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10150,7 +10206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3138851965793925776, guid: a99f298ebec0a3e47b3dc0a6715652b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -13.60034
       objectReference: {fileID: 0}
     - target: {fileID: 3138851965793925776, guid: a99f298ebec0a3e47b3dc0a6715652b4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12941,6 +12997,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1523480289}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.r
+      value: 0.95662296
+      objectReference: {fileID: 0}
     - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
       propertyPath: dialogue.image
       value: 
