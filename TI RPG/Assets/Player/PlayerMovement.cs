@@ -12,6 +12,7 @@ namespace Player
         private Vector3 targetPosition;
         private Camera mainCamera;
         private Animator corpo_fsm;
+        public GameObject mouseInput;
 
         private void Awake()
         {
@@ -19,6 +20,7 @@ namespace Player
             targetPosition = transform.position;
             corpo_fsm = gameObject.GetComponent<Animator>();
             corpo_fsm.SetFloat("Mover", 0.5f);
+            mouseInput.SetActive(false);
         }
 
         protected override void Update()
@@ -31,6 +33,8 @@ namespace Player
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
                 {
                     targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    mouseInput.transform.position = targetPosition;
+                    mouseInput.SetActive(true);
                     Mover(targetPosition);
                 }
             }
@@ -39,6 +43,7 @@ namespace Player
             {
                 corpo_fsm.SetBool("movimentando", false);
                 Debug.Log("Parou");
+                mouseInput.SetActive(false);
             }
             else if(!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
             {
