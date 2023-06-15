@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032013855, g: 0.0063153747, b: 0.014413998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4852,6 +4852,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4181670477067513066, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4181670477067513067, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4902,6 +4906,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4181670477067513068, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
@@ -4911,6 +4919,10 @@ PrefabInstance:
     - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: pontos.Array.data[0].x
       value: 2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
+      propertyPath: pontos.Array.data[0].y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4181670477067513071, guid: 3d293f90d91c9a14a98537f6167064db, type: 3}
       propertyPath: pontos.Array.data[0].z
@@ -5645,9 +5657,9 @@ RectTransform:
   m_Father: {fileID: 1533380534}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -704.7149, y: 347.50577}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 257.28998, y: -74.109985}
   m_SizeDelta: {x: 514.5702, y: 148.9884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348471873

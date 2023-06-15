@@ -11,32 +11,10 @@ namespace Skills
         [SerializeField] private List<Outline> outlines;
         [SerializeField] private GameObject[] inimigos;
         bool isActive = false;
-        bool ativada;
         public Text skillText;
-        public override void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                if (!ativada)
-                {
-                    StartCoroutine(ActivatePremonicaoText(ativada));
-                    ativada = true;
-                }
-                else
-                {
-                    StartCoroutine(ActivatePremonicaoText(ativada));
-                    ativada = false;
-                }
-            }
-        }
-        public void Start()
-        {
-            ativada = true;
-            skillText = GameObject.FindObjectOfType<Text>();
-        }
         private IEnumerator ActivatePremonicaoText(bool active)
         {
-            if (active)
+            if (active) 
             {
                 skillText.text = "Premonição Ativada";
 
@@ -73,17 +51,17 @@ namespace Skills
             _outline.OutlineWidth = 2f;
             _outline.enabled = false;
             outlines.Add(_outline);
-        }
-
-//        public override void Update()
-//        {
-//            if (!Input.GetKeyDown(KeyCode.G)) return;
-//            isActive = !isActive;
-//            foreach (var outline in outlines)
-//            {
-//                outline.enabled = isActive;
-//            }
-//        }
+        }   
+          public override void Update()
+          {
+              if (!Input.GetKeyDown(KeyCode.G)) return;
+              isActive = !isActive;
+              StartCoroutine(ActivatePremonicaoText(isActive));
+              foreach (var outline in outlines)
+              {
+                  outline.enabled = isActive;
+              }
+          }
 
         public override void OnDisable()
         {

@@ -12,25 +12,10 @@ public class Proteção : Skill
     public Text skillText;
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (!ativada)
-            {
-                StartCoroutine(ActivatePremonicaoText(ativada));
-                ativada = true;
-            }
-            else
-            {
-                StartCoroutine(ActivatePremonicaoText(ativada));
-                StopAllCoroutines();
-                ativada = false;
-            }
-        }
-    }
-    public void Start()
-    {
-        ativada = true;
-        skillText = GameObject.FindObjectOfType<Text>();
+        if (!Input.GetKeyDown(KeyCode.Q)) return;
+        ativada = !ativada;
+        StopAllCoroutines();
+        StartCoroutine(ActivatePremonicaoText(ativada));
     }
     private IEnumerator ActivatePremonicaoText(bool active)
     {
@@ -56,6 +41,8 @@ public class Proteção : Skill
     public override void OnEnable()
     {
         Debug.Log("Proteção Ativada");
+        ativada = true;
+        skillText = FindObjectOfType<Text>();
     }
 
     public override void OnDisable()
