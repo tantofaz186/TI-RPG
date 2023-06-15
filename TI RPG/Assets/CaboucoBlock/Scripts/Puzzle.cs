@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 
-class Puzzle : MonoBehaviourSingletonPersistent<Puzzle>
+class Puzzle : Singleton<Puzzle>
 {
     public void CompletarPuzzle()
     {

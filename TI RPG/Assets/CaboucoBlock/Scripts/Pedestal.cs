@@ -22,7 +22,7 @@ public class Pedestal : MonoBehaviour
         {
             mr.material.EnableKeyword("_EMISSION");
             ativado = true;
-            Puzzle.puzzle.CompletarPuzzle();
+            Puzzle.Instance.CompletarPuzzle();
             Debug.Log("Ativou");
 
         }
