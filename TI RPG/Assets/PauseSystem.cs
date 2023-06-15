@@ -16,7 +16,6 @@ public class PauseSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 gameIsPaused = !gameIsPaused;
-
                 pauseMenu.SetActive(gameIsPaused);
                 Time.timeScale = gameIsPaused ? 0 : 1;
             }
