@@ -15,7 +15,9 @@ namespace Player
         {
             SaveData saveData = new SaveData
             {
-                playerPosition = transform.position,
+                playerPositionX = transform.position.x,
+                playerPositionY = transform.position.y,
+                playerPositionZ = transform.position.z,
                 xpPlayer = GetComponent<XpPlayer>()._xpAtual,
                 armadihaFantasmaActive = GetComponent<ArmadilhaFantasma>().isActiveAndEnabled,
                 invisibilidadeActive = GetComponent<Invisibilidade>().isActiveAndEnabled,
@@ -24,14 +26,13 @@ namespace Player
                 mãosHábéisActive = GetComponent<MãosHábeis>().isActiveAndEnabled,
                 passoFantasmaActive = GetComponent<PassoFantasma>().isActiveAndEnabled,
                 premoniçãoActive = GetComponent<Premonição>().isActiveAndEnabled,
-                proteçãoActive = GetComponent<Proteção>().isActiveAndEnabled
             };
             return saveData;
         }
 
         public void Load(SaveData saveData)
         {
-            transform.position = saveData.playerPosition;
+            transform.position = new Vector3(saveData.playerPositionX, saveData.playerPositionY, saveData.playerPositionZ);
             GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
             GetComponent<ArmadilhaFantasma>().enabled = saveData.armadihaFantasmaActive;
             GetComponent<Invisibilidade>().enabled = saveData.invisibilidadeActive;
