@@ -1479,6 +1479,10 @@ PrefabInstance:
       propertyPath: vidaInfinitaText
       value: 
       objectReference: {fileID: 1348471873}
+    - target: {fileID: 6497301580384079397, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: mouseInput
+      value: 
+      objectReference: {fileID: 847330220}
     - target: {fileID: 7559739180315088984, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1489,6 +1493,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8044388366209750338, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121167193277858860, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9119299551629329052, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
@@ -2601,6 +2609,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8491582718455497142, guid: 1a5a77affaa0acd4f8f11d88af0ded09, type: 3}
+--- !u!1 &847330220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8121167193277858860, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+  m_PrefabInstance: {fileID: 376506959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &858291937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a5a77affaa0acd4f8f11d88af0ded09, type: 3}
