@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1780688682009904286}
   - component: {fileID: 2936259434932338343}
   - component: {fileID: 8310932448376297453}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2103464250233343490}
   - component: {fileID: 6525906874291576824}
   - component: {fileID: 4733211557147197684}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 946378984472516631}
   - component: {fileID: 8597351709710595366}
   - component: {fileID: 1766557334238207257}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 6136891799556449455}
   - component: {fileID: 154361115494298223}
   - component: {fileID: 3666282326086073986}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 370126850955165496}
   - component: {fileID: 2776597075492813094}
   - component: {fileID: 8722201242511927356}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 4176252410765357137}
   - component: {fileID: 7896702429118584338}
   - component: {fileID: 7514458089193391988}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 8329107500777851893}
   - component: {fileID: 6294777348713943413}
   - component: {fileID: 4003552285505391412}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 773300322261522147}
   - component: {fileID: 312192293173167575}
   - component: {fileID: 5894170345689754264}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 9132880673253741527}
   - component: {fileID: 5212847163759345560}
   - component: {fileID: 4268255573529680841}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3650932745867923868}
   - component: {fileID: 5363261938576591618}
-  m_Layer: 6
+  - component: {fileID: 1879574876831406959}
+  m_Layer: 0
   m_Name: ParedeQuebravel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1062,7 @@ Transform:
   m_GameObject: {fileID: 4170728330514713382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.83, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3726735403453193010}
@@ -1096,7 +1097,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "pe\xE7as": []
   player: {fileID: 0}
-  explodiu: 0
+  distanciaMinima: 2.71
+--- !u!65 &1879574876831406959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170728330514713382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 4, z: 0.25}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &4796160005816965931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1124,7 @@ GameObject:
   - component: {fileID: 8092797616282554609}
   - component: {fileID: 5263366466880279073}
   - component: {fileID: 8502910330922286551}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1239,7 @@ GameObject:
   - component: {fileID: 9172315414669547896}
   - component: {fileID: 4191476109287225658}
   - component: {fileID: 4642880585884497522}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1340,7 +1354,7 @@ GameObject:
   - component: {fileID: 7575227256812927579}
   - component: {fileID: 33712348579336538}
   - component: {fileID: 3881238655291877279}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1469,7 @@ GameObject:
   - component: {fileID: 56848934519347991}
   - component: {fileID: 5037306269644711604}
   - component: {fileID: 2800867585856379122}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1584,7 @@ GameObject:
   - component: {fileID: 7430625131599015842}
   - component: {fileID: 199625251986948495}
   - component: {fileID: 2661309368208390215}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ParedeQuebravel_cell.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7172044363428455075}
   - component: {fileID: 876292542323711548}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: NavObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

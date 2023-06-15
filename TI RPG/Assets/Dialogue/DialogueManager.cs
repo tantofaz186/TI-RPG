@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Controllers;
@@ -5,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[DefaultExecutionOrder(int.MinValue)]
 public class DialogueManager : Singleton<DialogueManager>
 {
     public TextMeshProUGUI dialogueTitle;
@@ -22,6 +24,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Time.timeScale = 0;
         Debug.Log("in");
         dialoguePanel.SetActive(true);
         sentences.Clear();
@@ -48,6 +51,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private void EndDialogue()
     {
+        Time.timeScale = 1;
         dialoguePanel.SetActive(false);
     }
 }

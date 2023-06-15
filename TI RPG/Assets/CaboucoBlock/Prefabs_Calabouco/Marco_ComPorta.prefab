@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6985818843799125431
 Transform:
@@ -84,9 +84,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5253852429937851173, guid: fdbc61a98b678874aacbf6a2fb1c12ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6539205837776195006, guid: fdbc61a98b678874aacbf6a2fb1c12ba, type: 3}
       propertyPath: m_Name
       value: PortaDupla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539205837776195006, guid: fdbc61a98b678874aacbf6a2fb1c12ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588114218208085246, guid: fdbc61a98b678874aacbf6a2fb1c12ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdbc61a98b678874aacbf6a2fb1c12ba, type: 3}

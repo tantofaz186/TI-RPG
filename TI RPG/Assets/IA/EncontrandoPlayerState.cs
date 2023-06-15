@@ -15,6 +15,7 @@ namespace IA
 
         public void OnUpdate()
         {
+            Debug.Log((percentage * 100) + "%");
             switch (percentage)
             {
                 case >= 1:

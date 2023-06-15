@@ -14,7 +14,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
     private Camera Camera;
     [SerializeField]
     [Range(0, 1f)]
-    private float FadedAlpha = 0.33f;
+    private float FadedAlpha = 0.80f;
     [SerializeField]
     private bool RetainShadows = true;
     [SerializeField]
