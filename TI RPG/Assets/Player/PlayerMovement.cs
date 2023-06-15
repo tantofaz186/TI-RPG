@@ -23,6 +23,7 @@ namespace Player
 
         protected override void Update()
         {
+            
             base.Update();
             agente.speed = velocidade;
             if (Input.GetMouseButtonDown(1))
