@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace SaveGame
 {
-    public class SaveGameManager : Singleton<SaveGameManager>
+    public class SaveGameManager : MonoBehaviourSingletonPersistent<SaveGameManager>
     {
         private string saveFilePath;
         public SaveData saveData;

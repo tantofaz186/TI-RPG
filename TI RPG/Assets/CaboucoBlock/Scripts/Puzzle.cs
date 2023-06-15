@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
-class Puzzle : MonoBehaviour
+class Puzzle : MonoBehaviourSingletonPersistent<Puzzle>
 {
-    public static Puzzle puzzle;
-
     public void CompletarPuzzle()
     {
         bool completo = false;
@@ -31,16 +30,5 @@ class Puzzle : MonoBehaviour
         if(quest==true)gameObject.transform.GetChild(5).gameObject.SetActive(true);
     }
     // Start is called before the first frame update
-    void Awake()
-    {
-        if (puzzle == null)
-        {
-            puzzle = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
 
 }

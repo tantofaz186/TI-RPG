@@ -4,7 +4,7 @@ using Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIControl : Singleton<UIControl> {
+public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     public string nomeCena;
 
     //Carrega uma cena
