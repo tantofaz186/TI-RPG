@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace Skills
 {
@@ -8,17 +11,59 @@ namespace Skills
         [SerializeField] private List<Outline> outlines;
         [SerializeField] private GameObject[] inimigos;
         bool isActive = false;
+        bool ativada;
+        public Text skillText;
+        public override void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                if (!ativada)
+                {
+                    StartCoroutine(ActivatePremonicaoText(ativada));
+                    ativada = true;
+                }
+                else
+                {
+                    StartCoroutine(ActivatePremonicaoText(ativada));
+                    ativada = false;
+                }
+            }
+        }
+        public void Start()
+        {
+            ativada = true;
+            skillText = GameObject.FindObjectOfType<Text>();
+        }
+        private IEnumerator ActivatePremonicaoText(bool active)
+        {
+            if (active)
+            {
+                skillText.text = "Premonição Ativada";
+
+                yield return new WaitForSeconds(3f);
 
 
+                skillText.text = "";
+            }
+            else
+            {
+                skillText.text = "Premonição Desativada";
+
+                yield return new WaitForSeconds(3f);
+
+
+                skillText.text = "";
+            }
+        }
         public override void OnEnable()
         {
-            Debug.Log("Premonição Ativada");
             inimigos = GameObject.FindGameObjectsWithTag("Inimigo");
             foreach (var inimigo in inimigos)
             {
                 Outline _outline = inimigo.AddComponent<Outline>();
                 PrepareOutline(_outline);
             }
+            skillText = GameObject.FindObjectOfType<Text>(); 
         }
 
         private void PrepareOutline(Outline _outline)
@@ -30,16 +75,15 @@ namespace Skills
             outlines.Add(_outline);
         }
 
-        public override void Update()
-        {
-            if (!Input.GetKeyDown(KeyCode.G)) return;
-            isActive = !isActive;
-            foreach (var outline in outlines)
-            {
-                outline.enabled = isActive;
-            }
-        }
-
+//        public override void Update()
+//        {
+//            if (!Input.GetKeyDown(KeyCode.G)) return;
+//            isActive = !isActive;
+//            foreach (var outline in outlines)
+//            {
+//                outline.enabled = isActive;
+//            }
+//        }
 
         public override void OnDisable()
         {
@@ -50,5 +94,8 @@ namespace Skills
             }
             Debug.Log("Premonição Desativada");
         }
+
+       
     }
 }
+

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Controllers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -10,6 +11,7 @@ namespace Player
         [SerializeField] private int vidas = 2;
         [SerializeField] private float speedBoostMultiplier = 2f;
         [SerializeField] private float speedBoostTime = 2f;
+        public Text vidaInfinitaText;
         public int Vidas
         {
             get { return vidas; }
@@ -72,6 +74,34 @@ namespace Player
                 }
             }
             
+        }
+        private void vidaInfinita()
+        {
+            if (Input.GetKeyDown(KeyCode.F8))
+            {
+                Vidas += 9999999;
+                vidaInfinitaText = GameObject.FindObjectOfType<Text>();
+                StartCoroutine(ActivateCheatText());
+            }
+        }
+        private IEnumerator ActivateCheatText()
+        {
+           
+            vidaInfinitaText.gameObject.SetActive(true);
+            vidaInfinitaText.text = "Cheat Activated";
+
+            yield return new WaitForSeconds(3f);
+
+
+            vidaInfinitaText.text = "";
+        }
+        private void Start()
+        {
+            vidaInfinitaText.text = "";
+        }
+        private void Update()
+        {
+            vidaInfinita();
         }
     }
 }

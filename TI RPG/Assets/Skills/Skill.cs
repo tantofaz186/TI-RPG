@@ -8,8 +8,10 @@ namespace Skills
         [TextArea(1, 3)]
         public string skillDescricao;
         public Skill[] skillAnterior;
+        
         public abstract void Update();
         public abstract void OnEnable();
         public abstract void OnDisable();
+
     }
 }

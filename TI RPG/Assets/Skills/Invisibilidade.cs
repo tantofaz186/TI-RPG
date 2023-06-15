@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Skills
 {
@@ -10,6 +11,52 @@ namespace Skills
         private MeshRenderer m_MeshRenderer;
         private Collider m_Collider;
         private bool invisivel = false;
+        bool ativada;
+        public Text skillText;
+        public override void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                if (!ativada)
+                {
+                    StartCoroutine(ActivatePremonicaoText(ativada));
+                    StartCoroutine(FicarInvisivel());
+                    ativada = true;
+                }
+                else
+                {
+                    StartCoroutine(ActivatePremonicaoText(ativada));
+                    StopAllCoroutines();
+                    ativada = false;
+                }
+            }
+        }
+        public void Start()
+        {
+            ativada = true;
+            skillText = GameObject.FindObjectOfType<Text>();
+        }
+        private IEnumerator ActivatePremonicaoText(bool active)
+        {
+            if (active)
+            {
+                skillText.text = "Invisibilidade Ativada";
+
+                yield return new WaitForSeconds(3f);
+
+
+                skillText.text = "";
+            }
+            else
+            {
+                skillText.text = "Invisibilidade Desativada";
+
+                yield return new WaitForSeconds(3f);
+
+
+                skillText.text = "";
+            }
+        }
         public override void OnEnable()
         {
             Debug.Log("Invisibilidade Ativada");
@@ -17,14 +64,14 @@ namespace Skills
             m_MeshRenderer = player.GetComponent<MeshRenderer>();
             m_Collider = player.GetComponent<Collider>();
         }
-        public override void Update()
-        { 
-            if (!Input.GetKeyDown(KeyCode.J)) return;
-            if (invisivel) return;
-            StopAllCoroutines();
-            StartCoroutine(FicarInvisivel());
+//        public override void Update()
+//        { 
+//            if (!Input.GetKeyDown(KeyCode.J)) return;
+//            if (invisivel) return;
+//            StopAllCoroutines();
+//            StartCoroutine(FicarInvisivel());
 
-        }
+//        }
         IEnumerator FicarInvisivel()
         {
             invisivel = true;
