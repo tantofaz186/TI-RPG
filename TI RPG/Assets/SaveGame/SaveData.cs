@@ -1,12 +1,11 @@
 
 using UnityEngine;
-
 namespace SaveGame
 {
     [System.Serializable]
     public class SaveData
     {
-        public Vector3 playerPosition;
+        public float playerPositionX, playerPositionY, playerPositionZ;
         public int xpPlayer;
         public bool armadihaFantasmaActive;
         public bool invisibilidadeActive;
