@@ -2,7 +2,7 @@
 
 namespace Controllers
 {
-    public class GameOverController : Singleton<GameOverController>
+    public class GameOverController : MonoBehaviourSingletonPersistent<GameOverController>
     {
         [SerializeField] GameObject gameOverScreen;
 
