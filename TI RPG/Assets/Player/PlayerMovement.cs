@@ -12,6 +12,7 @@ namespace Player
         private Vector3 targetPosition;
         private Camera mainCamera;
         private Animator corpo_fsm;
+        public GameObject mouseInput;
 
         private void Awake()
         {
@@ -19,6 +20,7 @@ namespace Player
             targetPosition = transform.position;
             corpo_fsm = gameObject.GetComponent<Animator>();
             corpo_fsm.SetFloat("Mover", 0.5f);
+            mouseInput.SetActive(false);
         }
 
         protected override void Update()
@@ -31,6 +33,8 @@ namespace Player
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
                 {
                     targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    mouseInput.transform.position = targetPosition;
+                    mouseInput.SetActive(true);
                     Mover(targetPosition);
                 }
             }
@@ -39,6 +43,7 @@ namespace Player
             {
                 corpo_fsm.SetBool("movimentando", false);
                 Debug.Log("Parou");
+                mouseInput.SetActive(false);
             }
             else if(!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
             {
@@ -46,18 +51,22 @@ namespace Player
                 velocidade = 3.0f;
                 StartCoroutine(LerpValue("Mover", 0.5f));
             }
+            else{
+                corpo_fsm.SetBool("movimentando", true);
+            }
             if (Input.GetKey(KeyCode.LeftControl))//Agachar
             {
                 corpo_fsm.SetBool("agachado", true);
                 velocidade = 1.75f;
                 StartCoroutine(LerpValue("Mover", 0f));
             }
-            else corpo_fsm.SetBool("agachado", false);// Desagachar
-
-            if (Input.GetKey(KeyCode.LeftShift))//Correr
+            else if (Input.GetKey(KeyCode.LeftShift))//Correr
             {
                 velocidade = 4.25f;
                 StartCoroutine(LerpValue("Mover", 1f));
+            }
+            else if (!Input.GetKey(KeyCode.LeftControl)) {
+                corpo_fsm.SetBool("agachado", false);// Desagachar
             }
 
 

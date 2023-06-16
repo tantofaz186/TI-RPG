@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7714145485153169844}
   - component: {fileID: 5542472344480253310}
   - component: {fileID: 51430404442551093}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cotovelnverso_5m
-  m_TagString: Untagged
+  m_TagString: ObjetoCameraEsconder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 40
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6674895294711463441
 Transform:
@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6334925627346625707}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 65, y: 0, z: 50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7714145485153169844
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -15,12 +15,16 @@ namespace IA
         public List<Vector3> Pontos => pontos;
         private ConeDeVisão coneDeVisão;
         [SerializeField] private InimigoUI inimigoUI;
+        [SerializeField] Animator animator;
 
         private void Awake()
         {
             coneDeVisão = GetComponent<ConeDeVisão>();
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetStatePatrulha();
+            animator = GetComponent<Animator>();
+            animator.SetBool("movimentando", true);
+            animator.SetFloat("Mover", 0.5f);
         }
 
         protected override void Update()
@@ -62,6 +66,7 @@ namespace IA
 
         void SetStatePatrulha()
         {
+
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetState(new PatrulhaState(this, pontos));
         }
