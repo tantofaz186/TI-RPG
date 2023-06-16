@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Controllers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,9 @@ namespace Player
         [SerializeField] private int vidas = 2;
         [SerializeField] private float speedBoostMultiplier = 2f;
         [SerializeField] private float speedBoostTime = 2f;
-        public Text vidaInfinitaText;
+        public TMP_Text vidaInfinitaText;
+        private PlayerMovement m_PlayerMovement;
+
         public int Vidas
         {
             get { return vidas; }
@@ -41,7 +44,7 @@ namespace Player
             SkinnedMeshRenderer smr;
             MeshRenderer mr;
 
-            if (this.gameObject.GetComponent<MeshRenderer>() == null)
+            if (gameObject.GetComponent<MeshRenderer>() == null)
             {
                 smr = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
                 selfColor = smr.material.color;
@@ -53,10 +56,9 @@ namespace Player
                selfColor = mr.material.color;
                smr = null;
             }
+            m_PlayerMovement.GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
 
-           GetComponent<PlayerMovement>().GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
-
-            if (this.gameObject.GetComponent<MeshRenderer>() == null)
+            if (gameObject.GetComponent<MeshRenderer>() == null)
             {
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = damageColor;
@@ -80,7 +82,6 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.F8))
             {
                 Vidas += 9999999;
-                vidaInfinitaText = GameObject.FindObjectOfType<Text>();
                 StartCoroutine(ActivateCheatText());
             }
         }
@@ -98,6 +99,7 @@ namespace Player
         private void Start()
         {
             vidaInfinitaText.text = "";
+            m_PlayerMovement = GetComponent<PlayerMovement>();
         }
         private void Update()
         {

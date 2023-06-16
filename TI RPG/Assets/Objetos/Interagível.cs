@@ -48,7 +48,7 @@ namespace Objetos
             RaycastHit hit;
             if (!Physics.Raycast(ray, out hit)) yield break; // Check if the ray hits any collider
             if (!hit.collider.gameObject.Equals(gameObject)) yield break; // Check if the hit collider belongs to this object
-            try{player.Mover(transform.position);} catch (Exception e) {Debug.Log(e);}
+            if(player.isActiveAndEnabled) player.Mover(transform.position);
             while (distanciaDoPlayer > distanciaMinima) yield return null;
             Interagir();
         }
