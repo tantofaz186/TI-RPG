@@ -4,11 +4,10 @@ using Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIControl : Singleton<UIControl> {
-    public string nomeCena;
+public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
     //Carrega uma cena
-    public void MudarCena()
+    public void MudarCena(string nomeCena)
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(nomeCena);
