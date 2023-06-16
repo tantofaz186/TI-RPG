@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EmptyDialogueTrigger : MonoBehaviour
 {
-    [SerializeField]Dialogue dialogue;
+    [SerializeField] Dialogue dialogue;
     [SerializeField] private GameObject changeScene;
     private void OnTriggerEnter(Collider other)
     {
