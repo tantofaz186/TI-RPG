@@ -11,17 +11,16 @@ namespace IA
         public void OnEnter()
         {
             currentWaypoint = GetClosestWaypoint();
+            self.Mover(waypoints[currentWaypoint]);
             self.ComeçarAEscutar();
         }
         
         public void OnUpdate()
         {
+            if (!(Vector3.Distance(self.transform.position, waypoints[currentWaypoint]) < 0.6f)) return;
+            currentWaypoint++;
+            currentWaypoint %= waypoints.Count;
             self.Mover(waypoints[currentWaypoint]);
-            if(Vector3.Distance(self.transform.position, waypoints[currentWaypoint]) < 0.6f)
-            {
-                currentWaypoint++;
-                currentWaypoint %= waypoints.Count;
-            }
 
         }
         public void OnExit()

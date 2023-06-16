@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
-    public string nomeCena;
 
     //Carrega uma cena
-    public void MudarCena()
+    public void MudarCena(string nomeCena)
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(nomeCena);
