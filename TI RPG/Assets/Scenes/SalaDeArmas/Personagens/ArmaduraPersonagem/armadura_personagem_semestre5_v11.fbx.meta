@@ -19,7 +19,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'armature|Bake_IdleArmour' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'quadril' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -31,7 +34,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: armature|Bake_IdleArmour
+      takeName: armature|Bake_IdleArmour
+      internalID: -8835624632508931311
+      firstFrame: 0
+      lastFrame: 124
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -79,8 +111,757 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: armature
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: coxa.L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: coxa.R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: panturrilha.L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: panturrilha.R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pe.L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: pe.R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: torax
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "pesco\xE7o"
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "cabe\xE7a"
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: clavicula.L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: clavicula.R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: braco.L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: braco.R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: antebraco.L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: antebraco.R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mao.L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mao.R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.L.001
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.L.002
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.L.001
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.L.002
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.L.001
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.L.002
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.L.001
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.L.002
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.L.001
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.L.002
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.R.001
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: polegar.R.002
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.R.001
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: indicador.R.002
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.R.001
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: dedoMedio.R.002
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.R.001
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: anelar.R.002
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.R.001
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mindinho.R.002
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: armadura_personagem_semestre5_v11(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ReopoBake_Elmo
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Viseira
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Babeira
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Gola
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: "RetopoBake_Pesco\xE7o"
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: "RetopoBake_Bra\xE7o"
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Cutuveleira
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Manopla
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Peitoral
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_CoxoteDetalhes
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Coxote
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Joelheira
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Greva
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Escarpe
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: RetopoBake_Peitoral.001
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0.00091838837, y: -0.0013125382, z: -0.2872701}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: armature
+      parentName: armadura_personagem_semestre5_v11(Clone)
+      position: {x: 0, y: 0, z: 0.27571523}
+      rotation: {x: -0.7071067, y: 5.302452e-33, z: 5.302451e-33, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: root
+      parentName: armature
+      position: {x: -0, y: 0.0027903009, z: 0}
+      rotation: {x: -0.00000004371139, y: -0.000000059604645, z: 1, w: -5.3290705e-15}
+      scale: {x: 1, y: 0.99999785, z: 0.99999785}
+    - name: ikPerna.L
+      parentName: root
+      position: {x: 0.002800927, y: -0.0010089529, z: 0.0010326948}
+      rotation: {x: -0, y: -0, z: -1, w: -4.2351647e-22}
+      scale: {x: 1, y: 0.9999977, z: 0.9999977}
+    - name: poleJoelho.L
+      parentName: ikPerna.L
+      position: {x: 0.000011792183, y: -0.0060786675, z: 0.0023449606}
+      rotation: {x: 0.7071067, y: 3.552714e-15, z: 5.395011e-15, w: 0.7071068}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: ikPerna.R
+      parentName: root
+      position: {x: -0.0028192948, y: -0.0010089529, z: 0.0010326948}
+      rotation: {x: -0, y: -0, z: -1, w: -4.2351647e-22}
+      scale: {x: 1, y: 0.9999977, z: 0.9999977}
+    - name: poleJoelho.R
+      parentName: ikPerna.R
+      position: {x: -0.000011792183, y: -0.0060786665, z: 0.0023449606}
+      rotation: {x: 0.7071067, y: 3.552714e-15, z: 5.395011e-15, w: 0.7071068}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: master
+      parentName: root
+      position: {x: -0, y: 0.00038335085, z: 0.012374516}
+      rotation: {x: -0, y: -0, z: -1, w: -4.2351647e-22}
+      scale: {x: 1, y: 0.9999977, z: 0.9999977}
+    - name: quadril
+      parentName: master
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.65953505, y: 7.105428e-15, z: -1.9584137e-15, w: -0.7516738}
+      scale: {x: 1, y: 0.9999988, z: 0.9999988}
+    - name: coxa.L
+      parentName: quadril
+      position: {x: -0.0013968752, y: 0.0019377294, z: 0.00009909093}
+      rotation: {x: -0.118659265, y: -0.009127609, z: 0.010402744, w: 0.9928386}
+      scale: {x: 1.0000002, y: 1.0000021, z: 1.0000032}
+    - name: panturrilha.L
+      parentName: coxa.L
+      position: {x: 8.381903e-11, y: 0.0049573136, z: 1.3038516e-10}
+      rotation: {x: 0.22004323, y: 0.009201805, z: -0.012355191, w: 0.9753685}
+      scale: {x: 1.0000001, y: 1.0000027, z: 1.0000036}
+    - name: pe.L
+      parentName: panturrilha.L
+      position: {x: 2.7008354e-10, y: 0.0047729937, z: -9.313225e-11}
+      rotation: {x: -0.7149146, y: -0.0134294, z: 0.016942013, w: 0.6988775}
+      scale: {x: 1.0000011, y: 1.0000043, z: 1.0000023}
+    - name: coxa.R
+      parentName: quadril
+      position: {x: 0.001415243, y: 0.0019377294, z: 0.00009909093}
+      rotation: {x: -0.118659265, y: 0.009127611, z: -0.010402739, w: 0.9928386}
+      scale: {x: 1, y: 1.0000021, z: 1.0000032}
+    - name: panturrilha.R
+      parentName: coxa.R
+      position: {x: -2.7939676e-10, y: 0.004957317, z: 1.9557773e-10}
+      rotation: {x: 0.22004323, y: -0.009201803, z: 0.012355169, w: 0.9753685}
+      scale: {x: 1.0000002, y: 1.0000027, z: 1.0000044}
+    - name: pe.R
+      parentName: panturrilha.R
+      position: {x: -6.519258e-11, y: 0.004772994, z: 7.4505804e-11}
+      rotation: {x: -0.7149145, y: 0.013429398, z: -0.016942006, w: 0.6988776}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1.0000006}
+    - name: torax
+      parentName: master
+      position: {x: 1.1641532e-12, y: 0.0000698334, z: 0}
+      rotation: {x: 0.72894055, y: 3.5527145e-15, z: 5.3363122e-15, w: 0.68457705}
+      scale: {x: 1, y: 0.99999964, z: 0.99999964}
+    - name: "pesco\xE7o"
+      parentName: torax
+      position: {x: -0, y: 0.003544549, z: -7.4505804e-11}
+      rotation: {x: -0.10437906, y: -3.1288135e-15, z: 1.0892276e-14, w: 0.9945376}
+      scale: {x: 1, y: 1.0000004, z: 0.9999999}
+    - name: "cabe\xE7a"
+      parentName: "pesco\xE7o"
+      position: {x: -0, y: 0.0016820767, z: 3.1664968e-10}
+      rotation: {x: 0.0844346, y: 7.17531e-16, z: -8.600561e-15, w: 0.996429}
+      scale: {x: 1, y: 1.0000021, z: 1.0000023}
+    - name: clavicula.L
+      parentName: torax
+      position: {x: -0.00041841462, y: 0.0031044073, z: 0.0015281888}
+      rotation: {x: -0.34908834, y: 0.53976685, z: 0.45602974, w: 0.61548835}
+      scale: {x: 1.0000018, y: 1.0000018, z: 1.0000011}
+    - name: braco.L
+      parentName: clavicula.L
+      position: {x: 0.0007637678, y: 0.0022895858, z: -0.00093784527}
+      rotation: {x: 0.19283009, y: -0.28960663, z: 0.04630272, w: -0.9363763}
+      scale: {x: 0.9999991, y: 0.9999904, z: 1.0000165}
+    - name: antebraco.L
+      parentName: braco.L
+      position: {x: 0.0000000010081567, y: 0.0033657807, z: -3.72529e-10}
+      rotation: {x: 0.0014192165, y: 0.11904041, z: 0.015237835, w: 0.99277145}
+      scale: {x: 1.0000075, y: 1.000006, z: 0.9999965}
+    - name: mao.L
+      parentName: antebraco.L
+      position: {x: 2.2351741e-10, y: 0.0029774378, z: -9.313226e-10}
+      rotation: {x: 0.124188095, y: 0.022180125, z: -0.1170948, w: 0.9850757}
+      scale: {x: 0.9999952, y: 1.0000311, z: 0.99998}
+    - name: indicador.L
+      parentName: mao.L
+      position: {x: -0.0002835734, y: 0.0012874281, z: -0.00022096459}
+      rotation: {x: -0.08517026, y: 0.025224144, z: 0.053435225, w: 0.9946127}
+      scale: {x: 0.9999989, y: 0.99997914, z: 1.0000257}
+    - name: indicador.L.001
+      parentName: indicador.L
+      position: {x: -0, y: 0.00030427813, z: -1.4901161e-10}
+      rotation: {x: -0.006822765, y: 0.08734315, z: -0.039469205, w: 0.9953728}
+      scale: {x: 0.9999963, y: 1.0000038, z: 1.0000176}
+    - name: indicador.L.002
+      parentName: indicador.L.001
+      position: {x: -0, y: 0.00036466762, z: 2.2351741e-10}
+      rotation: {x: -0.077876, y: 0.26119003, z: -0.19006832, w: 0.9431803}
+      scale: {x: 0.9999848, y: 0.9999832, z: 1.0000297}
+    - name: polegar.L
+      parentName: mao.L
+      position: {x: -0.00033571763, y: 0.00038871035, z: -0.00040241997}
+      rotation: {x: -0.4396923, y: 0.7374675, z: -0.051494386, w: 0.5100596}
+      scale: {x: 1.0000265, y: 0.99998564, z: 0.9999957}
+    - name: polegar.L.001
+      parentName: polegar.L
+      position: {x: 2.9802322e-10, y: 0.00034388623, z: -6.705522e-10}
+      rotation: {x: 0.036354225, y: 0.12734981, z: 0.00419414, w: 0.99118257}
+      scale: {x: 1.0000066, y: 0.9999773, z: 1.0000111}
+    - name: polegar.L.002
+      parentName: polegar.L.001
+      position: {x: 0.0000000013411044, y: 0.00041711284, z: 8.1956386e-10}
+      rotation: {x: 0.055869333, y: -0.023963664, z: 0.03992909, w: 0.9973515}
+      scale: {x: 1.000009, y: 0.9999824, z: 1.0000091}
+    - name: dedoMedio.L
+      parentName: mao.L
+      position: {x: -0.00013084918, y: 0.0012806233, z: -0.000005452025}
+      rotation: {x: -0.058676988, y: 0.028854618, z: 0.00856743, w: 0.9978232}
+      scale: {x: 0.9999971, y: 0.99999136, z: 1.0000206}
+    - name: dedoMedio.L.001
+      parentName: dedoMedio.L
+      position: {x: 3.72529e-10, y: 0.00034762934, z: 7.45058e-10}
+      rotation: {x: -0.013203194, y: 0.06751786, z: -0.038422197, w: 0.99689054}
+      scale: {x: 0.99999565, y: 1.0000099, z: 1.0000212}
+    - name: dedoMedio.L.002
+      parentName: dedoMedio.L.001
+      position: {x: 9.313226e-10, y: 0.0004096471, z: 0.0000000020116566}
+      rotation: {x: -0.0633602, y: 0.1993159, z: -0.1648545, w: 0.9638888}
+      scale: {x: 0.99998087, y: 0.9999883, z: 1.00003}
+    - name: anelar.L
+      parentName: mao.L
+      position: {x: 0.000056330857, y: 0.0013676524, z: 0.0002295965}
+      rotation: {x: -0.03060912, y: 0.011890963, z: 0.0082274405, w: 0.99942684}
+      scale: {x: 1, y: 0.9999995, z: 1.0000138}
+    - name: anelar.L.001
+      parentName: anelar.L
+      position: {x: -0, y: 0.00028104737, z: -0.0000000023841857}
+      rotation: {x: -0.01601553, y: 0.080167055, z: -0.036584616, w: 0.9959811}
+      scale: {x: 0.99999326, y: 0.9999972, z: 1.0000192}
+    - name: anelar.L.002
+      parentName: anelar.L.001
+      position: {x: -4.4703483e-10, y: 0.00034269466, z: 6.705522e-10}
+      rotation: {x: -0.063284926, y: 0.23433393, z: -0.2095709, w: 0.94718677}
+      scale: {x: 0.9999864, y: 0.99999714, z: 1.0000327}
+    - name: mindinho.L
+      parentName: mao.L
+      position: {x: 0.00021159828, y: 0.001389913, z: 0.00042058754}
+      rotation: {x: 0.027814828, y: 0.010755789, z: -0.025882713, w: 0.99922013}
+      scale: {x: 0.9999996, y: 1.0000149, z: 1.0000023}
+    - name: mindinho.L.001
+      parentName: mindinho.L
+      position: {x: -4.4703483e-10, y: 0.00021686412, z: -0.0000000023841857}
+      rotation: {x: -0.0215946, y: 0.08573424, z: -0.03260912, w: 0.9955501}
+      scale: {x: 0.9999904, y: 0.9999925, z: 1.0000199}
+    - name: mindinho.L.002
+      parentName: mindinho.L.001
+      position: {x: -2.6077032e-10, y: 0.0002795206, z: -3.72529e-10}
+      rotation: {x: -0.034010664, y: 0.25846663, z: -0.280644, w: 0.92373}
+      scale: {x: 0.9999866, y: 1.0000087, z: 1.000005}
+    - name: clavicula.R
+      parentName: torax
+      position: {x: 0.00043677998, y: 0.0031044073, z: 0.0015281888}
+      rotation: {x: -0.36900285, y: -0.50541764, z: -0.5138248, w: 0.58683395}
+      scale: {x: 1.0000013, y: 1.0000007, z: 1.0000026}
+    - name: braco.R
+      parentName: clavicula.R
+      position: {x: -0.0008911472, y: 0.0024858038, z: -0.00047670002}
+      rotation: {x: 0.11638272, y: 0.29569742, z: -0.046761315, w: -0.94701195}
+      scale: {x: 1.0000011, y: 0.9999939, z: 1.0000218}
+    - name: antebraco.R
+      parentName: braco.R
+      position: {x: -0, y: 0.0033657819, z: -1.4901161e-10}
+      rotation: {x: -0.0024272045, y: -0.11848889, z: -0.015497053, w: 0.99283147}
+      scale: {x: 1.0000002, y: 0.99999964, z: 0.9999972}
+    - name: mao.R
+      parentName: antebraco.R
+      position: {x: -5.9604643e-10, y: 0.0029774392, z: 5.2154064e-10}
+      rotation: {x: 0.124188825, y: -0.02218012, z: 0.117093965, w: 0.9850757}
+      scale: {x: 1.000002, y: 1.0000304, z: 0.99998224}
+    - name: indicador.R
+      parentName: mao.R
+      position: {x: 0.0002835743, y: 0.0012874283, z: -0.00022096514}
+      rotation: {x: -0.085168295, y: -0.025223624, z: -0.053435247, w: 0.9946129}
+      scale: {x: 0.9999953, y: 0.9999848, z: 1.000027}
+    - name: indicador.R.001
+      parentName: indicador.R
+      position: {x: 7.4505804e-11, y: 0.00030427764, z: 1.3038516e-10}
+      rotation: {x: -0.0068255044, y: -0.08734353, z: 0.039478272, w: 0.9953723}
+      scale: {x: 0.999999, y: 1.0000008, z: 1.0000228}
+    - name: indicador.R.002
+      parentName: indicador.R.001
+      position: {x: -5.2154064e-10, y: 0.00036466753, z: -2.7939677e-11}
+      rotation: {x: -0.07787636, y: -0.26119012, z: 0.19006819, w: 0.9431803}
+      scale: {x: 0.99997824, y: 0.9999775, z: 1.0000446}
+    - name: polegar.R
+      parentName: mao.R
+      position: {x: 0.0003357184, y: 0.00038871422, z: -0.00040241986}
+      rotation: {x: -0.43979183, y: -0.741875, z: 0.040109996, w: 0.5045749}
+      scale: {x: 1.0000272, y: 0.9999909, z: 0.999991}
+    - name: polegar.R.001
+      parentName: polegar.R
+      position: {x: 2.5145708e-10, y: 0.00034388772, z: -3.72529e-10}
+      rotation: {x: 0.03635646, y: -0.12734985, z: -0.004196165, w: 0.99118245}
+      scale: {x: 1.0000015, y: 0.9999762, z: 1.0000223}
+    - name: polegar.R.002
+      parentName: polegar.R.001
+      position: {x: -7.4505804e-11, y: 0.0004171127, z: 0}
+      rotation: {x: 0.055869393, y: 0.023963753, z: -0.03992893, w: 0.9973516}
+      scale: {x: 1.0000095, y: 0.99999154, z: 1.0000179}
+    - name: dedoMedio.R
+      parentName: mao.R
+      position: {x: 0.00013084992, y: 0.0012806238, z: -0.000005453229}
+      rotation: {x: -0.058679372, y: -0.028854102, z: -0.008564577, w: 0.99782306}
+      scale: {x: 0.99999666, y: 0.9999946, z: 1.0000185}
+    - name: dedoMedio.R.001
+      parentName: dedoMedio.R
+      position: {x: -3.352761e-10, y: 0.00034762765, z: 2.9802322e-10}
+      rotation: {x: -0.013201711, y: -0.06751837, z: 0.038420133, w: 0.9968906}
+      scale: {x: 0.9999963, y: 1.0000029, z: 1.000017}
+    - name: dedoMedio.R.002
+      parentName: dedoMedio.R.001
+      position: {x: -4.842877e-10, y: 0.0004096484, z: -2.2351741e-10}
+      rotation: {x: -0.06336122, y: -0.19931579, z: 0.16485691, w: 0.9638884}
+      scale: {x: 0.99998355, y: 0.9999843, z: 1.0000306}
+    - name: anelar.R
+      parentName: mao.R
+      position: {x: -0.000056330413, y: 0.0013676542, z: 0.00022959664}
+      rotation: {x: -0.030609831, y: -0.011890708, z: -0.00822673, w: 0.9994268}
+      scale: {x: 0.99999833, y: 0.9999957, z: 1.0000106}
+    - name: anelar.R.001
+      parentName: anelar.R
+      position: {x: 4.4703483e-10, y: 0.00028104798, z: -1.4901161e-10}
+      rotation: {x: -0.01600944, y: -0.08016717, z: 0.036576223, w: 0.99598145}
+      scale: {x: 0.9999939, y: 0.99998736, z: 1.0000105}
+    - name: anelar.R.002
+      parentName: anelar.R.001
+      position: {x: 2.7939676e-10, y: 0.0003426927, z: 2.9802322e-10}
+      rotation: {x: -0.063284256, y: -0.23433423, z: 0.20956805, w: 0.94718736}
+      scale: {x: 0.9999906, y: 0.99997663, z: 1.0000263}
+    - name: mindinho.R
+      parentName: mao.R
+      position: {x: -0.00021159946, y: 0.0013899157, z: 0.00042058632}
+      rotation: {x: 0.027811388, y: -0.010755295, z: 0.025878545, w: 0.9992203}
+      scale: {x: 1.0000014, y: 1.0000148, z: 1.0000074}
+    - name: mindinho.R.001
+      parentName: mindinho.R
+      position: {x: -1.5832484e-10, y: 0.00021686382, z: -1.4901161e-10}
+      rotation: {x: -0.021582639, y: -0.08573388, z: 0.032598503, w: 0.9955507}
+      scale: {x: 0.9999911, y: 0.9999884, z: 1.00002}
+    - name: mindinho.R.002
+      parentName: mindinho.R.001
+      position: {x: -8.1025064e-10, y: 0.0002795203, z: 2.9802322e-10}
+      rotation: {x: -0.034010027, y: -0.2584671, z: 0.28063884, w: 0.9237315}
+      scale: {x: 0.99998647, y: 1.0000014, z: 1.00002}
+    - name: arma
+      parentName: armature
+      position: {x: -0.004961921, y: -0.0025407139, z: 0.0040628994}
+      rotation: {x: 0.7071068, y: -0.00000011520232, z: -0.00000005338507, w: 0.7071068}
+      scale: {x: 1, y: 0.99999976, z: 0.99999976}
+    - name: Arma_base
+      parentName: arma
+      position: {x: 0.00014730096, y: -0.004134134, z: 0}
+      rotation: {x: -0.7071068, y: -7.536444e-15, z: -7.536449e-15, w: 0.7071067}
+      scale: {x: 1, y: 0.9999998, z: 0.9999998}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

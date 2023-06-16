@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009012707, g: 0.013102867, b: 0.020503506, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012734, g: 0.013102855, b: 0.02050359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -812,21 +812,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1366760240088521208, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366760240088521208, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667683311253715259, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: m_Height
+      value: 2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779829588644408476, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: pontos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779829588644408476, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: pontos.Array.data[1].x
+      value: 7.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779829588644408476, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: pontos.Array.data[2].x
+      value: 10.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779829588644408476, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: pontos.Array.data[2].z
+      value: 8.83
+      objectReference: {fileID: 0}
     - target: {fileID: 8623077540582616559, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8623077540582616559, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.587985
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8623077540582616559, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06375942
+      value: 0.447
       objectReference: {fileID: 0}
     - target: {fileID: 8623077540582616559, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.560183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8623077540582616559, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_LocalRotation.w
@@ -856,6 +884,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8800302092975017146, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b975767cb72bc1d4990010fb1aea2b8b, type: 2}
     - target: {fileID: 8998337167795369813, guid: da06d34174225164aa43f4f1cff8d474, type: 3}
       propertyPath: m_Name
       value: armadura_personagem_semestre5_v11
