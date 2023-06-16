@@ -1,5 +1,7 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace SaveGame
 {
     [System.Serializable]
@@ -17,5 +19,6 @@ namespace SaveGame
         public bool proteçãoActive;
         public bool isEscondido;
         public bool isHoldingItem;
+        public string sceneName;
     }
 }

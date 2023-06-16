@@ -29,6 +29,6 @@ public class EmptyDialogueTrigger : MonoBehaviour
 
     private void OnDisable()
     {
-        changeScene.SetActive(true);
+        changeScene?.SetActive(true);
     }
 }

@@ -17,4 +17,8 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     {
         Application.Quit(0);
     }
+    public string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 }

@@ -6,6 +6,7 @@ using Controllers;
 using Player;
 using Skills;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SaveGame
 {
@@ -34,6 +35,7 @@ namespace SaveGame
                 mãosHábéisActive = player.GetComponent<MãosHábeis>().isActiveAndEnabled,
                 passoFantasmaActive = player.GetComponent<PassoFantasma>().isActiveAndEnabled,
                 premoniçãoActive = player.GetComponent<Premonição>().isActiveAndEnabled,
+                sceneName = UIControl.Instance.GetSceneName(),
             };
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream fileStream = File.Create(saveFilePath);
@@ -53,6 +55,7 @@ namespace SaveGame
                 fileStream.Close();
 
                 // Carregar os dados do save para o jogo
+                UIControl.Instance.MudarCena(saveData.sceneName);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.position = new Vector3(saveData.playerPositionX, saveData.playerPositionY, saveData.playerPositionZ);
                 player.GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
