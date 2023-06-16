@@ -12,7 +12,7 @@ namespace Player
         [SerializeField] private int vidas = 2;
         [SerializeField] private float speedBoostMultiplier = 2f;
         [SerializeField] private float speedBoostTime = 2f;
-        public TMP_Text vidaInfinitaText;
+        public Text vidaInfinitaText;
         private PlayerMovement m_PlayerMovement;
 
         public int Vidas
