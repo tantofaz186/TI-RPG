@@ -14,8 +14,9 @@ namespace SaveGame
     {
         private string saveFilePath;
         public SaveData saveData;
-        private void Awake()
+        public override void Awake()
         {
+            base.Awake();
             saveFilePath = Path.Combine(Application.persistentDataPath, "savegame.dat");
         }
 
