@@ -7,7 +7,7 @@ using UnityEngine;
 public class EmptyDialogueTrigger : MonoBehaviour
 {
     [SerializeField]Dialogue dialogue;
-
+    [SerializeField] private GameObject changeScene;
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
@@ -18,5 +18,10 @@ public class EmptyDialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         DialogueManager.Instance.StartDialogue(dialogue);
+    }
+
+    private void OnDisable()
+    {
+        changeScene.SetActive(true);
     }
 }
