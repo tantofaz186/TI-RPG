@@ -901,6 +901,8 @@ GameObject:
   - component: {fileID: 8012411280116768803}
   - component: {fileID: 8012411280116768807}
   - component: {fileID: 8012411280116768808}
+  - component: {fileID: 3578247976717452481}
+  - component: {fileID: 5435025794578294131}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1019,6 +1021,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3578247976717452481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012411280116768802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492835df6afc4774095af996f221826e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 8012411280452400088}
+--- !u!114 &5435025794578294131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012411280116768802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacf154e8e9759c4eb68a8b340f3d4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTitle: {fileID: 8012411280270272378}
+  dialogueText: {fileID: 8012411280995382079}
+  dialogueImage: {fileID: 8012411281721758301}
+  dialoguePanel: {fileID: 8012411281821946433}
 --- !u!1 &8012411280121548897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5435025794578294131}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1
