@@ -1754,7 +1754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -7811,6 +7811,118 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3744305831662849277, guid: 8adac3f0b8db48743bd2a22a33c18348, type: 3}
   m_PrefabInstance: {fileID: 1482792980}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1489285795
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1523480289}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: corDoOutline.r
+      value: 0.95662296
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.image
+      value: 
+      objectReference: {fileID: 21300000, guid: b52a46d08e66bba4c8bee38a13c80317, type: 3}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.title
+      value: Detetive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: distanciaMinima
+      value: 7.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: larguraDoOutline
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Eu posso clicar em qualquer objeto que possua contorno com o bot\xE3o
+        esquerdo para interagir"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "Tamb\xE9m posso Apertar Esc para abrir o menu de pausa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "Eu posso clicar em qualquer objeto que possua contorno com o bot\xE3o
+        esquerdo para interagir"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259797402281685434, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "Com um item na m\xE3o, clique com o bot\xE3o esquerdo para jogar o
+        objeto"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442569818263836239, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106797589906099445, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
+      propertyPath: m_Name
+      value: "Pintura Dialog\xE1vel (2)"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60115618b54113c428cfeb3bd637ea34, type: 3}
 --- !u!1001 &1515357794
 PrefabInstance:
   m_ObjectHideFlags: 0
