@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Skills
 {
-    public class SkillManager : Singleton<SkillManager>
+    public class SkillManager : MonoBehaviourSingletonPersistent<SkillManager>
     {
         public List<Skill> skills;
         public Skill activateSkill;
