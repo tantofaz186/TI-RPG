@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 
 [DefaultExecutionOrder(int.MinValue)]
-public class DialogueManager : Singleton<DialogueManager>
+public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
 {
     public TextMeshProUGUI dialogueTitle;
     public TextMeshProUGUI dialogueText;
