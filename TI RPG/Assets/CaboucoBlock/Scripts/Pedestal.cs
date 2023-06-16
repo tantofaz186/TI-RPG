@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pedestal : MonoBehaviour
 {
     public GameObject peca;
-    bool ativado = false;
+    public bool ativado = false;
 
     public bool Ativado
     {
@@ -24,7 +24,7 @@ public class Pedestal : MonoBehaviour
             ativado = true;
             Puzzle.Instance.CompletarPuzzle();
             Debug.Log("Ativou");
-
+            
         }
         
     }

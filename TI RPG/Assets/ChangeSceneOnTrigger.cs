@@ -10,7 +10,7 @@ public class ChangeSceneOnTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneChanger.Instance.MudaCena(nomeCena);
+            UIControl.Instance.MudarCena(nomeCena);
         }
     }
 }

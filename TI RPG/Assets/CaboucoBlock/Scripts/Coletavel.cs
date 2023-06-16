@@ -13,6 +13,9 @@ public class Coletavel : MonoBehaviour
     private Rigidbody rb;
     private Camera mainCamera;
     float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
+    [SerializeField] protected float larguraDoOutline = 4f;
+    [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
+    [SerializeField] protected Color corDoOutline = Color.green;
 
     public bool Carregada
     {
@@ -61,6 +64,16 @@ public class Coletavel : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         mao=EncontrarMao(player.gameObject, maoNome);
         mainCamera = Camera.main;
+        Outline outline;
+        if (TryGetComponent(out outline))
+        {
+            SetOutline(outline);
+        }
+        else
+        {
+            outline = gameObject.AddComponent<Outline>();
+            SetOutline(outline);
+        }
     }
 
     public IEnumerator IrAtéObjeto()
@@ -72,6 +85,12 @@ public class Coletavel : MonoBehaviour
         player.Mover(transform.position);
         while (distanciaDoPlayer > distanciaMinima) yield return null;
         Pegar();
+    }
+    protected virtual void SetOutline(Outline outline)
+    {
+        outline.OutlineColor = corDoOutline;
+        outline.OutlineMode = modoDoOutline;
+        outline.OutlineWidth = larguraDoOutline;
     }
     // Update is called once per frame
     void Update()
