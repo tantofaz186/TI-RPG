@@ -28,7 +28,8 @@ public class LanternaEspectral : Skill
     public void Start()
     {
         ativada = true;
-        skillText = GameObject.FindObjectOfType<Text>();
+        GameObject skillTextObject = GameObject.Find("cheatSkillText");
+        skillText = skillTextObject.GetComponent<Text>();
     }
 
     public override void OnEnable()

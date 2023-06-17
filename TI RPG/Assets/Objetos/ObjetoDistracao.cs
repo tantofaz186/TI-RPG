@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 namespace Objetos
 {
     public class ObjetoDistracao : MonoBehaviour
     {
+        [SerializeField] private PlayerMovement player;
+        [SerializeField] private GameObject mao;
+        [SerializeField] public string maoNome;
         public delegate void OnHitGroundHandler(Vector3 contactpoint);
 
         public event OnHitGroundHandler OnHitGround;
@@ -18,6 +22,9 @@ namespace Objetos
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            mao = EncontrarMao(player.gameObject, maoNome);
+            //mainCamera = Camera.main;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -43,8 +50,8 @@ namespace Objetos
             {
                 Collider col = Physics.OverlapSphere(transform.position, 3f, LayerMask.GetMask("Player"))[0];
                 rb.isKinematic = true;
-                transform.SetParent(col.transform);
-                transform.localPosition = Vector3.forward;
+                transform.parent = mao.transform;
+                transform.position = transform.parent.position;
                 isPicked = true;
             }
             catch (IndexOutOfRangeException)
@@ -56,10 +63,30 @@ namespace Objetos
         private void ThrowObject()
         {
             rb.isKinematic = false;
-            Vector3 throwDir = (transform.parent.forward + Vector3.up).normalized;
+            Vector3 throwDir = (player.transform.forward + Vector3.up).normalized;  
             transform.SetParent(null);
             rb.AddForce(throwDir * forcePower);
             isPicked = false;
         }
+        GameObject EncontrarMao(GameObject _player, string nome)
+        {
+            for (int i = 0; i < (_player.transform.childCount); i++)
+            {
+                if (_player.transform.GetChild(i).name == nome)
+                {
+                    return _player.transform.GetChild(i).gameObject;
+                }
+
+                GameObject aux = EncontrarMao(_player.transform.GetChild(i).gameObject, maoNome);
+
+                if (aux != null)
+                {
+                    return aux;
+                }
+            }
+            return null;
+
+        }
+
     }
 }

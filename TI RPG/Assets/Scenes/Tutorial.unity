@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0032013855, g: 0.0063153747, b: 0.014413998, a: 1}
+  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1579,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 6497301580384079399, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497301580384079401, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
@@ -7510,7 +7514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1325620603231277418, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1814489159087836112, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
       propertyPath: m_RootOrder
@@ -7555,6 +7559,14 @@ PrefabInstance:
     - target: {fileID: 1814489159087836112, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814489159087836117, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814489159087836123, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
@@ -10228,6 +10240,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3857818498959658984, guid: 89366746fcf0ed04fa741615c9a46744, type: 3}
+      propertyPath: maoNome
+      value: mixamorig:RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857818498959658984, guid: 89366746fcf0ed04fa741615c9a46744, type: 3}
+      propertyPath: forcePower
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 3857818498959658986, guid: 89366746fcf0ed04fa741615c9a46744, type: 3}
       propertyPath: m_RootOrder
       value: 2

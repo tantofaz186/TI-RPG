@@ -41,7 +41,8 @@ namespace Skills
                 Outline _outline = inimigo.AddComponent<Outline>();
                 PrepareOutline(_outline);
             }
-            skillText = GameObject.FindObjectOfType<Text>(); 
+            GameObject skillTextObject = GameObject.Find("cheatSkillText");
+            skillText = skillTextObject.GetComponent<Text>();
         }
 
         private void PrepareOutline(Outline _outline)

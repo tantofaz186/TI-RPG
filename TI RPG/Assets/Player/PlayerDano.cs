@@ -30,7 +30,7 @@ namespace Player
             }
         }
         void OnCollisionEnter(Collision collision)
-        {
+       {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
                 Vidas -= 1;
@@ -98,6 +98,8 @@ namespace Player
         }
         private void Start()
         {
+            GameObject vidaInfinitaTextObject = GameObject.Find("cheatSkillText");
+            vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();
         }
