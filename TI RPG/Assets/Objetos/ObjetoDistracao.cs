@@ -18,13 +18,15 @@ namespace Objetos
 
         [SerializeField] private bool isPicked = false;
         private Rigidbody rb;
+        private Collider pickupCollider; // Collider to be disabled when picked up
+        private bool isNear = false;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             mao = EncontrarMao(player.gameObject, maoNome);
-            //mainCamera = Camera.main;
+            pickupCollider = GetComponent<Collider>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -32,9 +34,25 @@ namespace Objetos
             OnHitGround?.Invoke(collision.contacts[0].point);
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                isNear = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                isNear = false;
+            }
+        }
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F) && !isPicked)
+            if (Input.GetKeyDown(KeyCode.F) && !isPicked && isNear)
             {
                 PickUpObject();
             }
@@ -48,8 +66,21 @@ namespace Objetos
         {
             try
             {
-                Collider col = Physics.OverlapSphere(transform.position, 3f, LayerMask.GetMask("Player"))[0];
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 3f, LayerMask.GetMask("Player"));
+
+                foreach (Collider col in colliders)
+                {
+                    Rigidbody colRb = col.GetComponent<Rigidbody>();
+
+                    if (colRb != null && colRb != rb && colRb.isKinematic)
+                    {
+                        Debug.Log("O objeto próximo não pode ser pego.");
+                        return;
+                    }
+                }
+
                 rb.isKinematic = true;
+                pickupCollider.enabled = false; // Disable the collider
                 transform.parent = mao.transform;
                 transform.position = transform.parent.position;
                 isPicked = true;
@@ -63,14 +94,16 @@ namespace Objetos
         private void ThrowObject()
         {
             rb.isKinematic = false;
-            Vector3 throwDir = (player.transform.forward + Vector3.up).normalized;  
+            pickupCollider.enabled = true; // Enable the collider
+            Vector3 throwDir = (player.transform.forward + Vector3.up).normalized;
             transform.SetParent(null);
             rb.AddForce(throwDir * forcePower);
             isPicked = false;
         }
+
         GameObject EncontrarMao(GameObject _player, string nome)
         {
-            for (int i = 0; i < (_player.transform.childCount); i++)
+            for (int i = 0; i < _player.transform.childCount; i++)
             {
                 if (_player.transform.GetChild(i).name == nome)
                 {
@@ -85,8 +118,6 @@ namespace Objetos
                 }
             }
             return null;
-
         }
-
     }
 }

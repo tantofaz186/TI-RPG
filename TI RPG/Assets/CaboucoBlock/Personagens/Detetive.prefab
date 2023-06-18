@@ -405,6 +405,7 @@ MonoBehaviour:
   vidas: 2
   speedBoostMultiplier: 2
   speedBoostTime: 2
+  vidaInfinitaText: {fileID: 0}
 --- !u!114 &1814489159087836119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ MonoBehaviour:
   velocidade: 4
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
+  mouseInput: {fileID: 0}
 --- !u!95 &1814489159087836122
 Animator:
   serializedVersion: 5
@@ -479,6 +481,7 @@ MonoBehaviour:
   skillAnterior: []
   armadilha: {fileID: 0}
   player: {fileID: 0}
+  skillText: {fileID: 0}
 --- !u!114 &3165124132909243818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +497,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!114 &8782453931443797108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +513,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!114 &8857653462580414750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +531,7 @@ MonoBehaviour:
   skillAnterior: []
   outlines: []
   inimigos: []
+  skillText: {fileID: 0}
 --- !u!114 &131712556052177037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +547,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!114 &3217322219452321968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +563,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!114 &3197252497992091579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +579,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!114 &1548056401200019415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +595,7 @@ MonoBehaviour:
   nomeSkill: 
   skillDescricao: 
   skillAnterior: []
+  skillText: {fileID: 0}
 --- !u!1 &1953393012672070683
 GameObject:
   m_ObjectHideFlags: 0

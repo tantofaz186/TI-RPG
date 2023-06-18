@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.008975641, g: 0.013044867, b: 0.02042249, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012734, g: 0.013102855, b: 0.02050359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5599,6 +5599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 970305145}
     m_Modifications:
+    - target: {fileID: 897804806943744113, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5642,6 +5646,10 @@ PrefabInstance:
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433672984343026032, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488740933472141276, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_Name
@@ -13815,6 +13823,10 @@ PrefabInstance:
       propertyPath: peca
       value: 
       objectReference: {fileID: 1747652342}
+    - target: {fileID: 4260011848500449038, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4782285549893103110, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: peca
       value: 
@@ -13826,6 +13838,10 @@ PrefabInstance:
     - target: {fileID: 6937605718122755393, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936400263875474959, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
@@ -22914,6 +22930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 970305145}
     m_Modifications:
+    - target: {fileID: 897804806943744113, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -22957,6 +22977,10 @@ PrefabInstance:
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433672984343026032, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488740933472141276, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_Name
@@ -24010,6 +24034,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 970305145}
     m_Modifications:
+    - target: {fileID: 897804806943744113, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -24053,6 +24081,10 @@ PrefabInstance:
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433672984343026032, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488740933472141276, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_Name
@@ -24996,6 +25028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 970305145}
     m_Modifications:
+    - target: {fileID: 897804806943744113, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -25051,6 +25087,10 @@ PrefabInstance:
     - target: {fileID: 5619296550536117586, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433672984343026032, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7488740933472141276, guid: 7a24063841821a8469d4715e84ee1d34, type: 3}
       propertyPath: m_Name
@@ -25885,7 +25925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497301580384079399, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}

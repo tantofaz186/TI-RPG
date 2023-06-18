@@ -33,6 +33,7 @@ namespace Player
        {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
+                Debug.Log("oi");
                 Vidas -= 1;
                 StartCoroutine(TomarDano());
             }
