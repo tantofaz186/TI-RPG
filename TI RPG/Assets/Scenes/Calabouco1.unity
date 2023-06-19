@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009012734, g: 0.013102855, b: 0.02050359, a: 1}
+  m_IndirectSpecularColor: {r: 0.008975641, g: 0.013044867, b: 0.02042249, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16059,6 +16059,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4169794365381788623, guid: 6fd7dc64172568c4e879bb49d166e5c9, type: 3}
   m_PrefabInstance: {fileID: 1377817523}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &1386323101 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 645422273666309170, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+  m_PrefabInstance: {fileID: 3970472965619211169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1388353365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20094,6 +20099,10 @@ PrefabInstance:
     - target: {fileID: 1814489159087836117, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814489159087836123, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
@@ -25861,7 +25870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970472966021530538, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 59.363194
       objectReference: {fileID: 0}
     - target: {fileID: 3970472966021530538, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25869,7 +25878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970472966021530538, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.1
+      value: 98.43272
       objectReference: {fileID: 0}
     - target: {fileID: 3970472966021530538, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25907,6 +25916,18 @@ PrefabInstance:
       propertyPath: FadedAlpha
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6497301580384079394, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -52.563023
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497301580384079394, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -85.6324
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497301580384079396, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
+      propertyPath: smr
+      value: 
+      objectReference: {fileID: 1386323101}
     - target: {fileID: 6497301580384079396, guid: 94c519dc2e5616944b25b48a6735b550, type: 3}
       propertyPath: vidaInfinitaText
       value: 
