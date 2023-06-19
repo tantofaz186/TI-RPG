@@ -12,8 +12,12 @@ namespace Skills
         private Collider m_Collider;
         private bool invisivel = false;
         public Text skillText;
-        
 
+        public void Start()
+        {
+            GameObject skillTextObject = GameObject.Find("cheatSkillText");
+            skillText = skillTextObject.GetComponent<Text>();
+        }
         private IEnumerator ActivatePremonicaoText(bool active)
         {
             if (active)

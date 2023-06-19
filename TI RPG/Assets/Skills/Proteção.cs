@@ -42,7 +42,8 @@ public class Proteção : Skill
     {
         Debug.Log("Proteção Ativada");
         ativada = true;
-        skillText = FindObjectOfType<Text>();
+        GameObject skillTextObject = GameObject.Find("cheatSkillText");
+        skillText = skillTextObject.GetComponent<Text>();
     }
 
     public override void OnDisable()

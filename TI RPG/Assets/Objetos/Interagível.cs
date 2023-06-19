@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Objetos
 {
+    [RequireComponent(typeof(Outline))]
     public abstract class Interagível : MonoBehaviour
     {
         private Camera mainCamera;
@@ -18,7 +19,18 @@ namespace Objetos
         [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
         [SerializeField] protected Color corDoGizmos = Color.yellow;
         
-        
+        void OnValidate(){
+            Outline outline;
+            if (TryGetComponent(out outline))
+            {
+                SetOutline(outline);
+            }
+            else
+            {
+                outline = gameObject.AddComponent<Outline>();
+                SetOutline(outline);
+            } 
+        }
         protected virtual void Awake()
         {
             mainCamera = Camera.main;

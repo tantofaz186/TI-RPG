@@ -11,7 +11,7 @@ public class MãosÁgeis : Skill
     public Text skillText;
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (!ativada)
             {
@@ -29,7 +29,8 @@ public class MãosÁgeis : Skill
     public void Start()
     {
         ativada = true;
-        skillText = GameObject.FindObjectOfType<Text>();
+        GameObject skillTextObject = GameObject.Find("cheatSkillText");
+        skillText = skillTextObject.GetComponent<Text>();
     }
     private IEnumerator ActivatePremonicaoText(bool active)
     {

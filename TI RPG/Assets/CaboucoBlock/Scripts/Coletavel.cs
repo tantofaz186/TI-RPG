@@ -9,10 +9,10 @@ public class Coletavel : MonoBehaviour
     [SerializeField] private GameObject mao;
     [SerializeField] public string maoNome;
     public float distanciaMinima = 2f;
-    bool carregada=false;
+    bool carregada = false;
     private Rigidbody rb;
     private Camera mainCamera;
-    float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
+    float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);
     [SerializeField] protected float larguraDoOutline = 4f;
     [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
     [SerializeField] protected Color corDoOutline = Color.green;
@@ -26,23 +26,33 @@ public class Coletavel : MonoBehaviour
     {
         carregada = true;
         transform.parent = mao.transform;
-        transform.position= transform.parent.position;
+        transform.position = transform.parent.position;
         rb.isKinematic = true;
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = false; // Disable the collider when picked up
+        }
         Debug.Log("pegou");
     }
 
     void Largar()
     {
         transform.parent = null;
-        rb.isKinematic = false; ;
+        rb.isKinematic = false;
         carregada = false;
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = true; // Enable the collider when dropped
+        }
     }
 
     GameObject EncontrarMao(GameObject _player, string nome)
     {
-        for(int i = 0; i < (_player.transform.childCount); i++)
+        for (int i = 0; i < (_player.transform.childCount); i++)
         {
-            if(_player.transform.GetChild(i).name == nome)
+            if (_player.transform.GetChild(i).name == nome)
             {
                 return _player.transform.GetChild(i).gameObject;
             }
@@ -55,14 +65,13 @@ public class Coletavel : MonoBehaviour
             }
         }
         return null;
-
     }
-    // Start is called before the first frame update
+
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        mao=EncontrarMao(player.gameObject, maoNome);
+        mao = EncontrarMao(player.gameObject, maoNome);
         mainCamera = Camera.main;
         Outline outline;
         if (TryGetComponent(out outline))
@@ -86,13 +95,14 @@ public class Coletavel : MonoBehaviour
         while (distanciaDoPlayer > distanciaMinima) yield return null;
         Pegar();
     }
+
     protected virtual void SetOutline(Outline outline)
     {
         outline.OutlineColor = corDoOutline;
         outline.OutlineMode = modoDoOutline;
         outline.OutlineWidth = larguraDoOutline;
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (!Input.GetMouseButtonDown(0)) return;
