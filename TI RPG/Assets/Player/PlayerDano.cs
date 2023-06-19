@@ -12,8 +12,10 @@ namespace Player
         [SerializeField] private int vidas = 2;
         [SerializeField] private float speedBoostMultiplier = 2f;
         [SerializeField] private float speedBoostTime = 2f;
+        [SerializeField] SkinnedMeshRenderer smr;
         public Text vidaInfinitaText;
         private PlayerMovement m_PlayerMovement;
+    
 
         public int Vidas
         {
@@ -40,43 +42,17 @@ namespace Player
         }
         IEnumerator TomarDano()
         {
-            Color selfColor;
+            Color selfColor = smr.material.color;;
             Color damageColor = Color.red;
-            SkinnedMeshRenderer smr;
-            MeshRenderer mr;
 
-            if (gameObject.GetComponent<MeshRenderer>() == null)
-            {
-                smr = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
-                selfColor = smr.material.color;
-                mr = null;
-            }
-            else
-            {
-               mr = gameObject.GetComponent<MeshRenderer>();
-               selfColor = mr.material.color;
-               smr = null;
-            }
             m_PlayerMovement.GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
-
-            if (gameObject.GetComponent<MeshRenderer>() == null)
+            for (int i = 0; i < 3; i++)
             {
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = damageColor;
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = selfColor;
-            }
-            else
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    yield return new WaitForSeconds(0.3f);
-                    mr.material.color = damageColor;
-                    yield return new WaitForSeconds(0.3f);
-                    mr.material.color = selfColor;
-                }
-            }
-            
+            }            
         }
         private void vidaInfinita()
         {
@@ -88,12 +64,10 @@ namespace Player
         }
         private IEnumerator ActivateCheatText()
         {
-           
             vidaInfinitaText.gameObject.SetActive(true);
             vidaInfinitaText.text = "Cheat Activated";
 
             yield return new WaitForSeconds(3f);
-
 
             vidaInfinitaText.text = "";
         }
