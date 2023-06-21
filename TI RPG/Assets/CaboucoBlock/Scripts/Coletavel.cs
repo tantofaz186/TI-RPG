@@ -68,7 +68,15 @@ public class Coletavel : MonoBehaviour
     }
 
     private Outline outline;
+    void OnMouseEnter()
+    {
+        outline.enabled = true;
+    }
 
+    void OnMouseExit()
+    {
+        outline.enabled = false;
+    }
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -83,7 +91,6 @@ public class Coletavel : MonoBehaviour
         }
 
         SetOutline(outline);
-        outline.enabled = false;
     }
 
     public IEnumerator IrAtéObjeto()
@@ -102,16 +109,6 @@ public class Coletavel : MonoBehaviour
         outline.OutlineColor = corDoOutline;
         outline.OutlineMode = modoDoOutline;
         outline.OutlineWidth = larguraDoOutline;
-    }
-
-    void OnMouseEnter()
-    {
-        outline.enabled = true;
-    }
-
-    void OnMouseExit()
-    {
-        outline.enabled = false;
     }
 
     void Update()
