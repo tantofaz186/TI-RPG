@@ -18,40 +18,39 @@ namespace Objetos
         [SerializeField] protected float larguraDoOutline = 4f;
         [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
         [SerializeField] protected Color corDoGizmos = Color.yellow;
-        
+        Outline outline;
         void OnValidate(){
-            Outline outline;
-            if (TryGetComponent(out outline))
-            {
-                SetOutline(outline);
-            }
-            else
+            if (!TryGetComponent(out outline))
             {
                 outline = gameObject.AddComponent<Outline>();
-                SetOutline(outline);
-            } 
+            }
+            SetOutline(outline);
         }
         protected virtual void Awake()
         {
             mainCamera = Camera.main;
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            Outline outline;
-            if (TryGetComponent(out outline))
-            {
-                SetOutline(outline);
-            }
-            else
+            if (!TryGetComponent(out outline))
             {
                 outline = gameObject.AddComponent<Outline>();
-                SetOutline(outline);
             }
+            SetOutline(outline);
+        }
+        void OnMouseEnter()
+        {
+            outline.enabled = true;
         }
 
-        protected virtual void Update()
+        private void OnMouseOver()
         {
             if (!Input.GetMouseButtonDown(0)) return;
             StopAllCoroutines();
             StartCoroutine(MoverParaObjeto());
+        }
+
+        void OnMouseExit()
+        {
+            outline.enabled = false;
         }
 
         protected virtual IEnumerator MoverParaObjeto()
