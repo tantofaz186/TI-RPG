@@ -67,22 +67,23 @@ public class Coletavel : MonoBehaviour
         return null;
     }
 
+    private Outline outline;
+
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         mao = EncontrarMao(player.gameObject, maoNome);
         mainCamera = Camera.main;
-        Outline outline;
-        if (TryGetComponent(out outline))
-        {
-            SetOutline(outline);
-        }
-        else
+
+        outline = gameObject.GetComponent<Outline>();
+        if (outline == null)
         {
             outline = gameObject.AddComponent<Outline>();
-            SetOutline(outline);
         }
+
+        SetOutline(outline);
+        outline.enabled = false;
     }
 
     public IEnumerator IrAtéObjeto()
@@ -101,6 +102,16 @@ public class Coletavel : MonoBehaviour
         outline.OutlineColor = corDoOutline;
         outline.OutlineMode = modoDoOutline;
         outline.OutlineWidth = larguraDoOutline;
+    }
+
+    void OnMouseEnter()
+    {
+        outline.enabled = true;
+    }
+
+    void OnMouseExit()
+    {
+        outline.enabled = false;
     }
 
     void Update()

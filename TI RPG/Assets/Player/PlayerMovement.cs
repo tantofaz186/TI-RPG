@@ -12,7 +12,8 @@ namespace Player
         private Vector3 targetPosition;
         private Camera mainCamera;
         private Animator corpo_fsm;
-        public GameObject mouseInput;
+        //public GameObject mouseInput;
+        private bool isMouseDown;
 
         private void Awake()
         {
@@ -20,55 +21,70 @@ namespace Player
             targetPosition = transform.position;
             corpo_fsm = gameObject.GetComponent<Animator>();
             corpo_fsm.SetFloat("Mover", 0.5f);
-            mouseInput.SetActive(false);
+            //mouseInput.SetActive(false);
         }
 
         protected override void Update()
         {
-            
             base.Update();
             agente.speed = velocidade;
+
             if (Input.GetMouseButtonDown(1))
+            {
+                isMouseDown = true;
+            }
+
+            if (Input.GetMouseButtonUp(1))
+            {
+                isMouseDown = false;
+                StopMovement();
+            }
+
+            if (isMouseDown)
             {
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
                 {
                     targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                    mouseInput.transform.position = targetPosition;
-                    mouseInput.SetActive(true);
+                    //mouseInput.transform.position = targetPosition;
+                    //mouseInput.SetActive(true);
                     Mover(targetPosition);
                 }
             }
+
             #region Movimentacao/Mecanim
+
             if (agente.destination == transform.position)
             {
                 corpo_fsm.SetBool("movimentando", false);
                 Debug.Log("Parou");
-                mouseInput.SetActive(false);
+                //mouseInput.SetActive(false);
             }
-            else if(!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
+            else if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
             {
                 corpo_fsm.SetBool("movimentando", true);
                 velocidade = 3.0f;
                 StartCoroutine(LerpValue("Mover", 0.5f));
             }
-            else{
+            else
+            {
                 corpo_fsm.SetBool("movimentando", true);
             }
-            if (Input.GetKey(KeyCode.LeftControl))//Agachar
+
+            if (Input.GetKey(KeyCode.LeftControl)) // Agachar
             {
                 corpo_fsm.SetBool("agachado", true);
                 velocidade = 1.75f;
                 StartCoroutine(LerpValue("Mover", 0f));
             }
-            else if (Input.GetKey(KeyCode.LeftShift))//Correr
+            else if (Input.GetKey(KeyCode.LeftShift)) // Correr
             {
                 velocidade = 4.25f;
                 StartCoroutine(LerpValue("Mover", 1f));
             }
-            else if (!Input.GetKey(KeyCode.LeftControl)) {
-                corpo_fsm.SetBool("agachado", false);// Desagachar
+            else if (!Input.GetKey(KeyCode.LeftControl))
+            {
+                corpo_fsm.SetBool("agachado", false); // Desagachar
             }
-
 
             #endregion
         }
@@ -84,6 +100,12 @@ namespace Player
             }
             corpo_fsm.SetFloat(variableName, targetValue);
         }
-    }
 
+        private void StopMovement()
+        {
+            agente.ResetPath();
+            corpo_fsm.SetBool("movimentando", false);
+            //mouseInput.SetActive(false);
+        }
+    }
 }
