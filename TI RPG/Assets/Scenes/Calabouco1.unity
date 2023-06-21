@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009012734, g: 0.013102855, b: 0.02050359, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012707, g: 0.013102867, b: 0.020503506, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.4
     agentHeight: 1.8
     agentSlope: 45
-    agentClimb: 0.25
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -14152,6 +14152,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 679586242013545371, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 894705147749402160, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 127
+      objectReference: {fileID: 0}
     - target: {fileID: 987159379753677128, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -14196,6 +14204,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2582684728679699277, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 127
+      objectReference: {fileID: 0}
     - target: {fileID: 3132012663346141404, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: peca
       value: 
@@ -14218,7 +14230,11 @@ PrefabInstance:
       objectReference: {fileID: 1488472660}
     - target: {fileID: 6937605718122755393, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962419698742777361, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 7936400263875474959, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_IsKinematic
