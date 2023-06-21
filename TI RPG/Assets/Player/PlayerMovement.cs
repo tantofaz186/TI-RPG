@@ -12,8 +12,7 @@ namespace Player
         private Vector3 targetPosition;
         private Camera mainCamera;
         private Animator corpo_fsm;
-        //public GameObject mouseInput;
-        private bool isMouseDown;
+        public GameObject mouseInput;
 
         private void Awake()
         {
@@ -21,7 +20,7 @@ namespace Player
             targetPosition = transform.position;
             corpo_fsm = gameObject.GetComponent<Animator>();
             corpo_fsm.SetFloat("Mover", 0.5f);
-            //mouseInput.SetActive(false);
+            mouseInput.SetActive(false);
         }
 
         protected override void Update()
@@ -29,35 +28,23 @@ namespace Player
             base.Update();
             agente.speed = velocidade;
 
-            if (Input.GetMouseButtonDown(1))
-            {
-                isMouseDown = true;
-            }
-
-            if (Input.GetMouseButtonUp(1))
-            {
-                isMouseDown = false;
-                StopMovement();
-            }
-
-            if (isMouseDown)
+            if (Input.GetMouseButton(1))
             {
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out var hit))
                 {
                     targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                    //mouseInput.transform.position = targetPosition;
-                    //mouseInput.SetActive(true);
+                    mouseInput.SetActive(true);
                     Mover(targetPosition);
                 }
             }
-
+            mouseInput.transform.position = agente.destination;
             #region Movimentacao/Mecanim
 
             if (agente.destination == transform.position)
             {
                 corpo_fsm.SetBool("movimentando", false);
                 Debug.Log("Parou");
-                //mouseInput.SetActive(false);
+                mouseInput.SetActive(false);
             }
             else if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
             {
@@ -99,13 +86,6 @@ namespace Player
                 yield return null;
             }
             corpo_fsm.SetFloat(variableName, targetValue);
-        }
-
-        private void StopMovement()
-        {
-            agente.ResetPath();
-            corpo_fsm.SetBool("movimentando", false);
-            //mouseInput.SetActive(false);
         }
     }
 }
