@@ -13,7 +13,7 @@ public class Vitoria : MonoBehaviour
         if (other.gameObject == chave)
         {
             Debug.Log("Venceu");
-            GameOverController.Instance.GameOver();
+            VitoriaController.Instance.Ganhou();
         }
     }
 
