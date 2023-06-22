@@ -3816,6 +3816,10 @@ PrefabInstance:
       value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4511497438870090449, guid: 827a8feca7f1e2045aee9593b379167b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511497438870090449, guid: 827a8feca7f1e2045aee9593b379167b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.71327
       objectReference: {fileID: 0}
@@ -5966,41 +5970,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7458482278313644967, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: corDoOutline.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458482278313644967, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: corDoOutline.g
-      value: 0.04726863
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458482278313644967, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: corDoOutline.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458482278313644967, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: distanciaMinima
-      value: 2.46
-      objectReference: {fileID: 0}
     - target: {fileID: 7728374649423637996, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
       propertyPath: m_Name
       value: "Mesa Escond\xEDvel"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904729769237315595, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904729769237315595, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: outlineColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904729769237315595, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: outlineColor.g
-      value: 0.04726863
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904729769237315595, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-      propertyPath: outlineColor.r
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
@@ -13795,23 +13767,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4511497438870090449, guid: 827a8feca7f1e2045aee9593b379167b, type: 3}
   m_PrefabInstance: {fileID: 1788699322}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1793162910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7728374649423637996, guid: 5f651bc192b8bab4c9d83fc229704380, type: 3}
-  m_PrefabInstance: {fileID: 794894423}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1793162917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793162910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893df8d274a2e6845a748f9c52e52b66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1811183374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681344049544278442, guid: a20c2c7d488e7ee4eada54d8afb32439, type: 3}
