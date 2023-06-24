@@ -15,11 +15,6 @@ namespace Skills
         public Skill activateSkill;
         public XpPlayer pontosPlayer;
 
-        private void Update()
-        {
-            skills = GameObject.FindGameObjectWithTag("Player").GetComponents<Skill>().ToList();
-        }
-     
 
         public Skill SetActivateSkill(SkillUI skillUi)
         {

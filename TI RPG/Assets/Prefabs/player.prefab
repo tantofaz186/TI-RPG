@@ -16,14 +16,6 @@ GameObject:
   - component: {fileID: 6557822184550138279}
   - component: {fileID: 3406911441445836350}
   - component: {fileID: 6557822184550138278}
-  - component: {fileID: 3095986943593971547}
-  - component: {fileID: 6912923288059692202}
-  - component: {fileID: 2561422284356754546}
-  - component: {fileID: 4253186497904511}
-  - component: {fileID: 6545568969168365160}
-  - component: {fileID: 6092335344105618014}
-  - component: {fileID: 7710890735289583531}
-  - component: {fileID: 4388394652266304103}
   - component: {fileID: 18612880176030158}
   m_Layer: 0
   m_Name: player
@@ -127,6 +119,8 @@ MonoBehaviour:
   vidas: 2
   speedBoostMultiplier: 2
   speedBoostTime: 2
+  smr: {fileID: 0}
+  vidaInfinitaText: {fileID: 0}
 --- !u!114 &6557822184550138279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +136,7 @@ MonoBehaviour:
   velocidade: 2
   agente: {fileID: 6557822184550138278}
   audioDetectionRadius: 10
+  mouseInput: {fileID: 0}
 --- !u!95 &3406911441445836350
 Animator:
   serializedVersion: 5
@@ -184,130 +179,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3095986943593971547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc477a9c50161440947372495bbf7a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
-  armadilha: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &6912923288059692202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2449b7f1e94ae47a3fb205e2980f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
---- !u!114 &2561422284356754546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576991348274ff24a87a8a5d0604dd69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
---- !u!114 &4253186497904511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: accd4b3455fe86541852be9fa83a7fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
---- !u!114 &6545568969168365160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d913e168833a341bbcf00ab63972d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
---- !u!114 &6092335344105618014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48cc725e31d9ee4bad4e86a1c206eb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
---- !u!114 &7710890735289583531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: defba61c4ab836b45b929f1a9854cea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
-  outlines: []
-  inimigos: []
---- !u!114 &4388394652266304103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6557822184550138281}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e420d114026f13429782b1275ab6549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeSkill: 
-  skillDescricao: 
-  skillAnterior: []
 --- !u!114 &18612880176030158
 MonoBehaviour:
   m_ObjectHideFlags: 0

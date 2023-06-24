@@ -28,14 +28,15 @@ namespace SaveGame
                 playerPositionX = player.transform.position.x,
                 playerPositionY = player.transform.position.y,
                 playerPositionZ = player.transform.position.z,
-                xpPlayer = player.GetComponent<XpPlayer>()._xpAtual,
-                armadihaFantasmaActive = player.GetComponent<ArmadilhaFantasma>().isActiveAndEnabled,
-                invisibilidadeActive = player.GetComponent<Invisibilidade>().isActiveAndEnabled,
-                lanternaEspectralActive = player.GetComponent<LanternaEspectral>().isActiveAndEnabled,
-                mãosÁgeisActive = player.GetComponent<MãosÁgeis>().isActiveAndEnabled,
-                mãosHábéisActive = player.GetComponent<MãosHábeis>().isActiveAndEnabled,
-                passoFantasmaActive = player.GetComponent<PassoFantasma>().isActiveAndEnabled,
-                premoniçãoActive = player.GetComponent<Premonição>().isActiveAndEnabled,
+                
+                xpPlayer = SkillManager.Instance.GetComponent<XpPlayer>()._xpAtual,
+                armadihaFantasmaActive = SkillManager.Instance.GetComponent<ArmadilhaFantasma>().isActiveAndEnabled,
+                invisibilidadeActive = SkillManager.Instance.GetComponent<Invisibilidade>().isActiveAndEnabled,
+                lanternaEspectralActive = SkillManager.Instance.GetComponent<LanternaEspectral>().isActiveAndEnabled,
+                mãosÁgeisActive = SkillManager.Instance.GetComponent<MãosÁgeis>().isActiveAndEnabled,
+                mãosHábéisActive = SkillManager.Instance.GetComponent<MãosHábeis>().isActiveAndEnabled,
+                passoFantasmaActive = SkillManager.Instance.GetComponent<PassoFantasma>().isActiveAndEnabled,
+                premoniçãoActive = SkillManager.Instance.GetComponent<Premonição>().isActiveAndEnabled,
                 sceneName = UIControl.Instance.GetSceneName(),
             };
             BinaryFormatter formatter = new BinaryFormatter();
@@ -72,15 +73,15 @@ namespace SaveGame
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position =
                 new Vector3(saveData.playerPositionX, saveData.playerPositionY, saveData.playerPositionZ);
-            player.GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
-            player.GetComponent<ArmadilhaFantasma>().enabled = saveData.armadihaFantasmaActive;
-            player.GetComponent<Invisibilidade>().enabled = saveData.invisibilidadeActive;
-            player.GetComponent<LanternaEspectral>().enabled = saveData.lanternaEspectralActive;
-            player.GetComponent<MãosÁgeis>().enabled = saveData.mãosÁgeisActive;
-            player.GetComponent<MãosHábeis>().enabled = saveData.mãosHábéisActive;
-            player.GetComponent<PassoFantasma>().enabled = saveData.passoFantasmaActive;
-            player.GetComponent<Premonição>().enabled = saveData.premoniçãoActive;
-            player.GetComponent<Proteção>().enabled = saveData.proteçãoActive;
+            SkillManager.Instance.GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
+            SkillManager.Instance.GetComponent<ArmadilhaFantasma>().enabled = saveData.armadihaFantasmaActive;
+            SkillManager.Instance.GetComponent<Invisibilidade>().enabled = saveData.invisibilidadeActive;
+            SkillManager.Instance.GetComponent<LanternaEspectral>().enabled = saveData.lanternaEspectralActive;
+            SkillManager.Instance.GetComponent<MãosÁgeis>().enabled = saveData.mãosÁgeisActive;
+            SkillManager.Instance.GetComponent<MãosHábeis>().enabled = saveData.mãosHábéisActive;
+            SkillManager.Instance.GetComponent<PassoFantasma>().enabled = saveData.passoFantasmaActive;
+            SkillManager.Instance.GetComponent<Premonição>().enabled = saveData.premoniçãoActive;
+            SkillManager.Instance.GetComponent<Proteção>().enabled = saveData.proteçãoActive;
             player.GetComponent<PlayerMovement>().Mover(player.transform.position);
             SceneManager.sceneLoaded -= LoadObjects;
         }
