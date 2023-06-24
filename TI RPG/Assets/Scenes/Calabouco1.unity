@@ -90452,12 +90452,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: dialogueFim.sentences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: dialogueFim.sentences.Array.data[0]
       value: "Muito obrigado por sua ajuda, aqui est\xE1 algo para voc\xEA usar para
         se adaptar a esse ambiente hostil ."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
+      propertyPath: dialogueFim.sentences.Array.data[1]
+      value: "N\xE3o se preocupe comigo, vou esperar aqui uma chance boa para escapar"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
+      propertyPath: dialogueFim.sentences.Array.data[2]
+      value: Finalmente verei minha familia denovo
       objectReference: {fileID: 0}
     - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: dialogueInicio.sentences.Array.size
@@ -90497,7 +90505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564731139923778857, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: m_Name
-      value: CaraDaQuest
+      value: FetchQuestPrisao
       objectReference: {fileID: 0}
     - target: {fileID: 9049940796225243027, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: m_RootOrder

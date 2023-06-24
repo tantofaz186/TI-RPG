@@ -33,7 +33,7 @@ public class QuestItem : MonoBehaviour
         Collider collider = GetComponent<Collider>();
         if (collider != null)
         {
-            collider.enabled = false; // Disable the collider when picked up
+            collider.enabled = false;
         }
         if (objetoEDeQuest && gameObject.name == nameObjetoQuest)
         {
@@ -51,7 +51,7 @@ public class QuestItem : MonoBehaviour
         Collider collider = GetComponent<Collider>();
         if (collider != null)
         {
-            collider.enabled = true; // Enable the collider when dropped
+            collider.enabled = true; 
         }
         if (objetoEDeQuest && gameObject.name== nameObjetoQuest)
         {

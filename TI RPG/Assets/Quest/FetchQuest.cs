@@ -10,6 +10,7 @@ public class FetchQuest : Interagível
     public Dialogue dialogueLembrarMissao;
     public Dialogue dialogueFim;
     public bool estaComItemQuest;
+    public bool questConcluida; 
 
     private int interactionCount = 0;
 
@@ -31,6 +32,11 @@ public class FetchQuest : Interagível
         {
             DialogueManager.Instance.StartDialogue(dialogueFim);
             interactionCount=1;
+            questConcluida = true;
+            XpPlayer xpPlayer = FindObjectOfType<XpPlayer>();
+            xpPlayer._xpAtual += 1;
+            QuestManager manager = FindObjectOfType<QuestManager>();
+            manager.AtualizarQuests();
         }
 
 
