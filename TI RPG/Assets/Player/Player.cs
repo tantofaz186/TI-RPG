@@ -6,7 +6,6 @@ namespace Player
 {
     [RequireComponent(typeof(PlayerMovement))]
     [RequireComponent(typeof(PlayerPassos))]
-    [RequireComponent(typeof(XpPlayer))]
     [RequireComponent(typeof(PlayerDano))]
     public class Player : MonoBehaviour, ISaveable
     {
