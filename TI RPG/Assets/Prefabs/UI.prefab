@@ -5576,7 +5576,6 @@ GameObject:
   - component: {fileID: 254953038478934904}
   - component: {fileID: 7161626166046393182}
   - component: {fileID: 1450550792108625917}
-  - component: {fileID: 7996786708552837590}
   - component: {fileID: 2073642213756702425}
   m_Layer: 5
   m_Name: Restart
@@ -5644,18 +5643,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7996786708552837590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3307967187736028426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2073642213756702425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5700,10 +5687,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7996786708552837590}
+      - m_Target: {fileID: 8012411280116768808}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
-        m_MethodName: MudarCena
+        m_MethodName: RestartScene
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Calabouco 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5380735963801018178}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9315,7 +9314,6 @@ GameObject:
   - component: {fileID: 8012411280549179728}
   - component: {fileID: 8012411280549179731}
   - component: {fileID: 8012411280549179730}
-  - component: {fileID: 8012411280549179732}
   - component: {fileID: 8012411280549179729}
   m_Layer: 5
   m_Name: Restart
@@ -9383,18 +9381,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8012411280549179732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8012411280549179695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8012411280549179729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9439,10 +9425,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8012411280549179732}
+      - m_Target: {fileID: 8012411280116768808}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
-        m_MethodName: MudarCena
+        m_MethodName: RestartScene
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8012411281496333242}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
