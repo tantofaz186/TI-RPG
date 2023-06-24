@@ -340,7 +340,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.34
+  m_Radius: 0.45
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -409,11 +409,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883cf6bad12d40d08fb53e4001fe96bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
+  velocidade: 2.5
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
   pontos:
-  - {x: 0, y: 0, z: 0}
+  - {x: 28, y: 0.4, z: 25}
+  - {x: 22.4, y: 0.4, z: 22.8}
+  - {x: 24, y: 0.4, z: 15}
+  - {x: 31.7, y: 0.4, z: 7.4}
+  - {x: 42.41, y: 0.4, z: 11.5}
+  - {x: 42.5, y: 0.4, z: 27.5}
+  - {x: 31.2, y: 0.4, z: 24.5}
+  - {x: 28.1, y: 0.4, z: 15.01}
+  - {x: 37.4, y: 0.4, z: 18.4}
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 6249570238781422718}

@@ -40,6 +40,18 @@ namespace Player
                 StartCoroutine(TomarDano());
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Armadilha"))
+            {
+                Debug.Log("oi");
+                Vidas -= 1;
+                StartCoroutine(TomarDano());
+            }
+        }
+
+
         IEnumerator TomarDano()
         {
             Color selfColor = smr.material.color;;
