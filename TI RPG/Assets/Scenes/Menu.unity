@@ -1209,6 +1209,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8012411280116768808, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: skillTreeMenu
+      value: 
+      objectReference: {fileID: 1299599659}
+    - target: {fileID: 8012411280228725053, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: skillTreeMenu
+      value: 
+      objectReference: {fileID: 1299599659}
+    - target: {fileID: 8012411280228725053, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: skills.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
 --- !u!1 &245325671
@@ -5303,6 +5315,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3744305831662849277, guid: 8adac3f0b8db48743bd2a22a33c18348, type: 3}
   m_PrefabInstance: {fileID: 1293771482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299599659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8012411280228725051, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+  m_PrefabInstance: {fileID: 229981149}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1312853289
 PrefabInstance:

@@ -5,6 +5,7 @@ using Controllers;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Skills
 {
@@ -14,10 +15,11 @@ namespace Skills
         public Skill activateSkill;
         public XpPlayer pontosPlayer;
 
-        private void Start()
+        private void Update()
         {
             skills = GameObject.FindGameObjectWithTag("Player").GetComponents<Skill>().ToList();
         }
+     
 
         public Skill SetActivateSkill(SkillUI skillUi)
         {
