@@ -57,18 +57,7 @@ namespace SaveGame
 
                 // Carregar os dados do save para o jogo
                 UIControl.Instance.MudarCena(saveData.sceneName);
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.transform.position = new Vector3(saveData.playerPositionX, saveData.playerPositionY, saveData.playerPositionZ);
-                player.GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
-                player.GetComponent<ArmadilhaFantasma>().enabled = saveData.armadihaFantasmaActive;
-                player.GetComponent<Invisibilidade>().enabled = saveData.invisibilidadeActive;
-                player.GetComponent<LanternaEspectral>().enabled = saveData.lanternaEspectralActive;
-                player.GetComponent<MãosÁgeis>().enabled = saveData.mãosÁgeisActive;
-                player.GetComponent<MãosHábeis>().enabled = saveData.mãosHábéisActive;
-                player.GetComponent<PassoFantasma>().enabled = saveData.passoFantasmaActive;
-                player.GetComponent<Premonição>().enabled = saveData.premoniçãoActive;
-                player.GetComponent<Proteção>().enabled = saveData.proteçãoActive;
-                player.GetComponent<PlayerMovement>().Mover(player.transform.position);
+                SceneManager.sceneLoaded += LoadObjects;
 
                 Debug.Log("Game loaded.");
             }
@@ -76,6 +65,24 @@ namespace SaveGame
             {
                 Debug.Log("No save file found.");
             }
+        }
+
+        private void LoadObjects(Scene arg0, LoadSceneMode arg1)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position =
+                new Vector3(saveData.playerPositionX, saveData.playerPositionY, saveData.playerPositionZ);
+            player.GetComponent<XpPlayer>()._xpAtual = saveData.xpPlayer;
+            player.GetComponent<ArmadilhaFantasma>().enabled = saveData.armadihaFantasmaActive;
+            player.GetComponent<Invisibilidade>().enabled = saveData.invisibilidadeActive;
+            player.GetComponent<LanternaEspectral>().enabled = saveData.lanternaEspectralActive;
+            player.GetComponent<MãosÁgeis>().enabled = saveData.mãosÁgeisActive;
+            player.GetComponent<MãosHábeis>().enabled = saveData.mãosHábéisActive;
+            player.GetComponent<PassoFantasma>().enabled = saveData.passoFantasmaActive;
+            player.GetComponent<Premonição>().enabled = saveData.premoniçãoActive;
+            player.GetComponent<Proteção>().enabled = saveData.proteçãoActive;
+            player.GetComponent<PlayerMovement>().Mover(player.transform.position);
+            SceneManager.sceneLoaded -= LoadObjects;
         }
     }
 }
