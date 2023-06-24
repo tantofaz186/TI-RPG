@@ -5792,66 +5792,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sair
---- !u!1 &4507484815886027088
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6570918357123268852}
-  - component: {fileID: 3196521415124279192}
-  m_Layer: 0
-  m_Name: SaveGameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6570918357123268852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507484815886027088}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -151.55174, y: -152.48352, z: 13.659357}
-  m_LocalScale: {x: 1.893491, y: 1.893491, z: 1.893491}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3196521415124279192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507484815886027088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e8d14918e708d4c99c831df9eacd69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveData:
-    playerPositionX: 0
-    playerPositionY: 0
-    playerPositionZ: 0
-    xpPlayer: 0
-    armadihaFantasmaActive: 0
-    invisibilidadeActive: 0
-    lanternaEspectralActive: 0
-    "m\xE3os\xC1geisActive": 0
-    "m\xE3osH\xE1b\xE9isActive": 0
-    passoFantasmaActive: 0
-    "premoni\xE7\xE3oActive": 0
-    "prote\xE7\xE3oActive": 0
-    isEscondido: 0
-    isHoldingItem: 0
-    sceneName: 
 --- !u!1 &5380735963801018178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,7 +7016,6 @@ RectTransform:
   - {fileID: 8012411280267996112}
   - {fileID: 8012411280452400091}
   - {fileID: 6531795788221290665}
-  - {fileID: 6570918357123268852}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
