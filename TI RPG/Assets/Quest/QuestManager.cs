@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
 {
-    [SerializeField]private FetchQuest[] quests;
+    [SerializeField]private List<FetchQuest> quests;
     [SerializeField]private HashSet<string> addedQuestNames = new HashSet<string>();
 
     private void Start()
@@ -20,17 +20,16 @@ public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
     public void ProcurarQuests(Scene arg0, LoadSceneMode loadSceneMode)
     {
         if (arg0 != SceneManager.GetSceneByBuildIndex(2)) return;
-        FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
-        for (int i = 0; i == questObjects.Length; i++)
+        foreach (var quest in FindObjectsOfType<FetchQuest>())
         {
-            if (!addedQuestNames.Contains(questObjects[i].gameObject.name))
+            if (!addedQuestNames.Contains(quest.gameObject.name))
             {
-                quests[i] = questObjects[i];
-                addedQuestNames.Add(questObjects[i].gameObject.name);
+                quests.Add(quest);
+                addedQuestNames.Add(quest.gameObject.name);
             }
         }
 
-        if (questObjects.Length > 0)
+        if (quests.Count > 0)
         {
             Debug.Log("Encontrei quests!");
         }
