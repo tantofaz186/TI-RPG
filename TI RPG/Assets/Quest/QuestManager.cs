@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Controllers;
 
 public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
@@ -10,9 +11,10 @@ public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
     [SerializeField]private FetchQuest[] quests;
     [SerializeField]private HashSet<string> addedQuestNames = new HashSet<string>();
 
-    public void ProcurarQuests()
+    public void ProcurarQuests(Scene cena, LoadSceneMode modo)
     {
-
+        if (cena == SceneManager.GetSceneByBuildIndex(2))
+        {
             FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
             for (int i = 0; i == questObjects.Length; i++)
             {
@@ -23,11 +25,10 @@ public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
                 }
             }
 
-        if (questObjects!=null)
-        {
-            Debug.Log("Encontrei quests!");
+            if (questObjects != null)  Debug.Log("Encontrei quests!"); 
+
         }
-        
+            
     }
 
     public void AtualizarQuests()
@@ -40,6 +41,11 @@ public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
                 quests[i].questConcluida = true;
             }
         }
+       
+    }
 
+    private void Start()
+    {
+        SceneManager.sceneLoaded += ProcurarQuests;
     }
 }
