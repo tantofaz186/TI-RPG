@@ -1,34 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Controllers;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
 {
-    public static QuestManager instance;
     [SerializeField]private FetchQuest[] quests;
     [SerializeField]private HashSet<string> addedQuestNames = new HashSet<string>();
 
-    public void ProcurarQuests(Scene cena, LoadSceneMode modo)
+    private void Start()
     {
-        if (cena == SceneManager.GetSceneByBuildIndex(2))
+        SceneManager.sceneLoaded += ProcurarQuests;
+    }
+
+    public void ProcurarQuests(Scene arg0, LoadSceneMode loadSceneMode)
+    {
+        if (arg0 != SceneManager.GetSceneByBuildIndex(2)) return;
+        FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
+        for (int i = 0; i == questObjects.Length; i++)
         {
-            FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
-            for (int i = 0; i == questObjects.Length; i++)
+            if (!addedQuestNames.Contains(questObjects[i].gameObject.name))
             {
-                if (!addedQuestNames.Contains(questObjects[i].gameObject.name))
-                {
-                    quests[i] = questObjects[i];
-                    addedQuestNames.Add(questObjects[i].gameObject.name);
-                }
+                quests[i] = questObjects[i];
+                addedQuestNames.Add(questObjects[i].gameObject.name);
             }
-
-            if (questObjects != null)  Debug.Log("Encontrei quests!"); 
-
         }
-            
+
+        if (questObjects.Length > 0)
+        {
+            Debug.Log("Encontrei quests!");
+        }
     }
 
     public void AtualizarQuests()
@@ -42,10 +47,5 @@ public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
             }
         }
        
-    }
-
-    private void Start()
-    {
-        SceneManager.sceneLoaded += ProcurarQuests;
     }
 }
