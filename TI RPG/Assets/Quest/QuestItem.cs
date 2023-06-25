@@ -60,7 +60,7 @@ public class QuestItem : MonoBehaviour
         }
     }
 
-    GameObject EncontrarMao(GameObject _player, string nome)
+    public GameObject EncontrarMao(GameObject _player, string nome)
     {
         for (int i = 0; i < (_player.transform.childCount); i++)
         {

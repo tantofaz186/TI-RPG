@@ -52513,6 +52513,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4169794365381788623, guid: 6fd7dc64172568c4e879bb49d166e5c9, type: 3}
   m_PrefabInstance: {fileID: 1289539222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1289891664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4144595595654862514, guid: 8a5ac34e49e046b4bb85ed988543f713, type: 3}
+  m_PrefabInstance: {fileID: 536751551556977082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7051cdbca341dab4da2f34d0a27bdbbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1290779103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89703,6 +89714,10 @@ PrefabInstance:
       value: "H\xE1 uma chave amarela perto daqui, traga ela para mim e eu lhe darei
         algo para te fortalecer em sua aventura."
       objectReference: {fileID: 0}
+    - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
+      propertyPath: questItem
+      value: 
+      objectReference: {fileID: 1289891664}
     - target: {fileID: 7667243331959516312, guid: ae5b4ed434ee5a0418884d7ede63e4b6, type: 3}
       propertyPath: distanciaMinima
       value: 5
