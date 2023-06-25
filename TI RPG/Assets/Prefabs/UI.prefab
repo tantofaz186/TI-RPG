@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1419139779832377266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8012411280116768808}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
         m_MethodName: MudarCena
         m_Mode: 5
@@ -2153,7 +2153,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8012411280116768808}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
         m_MethodName: Sair
         m_Mode: 1
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6299956053258998655}
         m_TargetAssemblyTypeName: SaveGame.SaveGameManager, Assembly-CSharp
         m_MethodName: LoadGame
         m_Mode: 1
@@ -3009,6 +3009,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3635487198185658131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5891982037835995114}
+  m_Layer: 5
+  m_Name: Margens
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5891982037835995114
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635487198185658131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1249818782623364433}
+  - {fileID: 1198206295510717988}
+  - {fileID: 6699385021117787178}
+  - {fileID: 923044886072242372}
+  m_Father: {fileID: 8012411280116768806}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3693328181719854515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,7 +3723,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3766,12 +3806,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6277289559148579565}
-  m_RootOrder: 10
+  m_Father: {fileID: 5891982037835995114}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -540}
+  m_AnchoredPosition: {x: 810, y: -540}
   m_SizeDelta: {x: 100, y: 1080}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4741564491082019595
@@ -4600,7 +4640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8388588972910924166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4619,7 +4659,7 @@ RectTransform:
   - {fileID: 1495593516987445576}
   - {fileID: 4220201493056026654}
   m_Father: {fileID: 6277289559148579565}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
@@ -4786,7 +4826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8012411280116768808}
         m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
         m_MethodName: Sair
         m_Mode: 1
@@ -5115,12 +5155,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6277289559148579565}
-  m_RootOrder: 7
+  m_Father: {fileID: 5891982037835995114}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -540}
+  m_AnchoredPosition: {x: -910, y: -540}
   m_SizeDelta: {x: 100, y: 1080}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &7821824803938631253
@@ -5191,12 +5231,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6277289559148579565}
-  m_RootOrder: 9
+  m_Father: {fileID: 5891982037835995114}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: -910, y: 390}
   m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4398149024488673204
@@ -5708,12 +5748,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6277289559148579565}
-  m_RootOrder: 8
+  m_Father: {fileID: 5891982037835995114}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -910, y: -490}
   m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4056616894054808845
@@ -5792,10 +5832,6 @@ RectTransform:
   - {fileID: 2430004247526612145}
   - {fileID: 2727442518515910657}
   - {fileID: 1419139779832377266}
-  - {fileID: 1249818782623364433}
-  - {fileID: 1198206295510717988}
-  - {fileID: 6699385021117787178}
-  - {fileID: 923044886072242372}
   - {fileID: 8388588972910924166}
   m_Father: {fileID: 8012411280116768806}
   m_RootOrder: 0
@@ -7014,6 +7050,7 @@ RectTransform:
   - {fileID: 859372456865210219}
   - {fileID: 4975901514263682243}
   - {fileID: 8858107467222303586}
+  - {fileID: 5891982037835995114}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11189,7 +11226,7 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7430912162861667266}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
