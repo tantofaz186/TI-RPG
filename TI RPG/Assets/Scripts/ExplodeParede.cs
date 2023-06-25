@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Objetos;
 using Player;
 using UnityEngine;
@@ -17,9 +18,10 @@ public class ExplodeParede : Interagível
         }
 
         transform.GetChild(14).gameObject.SetActive(false);
-        enabled = false;
+        StartCoroutine(MakeInvisibleThenDisable());
     }
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,4 +33,49 @@ public class ExplodeParede : Interagível
     }
 
     protected override void Interagir() => Explode();
+    
+    
+    
+    private IEnumerator MakeInvisibleThenDisable()
+    {
+        foreach (Material material in GetComponentsInChildren<Renderer>().Select((_renderer) => _renderer.material))
+        {
+            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetInt("_ZWrite", 0);
+            material.SetInt("_Surface", 1);
+
+            material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
+            material.SetShaderPassEnabled("DepthOnly", false);
+            material.SetShaderPassEnabled("SHADOWCASTER", false);
+
+            material.SetOverrideTag("RenderType", "Transparent");
+
+            material.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+        }
+
+        
+        float secondsUntilDisable = 5;
+        while (secondsUntilDisable > 0)
+        {
+            foreach (Material material in GetComponentsInChildren<Renderer>().Select((_renderer) => _renderer.material))
+            {
+                if (material.HasProperty("_Color"))
+                {
+                    material.color = new Color(
+                        material.color.r,
+                        material.color.g,
+                        material.color.b,
+                        Mathf.Lerp(0, 1, secondsUntilDisable / 5)
+                    );
+                }
+            }
+            secondsUntilDisable -= Time.deltaTime;
+            yield return null;
+        }
+        gameObject.SetActive(false);
+    }
+
 }
