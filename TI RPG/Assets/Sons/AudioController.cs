@@ -43,7 +43,7 @@ public class AudioController : MonoBehaviourSingletonPersistent<AudioController>
     // Start is called before the first frame update
     void Start()
     {
-        mixer.SetFloat("MasterVol", masterVol.value=-10);
+        mixer.SetFloat("MasterVol", masterVol.value=-5);
         mixer.SetFloat("MusicaVol", musicaVol.value=-10);
         mixer.SetFloat("VFXVol", vfxVol.value=-10);
     }

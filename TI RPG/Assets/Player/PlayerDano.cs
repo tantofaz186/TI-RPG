@@ -15,6 +15,7 @@ namespace Player
         [SerializeField] SkinnedMeshRenderer smr;
         public Text vidaInfinitaText;
         private PlayerMovement m_PlayerMovement;
+        [SerializeField] private AudioSource audioPlayer;
     
 
         public int Vidas
@@ -38,6 +39,7 @@ namespace Player
                 Debug.Log("oi");
                 Vidas -= 1;
                 StartCoroutine(TomarDano());
+                audioPlayer.Play();
             }
         }
 
@@ -48,6 +50,7 @@ namespace Player
                 Debug.Log("oi");
                 Vidas -= 1;
                 StartCoroutine(TomarDano());
+                audioPlayer.Play();
             }
         }
 
@@ -89,6 +92,11 @@ namespace Player
             vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();
+        }
+
+        private void Awake()
+        {
+            audioPlayer = GetComponent<AudioSource>();
         }
         private void Update()
         {

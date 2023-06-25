@@ -5,7 +5,6 @@ using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Controllers;
-using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
 {
