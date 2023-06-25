@@ -337,12 +337,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1814489159087836118, guid: 5da99187d71981d49882db9119218808, type: 3}
+      propertyPath: smr
+      value: 
+      objectReference: {fileID: 645422273666309170}
+    - target: {fileID: 1814489159087836118, guid: 5da99187d71981d49882db9119218808, type: 3}
+      propertyPath: vidaInfinitaText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1814489159087836119, guid: 5da99187d71981d49882db9119218808, type: 3}
       propertyPath: mouseInput
       value: 
       objectReference: {fileID: 8121167193277858860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da99187d71981d49882db9119218808, type: 3}
+--- !u!137 &645422273666309170 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5471962853606660544, guid: 5da99187d71981d49882db9119218808, type: 3}
+  m_PrefabInstance: {fileID: 4829355348229539314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6497301580384079394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1814489159087836112, guid: 5da99187d71981d49882db9119218808, type: 3}
