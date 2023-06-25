@@ -8,9 +8,10 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
     public GameObject skillTreeMenu;
 
+
     public void AbrirSkillTree()
     {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))//Ignorar caso estiver na Cena Menu
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -33,6 +34,8 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     {
         AbrirSkillTree();
     }
+
+
     //Carrega uma cena
     public void MudarCena(string nomeCena)
     {

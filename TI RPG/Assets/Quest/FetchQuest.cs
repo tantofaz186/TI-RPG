@@ -35,7 +35,7 @@ public class FetchQuest : Interagível
             questConcluida = true;
             XpPlayer xpPlayer = FindObjectOfType<XpPlayer>();
             xpPlayer._xpAtual += 1;
-            QuestManager manager = FindObjectOfType<QuestManager>();
+            QuestManager manager = QuestManager.Instance;
             manager.AtualizarQuests();
         }
 

@@ -2,34 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using Controllers;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : MonoBehaviourSingletonPersistent<QuestManager>
 {
     public static QuestManager instance;
     [SerializeField]private FetchQuest[] quests;
     [SerializeField]private HashSet<string> addedQuestNames = new HashSet<string>();
 
-    private void Awake()
+    public void ProcurarQuests()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
-        for (int i = 0; i == questObjects.Length; i++)
-        {
-            if (!addedQuestNames.Contains(questObjects[i].gameObject.name))
+            FetchQuest[] questObjects = FindObjectsOfType<FetchQuest>();
+            for (int i = 0; i == questObjects.Length; i++)
             {
-                quests[i] = questObjects[i];
-                addedQuestNames.Add(questObjects[i].gameObject.name);
+                if (!addedQuestNames.Contains(questObjects[i].gameObject.name))
+                {
+                    quests[i] = questObjects[i];
+                    addedQuestNames.Add(questObjects[i].gameObject.name);
+                }
             }
-        }
 
+        if (questObjects!=null)
+        {
+            Debug.Log("Encontrei quests!");
+        }
+        
     }
 
     public void AtualizarQuests()

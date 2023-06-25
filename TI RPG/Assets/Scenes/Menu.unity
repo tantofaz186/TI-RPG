@@ -1279,6 +1279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+--- !u!224 &229981150 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8012411280116768806, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+  m_PrefabInstance: {fileID: 229981149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &245325671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,6 +5505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecad4a170c3a18e45bb8ab9376b5ee34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quests: []
 --- !u!4 &1334671110
 Transform:
   m_ObjectHideFlags: 0
@@ -5507,13 +5513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334671108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 229981150}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1364005269
 PrefabInstance:

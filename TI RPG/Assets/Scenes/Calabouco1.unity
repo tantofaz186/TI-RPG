@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.4
+    agentRadius: 0.31
     agentHeight: 1.8
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 45.7
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.13333334
+    cellSize: 0.10333333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -51563,8 +51563,16 @@ PrefabInstance:
       value: Puzzle
       objectReference: {fileID: 0}
     - target: {fileID: 679586242013545371, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 679586242013545371, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 894705147749402160, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 894705147749402160, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51615,6 +51623,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582684728679699277, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582684728679699277, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 127
       objectReference: {fileID: 0}
@@ -51639,8 +51651,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1488472660}
     - target: {fileID: 6937605718122755393, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937605718122755393, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 127
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962419698742777361, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6962419698742777361, guid: 319771ac9a5ef134db6e55e7c2ba4773, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -69480,6 +69500,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5726864414706594186, guid: d73253a7c1cea204a9a38ea109760818, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5726864414706594187, guid: d73253a7c1cea204a9a38ea109760818, type: 3}
       propertyPath: m_Name
       value: PecaAzul
