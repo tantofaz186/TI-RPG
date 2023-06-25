@@ -35,7 +35,7 @@ public class FetchQuest : Interagível
             questConcluida = true;
             SkillManager.Instance.GetComponent<XpPlayer>().AddXp();
             QuestManager.Instance.AtualizarQuests();
-            questItem.EncontrarMao(gameObject,"mixamorig:RightHand");
+            questItem.ColocarNaMaoDoGameObject(gameObject,"mixamorig:RightHand");
         }
 
 
