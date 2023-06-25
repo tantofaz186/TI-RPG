@@ -60,6 +60,19 @@ public class QuestItem : MonoBehaviour
         }
     }
 
+    public void ColocarNaMaoDoGameObject(GameObject go, string nome)
+    {
+        mao = EncontrarMao(go, nome);
+        carregada = true;
+        transform.parent = mao.transform;
+        transform.position = transform.parent.position;
+        rb.isKinematic = true;
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+    }
     public GameObject EncontrarMao(GameObject _player, string nome)
     {
         for (int i = 0; i < (_player.transform.childCount); i++)
