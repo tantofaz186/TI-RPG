@@ -14,10 +14,9 @@ namespace Objetos
         private bool estaEscondido = false;
         protected override void Interagir() => Esconder();
         [SerializeField] public triggerName trigger;
+
         private void Esconder()
         {
-            
-            
             StartCoroutine(EsperarAnimaçãoParaEsconder());
         }
 

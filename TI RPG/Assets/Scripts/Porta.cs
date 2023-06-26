@@ -6,6 +6,7 @@ public class Porta : MonoBehaviour
 {
     public bool estaBloqueada;
     public GameObject chave;
+    AudioSource portaAudio;
 
     void DesativaNav()
     {
@@ -21,6 +22,7 @@ public class Porta : MonoBehaviour
             if (other.CompareTag("Player") && chave.GetComponent<Coletavel>().Carregada == true)
             {
                 DesativaNav();
+                portaAudio.Play();
                
             }
         }
@@ -28,6 +30,7 @@ public class Porta : MonoBehaviour
 
     private void Awake()
     {
+        portaAudio = GetComponent<AudioSource>();
         if (estaBloqueada == false)
         {
             DesativaNav();

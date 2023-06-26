@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 class Puzzle : Singleton<Puzzle>
 {
+ 
+
     public void CompletarPuzzle()
     {
         bool completo = false;
