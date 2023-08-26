@@ -9,8 +9,8 @@ namespace Objetos
     public abstract class Interagível : MonoBehaviour
     {
         private Camera mainCamera;
-        protected PlayerMovement player; 
-        
+        protected PlayerMovement player;
+        public ItemInventario item;
         protected float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
         
         [SerializeField] protected float distanciaMinima = 2f;
@@ -46,6 +46,12 @@ namespace Objetos
             if (!Input.GetMouseButtonDown(0)) return;
             StopAllCoroutines();
             StartCoroutine(MoverParaObjeto());
+        }
+
+        private void ColocarInventario()
+        {
+            if (!Input.GetMouseButtonDown(2)) return;
+            //InventarioManager.Instance.AddItem(this.item);
         }
 
         void OnMouseExit()
