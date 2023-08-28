@@ -12,8 +12,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         if (transform.childCount == 0 && craftResultSlot==false)
         {
             ItemInventario inventoryItem = eventData.pointerDrag.GetComponent<ItemInventario>();
-            inventoryItem.parentAfterDrag = transform;
             inventoryItem.transform.SetParent(transform);
+            inventoryItem.parentAfterDrag = transform;
         }
             Debug.Log("ola");
     }
