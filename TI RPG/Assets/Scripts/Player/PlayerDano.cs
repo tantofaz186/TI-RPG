@@ -88,7 +88,7 @@ namespace Player
         }
         private void Start()
         {
-            GameObject vidaInfinitaTextObject = GameObject.Find("cheatSkillText");
+            GameObject vidaInfinitaTextObject = GameObject.FindWithTag("CheatSkillText");
             vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();

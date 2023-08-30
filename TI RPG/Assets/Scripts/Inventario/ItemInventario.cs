@@ -12,6 +12,14 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Image icon;
     public Transform parentAfterDrag;
     public GameObject objeto;
+    public ItemInventario item;
+
+
+    public void InitializeItem(ItemInventario newItem)
+    {
+        item = newItem;
+        icon = newItem.icon;
+    }
 
     private void Awake()
     {

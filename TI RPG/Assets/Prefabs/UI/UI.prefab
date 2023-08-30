@@ -1178,6 +1178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7019864230887398550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1992,6 +1995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &6986618454470516424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2107,6 +2113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7972279605710306605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,6 +2231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &236481662974083468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2683,6 +2695,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &955867382927784295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2950,6 +2965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8456520173449006541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3504,6 +3522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &6698020762151569574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3619,6 +3640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7896254552013502373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3906,6 +3930,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5805197192646266886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,6 +4698,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5363433885234930708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4906,6 +4936,74 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2673761979847608411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2498369503604007022}
+  - component: {fileID: 961576053036936202}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2498369503604007022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673761979847608411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8012411280116768806}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961576053036936202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673761979847608411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58648981356eff44b914130b28504bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots:
+  - {fileID: 7082908267755388093}
+  - {fileID: 518754188872960685}
+  - {fileID: 1129577552155610320}
+  - {fileID: 7129429618929161721}
+  - {fileID: 5352808326631629605}
+  - {fileID: 1680827142523591848}
+  - {fileID: 1820438105895057431}
+  - {fileID: 7802619114697858332}
+  - {fileID: 3053524269934903177}
+  - {fileID: 2180003190223353191}
+  - {fileID: 6401691424591677292}
+  - {fileID: 7775673846304495916}
+  - {fileID: 8031023857856509818}
+  - {fileID: 6646935281932925556}
+  - {fileID: 1907893320768745815}
+  - {fileID: 8343274561488133088}
+  - {fileID: 7527712830470596193}
+  - {fileID: 4106747930416327372}
+  - {fileID: 7161287926629169862}
+  - {fileID: 8889517047320657028}
+  - {fileID: 3199152420971654136}
+  - {fileID: 5290412058111530146}
+  - {fileID: 4228717497948318970}
 --- !u!1 &2683466923325470025
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,6 +5431,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3162136959188877020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6584,6 +6685,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8492606871328071603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6969,6 +7073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &9039351196753235091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,6 +7346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2393922678893116257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7489,6 +7599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7852090646090216258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7739,6 +7852,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1732274709457424173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7930,6 +8046,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &495555411044835363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8272,6 +8391,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4358353288601860132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8567,6 +8689,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 1
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &493687576184680291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8758,6 +8883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5028223617433584083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8873,6 +9001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &6079759378756329432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9126,6 +9257,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   parentAfterDrag: {fileID: 0}
   objeto: {fileID: 0}
+  item: {fileID: 0}
 --- !u!1 &6743385986561757307
 GameObject:
   m_ObjectHideFlags: 0
@@ -9510,6 +9642,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &182959599494559294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10584,6 +10719,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2525177455595924584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11704,6 +11842,7 @@ RectTransform:
   - {fileID: 5891982037835995114}
   - {fileID: 1887738256099528052}
   - {fileID: 7092479085470915730}
+  - {fileID: 2498369503604007022}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17481,6 +17620,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2561403656362408922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17633,6 +17775,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5047083437447037934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17965,6 +18110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftResultSlot: 0
+  slotImage: {fileID: 0}
+  selected: {r: 0, g: 0, b: 0, a: 0}
+  notSelected: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5699261364412591654
 MonoBehaviour:
   m_ObjectHideFlags: 0

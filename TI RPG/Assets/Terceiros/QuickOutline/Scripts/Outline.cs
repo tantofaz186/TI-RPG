@@ -75,7 +75,9 @@ public class Outline : MonoBehaviour {
   private List<ListVector3> bakeValues = new List<ListVector3>();
 
   private Renderer[] renderers;
+  [SerializeField]
   private Material outlineMaskMaterial;
+  [SerializeField]
   private Material outlineFillMaterial;
 
   private bool needsUpdate;
