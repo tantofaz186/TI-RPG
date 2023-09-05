@@ -118,7 +118,7 @@ public class QuestItem : MonoBehaviour
         SetOutline(outline);
     }
 
-    public IEnumerator IrAtÈObjeto()
+    public IEnumerator IrAt√©Objeto()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
         RaycastHit hit;
@@ -143,7 +143,7 @@ public class QuestItem : MonoBehaviour
             StopAllCoroutines();
             if (!carregada)
             {
-                StartCoroutine(IrAtÈObjeto());
+                StartCoroutine(IrAt√©Objeto());
             }
         }
         else if (Input.GetKeyDown(KeyCode.G) && carregada)
