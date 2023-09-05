@@ -1,13 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
 public class Dialogue
 {
+    public Dialog[] dialogues;
+}
+[Serializable]
+public struct Dialog
+{
     public string title;
-	public Sprite image;
+    public Sprite image;
     [TextArea(3,10)]
-    public string[] sentences;
+    public string sentence;
 }

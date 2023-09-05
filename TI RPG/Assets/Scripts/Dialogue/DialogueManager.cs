@@ -29,9 +29,9 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
         dialoguePanel.SetActive(true);
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Dialog dialog in dialogue.dialogues)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue(dialog.sentence);
         }
 
         DisplayNextSentence();
