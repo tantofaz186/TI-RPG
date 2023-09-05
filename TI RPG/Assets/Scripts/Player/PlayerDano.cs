@@ -32,8 +32,8 @@ namespace Player
                 }
             }
         }
-        void OnCollisionEnter(Collision collision)
-       {
+        void OnCollisionEnter(Collision collision) 
+        {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
                 Debug.Log("oi");
@@ -41,6 +41,7 @@ namespace Player
                 StartCoroutine(TomarDano());
                 audioPlayer.Play();
             }
+            
         }
 
         private void OnTriggerEnter(Collider other)
