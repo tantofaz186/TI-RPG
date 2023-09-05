@@ -15,10 +15,14 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     public GameObject dialoguePanel;
 
     private Queue<string> sentences;
+    private Queue<Sprite> images;
+    private Queue<string> titles;
 
     private void Start()
     {
         sentences = new Queue<string>();
+        images = new Queue<Sprite>();
+        titles = new Queue<string>();
         dialoguePanel.SetActive(false);
     }
 
@@ -32,6 +36,8 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
         foreach (Dialog dialog in dialogue.dialogues)
         {
             sentences.Enqueue(dialog.sentence);
+            images.Enqueue(dialog.image);
+            titles.Enqueue(dialog.title);
         }
 
         DisplayNextSentence();
@@ -45,8 +51,9 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
             return;
         }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        dialogueText.text = sentences.Dequeue();
+        dialogueImage.sprite = images.Dequeue();
+        dialogueTitle.text = titles.Dequeue();
     }
 
     private void EndDialogue()
