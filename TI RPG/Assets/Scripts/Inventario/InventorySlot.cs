@@ -10,19 +10,24 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public Image slotImage;
     public Color selected= new Color(0,1,1,1);
     public Color notSelected = new Color(0.451f, 0.451f, 0.451f, 1);
-
+    //public int idCrafting;
+    [SerializeField]
+    private bool craftSlot;
+    [SerializeField]
+    private CraftingManager manager;
     public void Awake()
     {
         Deselect();
+        manager = FindObjectOfType<CraftingManager>();
     }
     public void Select()
     {
-        slotImage.color = selected;
+        //slotImage.color = selected;
     }
 
     public void Deselect()
     {
-        slotImage.color = notSelected;
+        //slotImage.color = notSelected;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -32,7 +37,13 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             ItemInventario inventoryItem = eventData.pointerDrag.GetComponent<ItemInventario>();
             inventoryItem.transform.SetParent(transform);
             inventoryItem.parentAfterDrag = transform;
+            //Debug.Log("ola");
+            if (craftSlot==true)
+            {
+
+                manager.AddItemCrafting();
+            }
         }
-            Debug.Log("ola");
+          
     }
 }
