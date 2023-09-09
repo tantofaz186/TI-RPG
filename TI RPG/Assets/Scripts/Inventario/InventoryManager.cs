@@ -112,17 +112,22 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             slot = inventorySlots[i];
-            item = slot.GetComponentInChildren<ItemInventario>();
+            itemNoSlot = slot.GetComponentInChildren<ItemInventario>();
             if (itemNoSlot == null)
             {
                 SpawnItemInventario(item, slot);
-                return true;
+                itemNoSlot.taNoInventario = true;
+
+                return true; 
             }
         }
         return false;
     }
+
     public void SpawnItemInventario(ItemInventario item, InventorySlot slot)
     {
+        Debug.Log(item.gameObject.name);
+        Debug.Log(slot.gameObject.name);
         GameObject newItemGo = Instantiate(item.gameObject, slot.transform);
         itemInventarioAuxSpawn = newItemGo.GetComponent<ItemInventario>();
         itemInventarioAuxSpawn.InitializeItem(item);

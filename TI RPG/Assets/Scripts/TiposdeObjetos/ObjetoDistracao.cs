@@ -31,7 +31,7 @@ namespace Objetos
         private void ColocarInventario()
         {
             //InventarioManager.Instance.AddItem(this.item);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         private void OnCollisionEnter(Collision collision)
         {
@@ -64,10 +64,10 @@ namespace Objetos
             {
                 ThrowObject();
             }
-            if (Input.GetKeyDown(KeyCode.I) && isPicked)
-            {
-                ColocarInventario();
-            }
+//            if (Input.GetMouseButtonDown(2) && isPicked)
+//            {
+//                ColocarInventario();
+//            }
         }
 
         private void PickUpObject()

@@ -13,9 +13,10 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Image icon;
     public Transform parentAfterDrag;
     public GameObject objeto;
-    public ItemInventario item;
+    private ItemInventario item;
     public InventoryManager manager;
     [SerializeField] private bool isPicked = false;
+    public bool taNoInventario = false;
     [SerializeField] private bool quebrou= false;
     [SerializeField] private int durabilidade;
 
@@ -59,14 +60,14 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && isPicked)
+        if (Input.GetKeyDown(KeyCode.I))
         {
             ColocarInventario();
         }
     }
     private void ColocarInventario()
     {
-        manager.AddItem(this.item);
+        manager.AddItem(this);
         //Destroy(gameObject);
     }
 
