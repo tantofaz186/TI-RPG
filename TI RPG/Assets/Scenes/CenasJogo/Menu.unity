@@ -2183,6 +2183,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1887738256099528052, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2068241269956777475, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_Name
       value: InventorySlot(22)
@@ -2406,6 +2410,10 @@ PrefabInstance:
     - target: {fileID: 3181388416136988116, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_Name
       value: InventorySlot(20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635487198185658131, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3912569813853907923, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11154,7 +11162,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1814489159087836118, guid: 5da99187d71981d49882db9119218808, type: 3}
+    - {fileID: 1814489159087836119, guid: 5da99187d71981d49882db9119218808, type: 3}
+    - {fileID: 1814489159087836116, guid: 5da99187d71981d49882db9119218808, type: 3}
+    - {fileID: 8699008655727940093, guid: 5da99187d71981d49882db9119218808, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5da99187d71981d49882db9119218808, type: 3}
 --- !u!1001 &1248200004
 PrefabInstance:

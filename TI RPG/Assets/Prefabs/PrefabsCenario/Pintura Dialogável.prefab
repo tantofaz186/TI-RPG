@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7305160032240479520}
   - component: {fileID: 8259797402281685438}
   - component: {fileID: 8259797402281685434}
+  - component: {fileID: 2805372548686963785}
   m_Layer: 0
   m_Name: "Pintura Dialog\xE1vel"
   m_TagString: dialogavel
@@ -110,17 +111,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   distanciaMinima: 3.63
   corDoOutline: {r: 1, g: 0.95132565, b: 0, a: 1}
   larguraDoOutline: 6
   modoDoOutline: 1
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   dialogue:
-    title: 
-    image: {fileID: 0}
-    sentences:
-    - Um quadro de um homem com uma barba branca
-    - Esse homem parece estranhamente jovem tirando a barba
-    - "Isso me tr\xE1s uma sensa\xE7\xE3o familiaridade, como se eu tivesse cruzado
-      com esse rosto antes."
-    - ...
+    dialogues: []
+--- !u!114 &2805372548686963785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106797589906099445}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.95132565, b: 0, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  outlineMaskMaterial: {fileID: 0}
+  outlineFillMaterial: {fileID: 0}

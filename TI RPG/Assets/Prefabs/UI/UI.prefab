@@ -1181,6 +1181,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &7019864230887398550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,6 +2000,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &6986618454470516424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,7 +2038,6 @@ GameObject:
   - component: {fileID: 6142240264255229210}
   - component: {fileID: 3395235611615015651}
   - component: {fileID: 7972279605710306605}
-  - component: {fileID: 3717224403459209006}
   m_Layer: 5
   m_Name: CraftingSlot2
   m_TagString: Untagged
@@ -2124,22 +2127,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &3717224403459209006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850626431594421578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b029e75b81ef831499146d220ad95f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftResultSlot: 0
-  selected: {r: 0, g: 1, b: 1, a: 1}
-  notSelected: {r: 0.451, g: 0.451, b: 0.451, a: 1}
-  idCrafting: 0
 --- !u!1 &876592922099149421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,6 +2221,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &236481662974083468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2698,6 +2687,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &955867382927784295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,6 +2959,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &8456520173449006541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3525,6 +3518,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &6698020762151569574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,6 +3638,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &7896254552013502373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,6 +3930,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &5805197192646266886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3982,7 +3981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859372456865210219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4701,6 +4700,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &5363433885234930708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4966,7 +4967,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &961576053036936202
 MonoBehaviour:
@@ -5004,7 +5005,10 @@ MonoBehaviour:
   - {fileID: 3199152420971654136}
   - {fileID: 5290412058111530146}
   - {fileID: 4228717497948318970}
-  inventoryItemPrefab: {fileID: 0}
+  inventoryItemActive: {fileID: 0}
+  player: {fileID: 0}
+  mao: {fileID: 0}
+  maoNome: 
 --- !u!1 &2683466923325470025
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,7 +5177,7 @@ Transform:
   - {fileID: 4037677326372371508}
   - {fileID: 1863287035066211542}
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2768226294457707618
 GameObject:
@@ -5318,7 +5322,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5435,6 +5439,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &3162136959188877020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5650,7 +5656,7 @@ RectTransform:
   - {fileID: 6699385021117787178}
   - {fileID: 923044886072242372}
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5988,51 +5994,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &4209619813945281693
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4975901514263682243}
-  - component: {fileID: 3826345043606067665}
-  m_Layer: 0
-  m_Name: QuestManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4975901514263682243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4209619813945281693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3826345043606067665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4209619813945281693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecad4a170c3a18e45bb8ab9376b5ee34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quests: []
 --- !u!1 &4239144731928094565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,7 +6510,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8921548228561418620
 MonoBehaviour:
@@ -6564,11 +6525,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySlots:
-  - {fileID: 979795206666622933}
-  - {fileID: 3717224403459209006}
-  - {fileID: 8759666051828252577}
+  - {fileID: 7082908267755388093}
+  - {fileID: 518754188872960685}
+  - {fileID: 1129577552155610320}
   idCrafting1: 
   idCrafting2: 
+  prefabResultLanterna: {fileID: 0}
 --- !u!1 &4840833475918750424
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,6 +6701,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &8492606871328071603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7127,6 +7091,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &9039351196753235091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7400,6 +7366,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &2393922678893116257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7653,6 +7621,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &7852090646090216258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7906,6 +7876,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &1732274709457424173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8100,6 +8072,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &495555411044835363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8445,6 +8419,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &4358353288601860132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8661,7 +8637,6 @@ GameObject:
   - component: {fileID: 835565869019974284}
   - component: {fileID: 2889531672697017124}
   - component: {fileID: 8735406624167257995}
-  - component: {fileID: 8759666051828252577}
   - component: {fileID: 493687576184680291}
   m_Layer: 5
   m_Name: CraftingResultado
@@ -8744,22 +8719,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &8759666051828252577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6473088906829053795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b029e75b81ef831499146d220ad95f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftResultSlot: 1
-  selected: {r: 0, g: 1, b: 1, a: 1}
-  notSelected: {r: 0.451, g: 0.451, b: 0.451, a: 1}
-  idCrafting: 0
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &493687576184680291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8954,6 +8915,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &5028223617433584083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9072,6 +9035,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &6079759378756329432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9325,7 +9290,11 @@ MonoBehaviour:
   icon: {fileID: 0}
   parentAfterDrag: {fileID: 0}
   objeto: {fileID: 0}
-  item: {fileID: 0}
+  manager: {fileID: 0}
+  isPicked: 0
+  taNoInventario: 0
+  quebrou: 0
+  durabilidade: 0
 --- !u!1 &6743385986561757307
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,6 +9682,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &182959599494559294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10708,7 +10679,6 @@ GameObject:
   - component: {fileID: 7158988857709989079}
   - component: {fileID: 4779850595526437170}
   - component: {fileID: 2525177455595924584}
-  - component: {fileID: 979795206666622933}
   m_Layer: 5
   m_Name: CraftingSlot1
   m_TagString: Untagged
@@ -10798,22 +10768,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &979795206666622933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899422850673707729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b029e75b81ef831499146d220ad95f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftResultSlot: 0
-  selected: {r: 0, g: 1, b: 1, a: 1}
-  notSelected: {r: 0.451, g: 0.451, b: 0.451, a: 1}
-  idCrafting: 0
 --- !u!1 &7929428674888271237
 GameObject:
   m_ObjectHideFlags: 0
@@ -11871,12 +11825,13 @@ GameObject:
   - component: {fileID: 8012411280116768805}
   - component: {fileID: 8012411280116768804}
   - component: {fileID: 8012411280116768803}
-  - component: {fileID: 8012411280116768807}
   - component: {fileID: 8012411280116768808}
+  - component: {fileID: 8012411280116768807}
   - component: {fileID: 3578247976717452481}
   - component: {fileID: 5435025794578294131}
   - component: {fileID: 6299956053258998655}
   - component: {fileID: 974766254}
+  - component: {fileID: 356385280611072678}
   - component: {fileID: 1471694864}
   m_Layer: 5
   m_Name: UI
@@ -11905,7 +11860,6 @@ RectTransform:
   - {fileID: 6531795788221290665}
   - {fileID: 8012411281496333243}
   - {fileID: 859372456865210219}
-  - {fileID: 4975901514263682243}
   - {fileID: 8858107467222303586}
   - {fileID: 5891982037835995114}
   - {fileID: 1887738256099528052}
@@ -11981,6 +11935,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8012411280116768808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012411280116768802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 7430912162861667266}
+  skillTreeMenu: {fileID: 8012411280228725051}
+  dialogBox: {fileID: 8012411281821946433}
+  pauseMenu: {fileID: 8012411280452400088}
+  margens: {fileID: 3635487198185658131}
+  craftingInterface: {fileID: 2702112671062666779}
+  inventory: {fileID: 8605061425421593945}
 --- !u!114 &8012411280116768807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11994,19 +11967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 8012411281496333242}
---- !u!114 &8012411280116768808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8012411280116768802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56fdc47c491eac49a199010a6b42d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillTreeMenu: {fileID: 8012411280228725051}
 --- !u!114 &3578247976717452481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12077,6 +12037,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitoriaScreen: {fileID: 5380735963801018178}
+--- !u!114 &356385280611072678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012411280116768802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecad4a170c3a18e45bb8ab9376b5ee34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests: []
 --- !u!82 &1471694864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12555,8 +12528,8 @@ RectTransform:
   m_Father: {fileID: 8012411281656008875}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12984,7 +12957,7 @@ GameObject:
   - component: {fileID: 8012411280267996113}
   m_Layer: 5
   m_Name: cheatSkillText
-  m_TagString: Untagged
+  m_TagString: CheatSkillText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14898,7 +14871,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14974,7 +14947,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15094,7 +15067,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15918,7 +15891,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16867,7 +16840,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17479,8 +17452,8 @@ RectTransform:
   m_Father: {fileID: 8012411281929059124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17555,8 +17528,8 @@ RectTransform:
   m_Father: {fileID: 8012411280021807616}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.5, y: 0}
   m_SizeDelta: {x: 12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17692,6 +17665,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &2561403656362408922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17847,6 +17822,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &5047083437447037934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18086,7 +18063,7 @@ Transform:
   - {fileID: 2784143226095986998}
   - {fileID: 4954302571664509092}
   m_Father: {fileID: 8012411280116768806}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8676984431199320905
 GameObject:
@@ -18182,6 +18159,8 @@ MonoBehaviour:
   slotImage: {fileID: 0}
   selected: {r: 0, g: 0, b: 0, a: 0}
   notSelected: {r: 0, g: 0, b: 0, a: 0}
+  craftSlot: 0
+  manager: {fileID: 0}
 --- !u!114 &5699261364412591654
 MonoBehaviour:
   m_ObjectHideFlags: 0
