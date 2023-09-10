@@ -51,9 +51,17 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
             return;
         }
 
-        dialogueText.text = sentences.Dequeue();
-        dialogueImage.sprite = images.Dequeue();
-        dialogueTitle.text = titles.Dequeue();
+        string nextTitle = titles.Dequeue();
+        string nextSentence = sentences.Dequeue();
+        Sprite nextImage = images.Dequeue();
+
+        dialogueTitle.text = nextTitle;
+        dialogueText.text = nextSentence;
+        dialogueImage.sprite = nextImage;
+
+        dialogueTitle.gameObject.SetActive(nextTitle != null);
+        dialogueText.gameObject.SetActive(nextSentence != null);
+        dialogueImage.gameObject.SetActive(nextImage != null);
     }
 
     private void EndDialogue()
