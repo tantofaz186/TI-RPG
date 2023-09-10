@@ -12,7 +12,7 @@ namespace Objetos
         protected PlayerMovement player;
         public ItemInventario item;
         protected float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);	
-        
+        [Range(0,20)]
         [SerializeField] protected float distanciaMinima = 2f;
         [SerializeField] protected Color corDoOutline = Color.blue;
         [SerializeField] protected float larguraDoOutline = 4f;
@@ -81,6 +81,7 @@ namespace Objetos
             outline.OutlineColor = corDoOutline;
             outline.OutlineMode = modoDoOutline;
             outline.OutlineWidth = larguraDoOutline;
+            outline.enabled = false;
         }
     }
 }

@@ -13,7 +13,7 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Image icon;
     public Transform parentAfterDrag;
     public GameObject objeto;
-    private ItemInventario item;
+    //private ItemInventario item;
     public InventoryManager manager;
     [SerializeField] private bool isPicked = false;
     public bool taNoInventario = false;
@@ -22,7 +22,7 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void InitializeItem(ItemInventario newItem)
     {
-        item = newItem;
+        //item = newItem;
         id = newItem.id;
         itemName = newItem.itemName;
         icon = newItem.icon;

@@ -39,10 +39,9 @@ public class CraftingManager : MonoBehaviour
     {
         if (idCrafting1.Equals("1") && idCrafting2.Equals("2"))
         {
-            GameObject resultObject = Instantiate(prefabResultLanterna.gameObject);
+            GameObject resultObject = Instantiate(prefabResultLanterna.gameObject, inventorySlots[2].transform, true);
 
             //resultObject.transform.localScale = new Vector3(7436601f, 7436601f, 7436601f);
-            resultObject.transform.SetParent(inventorySlots[2].transform);
             //idCrafting1 = "";
             //idCrafting2 = "";
         }
