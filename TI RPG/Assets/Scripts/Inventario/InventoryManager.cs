@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -18,22 +19,26 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        changeSelectedSlot(0);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        //changeSelectedSlot(0);
     }
-    private void Awake()
-    {
-//        rb = GetComponent<Rigidbody>();
 
-//        pickupCollider = GetComponent<Collider>();
-    }
-    private void Update()
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-
-        if (player==null)
+        try
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             mao = EncontrarMao(player.gameObject, maoNome);
         }
+        catch
+        {
+            // ignored
+        }
+    }
+
+    private void Update()
+    {
+        
         if (Input.GetKeyDown("1"))
         {
             changeSelectedSlot(0);
@@ -55,7 +60,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedSlot>=0)
         {
-        inventorySlots[selectedSlot].Deselect();
+            inventorySlots[selectedSlot].Deselect();
         }
         inventorySlots[newValue].Select();
         //Debug.Log(inventorySlots[newValue].transform.GetChild(0).name);
@@ -88,8 +93,8 @@ public class InventoryManager : MonoBehaviour
             InventorySlot selectedInventorySlot = inventorySlots[selectedSlot];
             ItemInventario itemInSlot = selectedInventorySlot.GetComponentInChildren<ItemInventario>();
             inventoryItemActive = itemInSlot.objeto;
-             Rigidbody rb = inventoryItemActive.GetComponent<Rigidbody>();
-             Collider pickupCollider= inventoryItemActive.GetComponent<Collider>(); ;
+            Rigidbody rb = inventoryItemActive.GetComponent<Rigidbody>();
+            Collider pickupCollider= inventoryItemActive.GetComponent<Collider>(); ;
             if (inventoryItemActive != null)
             {
                 if (rb!=null)
