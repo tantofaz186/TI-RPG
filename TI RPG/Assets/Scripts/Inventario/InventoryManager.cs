@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     private ItemInventario itemNoSlot;
     public GameObject inventoryItemActive;
     [SerializeField] private PlayerMovement player;
-    [SerializeField] private GameObject mao;
+    public GameObject mao;
     [SerializeField] public string maoNome;
     int selectedSlot= -1;
     private ItemInventario itemInventarioAuxSpawn;
@@ -121,7 +121,6 @@ public class InventoryManager : MonoBehaviour
             if (itemNoSlot == null)
             {
                 SpawnItemInventario(item, slot);
-                itemNoSlot.taNoInventario = true;
 
                 return true; 
             }
@@ -131,8 +130,7 @@ public class InventoryManager : MonoBehaviour
 
     public void SpawnItemInventario(ItemInventario item, InventorySlot slot)
     {
-        Debug.Log(item.gameObject.name);
-        Debug.Log(slot.gameObject.name);
+
         GameObject newItemGo = Instantiate(item.gameObject, slot.transform);
         itemInventarioAuxSpawn = newItemGo.GetComponent<ItemInventario>();
         itemInventarioAuxSpawn.InitializeItem(item);

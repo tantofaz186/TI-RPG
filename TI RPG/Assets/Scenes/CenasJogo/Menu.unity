@@ -3231,6 +3231,10 @@ PrefabInstance:
       propertyPath: itemName
       value: ola
       objectReference: {fileID: 0}
+    - target: {fileID: 8543142111398621030, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: taNoInventario
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8605061425421593945, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7160,9 +7164,10 @@ MonoBehaviour:
   objeto: {fileID: 7845889444583893946, guid: 206f8745d33d42640bc40a80cd51a1c3, type: 3}
   manager: {fileID: 0}
   isPicked: 0
-  taNoInventario: 0
+  taNoInventario: 1
   quebrou: 0
   durabilidade: 0
+  distanciaMinima: 2
 --- !u!114 &762692795
 MonoBehaviour:
   m_ObjectHideFlags: 0
