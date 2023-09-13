@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
@@ -11,7 +12,7 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     public GameObject dialogBox;
     public GameObject pauseMenu;
     public GameObject margens;
-    public GameObject craftingInterface;
+    public GameObject quickInventory;
     public GameObject inventory;
 
     private void Start()
@@ -25,10 +26,10 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     {
         mainMenu.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
         margens.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
+        quickInventory.SetActive(arg0.buildIndex != 0);
         skillTreeMenu.SetActive(false);
         dialogBox.SetActive(false);
         pauseMenu.SetActive(false);
-        craftingInterface.SetActive(false);
         inventory.SetActive(false);
     }
 
