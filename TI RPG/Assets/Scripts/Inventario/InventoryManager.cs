@@ -1,15 +1,19 @@
+using System.Net.Mime;
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
     private InventorySlot slot;
     private ItemInventario itemNoSlot;
+    private Image imagemItemNoSlot;
     public GameObject inventoryItemActive;
     [SerializeField] private PlayerMovement player;
     public GameObject mao;
@@ -108,7 +112,7 @@ public class InventoryManager : MonoBehaviour
                 inventoryItemActive = Instantiate(inventoryItemActive, mao.transform);
                 //transform.parent = mao.transform;
                 transform.position = transform.parent.position;
-                Debug.Log("Spawned item: " + inventoryItemActive.gameObject.name);
+                //Debug.Log("Spawned item: " + inventoryItemActive.gameObject.name);
             }
         }
     }
@@ -116,23 +120,33 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
+
             slot = inventorySlots[i];
             itemNoSlot = slot.GetComponentInChildren<ItemInventario>();
-            if (itemNoSlot == null)
+            //imagemItemNoSlot=;
+        
+            if (itemNoSlot.id == null||itemNoSlot.id=="" &&item.taNoInventario==false&&item.isPicked==true)
             {
-                SpawnItemInventario(item, slot);
-
+                UnityEngine.Debug.Log("11");
+                slot.GetComponentInChildren<ItemInventario>().id=item.id;
+                slot.GetComponentInChildren<ItemInventario>().itemName=item.itemName;
+                slot.GetComponentInChildren<ItemInventario>().icon=item.icon;
+                slot.GetComponentInChildren<ItemInventario>().objeto=item.objeto;
+                slot.GetComponentInChildren<ItemInventario>().isPicked=false;
+                slot.GetComponentInChildren<ItemInventario>().taNoInventario=true;
+                slot.GetComponentInChildren<ItemInventario>().durabilidade=item.durabilidade;
+                slot.GetComponentInChildren<Image>().sprite=item.icon.sprite;
+                //SpawnItemInventario(item, slot);
+                //itemNoSlot=item;
+                //UnityEngine.Debug.Log(itemNoSlot.itemName);
+                //imagemItemNoSlot=item.icon;
+                //slot.GetComponentInChildren<Image>() = item.icon;
+                //slot.GetComponentInChildren<ItemInventario>().ItemInventario = item;
+                //itemInventarioAuxSpawn.InitializeItem(item);
+                item.taNoInventario = true;
                 return true; 
             }
         }
         return false;
-    }
-
-    public void SpawnItemInventario(ItemInventario item, InventorySlot slot)
-    {
-
-        GameObject newItemGo = Instantiate(item.gameObject, slot.transform);
-        itemInventarioAuxSpawn = newItemGo.GetComponent<ItemInventario>();
-        itemInventarioAuxSpawn.InitializeItem(item);
     }
 }

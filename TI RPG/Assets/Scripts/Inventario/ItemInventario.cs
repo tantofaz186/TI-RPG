@@ -15,27 +15,17 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public Transform parentAfterDrag;
     public GameObject objeto;
     //private ItemInventario item;
-    public InventoryManager manager;
     public bool isPicked = false;
     public bool taNoInventario = false;
-    [SerializeField] private bool quebrou = false;
-    [SerializeField] private int durabilidade;
+    //[SerializeField] private bool quebrou = false;
+    public int durabilidade;
+
+    public InventoryManager manager;
     protected PlayerMovement player;
     protected float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);
     private Camera mainCamera;
     [SerializeField] protected float distanciaMinima = 2f;
-    public void InitializeItem(ItemInventario newItem)
-    {
-        //item = newItem;
-        id = newItem.id;
-        itemName = newItem.itemName;
-        icon = newItem.icon;
-        isPicked = newItem.isPicked;
-        quebrou = newItem.quebrou;
-        durabilidade = newItem.durabilidade;
-        objeto = newItem.objeto;
 
-    }
 
     private void Awake()
     {
@@ -83,6 +73,8 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private void ColocarInventario()
     {
         manager.AddItem(this);
+        //depois de colocar o objeto aqui mandar ele pra narnia
+        
         //Destroy(this.gameObject);
     }
     protected virtual IEnumerator MoverParaObjeto()
@@ -110,7 +102,7 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
                 if (colRb != null && colRb != rb && colRb.isKinematic)
                 {
-                    Debug.Log("O objeto próximo não pode ser pego.");
+                    Debug.Log("O objeto prï¿½ximo nï¿½o pode ser pego.");
                     return;
                 }
             }
@@ -123,7 +115,7 @@ public class ItemInventario : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
         catch (UnityException)
         {
-            Debug.Log("Não há nenhum objeto próximo para ser pego");
+            Debug.Log("Nï¿½o hï¿½ nenhum objeto prï¿½ximo para ser pego");
         }
 
     }
