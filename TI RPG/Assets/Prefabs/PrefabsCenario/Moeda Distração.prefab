@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3857818498959658988}
   - component: {fileID: 3857818498959658985}
   - component: {fileID: 3857818498959658984}
+  - component: {fileID: -5629729494041008209}
   - component: {fileID: 3857818498959658967}
   m_Layer: 0
   m_Name: "Moeda Distra\xE7\xE3o"
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3857818498959658990}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -5.6, y: 0.091, z: 16.074}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.081822, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -114,7 +115,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136f239c29094690abe384714b0d550f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mao: {fileID: 0}
+  maoNome: 
+  item: {fileID: 0}
+  forcePower: 400
   isPicked: 0
+--- !u!114 &-5629729494041008209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857818498959658990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fb3ed17a4eb384786648c26b24d429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  itemName: 
+  icon: {fileID: 4477732004133757110, guid: 420db66f57aeccb4a9f6a9718b0c55bf, type: 3}
+  parentAfterDrag: {fileID: 0}
+  objeto: {fileID: 3857818498959658990}
+  item: {fileID: 0}
+  manager: {fileID: 0}
+  isPicked: 0
+  quebrou: 0
+  durabilidade: 0
 --- !u!65 &3857818498959658967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,7 +152,7 @@ BoxCollider:
   m_GameObject: {fileID: 3857818498959658990}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
