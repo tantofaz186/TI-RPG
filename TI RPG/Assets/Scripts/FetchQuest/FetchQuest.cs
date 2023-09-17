@@ -4,7 +4,7 @@ using Skills;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FetchQuest : Interagível
+public class FetchQuest : InteragÃ­vel
 {
     public Dialogue dialogueInicio;
     public Dialogue dialogueLembrarMissao;

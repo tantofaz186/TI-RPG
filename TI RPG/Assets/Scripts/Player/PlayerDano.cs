@@ -32,8 +32,8 @@ namespace Player
                 }
             }
         }
-        void OnCollisionEnter(Collision collision)
-       {
+        void OnCollisionEnter(Collision collision) 
+        {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
                 Debug.Log("oi");
@@ -41,6 +41,7 @@ namespace Player
                 StartCoroutine(TomarDano());
                 audioPlayer.Play();
             }
+            
         }
 
         private void OnTriggerEnter(Collider other)
@@ -88,7 +89,7 @@ namespace Player
         }
         private void Start()
         {
-            GameObject vidaInfinitaTextObject = GameObject.Find("cheatSkillText");
+            GameObject vidaInfinitaTextObject = GameObject.FindWithTag("CheatSkillText");
             vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();
