@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-<<<<<<< HEAD
-
-public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
-
-    public GameObject skillTreeMenu;
-
-=======
 using UnityEngine.Serialization;
 
 public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
@@ -44,7 +37,6 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     {
         ResetUI(SceneManager.GetActiveScene(), LoadSceneMode.Single  );
     }
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
 
     public void AbrirSkillTree()
     {

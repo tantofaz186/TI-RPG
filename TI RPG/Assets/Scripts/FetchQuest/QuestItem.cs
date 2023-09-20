@@ -118,11 +118,7 @@ public class QuestItem : MonoBehaviour
         SetOutline(outline);
     }
 
-<<<<<<< HEAD
-    public IEnumerator IrAtéObjeto()
-=======
     public IEnumerator IrAtÃ©Objeto()
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition); // Cast a ray from the camera to the mouse position
         RaycastHit hit;
@@ -147,11 +143,7 @@ public class QuestItem : MonoBehaviour
             StopAllCoroutines();
             if (!carregada)
             {
-<<<<<<< HEAD
-                StartCoroutine(IrAtéObjeto());
-=======
                 StartCoroutine(IrAtÃ©Objeto());
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
             }
         }
         else if (Input.GetKeyDown(KeyCode.G) && carregada)

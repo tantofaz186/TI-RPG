@@ -12,11 +12,7 @@ namespace Objetos
         [SerializeField] private GameObject mao;
         [SerializeField] public string maoNome;
         public delegate void OnHitGroundHandler(Vector3 contactpoint);
-<<<<<<< HEAD
-
-=======
         public ItemInventario item;
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         public event OnHitGroundHandler OnHitGround;
         [SerializeField] private float forcePower = 400f;
 
@@ -32,15 +28,11 @@ namespace Objetos
             mao = EncontrarMao(player.gameObject, maoNome);
             pickupCollider = GetComponent<Collider>();
         }
-<<<<<<< HEAD
-
-=======
         private void ColocarInventario()
         {
             //InventarioManager.Instance.AddItem(this.item);
             Destroy(gameObject);
         }
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         private void OnCollisionEnter(Collision collision)
         {
             OnHitGround?.Invoke(collision.contacts[0].point);
@@ -72,13 +64,10 @@ namespace Objetos
             {
                 ThrowObject();
             }
-<<<<<<< HEAD
-=======
 //            if (Input.GetMouseButtonDown(2) && isPicked)
 //            {
 //                ColocarInventario();
 //            }
->>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         }
 
         private void PickUpObject()
