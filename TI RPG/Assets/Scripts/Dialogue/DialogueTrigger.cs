@@ -14,6 +14,10 @@ public class DialogueTrigger : Interagível
     {
         player.Mover(player.transform.position);
         DialogueManager.Instance.StartDialogue(dialogue);
+        /*if (used || SceneManager.GetActiveScene().name == "Tutorial") return;
+        used = true;
+        SkillManager.Instance.GetComponent<XpPlayer>().AddXp();*/
+
     }
     protected override void Interagir() => TriggerDialogue();
 }

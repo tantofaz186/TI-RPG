@@ -32,14 +32,35 @@ namespace Player
                 }
             }
         }
+<<<<<<< HEAD
+        void OnCollisionEnter(Collision collision)
+       {
+=======
         void OnCollisionEnter(Collision collision) 
         {
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
                 Debug.Log("oi");
                 Vidas -= 1;
                 StartCoroutine(TomarDano());
                 audioPlayer.Play();
+<<<<<<< HEAD
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Armadilha"))
+            {
+                Debug.Log("oi");
+                Vidas -= 1;
+                StartCoroutine(TomarDano());
+                audioPlayer.Play();
+            }
+        }
+
+=======
             }
             
         }
@@ -55,6 +76,7 @@ namespace Player
             }
         }
 
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
 
         IEnumerator TomarDano()
         {
@@ -89,7 +111,11 @@ namespace Player
         }
         private void Start()
         {
+<<<<<<< HEAD
+            GameObject vidaInfinitaTextObject = GameObject.Find("cheatSkillText");
+=======
             GameObject vidaInfinitaTextObject = GameObject.FindWithTag("CheatSkillText");
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
             vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();

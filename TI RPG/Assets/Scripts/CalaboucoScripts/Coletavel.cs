@@ -16,7 +16,11 @@ public class Coletavel : MonoBehaviour
     [SerializeField] protected float larguraDoOutline = 4f;
     [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
     [SerializeField] protected Color corDoOutline = Color.green;
+<<<<<<< HEAD
+
+=======
     private Collider collider;
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
     public bool Carregada
     {
         get { return carregada; }
@@ -28,6 +32,10 @@ public class Coletavel : MonoBehaviour
         transform.parent = mao.transform;
         transform.position = transform.parent.position;
         rb.isKinematic = true;
+<<<<<<< HEAD
+        Collider collider = GetComponent<Collider>();
+=======
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         if (collider != null)
         {
             collider.enabled = false; // Disable the collider when picked up
@@ -40,6 +48,10 @@ public class Coletavel : MonoBehaviour
         transform.parent = null;
         rb.isKinematic = false;
         carregada = false;
+<<<<<<< HEAD
+        Collider collider = GetComponent<Collider>();
+=======
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         if (collider != null)
         {
             collider.enabled = true; // Enable the collider when dropped
@@ -81,13 +93,21 @@ public class Coletavel : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         mao = EncontrarMao(player.gameObject, maoNome);
         mainCamera = Camera.main;
+<<<<<<< HEAD
+
+=======
         collider = GetComponent<Collider>();
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         outline = gameObject.GetComponent<Outline>();
         if (outline == null)
         {
             outline = gameObject.AddComponent<Outline>();
         }
+<<<<<<< HEAD
+
+=======
         
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         SetOutline(outline);
     }
 

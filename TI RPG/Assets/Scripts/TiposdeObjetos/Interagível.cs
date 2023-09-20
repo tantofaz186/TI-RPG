@@ -48,12 +48,15 @@ namespace Objetos
             StartCoroutine(MoverParaObjeto());
         }
 
+<<<<<<< HEAD
+=======
         private void ColocarInventario()
         {
             if (!Input.GetMouseButtonDown(2)) return;
             //InventarioManager.Instance.AddItem(this.item);
         }
 
+>>>>>>> b1cf5f4cfcccc576c08b33b4b6f4a5fc498ee90d
         void OnMouseExit()
         {
             outline.enabled = false;
