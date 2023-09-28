@@ -12248,7 +12248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecad4a170c3a18e45bb8ab9376b5ee34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
+  quests:
+  - {fileID: 0}
 --- !u!82 &1471694864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12486,7 +12487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.09411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13471,7 +13472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3505834, y: 0.27327752}
   m_AnchorMax: {x: 0.6528333, y: 0.39800003}
-  m_AnchoredPosition: {x: -3.8062134, y: -4.5}
+  m_AnchoredPosition: {x: -3.8062134, y: -4.4999695}
   m_SizeDelta: {x: 5.2581177, y: 10.933899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8012411280273326337
@@ -17291,7 +17292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0.9647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
