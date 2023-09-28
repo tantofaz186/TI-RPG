@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : Interagível
 {
+    //TODO fazer madeira ser usada para uma fogueira também
     public Dialogue dialogue;
     private bool used = false;
     public void TriggerDialogue()
