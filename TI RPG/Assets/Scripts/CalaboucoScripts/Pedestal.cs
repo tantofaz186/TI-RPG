@@ -21,19 +21,13 @@ public class Pedestal : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == peca)
+        if (collision.gameObject == peca.gameObject)
         {
             mr.material.EnableKeyword("_EMISSION");
             ativado = true;
             Puzzle.Instance.CompletarPuzzle();
             Debug.Log("Ativou");
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject == peca)
-        {
+        }else{
             mr.material.DisableKeyword("_EMISSION");
             ativado = false;
             Debug.Log("Desativou");
