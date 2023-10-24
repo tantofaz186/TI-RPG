@@ -14,7 +14,7 @@ namespace Rpg.Interface
         public Camera inspectCamera;
         
         [Header("STATE")]
-        public Vector2 rotateSpeed = Vector2.zero;
+        public Quaternion rotateSpeed = Quaternion.identity;
         public float scaleSpeed = 0f;
         
         [Header("SETTINGS")]
@@ -49,6 +49,9 @@ namespace Rpg.Interface
         {
             float deltaTime = Time.deltaTime;
 
+            if (Input.GetKey(KeyCode.R))
+                ResetState();
+
             #region Zoom
             float msw = Input.GetAxis("Mouse ScrollWheel");
             if (Mathf.Abs(msw) > 0.01f)
@@ -65,15 +68,22 @@ namespace Rpg.Interface
             #region Rotation
             if (Input.GetMouseButton(0))
             {
-                rotateSpeed = 5 * new Vector2(Input.GetAxis("Mouse Y"), -Input.GetAxis("Mouse X"));
-                gimbal.Rotate(rotateSpeed, Space.World);
+                Vector2 rot = 5 * new Vector2(Input.GetAxis("Mouse Y"), -Input.GetAxis("Mouse X"));
+                Quaternion pre = gimbal.rotation;
+                gimbal.Rotate(rot, Space.World);
+                rotateSpeed = Quaternion.Inverse(pre) * gimbal.rotation;
             }
             else
             {
-                gimbal.Rotate(rotateSpeed, Space.World);
-                rotateSpeed = Vector2.Lerp(rotateSpeed, Vector2.zero, deltaTime * 16f);
+                gimbal.rotation *= rotateSpeed;
+                rotateSpeed = Quaternion.Lerp(rotateSpeed, Quaternion.identity, deltaTime * 16f);
             }
             #endregion
+        }
+
+        public void ResetState()
+        {
+            rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1/128F);
         }
         
 #if UNITY_EDITOR
