@@ -11,6 +11,11 @@ namespace Rpg.Interface
         public Transform content;
         private Mesh itemMesh;
         
+        public Vector2 rotateSpeed = Vector2.zero;
+        public float scaleSpeed = 0f;
+        public float minScale = 0.75f;
+        public float maxScale = 1.5f;
+        
         [SerializeField] private Mesh testMesh;
         [SerializeField] private Mesh testMesh2;
         private Mesh defaultMesh;
@@ -25,9 +30,10 @@ namespace Rpg.Interface
                 content.GetComponent<MeshFilter>().mesh = value;
             }
         }
-
+        
         private void OnEnable()
         {
+            gimbal.localScale = Vector3.one;
             defaultMesh = content.GetComponent<MeshFilter>().sharedMesh;
             Item.onItemInspect += ChangeMesh;
         }
@@ -36,21 +42,35 @@ namespace Rpg.Interface
         {
             Item.onItemInspect -= ChangeMesh;
         }
-
         public void Update()
         {
-            Vector2 vec = 5 * new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            float deltaTime = Time.deltaTime;
 
+            #region Zoom
+            float msw = Input.GetAxis("Mouse ScrollWheel");
+            if (Mathf.Abs(msw) > 0.01f)
+            {
+                scaleSpeed = Mathf.Lerp(scaleSpeed, msw, deltaTime * 8);
+            }
+            else
+                scaleSpeed = Mathf.Lerp(scaleSpeed, 0, deltaTime * 16f);
+            
+            float f = gimbal.localScale.x + scaleSpeed;
+            gimbal.localScale = Vector3.one * Mathf.Clamp(f, minScale, maxScale);
+            #endregion
+
+            #region Rotation
             if (Input.GetMouseButton(0))
             {
-                gimbal.localRotation *= Quaternion.Euler(vec.y, -vec.x, 0);
+                rotateSpeed = 5 * new Vector2(Input.GetAxis("Mouse Y"), -Input.GetAxis("Mouse X"));
+                gimbal.Rotate(rotateSpeed, Space.World);
             }
-            else if (Input.GetMouseButtonUp(0))
+            else
             {
-                Quaternion now = content.rotation;
-                gimbal.localRotation = Quaternion.identity;
-                content.rotation = now;
+                gimbal.Rotate(rotateSpeed, Space.World);
+                rotateSpeed = Vector2.Lerp(rotateSpeed, Vector2.zero, deltaTime * 16f);
             }
+            #endregion
         }
 
         public void ChangeMesh(Mesh _mesh)
