@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Rpg.Crafting
@@ -24,6 +26,24 @@ namespace Rpg.Crafting
         public override string ToString()
         {
             return $"{recipe} ({foundItems} = {isCraftable})";
+        }
+
+        public bool Matches(Item[] items)
+        {
+            List<Item> tempItems = new List<Item>();
+            
+            tempItems.AddRange(items.Where(i => i != null));
+
+            foreach (var ign in recipe.ingredients)
+            {
+                int idx = tempItems.IndexOf(ign);
+                if (idx == -1)
+                    return false;
+                
+                tempItems.RemoveAt(idx);
+            }
+
+            return tempItems.Count == 0;
         }
     }
 }

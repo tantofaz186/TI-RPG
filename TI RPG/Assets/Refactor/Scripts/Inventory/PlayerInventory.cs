@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Rpg.Save;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,13 +16,21 @@ namespace Rpg.Crafting
     {
         public Action hasChangedItems;
 
+        [Header("DRAGGING")] 
+        public Item draggedItem;
+        public Vector2 draggingOffset;
+        public Image draggedItemDisplay;
+
         [Header("REFERENCES")] 
         public Recipe[] recipes;
         public Item[] items;
         public Image[] slots;
 
-        [Header("STATE")] [SerializeField] private Item[] contents = new Item[23];
-        public int firstContainerSlot = 3;
+        [Header("STATE")] 
+        [SerializeField]
+        private Item[] contents = new Item[26];
+        public int firstContainerSlot = 4;
+        public bool shouldIgnoreCrafting = false;
 
         #region Callbacks
         private void OnEnable()
@@ -29,12 +38,34 @@ namespace Rpg.Crafting
             SaveManager.mustReloadData += OnReloadContents;
             hasChangedItems += OnChangedContents;
             OnReloadContents();
+
+            for (int i = 0; i < slots.Length; i ++)
+            {
+                InventorySlotEventHandler comp = slots[i].gameObject.AddComponent<InventorySlotEventHandler>();
+                comp.slotId = i;
+                comp.onClick.AddListener(OnClickOnSlot);
+            }
         }
 
         private void OnDisable()
         {
             SaveManager.mustReloadData -= OnReloadContents;
             hasChangedItems -= OnChangedContents;
+            
+            foreach (var image in slots)
+            {
+                if(image != null)
+                    Destroy(image.gameObject.GetComponent<InventorySlotEventHandler>());
+            }
+        }
+
+        private void Update()
+        {
+            if (draggedItem == null)
+                return;
+
+            Vector2 mp = Input.mousePosition;
+            draggedItemDisplay.rectTransform.position = mp - draggingOffset;
         }
 
         public void OnReloadContents()
@@ -51,6 +82,7 @@ namespace Rpg.Crafting
             for (int i = 0; i < itemIds.Length; i++)
                 contents[i] = GetItemById(itemIds[i]);
 
+            RefreshCrafting();
             RefreshVisual();
         }
 
@@ -58,24 +90,20 @@ namespace Rpg.Crafting
         {
             string[] itemIds = new String[contents.Length];
 
-            for (int i = 0; i < itemIds.Length; i++)
+            for (int i = 0; i < contents.Length; i++)
             {
                 if (contents[i] == null)
                     continue;
                 itemIds[i] = contents[i].id;
             }
 
+            RefreshCrafting();
             SaveManager.Instance.data.playerInventory = itemIds;
             RefreshVisual();
         }
-
+        
         public void RefreshVisual()
         {
-            // foreach (var recipe in GetAvailableRecipes())
-            // {
-            //     Debug.Log(recipe);
-            // }
-
             for (int i = 0; i < contents.Length; i++)
             {
                 Item item = contents[i];
@@ -87,18 +115,82 @@ namespace Rpg.Crafting
                 slots[i].sprite = item.sprite;
             }
         }
+
+        public void RefreshCrafting()
+        {
+            if (shouldIgnoreCrafting)
+            {
+                shouldIgnoreCrafting = false;
+                return;
+            }
+
+            shouldIgnoreCrafting = true;
+            Item[] ingredients = new Item[3];
+            Array.Copy(contents, ingredients, 3);
+            foreach (RecipeInfo recipe in GetAvailableRecipes())
+            {
+                if (recipe.Matches(ingredients))
+                {
+                    SetItem(firstContainerSlot - 1, recipe.recipe.result);
+                    return;
+                }
+            }
+            
+            SetItem(firstContainerSlot - 1, null);
+        }
+        
+        public void OnClickOnSlot(int slot)
+        {
+            
+            if (slot >= 0)
+            {
+                if (draggedItem == null)
+                {
+                    var item = contents[slot];
+                    if (item != null)
+                    {
+                        if (slot == firstContainerSlot - 1)
+                            for(int i = 0 ; i < firstContainerSlot - 1; i ++)
+                                contents[i] = null;
+
+                        //Grab item
+                        SetItem(slot, null);
+                        SetDraggedItem(item);
+                        draggingOffset = Input.mousePosition - slots[slot].rectTransform.position;
+                    }
+
+                    return;
+                }
+                else
+                {
+                    var item = contents[slot];
+                    if (item == null && slot != firstContainerSlot - 1)
+                    {
+                        SetItem(slot, draggedItem);
+                        SetDraggedItem(null);
+                    }
+                }
+            }
+            else
+            {
+                if (draggedItem == null)
+                    return;
+                
+                DropItem(draggedItem);
+                SetDraggedItem(null);
+            }
+        }
         #endregion
 
         #region Inventory Methods
-
         public bool HasItem(Item item)
         {
-            return Array.IndexOf(contents, item) >= 0;
+            return Array.IndexOf(contents, item) >= firstContainerSlot;
         }
 
         public int GetItemCount(Item item)
         {
-            return contents.Select(s => s != null && s == item).Count();
+            return contents.Select((s, i) => i >= firstContainerSlot && s != null && s == item).Count();
         }
 
         public bool HasEmptySlot()
@@ -108,7 +200,7 @@ namespace Rpg.Crafting
 
         public int FirstEmptySlot()
         {
-            return Array.IndexOf(contents, null);
+            return Array.IndexOf(contents, null, firstContainerSlot);
         }
 
         public void Clear()
@@ -130,11 +222,12 @@ namespace Rpg.Crafting
 
         public bool RemoveItem(Item item)
         {
-            for (int i = 0; i < contents.Length; i++)
+            for (int i = firstContainerSlot; i < contents.Length; i++)
             {
                 if (contents[i] != null && contents[i] == item)
                 {
                     contents[i] = null;
+                    hasChangedItems?.Invoke();
                     return true;
                 }
             }
@@ -142,15 +235,32 @@ namespace Rpg.Crafting
             return false;
         }
 
+        public void SetItem(int slot, Item item)
+        {
+            contents[slot] = item;
+            hasChangedItems?.Invoke();
+        }
+
+        public Item GetItem(int slot)
+        {
+            return contents[slot];
+        }
+
         public IEnumerable<Item> GetItems()
         {
             return contents;
         }
 
+        public void SetDraggedItem(Item item)
+        {
+            draggedItem = item;
+            draggingOffset = Vector2.zero;
+            draggedItemDisplay.sprite = item == null ? null : item.sprite;
+            draggedItemDisplay.gameObject.SetActive(item != null);
+        }
         #endregion
 
         #region Inventory Utils
-
         public Item GetItemById(string id)
         {
             return items.FirstOrDefault(i => i.id == id);
@@ -185,6 +295,10 @@ namespace Rpg.Crafting
                     yield return recipeInfo;
         }
 
+        public void DropItem(Item item)
+        {
+            
+        }
         #endregion
     }
 
