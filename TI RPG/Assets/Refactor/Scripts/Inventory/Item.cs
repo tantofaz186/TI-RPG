@@ -1,4 +1,5 @@
 ﻿using System;
+using Rpg.Interface;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,17 +10,18 @@ namespace Rpg.Crafting
     {
         public string id;
         public Sprite sprite;
+        
         public GameObject prefab;
-        public static Action<Mesh> onItemInspect;
+        public GameObject inspectPrefab;
 
         public override string ToString()
         {
             return id;
         }
-
+        
         public virtual void InspectItem()
         {
-            onItemInspect?.Invoke(prefab.GetComponent<MeshFilter>().sharedMesh);
+            //InspectScreen.Instance.InspectItem(this);
         }
 
         #if UNITY_EDITOR

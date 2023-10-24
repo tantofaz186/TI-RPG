@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using Controllers;
 using Rpg.Crafting;
 using UnityEditor;
 using UnityEngine;
@@ -7,41 +9,42 @@ namespace Rpg.Interface
 {
     public class InspectScreen : MonoBehaviour
     {
+        [Header("REFERNECES")]
         public Transform gimbal;
-        public Transform content;
-        private Mesh itemMesh;
+        public Camera inspectCamera;
         
+        [Header("STATE")]
         public Vector2 rotateSpeed = Vector2.zero;
         public float scaleSpeed = 0f;
+        
+        [Header("SETTINGS")]
         public float minScale = 0.75f;
         public float maxScale = 1.5f;
+        public float defaultScaleFactor = 0.5f;
         
-        [SerializeField] private Mesh testMesh;
-        [SerializeField] private Mesh testMesh2;
-        private Mesh defaultMesh;
-        
-        
-        public Mesh ItemMesh
+        private void Awake()
         {
-            get => itemMesh;
-            private set
-            {
-                itemMesh = value;
-                content.GetComponent<MeshFilter>().mesh = value;
-            }
+            SetOpen(false);
         }
         
-        private void OnEnable()
+        public void InspectItem(Item item)
         {
-            gimbal.localScale = Vector3.one;
-            defaultMesh = content.GetComponent<MeshFilter>().sharedMesh;
-            Item.onItemInspect += ChangeMesh;
+            SetOpen(true);
+            if (gimbal.childCount > 0)
+                Destroy(gimbal.GetChild(0).gameObject);
+
+            GameObject go = Instantiate(item.inspectPrefab, gimbal.transform);
+            go.transform.localScale *= defaultScaleFactor;
         }
 
-        private void OnDisable()
+        public void SetOpen(bool open)
         {
-            Item.onItemInspect -= ChangeMesh;
+            inspectCamera.gameObject.SetActive(open);
+            enabled = open;
+            gimbal.gameObject.SetActive(open);
+            gimbal.localScale = Vector3.one;
         }
+        
         public void Update()
         {
             float deltaTime = Time.deltaTime;
@@ -50,10 +53,10 @@ namespace Rpg.Interface
             float msw = Input.GetAxis("Mouse ScrollWheel");
             if (Mathf.Abs(msw) > 0.01f)
             {
-                scaleSpeed = Mathf.Lerp(scaleSpeed, msw, deltaTime * 8);
+                scaleSpeed = Mathf.Lerp(scaleSpeed, msw, deltaTime * 8f);
             }
             else
-                scaleSpeed = Mathf.Lerp(scaleSpeed, 0, deltaTime * 16f);
+                scaleSpeed = Mathf.Lerp(scaleSpeed, 0f, deltaTime * 8f);
             
             float f = gimbal.localScale.x + scaleSpeed;
             gimbal.localScale = Vector3.one * Mathf.Clamp(f, minScale, maxScale);
@@ -72,36 +75,22 @@ namespace Rpg.Interface
             }
             #endregion
         }
-
-        public void ChangeMesh(Mesh _mesh)
-        {
-            ItemMesh = _mesh;
-        }
-
-
+        
 #if UNITY_EDITOR
         [CustomEditor(typeof(InspectScreen))]
         public class InspectScreenEditor : Editor
         {
+            public Item testItem;
+            
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
 
-                if (GUILayout.Button("Change Mesh to first test mesh"))
+                testItem = (Item) EditorGUILayout.ObjectField("Item", testItem, typeof(Item), false);
+                if (GUILayout.Button("Test Inspect"))
                 {
                     InspectScreen screen = (target as InspectScreen)!;
-                    screen.ChangeMesh(screen.testMesh);
-                }
-                    
-                if (GUILayout.Button("Change Mesh to second test mesh"))
-                {
-                    InspectScreen screen = (target as InspectScreen)!;
-                    screen.ChangeMesh(screen.testMesh2);
-                }
-                if (GUILayout.Button("Reset mesh"))
-                {
-                    InspectScreen screen = (target as InspectScreen)!;
-                    screen.ChangeMesh(screen.defaultMesh);
+                    screen.InspectItem(testItem);
                 }
             }
         }
