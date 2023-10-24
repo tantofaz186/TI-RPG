@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using Controllers;
+using Rpg.Entities;
 using Rpg.Save;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 namespace Rpg.Crafting
 {
-    public class PlayerInventory : MonoBehaviour
+    public class PlayerInventory : Singleton<PlayerInventory>
     {
         public Action hasChangedItems;
 
@@ -25,6 +28,7 @@ namespace Rpg.Crafting
         public Recipe[] recipes;
         public Item[] items;
         public Image[] slots;
+        public GameObject prefabWorldItem;
 
         [Header("STATE")] 
         [SerializeField]
@@ -200,7 +204,10 @@ namespace Rpg.Crafting
 
         public int FirstEmptySlot()
         {
-            return Array.IndexOf(contents, null, firstContainerSlot);
+            for(int i = firstContainerSlot; i < contents.Length; i ++)
+                if (contents[i] == null)
+                    return i;
+            return -1;
         }
 
         public void Clear()
@@ -297,7 +304,15 @@ namespace Rpg.Crafting
 
         public void DropItem(Item item)
         {
-            
+            WorldItem go = Instantiate(prefabWorldItem).GetComponent<WorldItem>();
+            go.item = item;
+            go.UpdateDisplayedItem();
+            Vector3 v = Random.onUnitSphere;
+            Vector3 dir = new Vector3(v.x, 0, v.z).normalized;
+            go.transform.position = transform.position;
+            go.rigidbody.velocity = dir * 2 + Vector3.up * 2;
+            go.rigidbody.angularVelocity =
+                new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
         }
         #endregion
     }
