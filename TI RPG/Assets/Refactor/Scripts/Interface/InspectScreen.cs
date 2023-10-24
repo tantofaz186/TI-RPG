@@ -2,20 +2,23 @@
 using System.Security.Cryptography;
 using Controllers;
 using Rpg.Crafting;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 namespace Rpg.Interface
 {
-    public class InspectScreen : MonoBehaviour
+    public class InspectScreen : Singleton<InspectScreen>
     {
         [Header("REFERNECES")]
         public Transform gimbal;
         public Camera inspectCamera;
+        public TMP_Text labelItemName;
         
         [Header("STATE")]
         public Quaternion rotateSpeed = Quaternion.identity;
         public float scaleSpeed = 0f;
+        public float inactiveTime = 0f;
         
         [Header("SETTINGS")]
         public float minScale = 0.75f;
@@ -35,6 +38,8 @@ namespace Rpg.Interface
 
             GameObject go = Instantiate(item.inspectPrefab, gimbal.transform);
             go.transform.localScale *= defaultScaleFactor;
+
+            labelItemName.text = item.displayName;
         }
 
         public void SetOpen(bool open)
@@ -49,7 +54,7 @@ namespace Rpg.Interface
         {
             float deltaTime = Time.deltaTime;
 
-            if (Input.GetKey(KeyCode.R))
+            if (inactiveTime >= 3f)
                 ResetState();
 
             #region Zoom
@@ -57,6 +62,7 @@ namespace Rpg.Interface
             if (Mathf.Abs(msw) > 0.01f)
             {
                 scaleSpeed = Mathf.Lerp(scaleSpeed, msw, deltaTime * 8f);
+                inactiveTime = 0;
             }
             else
                 scaleSpeed = Mathf.Lerp(scaleSpeed, 0f, deltaTime * 8f);
@@ -72,6 +78,7 @@ namespace Rpg.Interface
                 Quaternion pre = gimbal.rotation;
                 gimbal.Rotate(rot, Space.World);
                 rotateSpeed = Quaternion.Inverse(pre) * gimbal.rotation;
+                inactiveTime = 0;
             }
             else
             {
@@ -79,11 +86,13 @@ namespace Rpg.Interface
                 rotateSpeed = Quaternion.Lerp(rotateSpeed, Quaternion.identity, deltaTime * 16f);
             }
             #endregion
+
+            inactiveTime += deltaTime;
         }
 
         public void ResetState()
         {
-            rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1/128F);
+            rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1/512F);
         }
         
 #if UNITY_EDITOR

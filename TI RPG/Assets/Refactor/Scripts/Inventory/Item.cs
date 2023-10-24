@@ -8,9 +8,12 @@ namespace Rpg.Crafting
     [CreateAssetMenu(fileName = "Item", menuName = "RPG/Inventory/Item", order = 100)]
     public class Item : ScriptableObject
     {
+        [Header("INFO")]
         public string id;
-        public Sprite sprite;
         
+        [Header("DISPLAY")]
+        public string displayName;
+        public Sprite sprite;
         public GameObject prefab;
         public GameObject inspectPrefab;
 
@@ -21,7 +24,7 @@ namespace Rpg.Crafting
         
         public virtual void InspectItem()
         {
-            //InspectScreen.Instance.InspectItem(this);
+            InspectScreen.Instance.InspectItem(this);
         }
 
         #if UNITY_EDITOR
