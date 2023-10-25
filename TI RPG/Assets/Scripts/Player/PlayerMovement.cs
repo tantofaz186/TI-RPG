@@ -13,7 +13,7 @@ namespace Player
         private Camera mainCamera;
         private Animator corpo_fsm;
         public GameObject mouseInput;
-
+        [SerializeField] CapsuleCollider _collider;
         private void Awake()
         {
             mainCamera = Camera.main;
@@ -62,6 +62,7 @@ namespace Player
                 corpo_fsm.SetBool("agachado", true);
                 velocidade = 1.75f;
                 StartCoroutine(LerpValue("Mover", 0f));
+                _collider.enabled = false;
             }
             else if (Input.GetKey(KeyCode.LeftShift)) // Correr
             {
@@ -71,6 +72,7 @@ namespace Player
             else if (!Input.GetKey(KeyCode.LeftControl))
             {
                 corpo_fsm.SetBool("agachado", false); // Desagachar
+                _collider.enabled = true;
             }
 
             #endregion

@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     public TextMeshProUGUI dialogueText;
     public Image dialogueImage;
     public GameObject dialoguePanel;
-
+    public Action endDialogue;
     private Queue<string> sentences;
     private Queue<Sprite> images;
     private Queue<string> titles;
@@ -68,5 +68,6 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     {
         Time.timeScale = 1;
         dialoguePanel.SetActive(false);
+        endDialogue?.Invoke();
     }
 }

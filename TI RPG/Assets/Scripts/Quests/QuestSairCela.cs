@@ -15,6 +15,7 @@ namespace Quests
             podeAbrir = false;
             dialogueTrigger = GetComponent<DialogueTrigger>();
             dialogueTrigger.dialogue = dialogueAntesDeAbrir;
+            dialogueTrigger.triggeredDialogue = SetPodeAbrirTrue;
         }
 
         public void SetPodeAbrirTrue()
