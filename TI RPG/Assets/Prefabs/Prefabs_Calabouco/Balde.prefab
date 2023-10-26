@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 206909937376504060}
   - component: {fileID: 3850802980955367257}
   - component: {fileID: 1338760553149813651}
-  - component: {fileID: 435087593277637069}
+  - component: {fileID: -2147086663642892973}
+  - component: {fileID: -5825930886749931024}
+  - component: {fileID: 8037142791174463677}
   m_Layer: 0
   m_Name: Balde
   m_TagString: Untagged
@@ -84,7 +86,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &435087593277637069
+--- !u!54 &-2147086663642892973
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690396345493844550}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-5825930886749931024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690396345493844550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31646228, y: 0.2688236, z: 0.29506734}
+  m_Center: {x: -0.0027207509, y: 0.1344118, z: 0}
+--- !u!114 &8037142791174463677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

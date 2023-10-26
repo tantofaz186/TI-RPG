@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Rpg.Entities
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class WorldItem : Interactible
     {
         public Item item;
@@ -15,7 +16,6 @@ namespace Rpg.Entities
 
         public void OnEnable()
         {
-            UpdateDisplayedItem();
             rigidbody = GetComponent<Rigidbody>();
             onInteract.AddListener(item.InspectItem);
         }

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 namespace Rpg.Entities
 {
+    [RequireComponent(typeof(BoxCollider))]
     public class Interactible : MonoBehaviour
     {
         public bool isMouseOver = false;
@@ -20,14 +21,15 @@ namespace Rpg.Entities
         [SerializeField] protected Color corDoGizmos = Color.yellow;
         private float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);
 
-        [Header("Outline")] [Range(0, 20)] [SerializeField]
-        protected Color corDoOutline = Color.blue;
+        [Header("Outline")] 
+        [Range(0, 20)] [SerializeField] protected Color corDoOutline = Color.blue;
         [SerializeField] protected float larguraDoOutline = 4f;
         [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
         private Outline outline;
 
         public virtual void OnChangeIsMouseOver()
         {
+            outline.enabled = isMouseOver;
         }
 
         private void OnMouseEnter()
