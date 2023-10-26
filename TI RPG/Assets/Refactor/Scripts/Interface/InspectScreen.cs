@@ -45,13 +45,14 @@ namespace Rpg.Interface
         {
             inspectCamera.gameObject.SetActive(open);
             enabled = open;
+            Time.timeScale = open ? 0f : 1f;
             gimbal.gameObject.SetActive(open);
             gimbal.localScale = Vector3.one;
         }
         
         public void Update()
         {
-            float deltaTime = Time.deltaTime;
+            float deltaTime = Time.unscaledDeltaTime;
 
             if (inactiveTime >= 3f)
                 ResetState();
