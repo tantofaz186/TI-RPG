@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using Rpg.Crafting;
+using Rpg.Interface;
 using UnityEngine;
 
 namespace Rpg.Entities
@@ -15,8 +17,13 @@ namespace Rpg.Entities
         {
             UpdateDisplayedItem();
             rigidbody = GetComponent<Rigidbody>();
+            onInteract.AddListener(item.InspectItem);
         }
 
+        private void OnDisable()
+        {
+            onInteract.RemoveListener(item.InspectItem);
+        }
         public void UpdateDisplayedItem()
         {
             if(transform.childCount > 0)
