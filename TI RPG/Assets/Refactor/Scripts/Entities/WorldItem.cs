@@ -17,6 +17,7 @@ namespace Rpg.Entities
         public void OnEnable()
         {
             rigidbody = GetComponent<Rigidbody>();
+            rigidbody.isKinematic = true;
             onInteract.AddListener(item.InspectItem);
         }
 

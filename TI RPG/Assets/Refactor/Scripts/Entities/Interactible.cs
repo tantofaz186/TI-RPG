@@ -82,6 +82,7 @@ namespace Rpg.Entities
                 yield break; // Check if the hit collider belongs to this object
             if (player.isActiveAndEnabled) player.Mover(transform.position);
             while (distanciaDoPlayer > distanciaMinima) yield return null;
+            player.Mover(player.transform.position);
             onInteract?.Invoke();
         }
 
