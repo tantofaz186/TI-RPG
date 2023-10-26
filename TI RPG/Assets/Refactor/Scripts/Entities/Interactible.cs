@@ -7,6 +7,7 @@ using UnityEngine.Events;
 namespace Rpg.Entities
 {
     [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(Outline))]
     public class Interactible : MonoBehaviour
     {
         public bool isMouseOver = false;
@@ -17,12 +18,12 @@ namespace Rpg.Entities
 
         [Header("Raio de interação")] 
         
-        [SerializeField] protected float distanciaMinima = 2f;
+        [Range(0, 20)] [SerializeField] protected float distanciaMinima = 2f;
         [SerializeField] protected Color corDoGizmos = Color.yellow;
         private float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);
 
         [Header("Outline")] 
-        [Range(0, 20)] [SerializeField] protected Color corDoOutline = Color.blue;
+        [SerializeField] protected Color corDoOutline = Color.blue;
         [SerializeField] protected float larguraDoOutline = 4f;
         [SerializeField] protected Outline.Mode modoDoOutline = Outline.Mode.OutlineVisible;
         private Outline outline;
@@ -50,7 +51,13 @@ namespace Rpg.Entities
             StopAllCoroutines();
             StartCoroutine(MoverParaObjeto());
         }
-
+        private void OnValidate(){
+            if (!TryGetComponent(out outline))
+            {
+                outline = gameObject.AddComponent<Outline>();
+            }
+            SetOutline(outline);
+        }
         protected virtual void Awake()
         {
             if (mainCamera == null)

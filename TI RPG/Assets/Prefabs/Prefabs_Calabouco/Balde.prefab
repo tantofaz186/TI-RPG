@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2147086663642892973}
   - component: {fileID: -5825930886749931024}
   - component: {fileID: 8037142791174463677}
+  - component: {fileID: 3241393463553128788}
   m_Layer: 9
   m_Name: Balde
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690396345493844550}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -137,6 +138,26 @@ MonoBehaviour:
   distanciaMinima: 2
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   corDoOutline: {r: 0, g: 0, b: 1, a: 1}
-  larguraDoOutline: 4
+  larguraDoOutline: 2
   modoDoOutline: 1
   item: {fileID: 11400000, guid: 50aac1de4d49a674f9b6b7ddd5fa3c92, type: 2}
+--- !u!114 &3241393463553128788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690396345493844550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  outlineMaskMaterial: {fileID: 0}
+  outlineFillMaterial: {fileID: 0}
