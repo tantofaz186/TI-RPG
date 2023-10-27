@@ -8,10 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class MedidoresPlayer : MonoBehaviour
 {
-    public string componentNameToFind; // Name of the component to search for
-    public string variableNameToAccess; 
-    //[SerializeField]private float valorVariavel;
-    public Slider medidor; // Reference to your Slider component in the Inspector.
+    public string nomeScript; 
+    public string nomeVariavel; 
+    public Slider medidor; 
 
     private Component foundComponent;
     private System.Type componentType;
@@ -19,7 +18,7 @@ public class MedidoresPlayer : MonoBehaviour
 
     void Start()
     {
-        FindComponentsByName(componentNameToFind, variableNameToAccess);
+        AcharScriptPorNome(nomeScript, nomeVariavel);
     }
 
 
@@ -27,31 +26,26 @@ public class MedidoresPlayer : MonoBehaviour
     {
         DesativaNoMenu();
         if(foundComponent==null){
-        FindComponentsByName(componentNameToFind, variableNameToAccess);
+        AcharScriptPorNome(nomeScript, nomeVariavel);
         }
         if (fieldInfo != null)
         {
             medidor.value=(float)fieldInfo.GetValue(foundComponent);
         }
-        else
-        {
-            Debug.LogWarning("Component does not have a variable named " + variableNameToAccess);
-        }
     }
 
-    void FindComponentsByName(string componentName, string variableName)
+    void AcharScriptPorNome(string scriptNome, string variavelNome)
     {
-        GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
+        GameObject[] TodosOsGameObjects = FindObjectsOfType<GameObject>();
 
-        foreach (GameObject go in allGameObjects)
+        foreach (GameObject go in TodosOsGameObjects)
         {
-            foundComponent = go.GetComponent(componentName);
+            foundComponent = go.GetComponent(scriptNome);
 
             if (foundComponent != null)
             {
                 componentType = foundComponent.GetType();
-                fieldInfo = componentType.GetField(variableNameToAccess);
-                Debug.Log("Found component with name: " + componentName);
+                fieldInfo = componentType.GetField(variavelNome);
                 break; 
             }
         }
