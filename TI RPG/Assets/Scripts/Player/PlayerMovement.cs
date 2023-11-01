@@ -13,6 +13,7 @@ namespace Player
         private Camera mainCamera;
         private Animator corpo_fsm;
         public GameObject mouseInput;
+         public float folego=100;
         [SerializeField] CapsuleCollider _collider;
         private void Awake()
         {
@@ -44,12 +45,18 @@ namespace Player
             {
                 corpo_fsm.SetBool("movimentando", false);
                 Debug.Log("Parou");
+                if(folego<100){
+                folego+=6*Time.deltaTime;
+                }
                 mouseInput.SetActive(false);
             }
             else if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
             {
                 corpo_fsm.SetBool("movimentando", true);
                 velocidade = 3.0f;
+                if(folego<100){
+                folego+=6*Time.deltaTime;
+                }
                 StartCoroutine(LerpValue("Mover", 0.5f));
             }
             else
@@ -61,13 +68,28 @@ namespace Player
             {
                 corpo_fsm.SetBool("agachado", true);
                 velocidade = 1.75f;
+                if(folego<100){
+                folego+=6*Time.deltaTime;
+                }
                 StartCoroutine(LerpValue("Mover", 0f));
                 _collider.enabled = false;
             }
             else if (Input.GetKey(KeyCode.LeftShift)) // Correr
             {
+                if(folego>0){
                 velocidade = 4.25f;
+                if(folego>0){
+                folego-=10*Time.deltaTime;
+                }
                 StartCoroutine(LerpValue("Mover", 1f));
+                }else{
+                corpo_fsm.SetBool("movimentando", true);
+                velocidade = 3.0f;
+                if(folego<100){
+                folego+=6*Time.deltaTime;
+                }
+                StartCoroutine(LerpValue("Mover", 0.5f)); 
+                }
             }
             else if (!Input.GetKey(KeyCode.LeftControl))
             {

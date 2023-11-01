@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
 using Rpg.Crafting;
+using Rpg.Interface;
 using UnityEngine;
 
 namespace Rpg.Entities
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class WorldItem : Interactible
     {
         public Item item;
@@ -13,10 +16,15 @@ namespace Rpg.Entities
 
         public void OnEnable()
         {
-            UpdateDisplayedItem();
             rigidbody = GetComponent<Rigidbody>();
+            rigidbody.isKinematic = true;
+            onInteract.AddListener(item.InspectItem);
         }
 
+        private void OnDisable()
+        {
+            onInteract.RemoveListener(item.InspectItem);
+        }
         public void UpdateDisplayedItem()
         {
             if(transform.childCount > 0)

@@ -16,7 +16,8 @@ namespace Player
         public Text vidaInfinitaText;
         private PlayerMovement m_PlayerMovement;
         [SerializeField] private AudioSource audioPlayer;
-    
+
+        public float vidaCounterUI;
 
         public int Vidas
         {
@@ -102,6 +103,7 @@ namespace Player
         private void Update()
         {
             vidaInfinita();
+            vidaCounterUI=(float)Vidas;
         }
     }
 }

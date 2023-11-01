@@ -429,9 +429,9 @@ Canvas:
   m_GameObject: {fileID: 7477102873038251064}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 7477102872735136050}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -763,9 +763,9 @@ MonoBehaviour:
   rotateSpeed: {x: 0, y: 0, z: 0, w: 1}
   scaleSpeed: 1
   inactiveTime: 1
-  minScale: 0.01
-  maxScale: 3
-  defaultScaleFactor: 0.5
+  minScale: 0.5
+  maxScale: 5
+  defaultScaleFactor: 1
 --- !u!1 &7477102874205573981
 GameObject:
   m_ObjectHideFlags: 0
