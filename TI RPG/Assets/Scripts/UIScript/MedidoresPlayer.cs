@@ -13,8 +13,8 @@ public class MedidoresPlayer : MonoBehaviour
     public Slider medidor;
 
     private Component foundComponent;
-    private System.Type componentType;
-    private System.Reflection.FieldInfo fieldInfo;
+    private Type componentType;
+    private FieldInfo fieldInfo;
 
     void Start()
     {
