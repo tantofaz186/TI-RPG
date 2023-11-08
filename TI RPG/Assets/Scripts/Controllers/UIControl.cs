@@ -57,8 +57,11 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
             }
         }
+    } 
+    public void SetInventoryActive(bool active)
+    {
+        inventory.SetActive(active);
     }
-
     private void Update()
     {
         AbrirSkillTree();
