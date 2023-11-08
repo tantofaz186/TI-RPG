@@ -42,7 +42,7 @@ namespace Rpg.Interface
 
             GameObject go = Instantiate(item.inspectPrefab, gimbal.transform);
             go.transform.localScale *= defaultScaleFactor;
-            worldItem = go.GetComponent<WorldItem>();
+            worldItem = item.prefab.GetComponent<WorldItem>();
             pickUpButton.gameObject.SetActive(worldItem.canBeCollected);
             labelItemName.text = item.displayName;
         }
@@ -53,7 +53,6 @@ namespace Rpg.Interface
             enabled = open;
             Time.timeScale = open ? 0f : 1f;
             gimbal.gameObject.SetActive(open);
-            
             gimbal.localScale = Vector3.one;
         }
         
