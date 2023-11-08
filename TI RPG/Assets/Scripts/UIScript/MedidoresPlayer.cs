@@ -8,13 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class MedidoresPlayer : MonoBehaviour
 {
-    public string nomeScript; 
-    public string nomeVariavel; 
-    public Slider medidor; 
+    public string nomeScript;
+    public string nomeVariavel;
+    public Slider medidor;
 
     private Component foundComponent;
     private System.Type componentType;
-    private  System.Reflection.FieldInfo fieldInfo;
+    private System.Reflection.FieldInfo fieldInfo;
 
     void Start()
     {
@@ -25,12 +25,14 @@ public class MedidoresPlayer : MonoBehaviour
     void Update()
     {
         DesativaNoMenu();
-        if(foundComponent==null){
-        AcharScriptPorNome(nomeScript, nomeVariavel);
+        if (foundComponent == null)
+        {
+            AcharScriptPorNome(nomeScript, nomeVariavel);
         }
+
         if (fieldInfo != null)
         {
-            medidor.value=(float)fieldInfo.GetValue(foundComponent);
+            medidor.value = (float)fieldInfo.GetValue(foundComponent);
         }
     }
 
@@ -46,15 +48,20 @@ public class MedidoresPlayer : MonoBehaviour
             {
                 componentType = foundComponent.GetType();
                 fieldInfo = componentType.GetField(variavelNome);
-                break; 
+                break;
             }
         }
     }
-    void DesativaNoMenu(){
-        if(SceneManager.GetActiveScene().name=="Menu"){
-        medidor.gameObject.SetActive(false);
-        }else{
-          medidor.gameObject.SetActive(true);   
+
+    void DesativaNoMenu()
+    {
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            medidor.gameObject.SetActive(false);
+        }
+        else
+        {
+            medidor.gameObject.SetActive(true);
         }
     }
 }
