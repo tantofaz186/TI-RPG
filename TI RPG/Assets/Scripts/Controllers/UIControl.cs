@@ -30,7 +30,7 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
         skillTreeMenu.SetActive(false);
         dialogBox.SetActive(false);
         pauseMenu.SetActive(false);
-        inventory.SetActive(false);
+        inventory.SetActive(arg0.buildIndex != 0);
     }
 
     private void ResetUI()

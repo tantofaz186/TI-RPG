@@ -1,9 +1,11 @@
 ﻿using Controllers;
 using Rpg.Crafting;
+using Rpg.Entities;
 using TMPro;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine.UI;
 #endif
 namespace Rpg.Interface
 {
@@ -13,6 +15,8 @@ namespace Rpg.Interface
         public Transform gimbal;
         public Camera inspectCamera;
         public TMP_Text labelItemName;
+        public Button pickUpButton;
+        private WorldItem worldItem;
         
         [Header("STATE")]
         public Quaternion rotateSpeed = Quaternion.identity;
@@ -27,6 +31,7 @@ namespace Rpg.Interface
         private void Awake()
         {
             SetOpen(false);
+            pickUpButton.onClick.AddListener(Collect);
         }
         
         public void InspectItem(Item item)
@@ -37,7 +42,7 @@ namespace Rpg.Interface
 
             GameObject go = Instantiate(item.inspectPrefab, gimbal.transform);
             go.transform.localScale *= defaultScaleFactor;
-
+            pickUpButton.gameObject.SetActive(worldItem.canBeCollected);
             labelItemName.text = item.displayName;
         }
 
@@ -94,7 +99,11 @@ namespace Rpg.Interface
         {
             rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1/512F);
         }
-        
+        public void Collect()
+        {
+            worldItem.Collect();
+            SetOpen(false);
+        }
 #if UNITY_EDITOR
         [CustomEditor(typeof(InspectScreen))]
         public class InspectScreenEditor : Editor

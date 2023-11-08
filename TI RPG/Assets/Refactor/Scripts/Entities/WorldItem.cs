@@ -10,7 +10,7 @@ namespace Rpg.Entities
     public class WorldItem : Interactible
     {
         public Item item;
-        
+        public bool canBeCollected;
         [NonSerialized]
         public Rigidbody rigidbody;
 
@@ -36,6 +36,7 @@ namespace Rpg.Entities
 
         public void Collect()
         {
+            if (!canBeCollected) return;
             if (PlayerInventory.Instance.AddItem(item))
             {
                 Destroy(gameObject);
