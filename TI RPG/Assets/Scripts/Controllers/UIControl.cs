@@ -11,7 +11,6 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     public GameObject skillTreeMenu;
     public GameObject dialogBox;
     public GameObject pauseMenu;
-    public GameObject margens;
     public GameObject quickInventory;
     public GameObject inventory;
 
@@ -24,8 +23,7 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
     private void ResetUI(Scene arg0, LoadSceneMode arg1)
     {
-        mainMenu.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
-        margens.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
+        mainMenu.SetActive(arg0.buildIndex == 0); //Sï¿½ ativar se estiver na cena do menu principal
         quickInventory.SetActive(arg0.buildIndex != 0);
         skillTreeMenu.SetActive(false);
         dialogBox.SetActive(false);
