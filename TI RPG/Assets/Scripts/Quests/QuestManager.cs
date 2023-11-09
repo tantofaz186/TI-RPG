@@ -17,7 +17,7 @@ namespace Quests
 
         public void ProcurarQuests(Scene arg0, LoadSceneMode loadSceneMode)
         {
-            if (arg0 != SceneManager.GetSceneByBuildIndex(2)) return;
+            if (arg0 != SceneManager.GetSceneByBuildIndex(1)) return;
             foreach (var quest in FindObjectsOfType<FetchQuest.FetchQuest>())
             {
                 if (!addedQuestNames.Contains(quest.gameObject.name))
