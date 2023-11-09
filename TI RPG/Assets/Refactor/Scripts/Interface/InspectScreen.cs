@@ -3,48 +3,46 @@ using Rpg.Crafting;
 using Rpg.Entities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEngine.UI;
 #endif
+
 namespace Rpg.Interface
 {
     public class InspectScreen : Singleton<InspectScreen>
     {
-        [Header("REFERNECES")]
-        public Transform gimbal;
+        [Header("REFERNECES")] public Transform gimbal;
         public Camera inspectCamera;
         public TMP_Text labelItemName;
         public Button pickUpButton;
         private WorldItem worldItem;
-        
-        [Header("STATE")]
-        public Quaternion rotateSpeed = Quaternion.identity;
+
+        [Header("STATE")] public Quaternion rotateSpeed = Quaternion.identity;
         public float scaleSpeed = 0f;
         public float inactiveTime = 0f;
-        
-        [Header("SETTINGS")]
-        public float minScale = 0.75f;
+
+        [Header("SETTINGS")] public float minScale = 0.75f;
         public float maxScale = 1.5f;
         public float defaultScaleFactor = 0.5f;
-        
+
         private void Awake()
         {
             SetOpen(false);
             pickUpButton.onClick.AddListener(Collect);
         }
-        
-        public void InspectItem(Item item)
+
+        public void InspectItem(WorldItem item)
         {
             SetOpen(true);
             if (gimbal.childCount > 0)
                 Destroy(gimbal.GetChild(0).gameObject);
 
-            GameObject go = Instantiate(item.inspectPrefab, gimbal.transform);
+            GameObject go = Instantiate(item.item.inspectPrefab, gimbal.transform);
             go.transform.localScale *= defaultScaleFactor;
-            worldItem = item.prefab.GetComponent<WorldItem>();
+            worldItem = item.gameObject.GetComponent<WorldItem>();
             pickUpButton.gameObject.SetActive(worldItem.canBeCollected);
-            labelItemName.text = item.displayName;
+            labelItemName.text = item.item.displayName;
         }
 
         public void SetOpen(bool open)
@@ -55,7 +53,7 @@ namespace Rpg.Interface
             gimbal.gameObject.SetActive(open);
             gimbal.localScale = Vector3.one;
         }
-        
+
         public void Update()
         {
             float deltaTime = Time.unscaledDeltaTime;
@@ -64,6 +62,7 @@ namespace Rpg.Interface
                 ResetState();
 
             #region Zoom
+
             float msw = Input.GetAxis("Mouse ScrollWheel");
             if (Mathf.Abs(msw) > 0.01f)
             {
@@ -72,12 +71,14 @@ namespace Rpg.Interface
             }
             else
                 scaleSpeed = Mathf.Lerp(scaleSpeed, 0f, deltaTime * 8f);
-            
+
             float f = gimbal.localScale.x + scaleSpeed;
             gimbal.localScale = Vector3.one * Mathf.Clamp(f, minScale, maxScale);
+
             #endregion
 
             #region Rotation
+
             if (Input.GetMouseButton(0))
             {
                 Vector2 rot = 5 * new Vector2(Input.GetAxis("Mouse Y"), -Input.GetAxis("Mouse X"));
@@ -91,6 +92,7 @@ namespace Rpg.Interface
                 gimbal.rotation *= rotateSpeed;
                 rotateSpeed = Quaternion.Lerp(rotateSpeed, Quaternion.identity, deltaTime * 16f);
             }
+
             #endregion
 
             inactiveTime += deltaTime;
@@ -98,11 +100,12 @@ namespace Rpg.Interface
 
         public void ResetState()
         {
-            rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1/512F);
+            rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1 / 512F);
         }
+
         public void Collect()
         {
-            worldItem.Collect();
+            if (worldItem.Collect()) Destroy(worldItem.gameObject);
             SetOpen(false);
         }
 #if UNITY_EDITOR
@@ -110,16 +113,16 @@ namespace Rpg.Interface
         public class InspectScreenEditor : Editor
         {
             public Item testItem;
-            
+
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
 
-                testItem = (Item) EditorGUILayout.ObjectField("Item", testItem, typeof(Item), false);
+                testItem = (Item)EditorGUILayout.ObjectField("Item", testItem, typeof(Item), false);
                 if (GUILayout.Button("Test Inspect"))
                 {
                     InspectScreen screen = (target as InspectScreen)!;
-                    screen.InspectItem(testItem);
+                    screen.InspectItem(testItem.prefab.GetComponent<WorldItem>()!);
                 }
             }
         }

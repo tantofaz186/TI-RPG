@@ -1,4 +1,5 @@
 ﻿using System;
+using Rpg.Entities;
 using Rpg.Interface;
 using UnityEditor;
 using UnityEngine;
@@ -21,13 +22,8 @@ namespace Rpg.Crafting
         {
             return id;
         }
-        
-        public virtual void InspectItem()
-        {
-            InspectScreen.Instance.InspectItem(this);
-        }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         [CustomEditor(typeof(Item))]
         public class ItemEditor : Editor
         {
@@ -35,11 +31,11 @@ namespace Rpg.Crafting
             {
                 base.OnInspectorGUI();
 
-                if (GUILayout.Button("Inspect Item"))
-                {
-                    Item item = (target as Item)!;
-                    item.InspectItem();
-                }
+                // if (GUILayout.Button("Inspect Item"))
+                // {
+                //     Item item = (target as Item)!;
+                //     item.InspectItem();
+                // }
             }
         }
         #endif

@@ -11,36 +11,38 @@ namespace Rpg.Entities
     {
         public Item item;
         public bool canBeCollected;
-        [NonSerialized]
-        public Rigidbody rigidbody;
+        [NonSerialized] public Rigidbody rigidbody;
 
         public void OnEnable()
         {
             rigidbody = GetComponent<Rigidbody>();
             rigidbody.isKinematic = true;
-            onInteract.AddListener(item.InspectItem);
+            onInteract.AddListener(InspectItem);
         }
 
         private void OnDisable()
         {
-            onInteract.RemoveListener(item.InspectItem);
+            onInteract.RemoveListener(InspectItem);
         }
+
         public void UpdateDisplayedItem()
         {
-            if(transform.childCount > 0)
+            if (transform.childCount > 0)
                 Destroy(transform.GetChild(0).gameObject);
 
-            if(item != null)
+            if (item != null)
                 Instantiate(item.prefab, transform);
         }
 
-        public void Collect()
+        public void InspectItem()
         {
-            if (!canBeCollected) return;
-            if (PlayerInventory.Instance.AddItem(item))
-            {
-                Destroy(gameObject);
-            }
+            InspectScreen.Instance.InspectItem(this);
+        }
+
+        public bool Collect()
+        {
+            if (!canBeCollected) return false;
+            return PlayerInventory.Instance.AddItem(item);
         }
     }
 }
