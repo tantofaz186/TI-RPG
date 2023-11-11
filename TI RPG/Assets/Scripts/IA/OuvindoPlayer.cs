@@ -42,7 +42,6 @@ namespace IA
                     if (collider.gameObject.tag == "Player")
                     {
                         StartCoroutine(MoverAteOSom());
-                        //Debug.Log("Detected: " + collider.gameObject.name);
                     }
                     else
                     {
@@ -60,8 +59,10 @@ namespace IA
         IEnumerator MoverAteOSom()
         {
             Vector3 lastKnownPosition = Alvo.position;
-            Mover(transform.position);
+            Mover(lastKnownPosition);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
+            SetState(new PatrulhaState(this, this.gameObject.GetComponent<InimigoQuePersegue>().Pontos));
+
         }
     }
 }
