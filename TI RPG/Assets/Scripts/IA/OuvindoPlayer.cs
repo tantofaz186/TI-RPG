@@ -11,12 +11,12 @@ namespace IA
         public LayerMask detectionLayer;
         [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
         [SerializeField] private InimigoUI inimigoUI;
-        [SerializeField] Transform alvo;
-        public Transform Alvo => alvo;
-
+        //[SerializeField] Transform alvo;
+        //public Transform Alvo => alvo;
+        Vector3 lastHeardPosition;
         private void Awake()
         {
-            alvo = GameObject.FindGameObjectWithTag("Player").transform;
+            //alvo = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         private void Update()
@@ -40,12 +40,14 @@ namespace IA
                 foreach (Collider collider in colliders)
                 {
                     if (collider.gameObject.tag == "Player")
-                    {
-                        StartCoroutine(MoverAteOSom());
+                    { 
+                        lastHeardPosition = collider.transform.position;
+                        StartCoroutine(MoverAteOSom(lastHeardPosition));
                     }
-                    else
+                    else if(Vector3.Distance(transform.position, lastHeardPosition) < 0.1f&& !(collider.gameObject.tag == "Player"))
                     {
-                        StopCoroutine(MoverAteOSom());
+                        StopCoroutine(MoverAteOSom(lastHeardPosition));
+                        this.gameObject.GetComponent<InimigoQuePersegue>().SetStatePatrulha();
                     }
                 }
             }
@@ -56,12 +58,12 @@ namespace IA
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, areaDeAudicao);
         }
-        IEnumerator MoverAteOSom()
+        IEnumerator MoverAteOSom(Vector3 position)
         {
-            Vector3 lastKnownPosition = Alvo.position;
-            Mover(lastKnownPosition);
+            //Vector3 lastKnownPosition = Alvo.position;
+            Mover(position);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
-            SetState(new PatrulhaState(this, this.gameObject.GetComponent<InimigoQuePersegue>().Pontos));
+            //SetState(new PatrulhaState(this, this.gameObject.GetComponent<InimigoQuePersegue>().Pontos));
 
         }
     }
