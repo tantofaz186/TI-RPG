@@ -64,7 +64,7 @@ namespace IA
             SetState(new PerseguindoState(this, coneDeVisão.Alvo));
         }
 
-        void SetStatePatrulha()
+        public void SetStatePatrulha()
         {
 
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;

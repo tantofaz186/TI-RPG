@@ -3036,6 +3036,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1589396336216678548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5321613383223912761}
+  - component: {fileID: 612007650718651206}
+  - component: {fileID: 1421798512684287681}
+  m_Layer: 0
+  m_Name: InventarioActiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5321613383223912761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589396336216678548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 620.82654, y: 370.00616, z: 0}
+  m_LocalScale: {x: 0.99998826, y: 0.99998826, z: 0.99998826}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 281772175308669359}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612007650718651206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589396336216678548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a541bc78b929c418b0b874d414f25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventarioGrande: {fileID: 0}
+  botaoAbrirInventario: {fileID: 0}
+--- !u!114 &1421798512684287681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589396336216678548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a541bc78b929c418b0b874d414f25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventarioGrande: {fileID: 5930701740687058629}
+  botaoAbrirInventario: {fileID: 7743174085809408439}
 --- !u!1 &1611101527419700659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,7 +6604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &664203816681672923
 MonoBehaviour:
@@ -9309,7 +9370,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6222717519174802557
 MonoBehaviour:
@@ -10978,7 +11039,7 @@ RectTransform:
   - {fileID: 4591310873591487147}
   - {fileID: 8653694844210110866}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12493,7 +12554,7 @@ RectTransform:
   - {fileID: 6094141711825864494}
   - {fileID: 4595947192795226574}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053500015, y: 0.09900001}
   m_AnchorMax: {x: 0.94649994, y: 0.90840745}
@@ -13241,6 +13302,7 @@ RectTransform:
   - {fileID: 1284653941393835016}
   - {fileID: 2442248912153717182}
   - {fileID: 4514457635469627829}
+  - {fileID: 5321613383223912761}
   - {fileID: 1631124189390447011}
   - {fileID: 6121632678478229420}
   - {fileID: 1859996681888358075}
@@ -15112,7 +15174,7 @@ RectTransform:
   - {fileID: 145747069207659912}
   - {fileID: 72443713145258069}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15475,18 +15537,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7743174085809408439}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 5930701740687058629}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
