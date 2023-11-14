@@ -402,6 +402,7 @@ MonoBehaviour:
   smr: {fileID: 0}
   vidaInfinitaText: {fileID: 0}
   audioPlayer: {fileID: 0}
+  vidaCounterUI: 0
 --- !u!114 &1814489159087836119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +419,9 @@ MonoBehaviour:
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
   mouseInput: {fileID: 0}
+  folego: 100
+  podeCorrer: 0
+  _collider: {fileID: 0}
 --- !u!95 &1814489159087836122
 Animator:
   serializedVersion: 5
