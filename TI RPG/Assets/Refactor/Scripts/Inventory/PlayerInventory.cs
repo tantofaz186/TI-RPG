@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Controllers;
 using Rpg.Entities;
 using Rpg.Save;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 #if UNITY_EDITOR
@@ -19,31 +17,36 @@ namespace Rpg.Crafting
     {
         public Action hasChangedItems;
 
-        [Header("DRAGGING")] 
+        [Header("DRAGGING")]
         public Item draggedItem;
+
         public Vector2 draggingOffset;
         public Image draggedItemDisplay;
 
-        [Header("REFERENCES")] 
+        [Header("REFERENCES")]
         public Recipe[] recipes;
+
         public Item[] items;
         public Image[] slots;
         public GameObject prefabWorldItem;
 
-        [Header("STATE")] 
+        [Header("STATE")]
         [SerializeField]
         private Item[] contents = new Item[26];
+
         public int firstContainerSlot = 4;
-        public bool shouldIgnoreCrafting = false;
+        public bool shouldIgnoreCrafting;
+        public event Action<Item> onCraftItem;
 
         #region Callbacks
+
         private void OnEnable()
         {
             SaveManager.mustReloadData += OnReloadContents;
             hasChangedItems += OnChangedContents;
             OnReloadContents();
 
-            for (int i = 0; i < slots.Length; i ++)
+            for (int i = 0; i < slots.Length; i++)
             {
                 InventorySlotEventHandler comp = slots[i].gameObject.AddComponent<InventorySlotEventHandler>();
                 comp.slotId = i;
@@ -55,12 +58,10 @@ namespace Rpg.Crafting
         {
             SaveManager.mustReloadData -= OnReloadContents;
             hasChangedItems -= OnChangedContents;
-            
-            foreach (var image in slots)
-            {
-                if(image != null)
+
+            foreach (Image image in slots)
+                if (image != null)
                     Destroy(image.gameObject.GetComponent<InventorySlotEventHandler>());
-            }
         }
 
         private void Update()
@@ -92,7 +93,7 @@ namespace Rpg.Crafting
 
         public void OnChangedContents()
         {
-            string[] itemIds = new String[contents.Length];
+            string[] itemIds = new string[contents.Length];
 
             for (int i = 0; i < contents.Length; i++)
             {
@@ -105,7 +106,7 @@ namespace Rpg.Crafting
             SaveManager.Instance.data.playerInventory = itemIds;
             RefreshVisual();
         }
-        
+
         public void RefreshVisual()
         {
             for (int i = 0; i < contents.Length; i++)
@@ -116,6 +117,7 @@ namespace Rpg.Crafting
                     slots[i].sprite = null;
                     continue;
                 }
+
                 slots[i].sprite = item.sprite;
             }
         }
@@ -132,29 +134,27 @@ namespace Rpg.Crafting
             Item[] ingredients = new Item[3];
             Array.Copy(contents, ingredients, 3);
             foreach (RecipeInfo recipe in GetAvailableRecipes())
-            {
                 if (recipe.Matches(ingredients))
                 {
                     SetItem(firstContainerSlot - 1, recipe.recipe.result);
+                    onCraftItem?.Invoke(recipe.recipe.result);
                     return;
                 }
-            }
-            
+
             SetItem(firstContainerSlot - 1, null);
         }
-        
+
         public void OnClickOnSlot(int slot)
         {
-            
             if (slot >= 0)
             {
                 if (draggedItem == null)
                 {
-                    var item = contents[slot];
+                    Item item = contents[slot];
                     if (item != null)
                     {
                         if (slot == firstContainerSlot - 1)
-                            for(int i = 0 ; i < firstContainerSlot - 1; i ++)
+                            for (int i = 0; i < firstContainerSlot - 1; i++)
                                 contents[i] = null;
 
                         //Grab item
@@ -162,12 +162,10 @@ namespace Rpg.Crafting
                         SetDraggedItem(item);
                         draggingOffset = Input.mousePosition - slots[slot].rectTransform.position;
                     }
-
-                    return;
                 }
                 else
                 {
-                    var item = contents[slot];
+                    Item item = contents[slot];
                     if (item == null && slot != firstContainerSlot - 1)
                     {
                         SetItem(slot, draggedItem);
@@ -179,14 +177,16 @@ namespace Rpg.Crafting
             {
                 if (draggedItem == null)
                     return;
-                
+
                 DropItem(draggedItem);
                 SetDraggedItem(null);
             }
         }
+
         #endregion
 
         #region Inventory Methods
+
         public bool HasItem(Item item)
         {
             return Array.IndexOf(contents, item) >= firstContainerSlot;
@@ -204,7 +204,7 @@ namespace Rpg.Crafting
 
         public int FirstEmptySlot()
         {
-            for(int i = firstContainerSlot; i < contents.Length; i ++)
+            for (int i = firstContainerSlot; i < contents.Length; i++)
                 if (contents[i] == null)
                     return i;
             return -1;
@@ -230,14 +230,12 @@ namespace Rpg.Crafting
         public bool RemoveItem(Item item)
         {
             for (int i = firstContainerSlot; i < contents.Length; i++)
-            {
                 if (contents[i] != null && contents[i] == item)
                 {
                     contents[i] = null;
                     hasChangedItems?.Invoke();
                     return true;
                 }
-            }
 
             return false;
         }
@@ -265,9 +263,11 @@ namespace Rpg.Crafting
             draggedItemDisplay.sprite = item == null ? null : item.sprite;
             draggedItemDisplay.gameObject.SetActive(item != null);
         }
+
         #endregion
 
         #region Inventory Utils
+
         public Item GetItemById(string id)
         {
             return items.FirstOrDefault(i => i.id == id);
@@ -275,26 +275,22 @@ namespace Rpg.Crafting
 
         public IEnumerable<RecipeInfo> GetAvailableRecipes()
         {
-            List<RecipeInfo> infos = new List<RecipeInfo>();
+            List<RecipeInfo> infos = new();
 
             foreach (Recipe recipe in recipes)
-            {
-                infos.Add(new RecipeInfo()
+                infos.Add(new RecipeInfo
                 {
                     recipe = recipe,
                     foundItems = 0
                 });
-            }
 
             foreach (Item item in contents)
+            foreach (RecipeInfo recipeInfo in infos)
             {
-                foreach (RecipeInfo recipeInfo in infos)
-                {
-                    if(recipeInfo.isCraftable)
-                        continue;
-                    if(recipeInfo.recipe.ingredients.Contains(item))
-                        recipeInfo.foundItems++;
-                }
+                if (recipeInfo.isCraftable)
+                    continue;
+                if (recipeInfo.recipe.ingredients.Contains(item))
+                    recipeInfo.foundItems++;
             }
 
             foreach (RecipeInfo recipeInfo in infos)
@@ -314,6 +310,7 @@ namespace Rpg.Crafting
             go.rigidbody.angularVelocity =
                 new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
         }
+
         #endregion
     }
 
@@ -331,20 +328,20 @@ namespace Rpg.Crafting
                 inventory.items = GetAllInstances<Item>().ToArray();
                 inventory.recipes = GetAllInstances<Recipe>().ToArray();
             }
-            
+
             if (GUILayout.Button("Refresh Contents"))
             {
                 PlayerInventory inventory = (target as PlayerInventory)!;
                 inventory.OnChangedContents();
             }
-            
+
             if (GUILayout.Button("Clear"))
             {
                 PlayerInventory inventory = (target as PlayerInventory)!;
                 inventory.Clear();
             }
         }
-        
+
         public IEnumerable<T> GetAllInstances<T>() where T : ScriptableObject
         {
             return AssetDatabase.FindAssets($"t: {typeof(T).Name}").ToList()
