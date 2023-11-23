@@ -3045,7 +3045,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5321613383223912761}
-  - component: {fileID: 612007650718651206}
   - component: {fileID: 1421798512684287681}
   m_Layer: 0
   m_Name: InventarioActiveManager
@@ -3069,20 +3068,6 @@ Transform:
   m_Father: {fileID: 281772175308669359}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &612007650718651206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589396336216678548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a541bc78b929c418b0b874d414f25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventarioGrande: {fileID: 0}
-  botaoAbrirInventario: {fileID: 0}
 --- !u!114 &1421798512684287681
 MonoBehaviour:
   m_ObjectHideFlags: 0
