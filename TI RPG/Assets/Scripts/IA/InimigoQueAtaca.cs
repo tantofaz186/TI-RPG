@@ -6,7 +6,7 @@ using UnityEngine;
 namespace IA
 {
     [RequireComponent(typeof(ConeDeVisão))]
-    public class InimigoQuePersegue : Agente
+    public class InimigoQueAtaca : Agente
     {
         [SerializeField] private List<Vector3> pontos;
         [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
@@ -62,11 +62,6 @@ namespace IA
         {
             coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
             SetState(new PerseguindoState(this, coneDeVisão.Alvo));
-        }
-
-        void SetStateAtacando()
-        {
-            
         }
 
         public void SetStatePatrulha()
