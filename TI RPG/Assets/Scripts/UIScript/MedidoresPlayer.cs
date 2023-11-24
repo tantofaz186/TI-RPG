@@ -1,42 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 using System.Reflection;
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MedidoresPlayer : MonoBehaviour
 {
     public string nomeScript;
     public string nomeVariavel;
     public Slider medidor;
-
-    private Component foundComponent;
     private Type componentType;
     private FieldInfo fieldInfo;
 
-    void Start()
+    private Component foundComponent;
+
+    private void Start()
     {
         AcharScriptPorNome(nomeScript, nomeVariavel);
     }
 
-
-    void Update()
+    private void Update()
     {
-        DesativaNoMenu();
-        if (foundComponent == null)
-        {
-            AcharScriptPorNome(nomeScript, nomeVariavel);
-        }
-
-        if (fieldInfo != null)
-        {
-            medidor.value = (float)fieldInfo.GetValue(foundComponent);
-        }
+        if (fieldInfo != null) medidor.value = (float)fieldInfo.GetValue(foundComponent);
     }
 
-    void AcharScriptPorNome(string scriptNome, string variavelNome)
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += DesativaNoMenu;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= DesativaNoMenu;
+    }
+
+    private void AcharScriptPorNome(string scriptNome, string variavelNome)
     {
         GameObject[] TodosOsGameObjects = FindObjectsOfType<GameObject>();
 
@@ -53,15 +51,8 @@ public class MedidoresPlayer : MonoBehaviour
         }
     }
 
-    void DesativaNoMenu()
+    private void DesativaNoMenu(Scene arg0, LoadSceneMode loadSceneMode)
     {
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            medidor.gameObject.SetActive(false);
-        }
-        else
-        {
-            medidor.gameObject.SetActive(true);
-        }
+        medidor.gameObject.SetActive(arg0.buildIndex != 0);
     }
 }
