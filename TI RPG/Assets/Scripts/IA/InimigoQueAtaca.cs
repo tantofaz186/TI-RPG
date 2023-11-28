@@ -11,6 +11,7 @@ namespace IA
         [SerializeField] private List<Vector3> pontos;
         [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
         [SerializeField] private float forgetTime = 5f;
+        [SerializeField] private float distancia = 0.25f;
         private float forgetTimer = 0f;
         public List<Vector3> Pontos => pontos;
         private ConeDeVisão coneDeVisão;
@@ -21,10 +22,11 @@ namespace IA
         {
             coneDeVisão = GetComponent<ConeDeVisão>();
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
-            SetStatePatrulha();
+           
             animator = GetComponent<Animator>();
-            animator.SetBool("movimentando", true);
+            animator.SetBool("movimentando",false);
             animator.SetFloat("Mover", 0.5f);
+            animator.SetBool("parado",true);
         }
 
         protected override void Update()
@@ -33,7 +35,7 @@ namespace IA
             if (currentState.GetType() != typeof(PerseguindoState)) return;
             forgetTimer += Time.deltaTime;
             if (!(forgetTimer >= forgetTime)) return;
-            SetStatePatrulha();
+            
             SetStateEncontrandoPlayer(.8f);
             forgetTimer = 0f;
         }
@@ -62,6 +64,13 @@ namespace IA
         {
             coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
             SetState(new PerseguindoState(this, coneDeVisão.Alvo));
+            
+        }
+
+        public void SetStateAtacando()
+        {
+            animator.SetBool("atacando",true);
+            animator.SetBool("movimentando",false);
         }
 
         public void SetStatePatrulha()
@@ -69,7 +78,9 @@ namespace IA
 
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetState(new PatrulhaState(this, pontos));
+            SetStatePatrulha();
         }
+
         void SetStateEncontrandoPlayer(float percentage = 0f)
         {
             EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState(percentage);
