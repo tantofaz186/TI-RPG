@@ -16,14 +16,20 @@ namespace IA
         [SerializeField]
         protected float audioDetectionRadius = 10f;
 
+        [SerializeField]
+        protected Animator animator;
+
+        public Animator Animator => animator;
+
+        private void Awake()
+        {
+            agente = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
+        }
+
         private void Start()
         {
             agente.speed = velocidade;
-        }
-
-        private void OnEnable()
-        {
-            agente = GetComponent<NavMeshAgent>();
         }
 
         public void Mover(Vector3 ponto)
@@ -52,12 +58,7 @@ namespace IA
 
         protected virtual void ouvirObjeto(Vector3 objetoOuvido)
         {
-            Debug.Log("Ouvi");
-            if (Vector3.Distance(objetoOuvido, transform.position) <= audioDetectionRadius)
-            {
-                Mover(objetoOuvido);
-                Debug.Log("Ouvi dentro do range");
-            }
+            if (Vector3.Distance(objetoOuvido, transform.position) <= audioDetectionRadius) Mover(objetoOuvido);
         }
     }
 }

@@ -1771,6 +1771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1615238147641692744, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d199e4a05170fdf44882bdec0828f2aa, type: 2}
     - target: {fileID: 1227714414984941275, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
       propertyPath: pontos.Array.size
       value: 5
@@ -1887,8 +1891,55 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1227714414984941275, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+--- !u!1 &284879999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1325620603231277418, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+  m_PrefabInstance: {fileID: 284879998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &284880000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6249570238781422718, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+  m_PrefabInstance: {fileID: 284879998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725005f65eefef94cb2c419ce5272347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &284880001 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -1615238147641692744, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+  m_PrefabInstance: {fileID: 284879998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &284880002 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 1814489159087836116, guid: 97e9548eab40c6345a898c1ebbdfcaf9, type: 3}
+  m_PrefabInstance: {fileID: 284879998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &284880003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284879999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f536a52080675d4dbe61f4c100f7869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 5
+  agente: {fileID: 284880002}
+  audioDetectionRadius: 0
+  animator: {fileID: 284880001}
+  waitTimeWhenSuspicious: 1.5
+  forgetTime: 5
+  distancia: 0.25
+  inimigoUI: {fileID: 284880000}
 --- !u!1001 &345820696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22934,13 +22985,13 @@ MonoBehaviour:
   velocidade: 2.5
   agente: {fileID: 7051339207254645911}
   audioDetectionRadius: 10
+  animator: {fileID: 1252205851983280891}
   pontos:
   - {x: 205.9, y: -3.615, z: 45.77}
   - {x: 212.17, y: -3.615, z: 45.77}
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 3337115533796682557}
-  animator: {fileID: 1252205851983280891}
 --- !u!4 &7640597993766051814
 Transform:
   m_ObjectHideFlags: 0
@@ -22994,6 +23045,7 @@ MonoBehaviour:
   velocidade: 5
   agente: {fileID: 7051339207254645911}
   audioDetectionRadius: 10
+  animator: {fileID: 0}
   areaDeAudicao: 5
   detectionLayer:
     serializedVersion: 2
@@ -23222,6 +23274,10 @@ PrefabInstance:
     - target: {fileID: 610701313825072419, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664203816681672923, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
+      propertyPath: nomeVariavel
+      value: Vida
       objectReference: {fileID: 0}
     - target: {fileID: 706642504364828782, guid: c3fb096c7f7d6ca489efcd3cf3e0a71b, type: 3}
       propertyPath: m_AnchorMax.y

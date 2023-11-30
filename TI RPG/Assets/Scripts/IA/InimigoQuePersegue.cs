@@ -8,21 +8,28 @@ namespace IA
     [RequireComponent(typeof(ConeDeVisão))]
     public class InimigoQuePersegue : Agente
     {
-        [SerializeField] private List<Vector3> pontos;
-        [SerializeField] private float waitTimeWhenSuspicious = 1.5f;
-        [SerializeField] private float forgetTime = 5f;
-        private float forgetTimer = 0f;
-        public List<Vector3> Pontos => pontos;
+        [SerializeField]
+        private List<Vector3> pontos;
+
+        [SerializeField]
+        private float waitTimeWhenSuspicious = 1.5f;
+
+        [SerializeField]
+        private float forgetTime = 5f;
+
+        [SerializeField]
+        private InimigoUI inimigoUI;
+
         private ConeDeVisão coneDeVisão;
-        [SerializeField] private InimigoUI inimigoUI;
-        [SerializeField] Animator animator;
+
+        private float forgetTimer;
+        public List<Vector3> Pontos => pontos;
 
         private void Awake()
         {
             coneDeVisão = GetComponent<ConeDeVisão>();
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetStatePatrulha();
-            animator = GetComponent<Animator>();
             animator.SetBool("movimentando", true);
             animator.SetFloat("Mover", 0.5f);
         }
@@ -37,59 +44,11 @@ namespace IA
             SetStateEncontrandoPlayer(.8f);
             forgetTimer = 0f;
         }
-        
-        void EncontreiOPlayerNoCampoDeVisão()
-        {
-            if (currentState.GetType() == typeof(PerseguindoState)) return;
-            if (currentState.GetType() != typeof(EncontrandoPlayerState))
-            {
-                SetStateEncontrandoPlayer();
-            }
-            ((EncontrandoPlayerState)currentState).Encontrando();
-        }
 
-        IEnumerator MoverAtéOAlvo()
-        {
-            inimigoUI.MostrarImagem(true);
-            Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
-            Mover(transform.position);
-            yield return new WaitForSeconds(waitTimeWhenSuspicious);
-            Mover(lastKnownPosition);
-            inimigoUI.MostrarImagem(false);
-
-        }
-        void SetStatePerseguindo()
-        {
-            coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
-            SetState(new PerseguindoState(this, coneDeVisão.Alvo));
-        }
-
-        void SetStateAtacando()
-        {
-            
-        }
-
-        public void SetStatePatrulha()
-        {
-
-            coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
-            SetState(new PatrulhaState(this, pontos));
-        }
-        void SetStateEncontrandoPlayer(float percentage = 0f)
-        {
-            EncontrandoPlayerState encontrandoPlayerState = new EncontrandoPlayerState(percentage);
-            encontrandoPlayerState.OnFoundPlayer += SetStatePerseguindo;
-            encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
-            SetState(encontrandoPlayerState);
-            StartCoroutine(MoverAtéOAlvo());
-        }
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
-            foreach (var ponto in pontos)
-            {
-                Gizmos.DrawSphere(ponto, 0.5f);
-            }
+            foreach (Vector3 ponto in pontos) Gizmos.DrawSphere(ponto, 0.5f);
 
             Gizmos.color = Color.red;
             try
@@ -101,12 +60,53 @@ namespace IA
                 Debug.LogWarning(e);
             }
         }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Armadilha"))
-            {
-                gameObject.SetActive(false);
-            }
+            if (other.gameObject.CompareTag("Armadilha")) gameObject.SetActive(false);
+        }
+
+        private void EncontreiOPlayerNoCampoDeVisão()
+        {
+            if (currentState.GetType() == typeof(PerseguindoState)) return;
+            if (currentState.GetType() != typeof(EncontrandoPlayerState)) SetStateEncontrandoPlayer();
+
+            ((EncontrandoPlayerState)currentState).Encontrando();
+        }
+
+        private IEnumerator MoverAtéOAlvo()
+        {
+            inimigoUI.MostrarImagem(true);
+            Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
+            Mover(transform.position);
+            yield return new WaitForSeconds(waitTimeWhenSuspicious);
+            Mover(lastKnownPosition);
+            inimigoUI.MostrarImagem(false);
+        }
+
+        private void SetStatePerseguindo()
+        {
+            coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
+            SetState(new PerseguindoState(this, coneDeVisão.Alvo));
+        }
+
+        private void SetStateAtacando()
+        {
+        }
+
+        public void SetStatePatrulha()
+        {
+            coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
+            SetState(new PatrulhaState(this, pontos));
+        }
+
+        private void SetStateEncontrandoPlayer(float percentage = 0f)
+        {
+            EncontrandoPlayerState encontrandoPlayerState = new(percentage, 1f / waitTimeWhenSuspicious);
+            encontrandoPlayerState.OnFoundPlayer += SetStatePerseguindo;
+            encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
+            SetState(encontrandoPlayerState);
+            StartCoroutine(MoverAtéOAlvo());
         }
     }
 }

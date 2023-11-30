@@ -5,17 +5,22 @@ namespace IA
 {
     public class EncontrandoPlayerState : IState
     {
-        float percentage = 0;
-        float timeMultiplier = 1/5f;
-        public event Action OnFoundPlayer;
-        public event Action OnForgetPlayer;
+        private readonly float timeMultiplier = 1 / 5f;
+        private float percentage;
+
+        public EncontrandoPlayerState(float percentage = 0, float timeMultiplier = 1 / 5f)
+        {
+            this.percentage = percentage;
+            this.timeMultiplier = timeMultiplier;
+        }
+
         public void OnEnter()
         {
         }
 
         public void OnUpdate()
         {
-            // Debug.Log((percentage * 100) + "%");
+            Debug.Log(percentage * 100 + "%");
             switch (percentage)
             {
                 case >= 1:
@@ -25,24 +30,25 @@ namespace IA
                     OnForgetPlayer?.Invoke();
                     break;
             }
+
             Perdendo();
         }
-        public void Encontrando()
-        {
-            percentage += Time.deltaTime * timeMultiplier * 2;
-        }
-        public void Perdendo()
-        {
-            percentage -= Time.deltaTime * timeMultiplier;
-        }
-        
+
         public void OnExit()
         {
         }
-        public EncontrandoPlayerState(float percentage = 0)
+
+        public event Action OnFoundPlayer;
+        public event Action OnForgetPlayer;
+
+        public void Encontrando()
         {
-            this.percentage = percentage;
+            percentage += Time.deltaTime * timeMultiplier;
+        }
+
+        public void Perdendo()
+        {
+            percentage -= Time.deltaTime * timeMultiplier / 2;
         }
     }
-
 }

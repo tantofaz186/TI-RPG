@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Controllers;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,19 +8,28 @@ namespace Player
     [RequireComponent(typeof(PlayerMovement))]
     public class PlayerDano : MonoBehaviour
     {
-        [SerializeField] private int vidas = 2;
-        [SerializeField] private float speedBoostMultiplier = 2f;
-        [SerializeField] private float speedBoostTime = 2f;
-        [SerializeField] SkinnedMeshRenderer smr;
-        public Text vidaInfinitaText;
-        private PlayerMovement m_PlayerMovement;
-        [SerializeField] private AudioSource audioPlayer;
+        [SerializeField]
+        private int vidas = 5;
 
-        public float vidaCounterUI;
+        [SerializeField]
+        private float speedBoostMultiplier = 2f;
+
+        [SerializeField]
+        private float speedBoostTime = 2f;
+
+        [SerializeField]
+        private SkinnedMeshRenderer smr;
+
+        public Text vidaInfinitaText;
+
+        [SerializeField]
+        private AudioSource audioPlayer;
+
+        private PlayerMovement m_PlayerMovement;
 
         public int Vidas
         {
-            get { return vidas; }
+            get => vidas;
             set
             {
                 vidas = value;
@@ -33,7 +41,26 @@ namespace Player
                 }
             }
         }
-        void OnCollisionEnter(Collision collision) 
+
+        private void Awake()
+        {
+            audioPlayer = GetComponent<AudioSource>();
+        }
+
+        private void Start()
+        {
+            GameObject vidaInfinitaTextObject = GameObject.FindWithTag("CheatSkillText");
+            vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
+            vidaInfinitaText.text = "";
+            m_PlayerMovement = GetComponent<PlayerMovement>();
+        }
+
+        private void Update()
+        {
+            vidaInfinita();
+        }
+
+        private void OnCollisionEnter(Collision collision)
         {
             if (collision.collider.gameObject.CompareTag("Inimigo"))
             {
@@ -42,7 +69,6 @@ namespace Player
                 StartCoroutine(TomarDano());
                 audioPlayer.Play();
             }
-            
         }
 
         private void OnTriggerEnter(Collider other)
@@ -56,21 +82,22 @@ namespace Player
             }
         }
 
-
-        IEnumerator TomarDano()
+        private IEnumerator TomarDano()
         {
-            Color selfColor = smr.material.color;;
+            Color selfColor = smr.material.color;
+            ;
             Color damageColor = Color.red;
 
-            m_PlayerMovement.GetSpeedBoost(speedBoostTime,speedBoostMultiplier);
+            m_PlayerMovement.GetSpeedBoost(speedBoostTime, speedBoostMultiplier);
             for (int i = 0; i < 3; i++)
             {
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = damageColor;
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = selfColor;
-            }            
+            }
         }
+
         private void vidaInfinita()
         {
             if (Input.GetKeyDown(KeyCode.F8))
@@ -79,6 +106,7 @@ namespace Player
                 StartCoroutine(ActivateCheatText());
             }
         }
+
         private IEnumerator ActivateCheatText()
         {
             vidaInfinitaText.gameObject.SetActive(true);
@@ -87,23 +115,6 @@ namespace Player
             yield return new WaitForSeconds(3f);
 
             vidaInfinitaText.text = "";
-        }
-        private void Start()
-        {
-            GameObject vidaInfinitaTextObject = GameObject.FindWithTag("CheatSkillText");
-            vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
-            vidaInfinitaText.text = "";
-            m_PlayerMovement = GetComponent<PlayerMovement>();
-        }
-
-        private void Awake()
-        {
-            audioPlayer = GetComponent<AudioSource>();
-        }
-        private void Update()
-        {
-            vidaInfinita();
-            vidaCounterUI=(float)Vidas;
         }
     }
 }
