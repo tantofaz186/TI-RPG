@@ -38,6 +38,7 @@ public class MedidoresPlayer : MonoBehaviour
 
     private void MostrarFolegoEVida()
     {
+        if (folegoUI == null || vidasUI == null) return;
         medidorFolego.value = folegoUI.folego;
         medidorVidas.value = vidasUI.Vidas;
     }
