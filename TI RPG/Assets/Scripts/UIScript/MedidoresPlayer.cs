@@ -1,24 +1,18 @@
-using System;
-using System.Reflection;
+using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Player;
 
 public class MedidoresPlayer : MonoBehaviour
 {
+    [SerializeField]
+    private Slider medidorFolego;
 
-    [SerializeField] private PlayerMovement folegoUI;
-    [SerializeField] private PlayerDano vidasUI;
-    [SerializeField] private Slider medidorFolego;
-    [SerializeField] private Slider medidorVidas;
+    [SerializeField]
+    private Slider medidorVidas;
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // if(folegoUI==null){
-        //     folegoUI=GameObject.FindObjectOfType(typeof(PlayerMovement));
-        // }
-    }
+    private PlayerMovement folegoUI;
+    private PlayerDano vidasUI;
 
     private void Update()
     {
@@ -27,23 +21,29 @@ public class MedidoresPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += DesativaNoMenu;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= DesativaNoMenu;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        folegoUI = FindObjectOfType<PlayerMovement>();
+        vidasUI = FindObjectOfType<PlayerDano>();
+        DesativaNoMenu(scene, mode);
     }
 
     private void MostrarFolegoEVida()
     {
-        medidorFolego.value=folegoUI.folego;
-        medidorVidas.value=vidasUI.Vidas;
+        medidorFolego.value = folegoUI.folego;
+        medidorVidas.value = vidasUI.Vidas;
     }
 
     private void DesativaNoMenu(Scene arg0, LoadSceneMode loadSceneMode)
     {
-        //medidor.gameObject.SetActive(arg0.buildIndex != 0);
         medidorFolego.gameObject.SetActive(arg0.buildIndex != 0);
         medidorVidas.gameObject.SetActive(arg0.buildIndex != 0);
     }

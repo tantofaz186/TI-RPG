@@ -7142,7 +7142,7 @@ GameObject:
   - component: {fileID: 1859996681888358075}
   - component: {fileID: 664203816681672923}
   m_Layer: 0
-  m_Name: MedidorVidaManager
+  m_Name: MedidorManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7175,9 +7175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcdef6f81c88324aba24d2fd731cae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeScript: PlayerDano
-  nomeVariavel: vidaCounterUI
-  medidor: {fileID: 1957986385074062395}
+  folegoUI: {fileID: 0}
+  vidasUI: {fileID: 0}
+  medidorFolego: {fileID: 628769830108067739}
+  medidorVidas: {fileID: 1957986385074062395}
 --- !u!1 &3266849914569065078
 GameObject:
   m_ObjectHideFlags: 0
@@ -10010,53 +10011,6 @@ MonoBehaviour:
   vfxVol: {fileID: 871552413438234051}
   musicaVol: {fileID: 8591490272991780830}
   masterVol: {fileID: 3663543109181113272}
---- !u!1 &4523166583529258223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5431398021414564294}
-  - component: {fileID: 6222717519174802557}
-  m_Layer: 0
-  m_Name: MedidorFolegoManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5431398021414564294
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523166583529258223}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -690.00024, y: 444.00003, z: 0}
-  m_LocalScale: {x: 1.7598534, y: 1.7598534, z: 1.7598534}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6222717519174802557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523166583529258223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcdef6f81c88324aba24d2fd731cae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeScript: PlayerMovement
-  nomeVariavel: folego
-  medidor: {fileID: 628769830108067739}
 --- !u!1 &4699252482821432456
 GameObject:
   m_ObjectHideFlags: 0
@@ -13224,7 +13178,7 @@ RectTransform:
   - {fileID: 6094141711825864494}
   - {fileID: 4595947192795226574}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053500015, y: 0.09900001}
   m_AnchorMax: {x: 0.94649994, y: 0.90840745}
@@ -13976,7 +13930,6 @@ RectTransform:
   - {fileID: 1631124189390447011}
   - {fileID: 6121632678478229420}
   - {fileID: 1859996681888358075}
-  - {fileID: 5431398021414564294}
   - {fileID: 3595757404668428125}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -15896,9 +15849,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
