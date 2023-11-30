@@ -3,25 +3,26 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Player;
 
 public class MedidoresPlayer : MonoBehaviour
 {
-    public string nomeScript;
-    public string nomeVariavel;
-    public Slider medidor;
-    private Type componentType;
-    private FieldInfo fieldInfo;
 
-    private Component foundComponent;
+    [SerializeField] private PlayerMovement folegoUI;
+    [SerializeField] private PlayerDano vidasUI;
+    [SerializeField] private Slider medidorFolego;
+    [SerializeField] private Slider medidorVidas;
 
-    private void Start()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        AcharScriptPorNome(nomeScript, nomeVariavel);
+        // if(folegoUI==null){
+        //     folegoUI=GameObject.FindObjectOfType(typeof(PlayerMovement));
+        // }
     }
 
     private void Update()
     {
-        if (fieldInfo != null) medidor.value = (float)fieldInfo.GetValue(foundComponent);
+        MostrarFolegoEVida();
     }
 
     private void OnEnable()
@@ -34,25 +35,16 @@ public class MedidoresPlayer : MonoBehaviour
         SceneManager.sceneLoaded -= DesativaNoMenu;
     }
 
-    private void AcharScriptPorNome(string scriptNome, string variavelNome)
+    private void MostrarFolegoEVida()
     {
-        GameObject[] TodosOsGameObjects = FindObjectsOfType<GameObject>();
-
-        foreach (GameObject go in TodosOsGameObjects)
-        {
-            foundComponent = go.GetComponent(scriptNome);
-
-            if (foundComponent != null)
-            {
-                componentType = foundComponent.GetType();
-                fieldInfo = componentType.GetField(variavelNome);
-                break;
-            }
-        }
+        medidorFolego.value=folegoUI.folego;
+        medidorVidas.value=vidasUI.Vidas;
     }
 
     private void DesativaNoMenu(Scene arg0, LoadSceneMode loadSceneMode)
     {
-        medidor.gameObject.SetActive(arg0.buildIndex != 0);
+        //medidor.gameObject.SetActive(arg0.buildIndex != 0);
+        medidorFolego.gameObject.SetActive(arg0.buildIndex != 0);
+        medidorVidas.gameObject.SetActive(arg0.buildIndex != 0);
     }
 }
