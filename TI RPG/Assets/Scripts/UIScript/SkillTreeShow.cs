@@ -13,20 +13,20 @@ public class SkillTreeShow : MonoBehaviour
         menuUI.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (isSkillTree)
-            {
-                FecharSkillTree();
-            }
-            else
-            {
-                AbrirSkillTree();
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.S))
+    //     {
+    //         if (isSkillTree)
+    //         {
+    //             FecharSkillTree();
+    //         }
+    //         else
+    //         {
+    //             AbrirSkillTree();
+    //         }
+    //     }
+    // }
 
     private void AbrirSkillTree()
     {
