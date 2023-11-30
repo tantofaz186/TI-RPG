@@ -14,16 +14,21 @@ namespace Refactor.Scripts.Quest
 
         public Item reward;
         private int _currentObjectiveIndex;
-        private bool isCompleted;
-        public bool CanBeStarted => requiredQuests.All(quest => quest.isCompleted);
+        public bool IsCompleted { get; private set; }
 
-        public void OnEnable()
+        public bool CanBeStarted => requiredQuests.All(quest => quest.IsCompleted);
+
+        public void _OnEnable()
         {
+            Debug.Log("Quest Enabled");
+            objectives[_currentObjectiveIndex]._OnEnable();
             objectives[_currentObjectiveIndex].OnComplete += OnObjectiveComplete;
         }
 
-        public void OnDisable()
+        public void _OnDisable()
         {
+            Debug.Log("Quest Disabled");
+            objectives[_currentObjectiveIndex]._OnDisable();
             objectives[_currentObjectiveIndex].OnComplete -= OnObjectiveComplete;
         }
 
@@ -31,21 +36,25 @@ namespace Refactor.Scripts.Quest
 
         private void OnObjectiveComplete()
         {
+            Debug.Log("Objective Complete");
+            objectives[_currentObjectiveIndex]._OnDisable();
             objectives[_currentObjectiveIndex].OnComplete -= OnObjectiveComplete;
             if (_currentObjectiveIndex < objectives.Count - 1)
             {
                 _currentObjectiveIndex++;
+                objectives[_currentObjectiveIndex]._OnEnable();
                 objectives[_currentObjectiveIndex].OnComplete += OnObjectiveComplete;
             }
             else
             {
+                Debug.Log("Quest Complete");
                 CompleteQuest();
             }
         }
 
         private void CompleteQuest()
         {
-            isCompleted = true;
+            IsCompleted = true;
             OnComplete?.Invoke(reward);
         }
     }

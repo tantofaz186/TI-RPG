@@ -8,13 +8,15 @@ namespace Refactor.Scripts.Quest
     {
         public Item objectToCraft;
 
-        public void OnEnable()
+        public override void _OnEnable()
         {
+            Debug.Log("Craft Object Objective Enabled");
             PlayerInventory.Instance.onCraftItem += OnCraftItem;
         }
 
-        public void OnDisable()
+        public override void _OnDisable()
         {
+            Debug.Log("Craft Object Objective Disabled");
             PlayerInventory.Instance.onCraftItem -= OnCraftItem;
         }
 

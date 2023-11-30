@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Controllers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [DefaultExecutionOrder(int.MinValue)]
 public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
@@ -14,8 +13,8 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     public Image dialogueImage;
     public GameObject dialoguePanel;
     public Action endDialogue;
-    private Queue<string> sentences;
     private Queue<Sprite> images;
+    private Queue<string> sentences;
     private Queue<string> titles;
 
     private void Start()
@@ -29,7 +28,6 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     public void StartDialogue(Dialogue dialogue)
     {
         Time.timeScale = 0;
-        Debug.Log("in");
         dialoguePanel.SetActive(true);
         sentences.Clear();
 

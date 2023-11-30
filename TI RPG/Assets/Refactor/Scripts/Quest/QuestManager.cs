@@ -17,14 +17,18 @@ namespace Refactor.Scripts.Quest
         {
             foreach (Quest quest in quests)
             {
+                quest._OnEnable();
                 quest.OnComplete += OnQuestComplete;
-                quest.OnEnable();
             }
         }
 
         private void OnDisable()
         {
-            foreach (Quest quest in quests) quest.OnComplete -= OnQuestComplete;
+            foreach (Quest quest in quests)
+            {
+                quest._OnDisable();
+                quest.OnComplete -= OnQuestComplete;
+            }
         }
 
         private void OnQuestComplete(Item reward)

@@ -29,7 +29,6 @@ namespace IA
                 return;
             if (totalTime >= 1)
                 return;
-            Debug.Log(totalTime + " debugging");
             totalTime += Time.deltaTime / 10f;
             self.transform.eulerAngles =
                 Vector3.Lerp(self.transform.rotation.eulerAngles, rotation.eulerAngles, totalTime);

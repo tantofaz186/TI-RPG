@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pedestal : MonoBehaviour
 {
     public GameObject peca;
-    public bool ativado = false;
+    public bool ativado;
 
-    public bool Ativado
-    {
-        get => ativado;
-    }
+    private MeshRenderer mr;
 
-    MeshRenderer mr;
+    public bool Ativado => ativado;
 
     private void Start()
     {
@@ -26,11 +21,11 @@ public class Pedestal : MonoBehaviour
             mr.material.EnableKeyword("_EMISSION");
             ativado = true;
             Puzzle.Instance.CompletarPuzzle();
-            Debug.Log("Ativou");
-        }else{
+        }
+        else
+        {
             mr.material.DisableKeyword("_EMISSION");
             ativado = false;
-            Debug.Log("Desativou");
         }
     }
 }
