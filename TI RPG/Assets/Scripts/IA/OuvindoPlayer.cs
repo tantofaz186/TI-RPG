@@ -46,7 +46,7 @@ namespace IA
                     }
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, areaDeAudicao);
