@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5181789756114698900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5522181670298048558}
+  - component: {fileID: 8866850366122547083}
+  - component: {fileID: 6695047402549027649}
+  - component: {fileID: 3959062050697337251}
+  - component: {fileID: -1964161532411916750}
+  - component: {fileID: -5236026512939254763}
+  - component: {fileID: 7962241448834468332}
+  m_Layer: 9
+  m_Name: CabecaPilar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5522181670298048558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8866850366122547083
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_Mesh: {fileID: -4892948151421303457, guid: 06e15e5e12e6acb41abe78000441512b, type: 3}
+--- !u!23 &6695047402549027649
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 77ab2a9b54a21f841be903d697c1b005, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &3959062050697337251
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-1964161532411916750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9623444, y: 0.6000003, z: 1.1375153}
+  m_Center: {x: 0, y: 0.29999992, z: 0}
+--- !u!114 &-5236026512939254763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -4892948151421303457, guid: 06e15e5e12e6acb41abe78000441512b, type: 3}
+  bakeValues:
+  - data:
+    - {x: 0.6203813, y: -0.4590302, z: 0.63593894}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.6203813, y: -0.4590302, z: -0.63593894}
+    - {x: 0.38291407, y: -0.8713552, z: 0.30678484}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.38291404, y: -0.8713552, z: -0.30678484}
+    - {x: 0.7019405, y: -0.463178, z: 0.54105985}
+    - {x: -0.62038124, y: -0.4590302, z: -0.63593894}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.7019404, y: -0.46317795, z: -0.5410599}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.38291398, y: -0.8713553, z: -0.3067848}
+    - {x: -0.70194024, y: -0.4631781, z: -0.54105985}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.62038124, y: -0.45903015, z: 0.63593894}
+    - {x: -0.70194024, y: -0.4631781, z: 0.54105985}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.38291398, y: -0.8713553, z: 0.3067848}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.6203813, y: -0.4590302, z: 0.63593894}
+    - {x: 0.38291407, y: -0.8713552, z: 0.30678484}
+    - {x: 0.7019405, y: -0.463178, z: 0.54105985}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+  outlineMaskMaterial: {fileID: 0}
+  outlineFillMaterial: {fileID: 0}
+--- !u!114 &7962241448834468332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181789756114698900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMouseOver: 0
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  distanciaMinima: 2
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  corDoOutline: {r: 0, g: 0, b: 1, a: 1}
+  larguraDoOutline: 4
+  modoDoOutline: 1
+  item: {fileID: 11400000, guid: 35eec6da34a856a4b84acd1f724646ab, type: 2}
+  canBeCollected: 1

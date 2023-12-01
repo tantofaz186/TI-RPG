@@ -12,45 +12,30 @@ namespace Rpg.Interface
 {
     public class InspectScreen : Singleton<InspectScreen>
     {
-        [Header("REFERNECES")] public Transform gimbal;
+        [Header("REFERNECES")]
+        public Transform gimbal;
+
         public Camera inspectCamera;
         public TMP_Text labelItemName;
         public Button pickUpButton;
-        private WorldItem worldItem;
 
-        [Header("STATE")] public Quaternion rotateSpeed = Quaternion.identity;
-        public float scaleSpeed = 0f;
-        public float inactiveTime = 0f;
+        [Header("STATE")]
+        public Quaternion rotateSpeed = Quaternion.identity;
 
-        [Header("SETTINGS")] public float minScale = 0.75f;
+        public float scaleSpeed;
+        public float inactiveTime;
+
+        [Header("SETTINGS")]
+        public float minScale = 0.75f;
+
         public float maxScale = 1.5f;
         public float defaultScaleFactor = 0.5f;
+        private WorldItem worldItem;
 
         private void Awake()
         {
             SetOpen(false);
             pickUpButton.onClick.AddListener(Collect);
-        }
-
-        public void InspectItem(WorldItem item)
-        {
-            SetOpen(true);
-            if (gimbal.childCount > 0)
-                Destroy(gimbal.GetChild(0).gameObject);
-
-            GameObject go = Instantiate(item.item.inspectPrefab, gimbal.transform);
-            go.transform.localScale *= defaultScaleFactor;
-            worldItem = item.gameObject.GetComponent<WorldItem>();
-            pickUpButton.gameObject.SetActive(worldItem.canBeCollected);
-            labelItemName.text = item.item.displayName;
-        }
-
-        public void SetOpen(bool open)
-        {
-            inspectCamera.gameObject.SetActive(open);
-            enabled = open;
-            Time.timeScale = open ? 0f : 1f;
-            gimbal.gameObject.SetActive(open);
             gimbal.localScale = Vector3.one;
         }
 
@@ -70,7 +55,9 @@ namespace Rpg.Interface
                 inactiveTime = 0;
             }
             else
+            {
                 scaleSpeed = Mathf.Lerp(scaleSpeed, 0f, deltaTime * 8f);
+            }
 
             float f = gimbal.localScale.x + scaleSpeed;
             gimbal.localScale = Vector3.one * Mathf.Clamp(f, minScale, maxScale);
@@ -98,6 +85,28 @@ namespace Rpg.Interface
             inactiveTime += deltaTime;
         }
 
+        public void InspectItem(WorldItem item)
+        {
+            SetOpen(true);
+            if (gimbal.childCount > 0)
+                Destroy(gimbal.GetChild(0).gameObject);
+
+            GameObject go = Instantiate(item.item.inspectPrefab, gimbal.transform);
+            go.transform.localScale *= defaultScaleFactor;
+            worldItem = item.gameObject.GetComponent<WorldItem>();
+            pickUpButton.gameObject.SetActive(worldItem.canBeCollected);
+            labelItemName.text = item.item.displayName;
+        }
+
+        public void SetOpen(bool open)
+        {
+            inspectCamera.gameObject.SetActive(open);
+            enabled = open;
+            gimbal.gameObject.SetActive(open);
+            gimbal.localScale = Vector3.one;
+            Time.timeScale = open ? 0f : 1f;
+        }
+
         public void ResetState()
         {
             rotateSpeed = Quaternion.Slerp(Quaternion.identity, Quaternion.Inverse(gimbal.rotation), 1 / 512F);
@@ -108,7 +117,7 @@ namespace Rpg.Interface
             if (worldItem.Collect()) Destroy(worldItem.gameObject);
             SetOpen(false);
         }
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         [CustomEditor(typeof(InspectScreen))]
         public class InspectScreenEditor : Editor
         {
@@ -126,6 +135,6 @@ namespace Rpg.Interface
                 }
             }
         }
-#endif
+        #endif
     }
 }
