@@ -15414,9 +15414,9 @@ GameObject:
   - component: {fileID: 4002165896760554034}
   - component: {fileID: 1109107410899527346}
   - component: {fileID: 4604761802023995994}
-  - component: {fileID: 1233568758732631591}
   - component: {fileID: 1339590332118518045}
   - component: {fileID: 2855697326175440211}
+  - component: {fileID: 8990696736966181575}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -15593,20 +15593,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitoriaScreen: {fileID: 5073140322410575052}
---- !u!114 &1233568758732631591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6826155396479121510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecad4a170c3a18e45bb8ab9376b5ee34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quests:
-  - {fileID: 0}
 --- !u!82 &1339590332118518045
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15743,6 +15729,20 @@ MonoBehaviour:
     - 
     - 
     - 
+--- !u!114 &8990696736966181575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826155396479121510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2680cc1c076e4bbe9ad57476cdf8c2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - {fileID: 11400000, guid: ba87f6880b60b8d4b90a2dc56a84e90f, type: 2}
 --- !u!1 &6905549504283111324
 GameObject:
   m_ObjectHideFlags: 0

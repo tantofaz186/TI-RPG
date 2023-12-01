@@ -39,7 +39,9 @@ namespace Refactor.Scripts.Quest
         private void OnTalkToNpc()
         {
             Debug.Log("Talked to NPC" + _npcToDeliver.name);
-            if (PlayerInventory.Instance.HasItem(objectToDeliver)) CompleteObjective();
+            if (!PlayerInventory.Instance.HasItem(objectToDeliver)) return;
+            PlayerInventory.Instance.RemoveItem(objectToDeliver);
+            CompleteObjective();
         }
     }
 }
