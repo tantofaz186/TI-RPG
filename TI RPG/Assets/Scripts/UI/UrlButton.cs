@@ -9,7 +9,7 @@ public class UrlButton : MonoBehaviour
 
     private void Awake()
     {
-        url = GetComponent<TextMeshPro>().text;
+        url = GetComponentInChildren<TMP_Text>().text;
         GetComponent<Button>().onClick.AddListener(() => Application.OpenURL(url));
     }
 }
