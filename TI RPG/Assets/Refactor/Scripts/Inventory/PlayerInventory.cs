@@ -146,7 +146,7 @@ namespace Rpg.Crafting
             SetItem(firstContainerSlot - 1, null);
         }
 
-        public void OnClickOnSlot(int slot)
+        public void OnClickOnSlot(int slot, Vector3 mousePos)
         {
             if (slot >= 0)
             {
@@ -162,7 +162,7 @@ namespace Rpg.Crafting
                         //Grab item
                         SetItem(slot, null);
                         SetDraggedItem(item);
-                        draggingOffset = Input.mousePosition - slots[slot].rectTransform.position;
+                        draggingOffset = mousePos - slots[slot].rectTransform.position;
                     }
                 }
                 else
