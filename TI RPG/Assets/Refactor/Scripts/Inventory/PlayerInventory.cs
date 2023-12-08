@@ -51,6 +51,8 @@ namespace Rpg.Crafting
                 InventorySlotEventHandler comp = slots[i].gameObject.AddComponent<InventorySlotEventHandler>();
                 comp.slotId = i;
                 comp.onClick.AddListener(OnClickOnSlot);
+                comp.onUp.AddListener(OnClickOnSlot);
+                comp.onDown.AddListener(OnClickOnSlot);
             }
         }
 
