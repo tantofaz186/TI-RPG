@@ -341,7 +341,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.59
+  m_Radius: 0.45
   m_Height: 1.89
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -413,6 +413,7 @@ MonoBehaviour:
   velocidade: 2.5
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
+  animator: {fileID: -1615238147641692744}
   pontos:
   - {x: 28, y: 0.4, z: 25}
   - {x: 22.4, y: 0.4, z: 22.8}
@@ -426,7 +427,6 @@ MonoBehaviour:
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 6249570238781422718}
-  animator: {fileID: -1615238147641692744}
 --- !u!95 &-1615238147641692744
 Animator:
   serializedVersion: 5
@@ -462,6 +462,7 @@ MonoBehaviour:
   velocidade: 5
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
+  animator: {fileID: 0}
   areaDeAudicao: 5
   detectionLayer:
     serializedVersion: 2
