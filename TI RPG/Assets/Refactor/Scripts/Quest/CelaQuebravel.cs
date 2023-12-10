@@ -1,4 +1,4 @@
-using Rpg.Crafting;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Refactor.Scripts.Quest
@@ -19,7 +19,7 @@ namespace Refactor.Scripts.Quest
             quest.OnComplete -= OnQuestComplete;
         }
 
-        private void OnQuestComplete(Item obj)
+        private void OnQuestComplete(List<Rewards> rewardsList)
         {
             gameObject.SetActive(false);
         }

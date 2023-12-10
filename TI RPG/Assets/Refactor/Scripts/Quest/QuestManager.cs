@@ -31,9 +31,19 @@ namespace Refactor.Scripts.Quest
             }
         }
 
-        private void OnQuestComplete(Item reward)
+        private void OnQuestComplete(List<Rewards> rewardsList)
         {
-            if (!PlayerInventory.Instance.AddItem(reward)) PlayerInventory.Instance.DropItem(reward);
+            foreach (Rewards reward in rewardsList)
+            {
+                if (reward.removeOnComplete)
+                {
+                    PlayerInventory.Instance.RemoveItem(reward.item);
+                }
+                else if (!PlayerInventory.Instance.AddItem(reward.item))
+                {
+                    PlayerInventory.Instance.DropItem(reward.item);
+                }
+            }
         }
     }
     #if UNITY_EDITOR

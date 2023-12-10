@@ -12,7 +12,8 @@ namespace Refactor.Scripts.Quest
         public List<QuestObjective> objectives = new();
         public List<Quest> requiredQuests = new();
 
-        public Item reward;
+        public List<Rewards> rewards;
+
         private int _currentObjectiveIndex;
         public bool IsCompleted { get; private set; }
 
@@ -32,7 +33,7 @@ namespace Refactor.Scripts.Quest
             objectives[_currentObjectiveIndex].OnComplete -= OnObjectiveComplete;
         }
 
-        public event Action<Item> OnComplete;
+        public event Action<List<Rewards>> OnComplete;
 
         private void OnObjectiveComplete()
         {
@@ -55,7 +56,14 @@ namespace Refactor.Scripts.Quest
         private void CompleteQuest()
         {
             IsCompleted = true;
-            OnComplete?.Invoke(reward);
+            OnComplete?.Invoke(rewards);
         }
+    }
+
+    [Serializable]
+    public class Rewards
+    {
+        public Item item;
+        public bool removeOnComplete;
     }
 }
