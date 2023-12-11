@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3095381338672884481}
   - component: {fileID: 2115244284150506660}
   - component: {fileID: 4232869292026597486}
+  - component: {fileID: 3630795798016016717}
   m_Layer: 0
   m_Name: Pilastra_Pedaco
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3630795798016016717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431609830533247419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7848004, y: 1.7668785, z: 1.7797565}
+  m_Center: {x: 0.84848124, y: -0.04398513, z: -0.03093484}
