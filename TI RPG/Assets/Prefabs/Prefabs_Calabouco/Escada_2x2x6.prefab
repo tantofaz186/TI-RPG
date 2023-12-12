@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2518125125709758833}
   - component: {fileID: 1539658092112088788}
   - component: {fileID: 3654954400062208542}
+  - component: {fileID: 2814368072855489320}
   m_Layer: 0
   m_Name: Escada_2x2x6
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2814368072855489320
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006713335960493003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2476239139636096778, guid: 3db9205f206f6ff4f8afaf34e652d38d, type: 3}

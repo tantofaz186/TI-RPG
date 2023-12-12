@@ -15,8 +15,8 @@ GameObject:
   m_Name: ArcoPorta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2678038375831621697
 Transform:
@@ -143,6 +143,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArcoPorta_Batente
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76ec89261f9d8d549b1ac1616709f0eb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76ec89261f9d8d549b1ac1616709f0eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ec89261f9d8d549b1ac1616709f0eb, type: 3}
 --- !u!4 &2324131898427212923 stripped
@@ -208,6 +216,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d95d66b579c8565468d5faa514ed4af4, type: 3}
       propertyPath: m_Name
       value: ArcoPorta
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d95d66b579c8565468d5faa514ed4af4, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d95d66b579c8565468d5faa514ed4af4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95d66b579c8565468d5faa514ed4af4, type: 3}

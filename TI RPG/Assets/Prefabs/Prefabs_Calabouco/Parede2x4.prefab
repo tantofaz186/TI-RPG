@@ -15,8 +15,8 @@ GameObject:
   m_Name: Parede2x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5865538692504737459
 Transform:
@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rodape
       objectReference: {fileID: 0}
+    - target: {fileID: 5140076258635171157, guid: cc0ed912d42b2f94d9bd533897b32b01, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5485077252233109487, guid: cc0ed912d42b2f94d9bd533897b32b01, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -220,6 +224,10 @@ PrefabInstance:
     - target: {fileID: 5140076258635171157, guid: cc0ed912d42b2f94d9bd533897b32b01, type: 3}
       propertyPath: m_Name
       value: Rodape (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140076258635171157, guid: cc0ed912d42b2f94d9bd533897b32b01, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5485077252233109487, guid: cc0ed912d42b2f94d9bd533897b32b01, type: 3}
       propertyPath: m_RootOrder

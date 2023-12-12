@@ -15,8 +15,8 @@ GameObject:
   m_Name: ParedeArqueada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8601032483688664598
 Transform:
@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rodateto
       objectReference: {fileID: 0}
+    - target: {fileID: 7820354658669427117, guid: bcc46cd887e0b824ebff922bb336483e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc46cd887e0b824ebff922bb336483e, type: 3}
 --- !u!4 &8722615668332143897 stripped
@@ -205,6 +209,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f452cc9323a21c94d9f9e1a9a0dd56be, type: 3}
       propertyPath: m_Name
       value: ParedeArqueada_Detalhe
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f452cc9323a21c94d9f9e1a9a0dd56be, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f452cc9323a21c94d9f9e1a9a0dd56be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f452cc9323a21c94d9f9e1a9a0dd56be, type: 3}

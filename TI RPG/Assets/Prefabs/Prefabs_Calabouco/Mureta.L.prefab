@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 557866635951550862}
   - component: {fileID: 3463878525707107883}
   - component: {fileID: 1726809826109999841}
+  - component: {fileID: 5680015380560969176}
   m_Layer: 0
   m_Name: Mureta.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &557866635951550862
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5680015380560969176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933969240604502836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.823821, y: 1.1604334, z: 2.1320448}
+  m_Center: {x: -1.3470287, y: 0.5758051, z: 1}
