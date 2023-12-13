@@ -15,9 +15,7 @@ namespace IA
             this.self = self;
         }
 
-        public void OnEnter()
-        {
-        }
+        public void OnEnter() { }
 
         public void OnUpdate()
         {
@@ -35,6 +33,7 @@ namespace IA
 
         public void OnExit()
         {
+            self.Animator.SetBool(Movimentando, true);
         }
     }
 }
