@@ -29,7 +29,6 @@ namespace IA
             SetStateParado();
             animator.SetBool("movimentando", false);
             animator.SetFloat("Mover", 0.5f);
-            animator.SetBool("parado", true);
         }
 
         protected override void Update()
