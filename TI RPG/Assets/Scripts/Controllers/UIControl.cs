@@ -39,26 +39,24 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
         ResetUI(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
-    public void AbrirSkillTree()
-    {
-        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))//Ignorar caso estiver na Cena Menu
-        {
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                if (skillTreeMenu.activeSelf == false)
-                {
-                    skillTreeMenu.SetActive(true);
-                }
-
-                else
-                {
-                    skillTreeMenu.SetActive(false);
-                }
-
-
-            }
-        }
-    } 
+//    public void AbrirSkillTree()
+//    {
+//       if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))//Ignorar caso estiver na Cena Menu
+//        {
+//            if (Input.GetKeyDown(KeyCode.Tab))
+//            {
+//                if (skillTreeMenu.activeSelf == false)
+//                {
+//                    skillTreeMenu.SetActive(true);
+//                }
+//
+//                else
+//                {
+//                    skillTreeMenu.SetActive(false);
+//                }
+//            }
+//        }
+//    } 
 
     public void SetInventoryActive(bool active)
     {
@@ -67,7 +65,7 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
     private void Update()
     {
-        AbrirSkillTree();
+        //AbrirSkillTree();
     }
 
 
