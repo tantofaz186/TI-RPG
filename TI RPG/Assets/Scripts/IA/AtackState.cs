@@ -21,7 +21,6 @@ namespace IA
             if (Vector3.Distance(self.transform.position, target.position) < 0.7f)
             {
                 self.Mover(self.transform.position);
-                //self.Animator.SetTrigger(Atacando);
                 self.Animator.SetBool(Movimentando, false);
             }
             else

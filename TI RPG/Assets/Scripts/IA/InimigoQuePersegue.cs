@@ -48,7 +48,10 @@ namespace IA
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
-            foreach (Vector3 ponto in pontos) Gizmos.DrawSphere(ponto, 0.5f);
+            foreach (Vector3 ponto in pontos)
+            {
+                Gizmos.DrawSphere(ponto, 0.5f);
+            }
 
             Gizmos.color = Color.red;
             try
@@ -92,6 +95,8 @@ namespace IA
 
         private void SetStateAtacando()
         {
+            coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
+            SetState(new AtackState(this, coneDeVisão.Alvo));
         }
 
         public void SetStatePatrulha()
@@ -103,7 +108,7 @@ namespace IA
         private void SetStateEncontrandoPlayer(float percentage = 0f)
         {
             EncontrandoPlayerState encontrandoPlayerState = new(percentage, 1f / waitTimeWhenSuspicious);
-            encontrandoPlayerState.OnFoundPlayer += SetStatePerseguindo;
+            encontrandoPlayerState.OnFoundPlayer += SetStateAtacando;
             encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
             SetState(encontrandoPlayerState);
             StartCoroutine(MoverAtéOAlvo());
