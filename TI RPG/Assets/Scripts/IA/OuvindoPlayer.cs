@@ -1,49 +1,59 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace IA
 {
-    public class OuvindoPlayer : Agente
+    [RequireComponent(typeof(InimigoQuePersegue))]
+    public class OuvindoPlayer : MonoBehaviour
     {
         public float areaDeAudicao = 5.0f;
-        public LayerMask detectionLayer;
 
         [SerializeField]
         private float waitTimeWhenSuspicious = 1.5f;
 
         [SerializeField]
-        private InimigoUI inimigoUI;
+        protected NavMeshAgent agente;
 
-        //[SerializeField] Transform alvo;
-        //public Transform Alvo => alvo;
+        private InimigoQuePersegue inimigoQuePersegue;
+
         private Vector3 lastHeardPosition;
-        // private void Awake()
-        // {
-        //     alvo = GameObject.FindGameObjectWithTag("Player").transform;
-        // }
+
+        private void Awake()
+        {
+            inimigoQuePersegue = gameObject.GetComponent<InimigoQuePersegue>();
+        }
 
         private void Update()
         {
-            if (!Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.LeftShift))
-                areaDeAudicao = 5.0f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                areaDeAudicao = 7.0f;
+            }
             else if (Input.GetKey(KeyCode.LeftControl))
+            {
                 areaDeAudicao = 3.0f;
-            else if (Input.GetKey(KeyCode.LeftShift)) areaDeAudicao = 7.0f;
+            }
+            else
+            {
+                areaDeAudicao = 5.0f;
+            }
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, areaDeAudicao);
-            if (colliders.Length > 0)
-                foreach (Collider collider in colliders)
-                    if (collider.gameObject.tag == "Player")
-                    {
-                        lastHeardPosition = collider.transform.position;
-                        StartCoroutine(MoverAteOSom(lastHeardPosition));
-                    }
-                    else if (Vector3.Distance(transform.position, lastHeardPosition) < 0.1f &&
-                             !(collider.gameObject.tag == "Player"))
-                    {
-                        StopCoroutine(MoverAteOSom(lastHeardPosition));
-                        gameObject.GetComponent<InimigoQuePersegue>().SetStatePatrulha();
-                    }
+            if (colliders.Length <= 0) return;
+            foreach (Collider _collider in colliders)
+            {
+                if (_collider.gameObject.CompareTag("Player"))
+                {
+                    lastHeardPosition = _collider.transform.position;
+                    StartCoroutine(MoverAteOSom(lastHeardPosition));
+                }
+                else if (Vector3.Distance(transform.position, lastHeardPosition) < 0.1f)
+                {
+                    StopCoroutine(MoverAteOSom(lastHeardPosition));
+                    inimigoQuePersegue.SetStatePatrulha();
+                }
+            }
         }
 
         private void OnDrawGizmosSelected()
@@ -54,10 +64,8 @@ namespace IA
 
         private IEnumerator MoverAteOSom(Vector3 position)
         {
-            //Vector3 lastKnownPosition = Alvo.position;
-            Mover(position);
+            agente.Move(position);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
-            //SetState(new PatrulhaState(this, this.gameObject.GetComponent<InimigoQuePersegue>().Pontos));
         }
     }
 }
