@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
 
+    private bool inventoryOpen = true;
+
     public GameObject mainMenu;
     public GameObject skillTreeMenu;
     public GameObject dialogBox;
@@ -56,10 +58,12 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
             }
         }
     } 
+
     public void SetInventoryActive(bool active)
     {
         inventory.SetActive(active);
     }
+
     private void Update()
     {
         AbrirSkillTree();
@@ -86,5 +90,45 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     public void RestartScene()
     {
         MudarCena(GetSceneName());
+    }
+
+    public void OpenInventory()
+    {
+        Debug.Log("Estado aberto: " + inventoryOpen);
+        inventory.SetActive(true);
+        UpdateInvetory();
+    }
+
+    public void CloseInventory()
+    {
+        Debug.Log("Estado aberto: " + inventoryOpen);
+        UpdateInvetory();        
+    }
+
+    private void UpdateInvetory()
+    {
+        if (inventoryOpen != false)
+        {
+            inventory.GetComponent<Animator>().SetTrigger("fechar");
+            quickInventory.GetComponent<Animator>().SetTrigger("fechar");
+            StartCoroutine(liberarMudanca());
+            inventoryOpen = false;
+            Debug.Log("Estado aberto: " + inventoryOpen);
+        }
+        else
+        {
+            inventory.GetComponent<Animator>().SetTrigger("abrir");
+            quickInventory.GetComponent<Animator>().SetTrigger("abrir");
+            inventoryOpen = true;
+            Debug.Log("Estado aberto: " + inventoryOpen);
+        }
+    }
+
+    IEnumerator liberarMudanca()
+    {
+        Debug.Log("Passei Aqui!");
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("Terminou os 1s!");
+        inventory.SetActive(false);
     }
 }
