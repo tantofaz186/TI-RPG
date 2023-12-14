@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1814489159087836117}
   - component: {fileID: -4771101085355695763}
   - component: {fileID: -1615238147641692744}
-  - component: {fileID: 3938530139634833}
+  - component: {fileID: 8616441435809271832}
+  - component: {fileID: 2470616261115825051}
   m_Layer: 6
   m_Name: Inimigo
   m_TagString: Inimigo
@@ -126,7 +127,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3938530139634833
+--- !u!114 &8616441435809271832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,16 +136,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325620603231277418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f536a52080675d4dbe61f4c100f7869, type: 3}
+  m_Script: {fileID: 11500000, guid: 883cf6bad12d40d08fb53e4001fe96bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
   animator: {fileID: -1615238147641692744}
+  pontos: []
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 6249570238781422718}
+--- !u!114 &2470616261115825051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325620603231277418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360bafe17d07e9440adc9364376e0842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaDeAudicao: 5
+  waitTimeWhenSuspicious: 1.5
+  agente: {fileID: 1814489159087836116}
 --- !u!1 &2229967687877704061
 GameObject:
   m_ObjectHideFlags: 0
