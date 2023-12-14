@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 1814489159087836116}
   - component: {fileID: 1814489159087836117}
   - component: {fileID: -4771101085355695763}
-  - component: {fileID: 1227714414984941275}
   - component: {fileID: -1615238147641692744}
-  - component: {fileID: 8693198637651965696}
   - component: {fileID: 3938530139634833}
   m_Layer: 6
   m_Name: Inimigo
@@ -108,35 +106,6 @@ MonoBehaviour:
   raio: 10.98
   angulo: 120
   alvo: {fileID: 0}
---- !u!114 &1227714414984941275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325620603231277418}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 883cf6bad12d40d08fb53e4001fe96bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 2.5
-  agente: {fileID: 1814489159087836116}
-  audioDetectionRadius: 10
-  animator: {fileID: -1615238147641692744}
-  pontos:
-  - {x: 28, y: 0.4, z: 25}
-  - {x: 22.4, y: 0.4, z: 22.8}
-  - {x: 24, y: 0.4, z: 15}
-  - {x: 31.7, y: 0.4, z: 7.4}
-  - {x: 42.41, y: 0.4, z: 11.5}
-  - {x: 42.5, y: 0.4, z: 27.5}
-  - {x: 31.2, y: 0.4, z: 24.5}
-  - {x: 28.1, y: 0.4, z: 15.01}
-  - {x: 37.4, y: 0.4, z: 18.4}
-  waitTimeWhenSuspicious: 1.5
-  forgetTime: 5
-  inimigoUI: {fileID: 6249570238781422718}
 --- !u!95 &-1615238147641692744
 Animator:
   serializedVersion: 5
@@ -157,28 +126,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8693198637651965696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325620603231277418}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360bafe17d07e9440adc9364376e0842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidade: 5
-  agente: {fileID: 1814489159087836116}
-  audioDetectionRadius: 10
-  animator: {fileID: -1615238147641692744}
-  areaDeAudicao: 5
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  waitTimeWhenSuspicious: 1.5
-  inimigoUI: {fileID: 0}
 --- !u!114 &3938530139634833
 MonoBehaviour:
   m_ObjectHideFlags: 0
