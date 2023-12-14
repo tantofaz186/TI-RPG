@@ -4,7 +4,7 @@ namespace IA
 {
     public class AtackState : IState
     {
-        private static readonly int Atacando = Animator.StringToHash("atacando");
+        //private static readonly int Atacando = Animator.StringToHash("atacando");
         private static readonly int Movimentando = Animator.StringToHash("movimentando");
         private readonly Agente self;
         private readonly Transform target;
@@ -19,14 +19,16 @@ namespace IA
 
         public void OnUpdate()
         {
-            if (Vector3.Distance(self.transform.position, target.position) < 2.5f)
+            if (Vector3.Distance(self.transform.position, target.position) < 1.5f)
             {
                 self.Mover(self.transform.position);
-                self.Animator.SetTrigger(Atacando);
+                //self.Animator.SetTrigger(Atacando);
                 self.Animator.SetBool(Movimentando, false);
             }
-            else
+            else if (Vector3.Distance(self.transform.position, target.position) > 1.5f)
             {
+
+                self.Animator.SetBool(Movimentando, true);
                 self.Mover(target.position);
             }
         }
