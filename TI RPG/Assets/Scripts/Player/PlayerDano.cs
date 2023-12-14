@@ -27,6 +27,10 @@ namespace Player
 
         private PlayerMovement m_PlayerMovement;
 
+        Color selfColor;
+
+        Color damageColor = Color.red;
+
         public int Vidas
         {
             get => vidas;
@@ -53,12 +57,15 @@ namespace Player
             vidaInfinitaText = vidaInfinitaTextObject.GetComponent<Text>();
             vidaInfinitaText.text = "";
             m_PlayerMovement = GetComponent<PlayerMovement>();
+            selfColor = smr.material.color;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             vidaInfinita();
+            
         }
+
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -84,9 +91,7 @@ namespace Player
 
         private IEnumerator TomarDano()
         {
-            Color selfColor = smr.material.color;
-            ;
-            Color damageColor = Color.red;
+
 
             m_PlayerMovement.GetSpeedBoost(speedBoostTime, speedBoostMultiplier);
             for (int i = 0; i < 3; i++)
@@ -96,6 +101,14 @@ namespace Player
                 yield return new WaitForSeconds(0.3f);
                 smr.material.color = selfColor;
             }
+        }
+        void OnCoroutineEnd()
+        {
+            if (smr.material.color == damageColor)
+            {
+                smr.material.color = selfColor;
+            }
+            Debug.Log("Coroutine has ended!");
         }
 
         private void vidaInfinita()
