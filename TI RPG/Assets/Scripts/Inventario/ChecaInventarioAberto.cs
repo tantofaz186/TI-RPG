@@ -1,15 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChecaInventarioAberto : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject inventarioGrande;
+    [SerializeField]private GameObject inventarioGrande;
+    [SerializeField]private GameObject botaoAbrirInventario;
 
-    [SerializeField]
-    private GameObject botaoAbrirInventario;
-
-    private void Update()
+    void Update()
     {
-        botaoAbrirInventario.SetActive(!inventarioGrande.activeSelf);
+       if (SceneManager.GetActiveScene().name == "Calabouco")
+        {
+           if(inventarioGrande.activeSelf){
+            botaoAbrirInventario.SetActive(false);
+           }else{
+            botaoAbrirInventario.SetActive(true);
+           }
+        }
     }
 }
