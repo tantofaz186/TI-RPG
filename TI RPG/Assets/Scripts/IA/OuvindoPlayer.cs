@@ -64,7 +64,7 @@ namespace IA
 
         private IEnumerator MoverAteOSom(Vector3 position)
         {
-            agente.Move(position);
+            agente.SetDestination(position);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
         }
     }
