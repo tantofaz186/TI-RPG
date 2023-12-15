@@ -33,7 +33,6 @@ public class MedidoresPlayer : MonoBehaviour
     {
         folegoUI = FindObjectOfType<PlayerMovement>();
         vidasUI = FindObjectOfType<PlayerDano>();
-        DesativaNoMenu(scene, mode);
     }
 
     private void MostrarFolegoEVida()
@@ -41,11 +40,5 @@ public class MedidoresPlayer : MonoBehaviour
         if (folegoUI == null || vidasUI == null) return;
         medidorFolego.value = folegoUI.folego;
         medidorVidas.value = vidasUI.Vidas;
-    }
-
-    private void DesativaNoMenu(Scene arg0, LoadSceneMode loadSceneMode)
-    {
-        medidorFolego.gameObject.SetActive(arg0.buildIndex != 0);
-        medidorVidas.gameObject.SetActive(arg0.buildIndex != 0);
     }
 }

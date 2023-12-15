@@ -4518,7 +4518,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1421798512684287681
 MonoBehaviour:
@@ -8723,7 +8723,7 @@ RectTransform:
   m_Children:
   - {fileID: 4514457635469627829}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9154,52 +9154,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &3265376055828868179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1859996681888358075}
-  - component: {fileID: 664203816681672923}
-  m_Layer: 0
-  m_Name: MedidorManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1859996681888358075
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265376055828868179}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -690.00024, y: 444.00003, z: 0}
-  m_LocalScale: {x: 1.7598534, y: 1.7598534, z: 1.7598534}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &664203816681672923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3265376055828868179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dcdef6f81c88324aba24d2fd731cae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  medidorFolego: {fileID: 628769830108067739}
-  medidorVidas: {fileID: 1957986385074062395}
 --- !u!1 &3302881909565335255
 GameObject:
   m_ObjectHideFlags: 0
@@ -16711,7 +16665,7 @@ RectTransform:
   - {fileID: 4595947192795226574}
   - {fileID: 7150592677961152973}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -17408,7 +17362,7 @@ RectTransform:
   - {fileID: 9090034469013699587}
   - {fileID: 3482412372788510344}
   m_Father: {fileID: 281772175308669359}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17444,6 +17398,7 @@ GameObject:
   - component: {fileID: 2855697326175440211}
   - component: {fileID: 8990696736966181575}
   - component: {fileID: 9163561636675293627}
+  - component: {fileID: 2761942134920396593}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -17472,7 +17427,6 @@ RectTransform:
   - {fileID: 1479828088811432774}
   - {fileID: 1284653941393835016}
   - {fileID: 7074280499733671345}
-  - {fileID: 1859996681888358075}
   - {fileID: 7437570371663894995}
   - {fileID: 7067101399827429150}
   - {fileID: 5321613383223912761}
@@ -17564,6 +17518,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 6349056792524821633}
   quickInventory: {fileID: 8038366640186824184}
   menuInventory: {fileID: 5930701740687058629}
+  painelInformativo: {fileID: 6776682091394653732}
+  medidores: {fileID: 4422802011787377562}
   inventory: {fileID: 4221509431039411368}
 --- !u!114 &5224446595902176354
 MonoBehaviour:
@@ -17784,6 +17740,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventarioGrande: {fileID: 4221509431039411368}
   botaoAbrirInventario: {fileID: 7743174085809408439}
+--- !u!114 &2761942134920396593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826155396479121510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcdef6f81c88324aba24d2fd731cae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medidorFolego: {fileID: 628769830108067739}
+  medidorVidas: {fileID: 1957986385074062395}
 --- !u!1 &6905549504283111324
 GameObject:
   m_ObjectHideFlags: 0
