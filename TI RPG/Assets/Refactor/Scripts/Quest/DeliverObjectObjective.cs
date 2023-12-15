@@ -15,8 +15,6 @@ namespace Refactor.Scripts.Quest
         public override void _OnEnable()
         {
             _npcToDeliver = findInScene();
-            Debug.Log(
-                "Deliver Object Objective Enabled: " + _npcToDeliver.name + " " + _npcToDeliver.transform.position);
             _npcToDeliver.endedDialogue += OnTalkToNpc;
         }
 
@@ -25,20 +23,23 @@ namespace Refactor.Scripts.Quest
             List<DialogueTrigger> dialogues = FindObjectsOfType<DialogueTrigger>().ToList();
 
             foreach (DialogueTrigger dialogue in dialogues)
+            {
                 if (dialogue.name == npcToDeliver.name)
+                {
                     return dialogue;
+                }
+            }
+
             return npcToDeliver;
         }
 
         public override void _OnDisable()
         {
-            Debug.Log("Deliver Object Objective Disabled");
             _npcToDeliver.endedDialogue -= OnTalkToNpc;
         }
 
         private void OnTalkToNpc()
         {
-            Debug.Log("Talked to NPC" + _npcToDeliver.name);
             if (!PlayerInventory.Instance.HasItem(objectToDeliver)) return;
             PlayerInventory.Instance.RemoveItem(objectToDeliver);
             CompleteObjective();

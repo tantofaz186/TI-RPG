@@ -15,28 +15,28 @@ namespace Rpg.Crafting
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log("OnPointerDown");
             if (eventData.button == PointerEventData.InputButton.Left) onDown?.Invoke(slotId, eventData.pressPosition);
         }
 
-        public void OnDrag(PointerEventData eventData)
-        {
-        }
+        public void OnDrag(PointerEventData eventData) { }
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log("OnPointerUp");
             if (eventData.button != PointerEventData.InputButton.Left) return;
             if (eventData.pointerCurrentRaycast.gameObject.Equals(eventData.lastPress)) return;
             if (eventData.pointerCurrentRaycast.gameObject.Equals(gameObject))
+            {
                 onUp?.Invoke(slotId, eventData.pressPosition);
+            }
             else if (eventData.pointerCurrentRaycast.gameObject.TryGetComponent(
-                         out InventorySlotEventHandler i)) i.OnEndDrag(eventData);
+                         out InventorySlotEventHandler i))
+            {
+                i.OnEndDrag(eventData);
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("OnPointerClick");
             onClick?.Invoke(slotId, eventData.pressPosition);
         }
     }

@@ -63,14 +63,12 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl>
 
     public void OpenInventory()
     {
-        Debug.Log("Estado aberto: " + inventoryOpen);
         inventory.SetActive(true);
         UpdateInventory();
     }
 
     public void CloseInventory()
     {
-        Debug.Log("Estado aberto: " + inventoryOpen);
         UpdateInventory();
     }
 
@@ -87,14 +85,11 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl>
         }
 
         inventoryOpen = !inventoryOpen;
-        Debug.Log("Estado aberto: " + inventoryOpen);
     }
 
     private IEnumerator liberarMudanca()
     {
-        Debug.Log("Passei Aqui!");
         yield return new WaitForSeconds(1.0f);
-        Debug.Log("Terminou os 1s!");
         inventory.SetActive(false);
     }
 }

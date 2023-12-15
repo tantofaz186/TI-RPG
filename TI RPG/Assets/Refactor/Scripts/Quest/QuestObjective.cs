@@ -5,6 +5,7 @@ namespace Refactor.Scripts.Quest
 {
     public abstract class QuestObjective : ScriptableObject
     {
+        public Dialogue dialogueOnComplete;
         public abstract void _OnEnable();
         public abstract void _OnDisable();
         public event Action OnComplete;
