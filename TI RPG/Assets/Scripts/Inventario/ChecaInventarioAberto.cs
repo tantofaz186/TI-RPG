@@ -12,7 +12,7 @@ public class ChecaInventarioAberto : MonoBehaviour
     {
        if (SceneManager.GetActiveScene().name == "Calabouco")
         {
-           if(inventarioGrande.activeSelf){
+           if(inventarioGrande.activeSelf == true){
             botaoAbrirInventario.SetActive(false);
            }else{
             botaoAbrirInventario.SetActive(true);
