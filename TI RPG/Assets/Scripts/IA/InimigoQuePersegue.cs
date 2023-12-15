@@ -25,7 +25,7 @@ namespace IA
         [SerializeField]
         private float forgetTimer;
         public List<Vector3> Pontos => pontos;
-        public bool viuPlayer;
+
         private void Awake()
         {
             coneDeVisão = GetComponent<ConeDeVisão>();
@@ -33,7 +33,6 @@ namespace IA
             SetStatePatrulha();
             animator.SetBool("movimentando", true);
             animator.SetFloat("Mover", 0.5f);
-            viuPlayer = false;
         }
 
         protected override void Update()
@@ -73,7 +72,7 @@ namespace IA
         {
             if (currentState.GetType() == typeof(PerseguindoState)) return;
             if (currentState.GetType() != typeof(EncontrandoPlayerState)) SetStateEncontrandoPlayer();
-            viuPlayer = true;
+
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
 
@@ -103,7 +102,6 @@ namespace IA
         {
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetState(new PatrulhaState(this, pontos));
-            viuPlayer = false;
         }
 
         private void SetStateEncontrandoPlayer(float percentage = 0f)
