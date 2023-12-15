@@ -1615,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 220.14127
+      value: 221.51
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1623,7 +1623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.71493
+      value: 49.36
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36774,7 +36774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 219.77979
+      value: 221.14851
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -36782,7 +36782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 49.740013
+      value: 49.385082
       objectReference: {fileID: 0}
     - target: {fileID: 5036503108532019890, guid: 28e943a445d6d1e45a0766ae9354cf1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42047,7 +42047,6 @@ MonoBehaviour:
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 3337115533796682557}
-  viuPlayer: 0
 --- !u!4 &7640597993766051814
 Transform:
   m_ObjectHideFlags: 0
@@ -42098,10 +42097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360bafe17d07e9440adc9364376e0842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
-  agente: {fileID: 7051339207254645911}
-  audioDetectionRadius: 10
-  animator: {fileID: 0}
   areaDeAudicao: 5
   waitTimeWhenSuspicious: 1.5
   agente: {fileID: 7051339207254645911}

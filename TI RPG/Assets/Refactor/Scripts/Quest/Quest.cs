@@ -14,8 +14,16 @@ namespace Refactor.Scripts.Quest
 
         public List<Rewards> rewards;
 
+        [SerializeField]
+        private bool _isCompleted;
+
         private int _currentObjectiveIndex;
-        public bool IsCompleted { get; private set; }
+
+        public bool IsCompleted
+        {
+            get => _isCompleted;
+            private set => _isCompleted = value;
+        }
 
         public bool CanBeStarted => requiredQuests.All(quest => quest.IsCompleted);
 
