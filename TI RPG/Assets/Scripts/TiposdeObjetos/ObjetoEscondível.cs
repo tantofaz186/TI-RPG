@@ -11,16 +11,12 @@ namespace Objetos
     }
     public class ObjetoEscondível : Interagível
     {
-        [SerializeField]
         private bool estaEscondido = false;
-        public static bool estaEscondidoGlobal = true;
-
         protected override void Interagir() => Esconder();
         [SerializeField] public triggerName trigger;
 
         private void Esconder()
         {
-            Debug.Log(estaEscondidoGlobal);
             StartCoroutine(EsperarAnimaçãoParaEsconder());
         }
 
@@ -61,7 +57,6 @@ namespace Objetos
                 }
             }
             estaEscondido = !estaEscondido;
-            estaEscondidoGlobal = !estaEscondidoGlobal;
             player.enabled = true;
 
 

@@ -1,4 +1,3 @@
-using Objetos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +21,7 @@ namespace IA
         private InimigoUI inimigoUI;
 
         private ConeDeVisão coneDeVisão;
-        [SerializeField]
+
         private float forgetTimer;
         public List<Vector3> Pontos => pontos;
 
@@ -41,7 +40,9 @@ namespace IA
             if (currentState.GetType() != typeof(PerseguindoState)) return;
             forgetTimer += Time.deltaTime;
             if (!(forgetTimer >= forgetTime)) return;
-            PararDeCampar();
+            SetStatePatrulha();
+            SetStateEncontrandoPlayer(.8f);
+            forgetTimer = 0f;
         }
 
         private void OnDrawGizmosSelected()
@@ -111,16 +112,6 @@ namespace IA
             encontrandoPlayerState.OnForgetPlayer += SetStatePatrulha;
             SetState(encontrandoPlayerState);
             StartCoroutine(MoverAtéOAlvo());
-        }
-        public void PararDeCampar()
-        {
-            if (forgetTimer >= forgetTime && ObjetoEscondível.estaEscondidoGlobal == true)
-            {
-                Debug.Log("esqueci");
-                SetStatePatrulha();
-                SetStateEncontrandoPlayer(.8f);
-                forgetTimer = 0f;
-            }
         }
     }
 }
