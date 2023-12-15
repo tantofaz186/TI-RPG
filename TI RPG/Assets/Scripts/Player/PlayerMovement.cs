@@ -12,9 +12,6 @@ namespace Player
         [SerializeField]
         private bool podeCorrer;
 
-        [SerializeField]
-        private CapsuleCollider _collider;
-
         private Animator corpo_fsm;
         private Camera mainCamera;
         private Vector3 targetPosition;
@@ -35,12 +32,14 @@ namespace Player
             agente.speed = velocidade;
 
             if (Input.GetMouseButton(1))
+            {
                 if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
                 {
                     targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     mouseInput.SetActive(true);
                     Mover(targetPosition);
                 }
+            }
 
             mouseInput.transform.position = agente.destination;
 
@@ -73,7 +72,6 @@ namespace Player
                 if (folego < 100) folego += 6 * Time.deltaTime;
 
                 StartCoroutine(LerpValue("Mover", 0f));
-                _collider.enabled = false;
             }
             else if (Input.GetKey(KeyCode.LeftShift)) // Correr
             {
@@ -96,7 +94,6 @@ namespace Player
             else if (!Input.GetKey(KeyCode.LeftControl))
             {
                 corpo_fsm.SetBool("agachado", false); // Desagachar
-                _collider.enabled = true;
             }
 
             if (folego >= 25 && podeCorrer == false) podeCorrer = true;

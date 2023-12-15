@@ -37,11 +37,11 @@ namespace IA
         protected override void Update()
         {
             base.Update();
-            if (currentState.GetType() != typeof(PerseguindoState)) return;
+            if (currentState.GetType() != typeof(AtackState)) return;
             forgetTimer += Time.deltaTime;
             if (!(forgetTimer >= forgetTime)) return;
             SetStatePatrulha();
-            SetStateEncontrandoPlayer(.8f);
+            SetStateEncontrandoPlayer(.5f);
             forgetTimer = 0f;
         }
 
@@ -71,26 +71,20 @@ namespace IA
 
         private void EncontreiOPlayerNoCampoDeVisão()
         {
-            if (currentState.GetType() == typeof(PerseguindoState)) return;
+            if (currentState.GetType() == typeof(AtackState)) return;
             if (currentState.GetType() != typeof(EncontrandoPlayerState)) SetStateEncontrandoPlayer();
+            inimigoUI.MostrarImagem(true);
 
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
 
         private IEnumerator MoverAtéOAlvo()
         {
-            inimigoUI.MostrarImagem(true);
             Vector3 lastKnownPosition = coneDeVisão.Alvo.position;
             Mover(transform.position);
             yield return new WaitForSeconds(waitTimeWhenSuspicious);
             Mover(lastKnownPosition);
             inimigoUI.MostrarImagem(false);
-        }
-
-        private void SetStatePerseguindo()
-        {
-            coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
-            SetState(new PerseguindoState(this, coneDeVisão.Alvo));
         }
 
         private void SetStateAtacando()
