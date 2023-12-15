@@ -73,7 +73,7 @@ namespace Player
                 if (folego < 100) folego += 6 * Time.deltaTime;
 
                 StartCoroutine(LerpValue("Mover", 0f));
-                _collider.enabled = false;
+                _collider.enabled = true;
             }
             else if (Input.GetKey(KeyCode.LeftShift)) // Correr
             {

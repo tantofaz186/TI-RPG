@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace IA
 {
     [RequireComponent(typeof(InimigoQuePersegue))]
-    public class OuvindoPlayer : MonoBehaviour
+    public class OuvindoPlayer : Agente
     {
         public float areaDeAudicao = 5.0f;
 
@@ -45,12 +45,17 @@ namespace IA
             {
                 if (_collider.gameObject.CompareTag("Player"))
                 {
-                    lastHeardPosition = _collider.transform.position;
-                    StartCoroutine(MoverAteOSom(lastHeardPosition));
+                    Debug.Log("ola");
                 }
-                else if (Vector3.Distance(transform.position, lastHeardPosition) < 0.1f)
+                if (_collider.gameObject.CompareTag("Player") && inimigoQuePersegue.viuPlayer==false)
                 {
-                    StopCoroutine(MoverAteOSom(lastHeardPosition));
+                    Debug.Log("1");
+                    lastHeardPosition = _collider.transform.position;
+                    Mover(lastHeardPosition);
+                }
+                else if (Vector3.Distance(transform.position, lastHeardPosition) < 0.1f && inimigoQuePersegue.viuPlayer == false)
+                {
+                    Debug.Log("2");
                     inimigoQuePersegue.SetStatePatrulha();
                 }
             }
@@ -60,12 +65,6 @@ namespace IA
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, areaDeAudicao);
-        }
-
-        private IEnumerator MoverAteOSom(Vector3 position)
-        {
-            agente.Move(position);
-            yield return new WaitForSeconds(waitTimeWhenSuspicious);
         }
     }
 }

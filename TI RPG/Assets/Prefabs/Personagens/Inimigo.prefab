@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883cf6bad12d40d08fb53e4001fe96bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
+  velocidade: 3.5
   agente: {fileID: 1814489159087836116}
   audioDetectionRadius: 10
   animator: {fileID: -1615238147641692744}
@@ -147,6 +147,7 @@ MonoBehaviour:
   waitTimeWhenSuspicious: 1.5
   forgetTime: 5
   inimigoUI: {fileID: 6249570238781422718}
+  viuPlayer: 0
 --- !u!114 &2470616261115825051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360bafe17d07e9440adc9364376e0842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidade: 3.5
+  agente: {fileID: 1814489159087836116}
+  audioDetectionRadius: 10
+  animator: {fileID: 0}
   areaDeAudicao: 5
   waitTimeWhenSuspicious: 1.5
   agente: {fileID: 1814489159087836116}
