@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1810342730298840724}
   - component: {fileID: 1141519627300672476}
   - component: {fileID: 8473469605422870374}
+  - component: {fileID: 4248830424353142724}
   m_Layer: 0
   m_Name: TabuasDeMadeira
   m_TagString: Item
@@ -1606,17 +1607,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMouseOver: 0
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
+  item: {fileID: 11400000, guid: b4823787db92706408e4352b93914a93, type: 2}
+  canBeCollected: 1
+  dialogueTrigger: {fileID: 4248830424353142724}
+--- !u!114 &4248830424353142724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145077861505070935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   distanciaMinima: 2
-  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   corDoOutline: {r: 0, g: 0, b: 1, a: 1}
   larguraDoOutline: 4
   modoDoOutline: 1
-  item: {fileID: 11400000, guid: b4823787db92706408e4352b93914a93, type: 2}
-  canBeCollected: 1
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  dialogue:
+    dialogues: []

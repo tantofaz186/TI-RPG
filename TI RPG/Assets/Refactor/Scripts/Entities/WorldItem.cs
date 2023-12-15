@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Rpg.Crafting;
 using Rpg.Interface;
 using UnityEngine;
@@ -7,31 +6,42 @@ using UnityEngine;
 namespace Rpg.Entities
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class WorldItem : Interactible
+    [RequireComponent(typeof(DialogueTrigger))]
+    public class WorldItem : MonoBehaviour
     {
         public Item item;
         public bool canBeCollected;
-        [NonSerialized] public Rigidbody rigidbody;
+
+        [SerializeField]
+        private DialogueTrigger dialogueTrigger;
+
+        [NonSerialized]
+        public Rigidbody rigidbody;
 
         public void OnEnable()
         {
             rigidbody = GetComponent<Rigidbody>();
+            dialogueTrigger = GetComponent<DialogueTrigger>();
             rigidbody.isKinematic = true;
-            onInteract.AddListener(InspectItem);
+            dialogueTrigger.endedDialogue += InspectItem;
         }
 
         private void OnDisable()
         {
-            onInteract.RemoveListener(InspectItem);
+            dialogueTrigger.endedDialogue -= InspectItem;
         }
 
         public void UpdateDisplayedItem()
         {
             if (transform.childCount > 0)
+            {
                 Destroy(transform.GetChild(0).gameObject);
+            }
 
             if (item != null)
+            {
                 Instantiate(item.prefab, transform);
+            }
         }
 
         public void InspectItem()
