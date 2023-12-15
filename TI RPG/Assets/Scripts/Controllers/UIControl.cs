@@ -15,6 +15,8 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
     public GameObject pauseMenu;
     public GameObject quickInventory;
     public GameObject menuInventory;
+    public GameObject painelInformativo;
+    public GameObject medidores;
     public GameObject inventory;
 
     private void Start()
@@ -29,6 +31,8 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
         mainMenu.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
         menuInventory.SetActive(arg0.buildIndex != 0);
         quickInventory.SetActive(arg0.buildIndex != 0);
+        medidores.SetActive(arg0.buildIndex != 0);
+        painelInformativo.SetActive(arg0.buildIndex != 0);
         skillTreeMenu.SetActive(false);
         dialogBox.SetActive(false);
         pauseMenu.SetActive(false);
@@ -39,24 +43,24 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl> {
         ResetUI(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
-//    public void AbrirSkillTree()
-//    {
-//       if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))//Ignorar caso estiver na Cena Menu
-//        {
-//            if (Input.GetKeyDown(KeyCode.Tab))
-//            {
-//                if (skillTreeMenu.activeSelf == false)
-//                {
-//                    skillTreeMenu.SetActive(true);
-//                }
-//
-//                else
-//                {
-//                    skillTreeMenu.SetActive(false);
-//                }
-//            }
-//        }
-//    } 
+    /*public void AbrirSkillTree()
+    {
+      if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(0))//Ignorar caso estiver na Cena Menu
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (skillTreeMenu.activeSelf == false)
+                {
+                    skillTreeMenu.SetActive(true);
+                }
+
+                else
+                {
+                    skillTreeMenu.SetActive(false);
+                }
+            }
+        }
+     }*/
 
     public void SetInventoryActive(bool active)
     {
