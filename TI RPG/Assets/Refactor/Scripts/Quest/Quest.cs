@@ -30,6 +30,7 @@ namespace Refactor.Scripts.Quest
         public void _OnEnable()
         {
             Debug.Log("Quest Enabled");
+            _currentObjectiveIndex = 0;
             objectives[_currentObjectiveIndex]._OnEnable();
             objectives[_currentObjectiveIndex].OnComplete += OnObjectiveComplete;
         }
@@ -46,6 +47,12 @@ namespace Refactor.Scripts.Quest
         private void OnObjectiveComplete()
         {
             Debug.Log("Objective Complete");
+            Dialogue objectiveDialogue = objectives[_currentObjectiveIndex].dialogueOnComplete;
+            if (objectiveDialogue != null && objectiveDialogue.dialogues.Length > 0)
+            {
+                DialogueManager.Instance.StartDialogue(objectiveDialogue);
+            }
+
             objectives[_currentObjectiveIndex]._OnDisable();
             objectives[_currentObjectiveIndex].OnComplete -= OnObjectiveComplete;
             if (_currentObjectiveIndex < objectives.Count - 1)

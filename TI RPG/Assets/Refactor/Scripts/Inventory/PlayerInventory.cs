@@ -62,14 +62,20 @@ namespace Rpg.Crafting
             hasChangedItems -= OnChangedContents;
 
             foreach (Image image in slots)
+            {
                 if (image != null)
+                {
                     Destroy(image.gameObject.GetComponent<InventorySlotEventHandler>());
+                }
+            }
         }
 
         private void Update()
         {
             if (draggedItem == null)
+            {
                 return;
+            }
 
             Vector2 mp = Input.mousePosition;
             draggedItemDisplay.rectTransform.position = mp - draggingOffset;
@@ -86,8 +92,7 @@ namespace Rpg.Crafting
             }
 
             contents = new Item[contents.Length];
-            for (int i = 0; i < itemIds.Length; i++)
-                contents[i] = GetItemById(itemIds[i]);
+            for (int i = 0; i < itemIds.Length; i++) contents[i] = GetItemById(itemIds[i]);
 
             RefreshCrafting();
             RefreshVisual();
@@ -100,7 +105,10 @@ namespace Rpg.Crafting
             for (int i = 0; i < contents.Length; i++)
             {
                 if (contents[i] == null)
+                {
                     continue;
+                }
+
                 itemIds[i] = contents[i].id;
             }
 
@@ -136,12 +144,14 @@ namespace Rpg.Crafting
             Item[] ingredients = new Item[3];
             Array.Copy(contents, ingredients, 3);
             foreach (RecipeInfo recipe in GetAvailableRecipes())
+            {
                 if (recipe.Matches(ingredients))
                 {
                     SetItem(firstContainerSlot - 1, recipe.recipe.result);
-                    onCraftItem?.Invoke(recipe.recipe.result);
+                    //onCraftItem?.Invoke(recipe.recipe.result);
                     return;
                 }
+            }
 
             SetItem(firstContainerSlot - 1, null);
         }
@@ -156,8 +166,10 @@ namespace Rpg.Crafting
                     if (item != null)
                     {
                         if (slot == firstContainerSlot - 1)
-                            for (int i = 0; i < firstContainerSlot - 1; i++)
-                                contents[i] = null;
+                        {
+                            for (int i = 0; i < firstContainerSlot - 1; i++) contents[i] = null;
+                            onCraftItem?.Invoke(contents[slot]);
+                        }
 
                         //Grab item
                         SetItem(slot, null);
@@ -178,7 +190,9 @@ namespace Rpg.Crafting
             else
             {
                 if (draggedItem == null)
+                {
                     return;
+                }
 
                 DropItem(draggedItem);
                 SetDraggedItem(null);
@@ -207,8 +221,13 @@ namespace Rpg.Crafting
         public int FirstEmptySlot()
         {
             for (int i = firstContainerSlot; i < contents.Length; i++)
+            {
                 if (contents[i] == null)
+                {
                     return i;
+                }
+            }
+
             return -1;
         }
 
@@ -222,7 +241,9 @@ namespace Rpg.Crafting
         {
             int slot = FirstEmptySlot();
             if (slot == -1)
+            {
                 return false;
+            }
 
             contents[slot] = item;
             hasChangedItems?.Invoke();
@@ -232,12 +253,14 @@ namespace Rpg.Crafting
         public bool RemoveItem(Item item)
         {
             for (int i = firstContainerSlot; i < contents.Length; i++)
+            {
                 if (contents[i] != null && contents[i] == item)
                 {
                     contents[i] = null;
                     hasChangedItems?.Invoke();
                     return true;
                 }
+            }
 
             return false;
         }
@@ -280,24 +303,37 @@ namespace Rpg.Crafting
             List<RecipeInfo> infos = new();
 
             foreach (Recipe recipe in recipes)
+            {
                 infos.Add(new RecipeInfo
                 {
                     recipe = recipe,
                     foundItems = 0
                 });
+            }
 
             foreach (Item item in contents)
-            foreach (RecipeInfo recipeInfo in infos)
             {
-                if (recipeInfo.isCraftable)
-                    continue;
-                if (recipeInfo.recipe.ingredients.Contains(item))
-                    recipeInfo.foundItems++;
+                foreach (RecipeInfo recipeInfo in infos)
+                {
+                    if (recipeInfo.isCraftable)
+                    {
+                        continue;
+                    }
+
+                    if (recipeInfo.recipe.ingredients.Contains(item))
+                    {
+                        recipeInfo.foundItems++;
+                    }
+                }
             }
 
             foreach (RecipeInfo recipeInfo in infos)
+            {
                 if (recipeInfo.foundItems > 0)
+                {
                     yield return recipeInfo;
+                }
+            }
         }
 
         public void DropItem(Item item)

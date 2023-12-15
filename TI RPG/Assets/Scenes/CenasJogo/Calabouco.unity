@@ -36644,6 +36644,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TabuasDeMadeira
       objectReference: {fileID: 0}
+    - target: {fileID: 4248830424353142724, guid: 6689df2fbf42c1a45b6234ce73cac983, type: 3}
+      propertyPath: dialogue.dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248830424353142724, guid: 6689df2fbf42c1a45b6234ce73cac983, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d1348cdc55bba745b09b69bf6a5750e, type: 3}
+    - target: {fileID: 4248830424353142724, guid: 6689df2fbf42c1a45b6234ce73cac983, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].title
+      value: Detetive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248830424353142724, guid: 6689df2fbf42c1a45b6234ce73cac983, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].sentence
+      value: Lascas de madeira
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6689df2fbf42c1a45b6234ce73cac983, type: 3}
 --- !u!1 &2085984197
@@ -39965,6 +39981,7 @@ GameObject:
   - component: {fileID: 1810342731755942355}
   - component: {fileID: 1141519628221887643}
   - component: {fileID: 8473469606380767265}
+  - component: {fileID: 8473469606380767266}
   m_Layer: 0
   m_Name: Pedra
   m_TagString: Item
@@ -41863,38 +41880,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 164906828, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -250
-      objectReference: {fileID: 0}
-    - target: {fileID: 164906828, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 167102196, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 167102196, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 7477102872735136053, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 820457641}
-    - target: {fileID: 7477102873490715592, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -250
-      objectReference: {fileID: 0}
-    - target: {fileID: 7477102873490715595, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7477102873490715595, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
-      propertyPath: m_fontSize
-      value: 89.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7477102874205573980, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -42351,20 +42340,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMouseOver: 0
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
+  item: {fileID: 11400000, guid: 35eec6da34a856a4b84acd1f724646ab, type: 2}
+  canBeCollected: 1
+  dialogueTrigger: {fileID: 0}
+--- !u!114 &8473469606380767266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3145077860278849552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   distanciaMinima: 2
-  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   corDoOutline: {r: 0, g: 0, b: 1, a: 1}
   larguraDoOutline: 4
   modoDoOutline: 1
-  item: {fileID: 11400000, guid: 35eec6da34a856a4b84acd1f724646ab, type: 2}
-  canBeCollected: 1
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  dialogue:
+    dialogues:
+    - title: Detetive
+      image: {fileID: 21300000, guid: 0d1348cdc55bba745b09b69bf6a5750e, type: 3}
+      sentence: Uma Pedra
 --- !u!1001 &8515005544813180418
 PrefabInstance:
   m_ObjectHideFlags: 0
