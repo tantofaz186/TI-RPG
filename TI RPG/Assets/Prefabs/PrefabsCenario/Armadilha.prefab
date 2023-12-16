@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4398770270371422842}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7845889444583893946
 GameObject:
@@ -59,9 +59,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2587314505050038574}
-  - {fileID: 7826429951765118079}
   - {fileID: 3705239269322609283}
+  - {fileID: 7826429951765118079}
+  - {fileID: 2587314505050038574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,15 +105,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1413571169868671542, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1413571169868671542, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.99999976
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1413571169868671542, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.99999976
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1413571169868671542, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,10 +159,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Motoserra
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7692786271001457874, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
+      propertyPath: ponto1
+      value: 
+      objectReference: {fileID: 5113357900366247418}
+    - target: {fileID: 7692786271001457874, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
+      propertyPath: ponto2
+      value: 
+      objectReference: {fileID: 9179614368608836370}
+    - target: {fileID: 7692786271001457874, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
+      propertyPath: proxPos
+      value: 
+      objectReference: {fileID: 2587314505050038574}
+    m_RemovedComponents:
+    - {fileID: 1354541999232178634, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
 --- !u!4 &3705239269322609283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1413571169868671542, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
   m_PrefabInstance: {fileID: 2374984726920050869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4044364232517290041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1789569325014790284, guid: 406da93b3b70dd94d8b5df27c1e7ca6a, type: 3}
+  m_PrefabInstance: {fileID: 2374984726920050869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4920320161699473473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044364232517290041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa37687a714c1a441ae3fa03ce507136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ponto1: {fileID: 5113357900366247418}
+  ponto2: {fileID: 9179614368608836370}
+  vel_m: 10
+  vel_r: 500
+  proxPos: {fileID: 2587314505050038574}
