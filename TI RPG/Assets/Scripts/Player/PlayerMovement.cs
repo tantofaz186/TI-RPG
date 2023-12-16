@@ -15,6 +15,7 @@ namespace Player
         private Animator corpo_fsm;
         private Camera mainCamera;
         private Vector3 targetPosition;
+        private PlayerDano playerDano;
 
         private void Awake()
         {
@@ -24,12 +25,14 @@ namespace Player
             corpo_fsm.SetFloat("Mover", 0.5f);
             mouseInput.SetActive(false);
             podeCorrer = true;
+            playerDano = GetComponent<PlayerDano>();
         }
 
         protected override void Update()
         {
             base.Update();
-            agente.speed = velocidade;
+            if (!playerDano.GameOver) agente.speed = velocidade;
+            else agente.speed = 0;
 
             if (Input.GetMouseButton(1))
             {

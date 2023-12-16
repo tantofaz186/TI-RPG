@@ -30,6 +30,8 @@ namespace Player
 
         private PlayerMovement m_PlayerMovement;
 
+        private bool gameover = false;
+
         Color selfColor;
 
         Color damageColor = Color.red;
@@ -42,12 +44,16 @@ namespace Player
                 vidas = value;
                 if (vidas <= 0)
                 {
+                    gameover = true;
                     anim.SetTrigger("TriggerDerrota");
-                    //Time.timeScale = 0;
                     Debug.Log("Game Over");
-                    //GameOverController.Instance.GameOver();
+                    StartCoroutine(SetGameOver());
                 }
             }
+        }
+        public bool GameOver
+        {
+            get => gameover;
         }
 
         private void Awake()
@@ -91,6 +97,14 @@ namespace Player
                 StartCoroutine(TomarDano());
                 audioPlayer.Play();
             }
+        }
+
+        private IEnumerator SetGameOver()
+        {
+            yield return new WaitForSeconds(2.0f);
+            Time.timeScale = 0;
+            GameOverController.Instance.GameOver();
+
         }
 
         private IEnumerator TomarDano()
