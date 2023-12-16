@@ -11,6 +11,7 @@ namespace Objetos
     }
     public class ObjetoEscondível : Interagível
     {
+        [SerializeField]private Animator anim;
         private bool estaEscondido = false;
         protected override void Interagir() => Esconder();
         [SerializeField] public triggerName trigger;
