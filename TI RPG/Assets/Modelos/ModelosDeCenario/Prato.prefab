@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2411672203610294220}
   - component: {fileID: 1646101407409834089}
   - component: {fileID: 3547947877080759459}
+  - component: {fileID: 4243715988101769142}
   m_Layer: 0
   m_Name: Prato
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4243715988101769142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043355534252072310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27606022, y: 0.019818276, z: 0.19143917}
+  m_Center: {x: 0, y: 0.01042987, z: 0}

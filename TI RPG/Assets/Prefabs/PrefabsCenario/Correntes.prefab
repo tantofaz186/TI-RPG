@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 1399956398918441366}
   - component: {fileID: 243166836680382553}
   - component: {fileID: 8714751980492695396}
+  - component: {fileID: 7063003978241782614}
   m_Layer: 0
   m_Name: Correntes_LOD1
   m_TagString: Untagged
@@ -140,6 +141,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7063003978241782614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361704930901650879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5780933, y: 0.15963466, z: 0.564114}
+  m_Center: {x: -0.0013784319, y: 0.07338505, z: -0.0061237067}
 --- !u!1 &8555072796485164003
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +165,7 @@ GameObject:
   - component: {fileID: 1379656391927926614}
   - component: {fileID: 7193515550356382927}
   - component: {fileID: 79909680830600418}
+  - component: {fileID: 1760115311839989854}
   m_Layer: 0
   m_Name: Correntes_LOD0
   m_TagString: Untagged
@@ -223,3 +238,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1760115311839989854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555072796485164003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5892638, y: 0.15102816, z: 0.5889616}
+  m_Center: {x: -0.00034345686, y: 0.07732664, z: -0.000925079}
