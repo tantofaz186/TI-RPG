@@ -11,7 +11,7 @@ public class MedidoresPlayer : MonoBehaviour
     [SerializeField]
     private Slider medidorVidas;
 
-    private PlayerMovement folegoUI;
+    private PlayerAnimationController folegoUI;
     private PlayerDano vidasUI;
 
     private void Update()
@@ -31,7 +31,7 @@ public class MedidoresPlayer : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        folegoUI = FindObjectOfType<PlayerMovement>();
+        folegoUI = FindObjectOfType<PlayerAnimationController>();
         vidasUI = FindObjectOfType<PlayerDano>();
     }
 

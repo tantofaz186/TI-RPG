@@ -23,7 +23,8 @@ namespace Objetos
         [SerializeField]
         protected Color corDoGizmos = Color.yellow;
 
-        private Camera mainCamera;
+        protected Camera mainCamera;
+        private Coroutine movingToObjeto;
         private Outline outline;
         protected PlayerMovement player;
         protected float distanciaDoPlayer => Vector3.Distance(transform.position, player.transform.position);
@@ -55,20 +56,14 @@ namespace Objetos
         private void OnMouseOver()
         {
             if (!Input.GetMouseButtonDown(0)) return;
-            StopAllCoroutines();
-            StartCoroutine(MoverParaObjeto());
+            if (movingToObjeto != null) StopCoroutine(movingToObjeto);
+            movingToObjeto = StartCoroutine(MoverParaObjeto());
         }
 
         private void OnValidate()
         {
             if (!TryGetComponent(out outline)) outline = gameObject.AddComponent<Outline>();
             SetOutline(outline);
-        }
-
-        private void ColocarInventario()
-        {
-            if (!Input.GetMouseButtonDown(2)) return;
-            //InventarioManager.Instance.AddItem(this.item);
         }
 
         protected virtual IEnumerator MoverParaObjeto()
@@ -78,9 +73,13 @@ namespace Objetos
             RaycastHit hit;
             if (!Physics.Raycast(ray, out hit)) yield break; // Check if the ray hits any collider
             if (!hit.collider.gameObject.Equals(gameObject))
+            {
                 yield break; // Check if the hit collider belongs to this object
+            }
+
             if (player.isActiveAndEnabled) player.Mover(transform.position);
-            while (distanciaDoPlayer > distanciaMinima) yield return null;
+            yield return new WaitUntil(() => distanciaDoPlayer <= distanciaMinima);
+
             Interagir();
         }
 

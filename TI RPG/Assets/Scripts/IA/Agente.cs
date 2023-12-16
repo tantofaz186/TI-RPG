@@ -8,7 +8,7 @@ namespace IA
     public class Agente : StateMachine
     {
         [SerializeField]
-        protected float velocidade = 5f;
+        public float velocidade = 5f;
 
         [SerializeField]
         protected NavMeshAgent agente;
@@ -18,6 +18,8 @@ namespace IA
 
         [SerializeField]
         protected Animator animator;
+
+        public NavMeshAgent NavMeshAgent => agente;
 
         public Animator Animator => animator;
 
@@ -47,13 +49,17 @@ namespace IA
         public void ComeçarAEscutar()
         {
             foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
+            {
                 objectdistraction.OnHitGround += ouvirObjeto;
+            }
         }
 
         public void PararDeEscutar()
         {
             foreach (ObjetoDistracao objectdistraction in FindObjectsOfType<ObjetoDistracao>())
+            {
                 objectdistraction.OnHitGround -= ouvirObjeto;
+            }
         }
 
         protected virtual void ouvirObjeto(Vector3 objetoOuvido)
