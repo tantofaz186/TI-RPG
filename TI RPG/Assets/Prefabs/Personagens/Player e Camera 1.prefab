@@ -643,6 +643,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5667022082260553524}
     - target: {fileID: 7779920841029048475, guid: f5ced82e4ad56ea47af90eaead53242a, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 6151969259874955127}
+    - target: {fileID: 7779920841029048475, guid: f5ced82e4ad56ea47af90eaead53242a, type: 3}
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 1656526748}
@@ -814,5 +818,10 @@ CapsuleCollider:
 --- !u!137 &5667022082260553524 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1078102741834385752, guid: f5ced82e4ad56ea47af90eaead53242a, type: 3}
+  m_PrefabInstance: {fileID: 4635187204590044780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6151969259874955127 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -7695717973683689189, guid: f5ced82e4ad56ea47af90eaead53242a, type: 3}
   m_PrefabInstance: {fileID: 4635187204590044780}
   m_PrefabAsset: {fileID: 0}
