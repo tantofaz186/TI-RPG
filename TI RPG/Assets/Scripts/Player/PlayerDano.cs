@@ -25,6 +25,9 @@ namespace Player
         [SerializeField]
         private AudioSource audioPlayer;
 
+        [SerializeField]
+        private Animator anim;
+
         private PlayerMovement m_PlayerMovement;
 
         Color selfColor;
@@ -39,9 +42,10 @@ namespace Player
                 vidas = value;
                 if (vidas <= 0)
                 {
-                    Time.timeScale = 0;
+                    anim.SetTrigger("TriggerDerrota");
+                    //Time.timeScale = 0;
                     Debug.Log("Game Over");
-                    GameOverController.Instance.GameOver();
+                    //GameOverController.Instance.GameOver();
                 }
             }
         }
