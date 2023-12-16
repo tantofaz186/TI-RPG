@@ -12,6 +12,10 @@ namespace Refactor.Scripts.Quest
         {
             Debug.Log("Craft Object Objective Enabled");
             PlayerInventory.Instance.onCraftItem += OnCraftItem;
+            if (dialogueOnStart != null && dialogueOnStart.dialogues.Length > 0)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueOnStart);
+            }
         }
 
         public override void _OnDisable()

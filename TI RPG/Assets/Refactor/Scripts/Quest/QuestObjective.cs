@@ -5,6 +5,7 @@ namespace Refactor.Scripts.Quest
 {
     public abstract class QuestObjective : ScriptableObject
     {
+        public Dialogue dialogueOnStart;
         public Dialogue dialogueOnComplete;
         public abstract void _OnEnable();
         public abstract void _OnDisable();
@@ -13,6 +14,11 @@ namespace Refactor.Scripts.Quest
 
         protected void CompleteObjective()
         {
+            if (dialogueOnComplete != null && dialogueOnComplete.dialogues.Length > 0)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueOnComplete);
+            }
+
             OnComplete?.Invoke();
         }
 

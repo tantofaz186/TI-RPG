@@ -16,6 +16,10 @@ namespace Refactor.Scripts.Quest
         {
             _npcToDeliver = findInScene();
             _npcToDeliver.endedDialogue += OnTalkToNpc;
+            if (dialogueOnStart != null && dialogueOnStart.dialogues.Length > 0)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueOnStart);
+            }
         }
 
         private DialogueTrigger findInScene()

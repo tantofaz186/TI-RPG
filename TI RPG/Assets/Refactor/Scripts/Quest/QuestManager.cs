@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Controllers;
@@ -15,11 +16,7 @@ namespace Refactor.Scripts.Quest
 
         private void OnEnable()
         {
-            foreach (Quest quest in quests)
-            {
-                quest._OnEnable();
-                quest.OnComplete += OnQuestComplete;
-            }
+            StartCoroutine(RegisterQuests());
         }
 
         private void OnDisable()
@@ -28,6 +25,17 @@ namespace Refactor.Scripts.Quest
             {
                 quest._OnDisable();
                 quest.OnComplete -= OnQuestComplete;
+            }
+        }
+
+        private IEnumerator RegisterQuests()
+        {
+            yield return new WaitUntil(() => DialogueManager.Instance != null);
+            yield return new WaitForEndOfFrame();
+            foreach (Quest quest in quests)
+            {
+                quest._OnEnable();
+                quest.OnComplete += OnQuestComplete;
             }
         }
 

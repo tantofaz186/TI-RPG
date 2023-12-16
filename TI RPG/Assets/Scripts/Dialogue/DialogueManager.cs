@@ -17,8 +17,9 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
     private Queue<string> sentences;
     private Queue<string> titles;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         sentences = new Queue<string>();
         images = new Queue<Sprite>();
         titles = new Queue<string>();
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Debug.Log("Starting Dialogue");
         Time.timeScale = 0;
         dialoguePanel.SetActive(true);
         sentences.Clear();

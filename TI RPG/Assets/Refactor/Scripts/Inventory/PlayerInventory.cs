@@ -148,7 +148,6 @@ namespace Rpg.Crafting
                 if (recipe.Matches(ingredients))
                 {
                     SetItem(firstContainerSlot - 1, recipe.recipe.result);
-                    //onCraftItem?.Invoke(recipe.recipe.result);
                     return;
                 }
             }
@@ -156,7 +155,7 @@ namespace Rpg.Crafting
             SetItem(firstContainerSlot - 1, null);
         }
 
-        public void OnClickOnSlot(int slot, Vector3 mousePos)
+        private void OnClickOnSlot(int slot, Vector3 mousePos)
         {
             if (slot >= 0)
             {
