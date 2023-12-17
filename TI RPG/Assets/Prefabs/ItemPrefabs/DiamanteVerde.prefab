@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3138851965793925783}
   - component: {fileID: 3138851965793925782}
   - component: {fileID: 3138851965793925781}
-  - component: {fileID: 3138851965793925780}
   - component: {fileID: 3138851965793925803}
   - component: {fileID: 7371700892653243311}
+  - component: {fileID: 4489187983861538206}
+  - component: {fileID: 4231961801643267911}
   m_Layer: 0
   m_Name: DiamanteVerde
   m_TagString: Item
@@ -100,25 +101,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5061859, y: 0.39662626, z: 0.5061859}
   m_Center: {x: 0, y: 0.19593643, z: 0}
---- !u!114 &3138851965793925780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3138851965793925802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b1d48fc44068242b7fd62bdad68966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  mao: {fileID: 0}
-  maoNome: mixamorig:RightHand
-  distanciaMinima: 2
-  larguraDoOutline: 4
-  modoDoOutline: 1
-  corDoOutline: {r: 0, g: 1, b: 0, a: 1}
 --- !u!54 &3138851965793925803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,11 +129,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 1, a: 1}
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
   outlineMaskMaterial: {fileID: 0}
   outlineFillMaterial: {fileID: 0}
+--- !u!114 &4489187983861538206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138851965793925802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaMinima: 2
+  corDoOutline: {r: 0, g: 0, b: 1, a: 1}
+  larguraDoOutline: 4
+  modoDoOutline: 1
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  dialogue:
+    dialogues: []
+--- !u!114 &4231961801643267911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138851965793925802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  canBeCollected: 0
+  dialogueTrigger: {fileID: 0}
