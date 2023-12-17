@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7997099752409111591}
-  - component: {fileID: 11046494497201769}
   - component: {fileID: 8611351542205158684}
+  - component: {fileID: 6368691651479411803}
+  - component: {fileID: 8506163659130216392}
   m_Layer: 0
   m_Name: Pedestal_Amarelo
   m_TagString: Untagged
@@ -36,20 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &11046494497201769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116600377266397125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peca: {fileID: 6907693892525806668, guid: 029fbcfa37b30e74388bbf999d4c5eca, type: 3}
-  ativado: 0
 --- !u!64 &8611351542205158684
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64,6 +51,49 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4243859074866752783, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
+--- !u!114 &6368691651479411803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  outlineMaskMaterial: {fileID: 0}
+  outlineFillMaterial: {fileID: 0}
+--- !u!114 &8506163659130216392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaMinima: 2
+  corDoOutline: {r: 0, g: 0, b: 1, a: 1}
+  larguraDoOutline: 4
+  modoDoOutline: 1
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  dialogue:
+    dialogues:
+    - title: Detetive
+      image: {fileID: 21300000, guid: 0eea088dcd9d48c47979b81b142cfaff, type: 3}
+      sentence: "Um pilar emanando amarelo e com um espa\xE7o para colocar algum
+        item"
 --- !u!1001 &817189836991222392
 PrefabInstance:
   m_ObjectHideFlags: 0
