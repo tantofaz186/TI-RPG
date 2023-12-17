@@ -800,7 +800,10 @@ MonoBehaviour:
   modoDoOutline: 1
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   dialogue:
-    dialogues: []
+    dialogues:
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: Um par de botas de couro
 --- !u!114 &966166724413704337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,9 +816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  canBeCollected: 0
-  dialogueTrigger: {fileID: 0}
+  item: {fileID: 11400000, guid: 7be00ed570289ad4c8c617bc099fdc6d, type: 2}
+  canBeCollected: 1
+  dialogueTrigger: {fileID: 7330337628646991800}
 --- !u!65 &8770438354905455984
 BoxCollider:
   m_ObjectHideFlags: 0
