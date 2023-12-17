@@ -24,10 +24,10 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl>
 
     private void ResetUI(Scene arg0, LoadSceneMode arg1)
     {
-        mainMenu.SetActive(arg0.buildIndex == 0); //Só ativar se estiver na cena do menu principal
-        menuInventory.SetActive(arg0.buildIndex != 0);
-        medidores.SetActive(arg0.buildIndex != 0);
-        painelInformativo.SetActive(arg0.buildIndex != 0);
+        mainMenu.SetActive(arg0.buildIndex == 1); //SÃ³ ativar se estiver na cena do menu principal
+        menuInventory.SetActive(arg0.buildIndex == 2);
+        medidores.SetActive(arg0.buildIndex == 2);
+        painelInformativo.SetActive(arg0.buildIndex == 2);
         skillTreeMenu.SetActive(false);
         dialogBox.SetActive(false);
         pauseMenu.SetActive(false);
