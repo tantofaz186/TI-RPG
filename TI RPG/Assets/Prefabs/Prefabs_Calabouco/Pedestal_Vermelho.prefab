@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7997099752409111591}
+  - component: {fileID: 8054074637009207005}
+  - component: {fileID: 1411710587455259756}
   m_Layer: 0
-  m_Name: Pedestal
+  m_Name: Pedestal_Vermelho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +36,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8054074637009207005
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4243859074866752783, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
+--- !u!114 &1411710587455259756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peca: {fileID: 5642709704663051597, guid: 64532294ba590b44a86c68ceb047ba76, type: 3}
+  ativado: 0
 --- !u!1001 &817189836991222392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -247,39 +277,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
---- !u!1 &8554420514666549390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
-  m_PrefabInstance: {fileID: 8824242664679321055}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &2512993651658414546
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554420514666549390}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4243859074866752783, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
---- !u!114 &6851792832421930133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554420514666549390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peca: {fileID: 0}
-  ativado: 0
 --- !u!4 &9078333869412043316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
