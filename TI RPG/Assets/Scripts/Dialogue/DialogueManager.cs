@@ -4,7 +4,6 @@ using Controllers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(int.MinValue)]
 public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
@@ -29,11 +28,6 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
 
     public void StartDialogue(Dialogue dialogue)
     {
-        if (SceneManager.GetActiveScene().name == "Menu") 
-        {
-            Debug.Log("Player is on the menu scene. Dialogue will not start.");
-            return;
-        }
         Debug.Log("Starting Dialogue");
         Time.timeScale = 0;
         dialoguePanel.SetActive(true);
