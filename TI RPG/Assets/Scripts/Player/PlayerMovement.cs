@@ -44,5 +44,10 @@ namespace Player
             mouseInput.transform.position = agente.destination;
             mouseInput.SetActive(agente.destination != transform.position);
         }
+
+        private void OnDisable()
+        {
+            mouseInput.SetActive(false);
+        }
     }
 }

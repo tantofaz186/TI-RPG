@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Controllers
@@ -8,21 +9,28 @@ namespace Controllers
         where T : Component
     {
         private static T _instance;
-        public static T Instance {
-            get {
-                if (_instance == null) {
-                    var objs = FindObjectsOfType (typeof(T)) as T[];
-                    if (objs.Length > 0)
+
+        public static T Instance
+        {
+            get
+            {
+                if (_instance != null) return _instance;
+                T[] objs = FindObjectsOfType(typeof(T)) as T[];
+                objs ??= Array.Empty<T>();
+                switch (objs.Length)
+                {
+                    case <= 0:
+                        Debug.LogError("There is no " + typeof(T).Name + " in the scene.");
+                        break;
+                    case > 1:
+                        Debug.LogError("There is more than one " + typeof(T).Name + " in the scene.");
                         _instance = objs[0];
-                    if (objs.Length > 1) {
-                        Debug.LogError ("There is more than one " + typeof(T).Name + " in the scene.");
-                    }
-                    if (_instance == null) {
-                        GameObject obj = new GameObject ();
-                        obj.hideFlags = HideFlags.HideAndDontSave;
-                        _instance = obj.AddComponent<T> ();
-                    }
+                        break;
+                    case > 0:
+                        _instance = objs[0];
+                        break;
                 }
+
                 return _instance;
             }
         }
@@ -34,13 +42,16 @@ namespace Controllers
     {
         public static T Instance { get; private set; }
 
-        public virtual void Awake ()
+        public virtual void Awake()
         {
-            if (Instance == null) {
+            if (Instance == null)
+            {
                 Instance = this as T;
-                DontDestroyOnLoad (this);
-            } else {
-                Destroy (gameObject);
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
     }

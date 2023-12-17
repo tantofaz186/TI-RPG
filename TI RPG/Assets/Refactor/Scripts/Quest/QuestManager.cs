@@ -31,6 +31,7 @@ namespace Refactor.Scripts.Quest
         private IEnumerator RegisterQuests()
         {
             yield return new WaitUntil(() => DialogueManager.Instance != null);
+            yield return new WaitUntil(() => PlayerInventory.Instance != null);
             yield return new WaitForEndOfFrame();
             foreach (Quest quest in quests)
             {

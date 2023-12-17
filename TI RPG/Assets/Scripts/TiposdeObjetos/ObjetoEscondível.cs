@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace Objetos
 {
-    public enum triggerName { TriggerArmario, TriggerMesa }
-
     public class ObjetoEscondível : Interagível
     {
         private static readonly int TriggerFechando = Animator.StringToHash("TriggerFechando");
@@ -16,9 +14,6 @@ namespace Objetos
         [SerializeField]
         private Transform playerPosition;
 
-        [SerializeField]
-        public triggerName trigger;
-
         private bool estaEscondido;
         private Animator playerAnimator;
 
@@ -26,6 +21,7 @@ namespace Objetos
         {
             base.Awake();
             playerAnimator = player.GetComponent<Animator>();
+            playerAnimator.keepAnimatorStateOnDisable = true;
         }
 
         protected override void Interagir()
@@ -43,14 +39,15 @@ namespace Objetos
             playerAnimator.SetTrigger(estaEscondido ? TriggerFechando : TriggerAbrindo);
             anim.SetTrigger(estaEscondido ? TriggerFechando : TriggerAbrindo);
 
-            float animationTime = playerAnimator.GetCurrentAnimatorStateInfo(0).length;
-            Debug.Log(animationTime);
             yield return new WaitForSeconds(1.5f);
-            // player.gameObject.SetActive(estaEscondido);
             estaEscondido = !estaEscondido;
             if (!estaEscondido)
             {
                 player.enabled = true;
+            }
+            else
+            {
+                player.gameObject.SetActive(false);
             }
         }
 
@@ -76,21 +73,33 @@ namespace Objetos
         protected override IEnumerator MoverParaObjeto()
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (!Physics.Raycast(ray, out hit)) yield break; // Check if the ray hits any collider
-            if (!hit.collider.gameObject.Equals(gameObject))
+            if (!Physics.Raycast(ray, out RaycastHit hit)) yield break;
+            if (!hit.collider.gameObject.Equals(gameObject)) yield break;
+
+
+            if (player.isActiveAndEnabled)
             {
-                yield break; // Check if the hit collider belongs to this object
+                player.Mover(playerPosition.position);
+            }
+            else
+            {
+                player.gameObject.SetActive(true);
             }
 
-            if (player.isActiveAndEnabled) player.Mover(playerPosition.position);
             yield return null;
-            player.enabled = false;
 
             if (!estaEscondido)
             {
+                Vector3 originalDestination = player.NavMeshAgent.destination;
                 yield return new WaitUntil(() => playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("IDLE"));
+                if (player.NavMeshAgent.destination != originalDestination)
+                {
+                    StopAllCoroutines();
+                    yield break;
+                }
             }
+
+            player.enabled = false;
 
             yield return WaitUntilPlayerInPosition();
 

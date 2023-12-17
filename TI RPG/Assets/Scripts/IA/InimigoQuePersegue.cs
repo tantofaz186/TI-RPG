@@ -24,6 +24,7 @@ namespace IA
 
         private float forgetTimer;
         public List<Vector3> Pontos => pontos;
+        public IState CurrentState => currentState;
 
         private void Awake()
         {
@@ -74,7 +75,6 @@ namespace IA
             if (currentState.GetType() == typeof(AtackState)) return;
             if (currentState.GetType() != typeof(EncontrandoPlayerState)) SetStateEncontrandoPlayer();
             inimigoUI.MostrarImagem(true);
-
             ((EncontrandoPlayerState)currentState).Encontrando();
         }
 
@@ -87,13 +87,13 @@ namespace IA
             inimigoUI.MostrarImagem(false);
         }
 
-        private void SetStateAtacando()
+        public void SetStateAtacando()
         {
             coneDeVisão.OnFoundPlayer -= EncontreiOPlayerNoCampoDeVisão;
             SetState(new AtackState(this, coneDeVisão.Alvo));
         }
 
-        public void SetStatePatrulha()
+        private void SetStatePatrulha()
         {
             coneDeVisão.OnFoundPlayer += EncontreiOPlayerNoCampoDeVisão;
             SetState(new PatrulhaState(this, pontos));
