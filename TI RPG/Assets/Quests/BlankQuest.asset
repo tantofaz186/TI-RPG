@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7038433a2731d714cb8ec0b923bd3f55, type: 3}
-  m_Name: FirstQuest
+  m_Name: BlankQuest
   m_EditorClassIdentifier: 
   objectives:
-  - {fileID: 11400000, guid: b714c620e2bf79540a957d6d865ace22, type: 2}
-  - {fileID: 11400000, guid: b2022e16799f7e8448acba2975ed4977, type: 2}
-  requiredQuests:
-  - {fileID: 11400000, guid: d3306a47e611f3249bbb6c8377100deb, type: 2}
-  rewards:
-  - item: {fileID: 11400000, guid: c3ac1485381a4664cb8de61f20c40f20, type: 2}
-    removeOnComplete: 1
+  - {fileID: 11400000, guid: 182fb5b9e8a0b9c4d90a9609b9673dc8, type: 2}
+  requiredQuests: []
+  rewards: []
   _isCompleted: 0

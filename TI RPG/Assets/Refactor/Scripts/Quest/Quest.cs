@@ -29,6 +29,18 @@ namespace Refactor.Scripts.Quest
 
         public void _OnEnable()
         {
+            IsCompleted = false;
+            foreach (Quest quest in requiredQuests)
+            {
+                quest.OnComplete += OnRequiredQuestComplete;
+            }
+
+            OnRequiredQuestComplete(null);
+        }
+
+        private void OnRequiredQuestComplete(List<Rewards> obj)
+        {
+            if (!CanBeStarted) return;
             Debug.Log("Quest Enabled");
             _currentObjectiveIndex = 0;
             objectives[_currentObjectiveIndex]._OnEnable();
