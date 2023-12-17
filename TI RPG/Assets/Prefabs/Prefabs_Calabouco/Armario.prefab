@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3916440221239296679}
   - component: {fileID: -2372158014271767647}
+  - component: {fileID: 1209653844}
   m_Layer: 0
   m_Name: Armario
   m_TagString: Armario
@@ -193,6 +194,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1209653844
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039963378860261417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 513dbdc0a2f31fb4b91552bd008ad0d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3988662203439493594
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +260,6 @@ GameObject:
   - component: {fileID: 3249714245161299277}
   - component: {fileID: 1882287171910074469}
   - component: {fileID: 2769729800110509954}
-  - component: {fileID: 8208492777251699350}
   - component: {fileID: 4644378854691947443}
   m_Layer: 0
   m_Name: Armario
@@ -359,29 +379,9 @@ MonoBehaviour:
   larguraDoOutline: 4
   modoDoOutline: 1
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  anim: {fileID: 8208492777251699350}
+  anim: {fileID: 1209653844}
   playerPosition: {fileID: 6484523358747956704}
   trigger: 0
---- !u!95 &8208492777251699350
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4309515881909874288}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 513dbdc0a2f31fb4b91552bd008ad0d0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!65 &4644378854691947443
 BoxCollider:
   m_ObjectHideFlags: 0
