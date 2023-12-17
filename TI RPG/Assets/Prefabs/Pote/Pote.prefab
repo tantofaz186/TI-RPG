@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 8050991603829046951}
   - component: {fileID: 5778521053562111370}
   - component: {fileID: 9033570340406394262}
+  - component: {fileID: 7160361086262021837}
   m_Layer: 0
   m_Name: Pote
   m_TagString: Item
@@ -365,17 +366,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a536a82c920445a19261e26ea39a29bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMouseOver: 0
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
+  item: {fileID: 11400000, guid: 6152626ed110d8343bdfa4536b8cd255, type: 2}
+  canBeCollected: 1
+  dialogueTrigger: {fileID: 0}
+--- !u!114 &7160361086262021837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388082190263171173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   distanciaMinima: 2
-  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   corDoOutline: {r: 0, g: 0, b: 1, a: 1}
   larguraDoOutline: 4
   modoDoOutline: 1
-  item: {fileID: 0}
-  canBeCollected: 0
+  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  dialogue:
+    dialogues: []
