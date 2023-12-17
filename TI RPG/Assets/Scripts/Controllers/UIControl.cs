@@ -19,7 +19,6 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl>
     private void Start()
     {
         ResetUI();
-        UpdateInventory();
         SceneManager.sceneLoaded += ResetUI;
     }
 
