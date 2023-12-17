@@ -39,7 +39,8 @@ namespace IA
                 areaDeAudicao = 5.0f;
             }
 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, areaDeAudicao);
+
+            Collider[] colliders = Physics.OverlapSphere(transform.position, areaDeAudicao, LayerMask.NameToLayer("Player"));
             if (colliders.Length <= 0) return;
             foreach (Collider _collider in colliders)
             {
