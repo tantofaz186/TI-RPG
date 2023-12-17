@@ -126,8 +126,10 @@ GameObject:
   - component: {fileID: 9049940796225243027}
   - component: {fileID: 9049940796225243032}
   - component: {fileID: 9049940796225243030}
-  - component: {fileID: 7009631999265347102}
-  - component: {fileID: 7667243331959516312}
+  - component: {fileID: 8247315729466457922}
+  - component: {fileID: 8330937302297627359}
+  - component: {fileID: 495700317}
+  - component: {fileID: 3525711565623424144}
   m_Layer: 0
   m_Name: CaraDaQuest
   m_TagString: dialogavel
@@ -182,7 +184,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 3
---- !u!114 &7009631999265347102
+--- !u!114 &8247315729466457922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +204,7 @@ MonoBehaviour:
   bakeValues: []
   outlineMaskMaterial: {fileID: 0}
   outlineFillMaterial: {fileID: 0}
---- !u!114 &7667243331959516312
+--- !u!114 &8330937302297627359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +213,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8564731139923778857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d634741c9ce01004f98bb51744f1d162, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distanciaMinima: 2
@@ -219,15 +221,119 @@ MonoBehaviour:
   larguraDoOutline: 4
   modoDoOutline: 1
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  dialogueInicio:
-    dialogues: []
-  dialogueLembrarMissao:
-    dialogues: []
-  dialogueFim:
-    dialogues: []
-  estaComItemQuest: 0
-  questConcluida: 0
-  questItem: {fileID: 0}
+  dialogue:
+    dialogues:
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Que tipo de monstro \xE9 esse que prenderam nessa cela?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Isso foi rude. N\xE3o sou um monstro, sou um fantasma."
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Voc\xEA me entende?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Sim. Muito bem inclusive. Vi que voc\xEA conseguiu escapar da sua
+        cela. Pode me ajudar a sair daqui?"
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Se voc\xEA \xE9 um fantasma, n\xE3o poderia atravessar essas barras?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Infelizmente estou com muita fome para ficar incorp\xF3reo. Pode
+        me trazer comida?"
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: E o que fantasmas gostam de comer?
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Voc\xEA n\xE3o sabe de nada? Fantasmas adoram meias. Especialmente
+        meias amarelas. Traga uma pra mim por favor."
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: Eu tenho uma joia azul. Posso te entrega-la se me ajudar
+--- !u!95 &495700317
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564731139923778857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 383cc05bfec12e14fa66a8264ac57151, type: 3}
+  m_Controller: {fileID: 9100000, guid: b975767cb72bc1d4990010fb1aea2b8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &3525711565623424144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564731139923778857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a833738369be5142825664bbec9dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 97ebc7ec3a34c7040af2c866fc1b4031, type: 2}
+  dialogueOnStart:
+    dialogues:
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Que tipo de monstro \xE9 esse que prenderam nessa cela?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Isso foi rude. N\xE3o sou um monstro, sou um fantasma."
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Voc\xEA me entende?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Sim. Muito bem inclusive. Vi que voc\xEA conseguiu escapar da sua
+        cela. Pode me ajudar a sair daqui?"
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Se voc\xEA \xE9 um fantasma, n\xE3o poderia atravessar essas barras?"
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Infelizmente estou com muita fome para ficar incorp\xF3reo. Pode
+        me trazer comida?"
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: E o que fantasmas gostam de comer?
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Voc\xEA n\xE3o sabe de nada? Fantasmas adoram meias. Especialmente
+        meias amarelas. Traga uma pra mim por favor."
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: Eu tenho uma joia azul. Posso te entrega-la se me ajudar
+  dialogueDuringQuest:
+    dialogues:
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "J\xE1 conseguiu encontrar uma meia amarela?"
+    - title: Detetive
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+      sentence: "Ainda n\xE3o, mas estou procurando"
+  dialogueOnComplete:
+    dialogues:
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: Essa meia parece deliciosa, obrigado.
+    - title: Fantasma
+      image: {fileID: 0}
+      sentence: "Como prometido, aqui est\xE1 a joia azul que eu encontrei."
 --- !u!1001 &179721783385973246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3297370540345529512, guid: 8ebd26b65664c7047b1039a3217766d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3297370540345529512, guid: 8ebd26b65664c7047b1039a3217766d3, type: 3}
       propertyPath: m_LocalPosition.y

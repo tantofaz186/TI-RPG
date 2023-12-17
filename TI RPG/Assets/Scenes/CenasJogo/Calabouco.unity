@@ -32126,7 +32126,6 @@ Transform:
   - {fileID: 5266490526409623681}
   - {fileID: 6276570108384895411}
   - {fileID: 962081166}
-  - {fileID: 5619296551135356345}
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42401,21 +42400,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5619296551135356345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7488740934482454327}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 220.02, y: -3.64, z: 54.93}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1257392644}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5631865013783031248
 Transform:
   m_ObjectHideFlags: 0
@@ -42963,14 +42947,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1230925129372381673, guid: 1f94564871f0a904997a752d331c3814, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1230925129372381673, guid: 1f94564871f0a904997a752d331c3814, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3287364299807672107, guid: 1f94564871f0a904997a752d331c3814, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -42994,6 +42970,14 @@ PrefabInstance:
     - target: {fileID: 4652411367784423618, guid: 1f94564871f0a904997a752d331c3814, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.7999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563192109968330336, guid: 1f94564871f0a904997a752d331c3814, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[9].title
+      value: Fantasma
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563192109968330336, guid: 1f94564871f0a904997a752d331c3814, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[9].sentence
+      value: Pode me ajudar a sair dessa cela?
       objectReference: {fileID: 0}
     - target: {fileID: 6545388865537167153, guid: 1f94564871f0a904997a752d331c3814, type: 3}
       propertyPath: m_Name
@@ -43043,7 +43027,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6110971114383910951, guid: 1f94564871f0a904997a752d331c3814, type: 3}
+    - {fileID: 6912521592983999137, guid: 1f94564871f0a904997a752d331c3814, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f94564871f0a904997a752d331c3814, type: 3}
 --- !u!1 &6626280884336609749
 GameObject:
@@ -43372,22 +43358,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e2388ca55d1084f9ea644bdc43d135, type: 3}
---- !u!1 &7488740934482454327
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5619296551135356345}
-  m_Layer: 0
-  m_Name: Dialogue Trigger Enter Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
 --- !u!4 &7494215204725941966
 Transform:
   m_ObjectHideFlags: 0
