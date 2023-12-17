@@ -1596,8 +1596,8 @@ GameObject:
   - component: {fileID: 8067166422166988514}
   - component: {fileID: -6171030065195491869}
   - component: {fileID: 7779920841029048475}
-  - component: {fileID: -2642242108640890848}
   - component: {fileID: -7695717973683689189}
+  - component: {fileID: 7310694078127381021}
   m_Layer: 0
   m_Name: Detetive
   m_TagString: Player
@@ -1692,10 +1692,8 @@ MonoBehaviour:
   velocidade: 4
   agente: {fileID: 3032504249115291768}
   audioDetectionRadius: 10
+  animator: {fileID: 0}
   mouseInput: {fileID: 0}
-  folego: 100
-  podeCorrer: 0
-  _collider: {fileID: 8845439058041729377}
 --- !u!114 &7779920841029048475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,29 +1712,7 @@ MonoBehaviour:
   smr: {fileID: 0}
   vidaInfinitaText: {fileID: 0}
   audioPlayer: {fileID: 0}
-  vidaCounterUI: 0
---- !u!114 &-2642242108640890848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4935925307162004203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fab4b08cbbcae94eb988edf4aed376c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LayerMask:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  Target: {fileID: 1814489159087836112, guid: 5da99187d71981d49882db9119218808, type: 3}
-  Camera: {fileID: 0}
-  FadedAlpha: 0.33
-  RetainShadows: 1
-  TargetPositionOffset: {x: 0, y: 1, z: 0}
-  FadeSpeed: 1
-  ObjectsBlockingView: []
+  anim: {fileID: 0}
 --- !u!95 &-7695717973683689189
 Animator:
   serializedVersion: 5
@@ -1757,6 +1733,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &7310694078127381021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935925307162004203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b01d0ac91b323342b74a7044bee5e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  podeCorrer: 0
+  folego: 100
 --- !u!1 &5065777568739033291
 GameObject:
   m_ObjectHideFlags: 0

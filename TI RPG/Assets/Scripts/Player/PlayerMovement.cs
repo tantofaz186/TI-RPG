@@ -42,7 +42,7 @@ namespace Player
             }
 
             mouseInput.transform.position = agente.destination;
-            mouseInput.SetActive(agente.destination != transform.position);
+            mouseInput.SetActive(!agente.isStopped);
         }
     }
 }
