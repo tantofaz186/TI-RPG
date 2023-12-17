@@ -610,10 +610,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Uma garrafa de \xF3leo"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Se eu encontrar fogo, posso fazer uma lanterna
 --- !u!114 &107820568
 MonoBehaviour:
@@ -1075,10 +1075,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 937947938404777503, guid: cfd1ed65d4d973242a920168c971259b, type: 3}
-      propertyPath: dialogueTrigger
-      value: 
-      objectReference: {fileID: 198418740}
     - target: {fileID: 3690338978159441648, guid: cfd1ed65d4d973242a920168c971259b, type: 3}
       propertyPath: m_Name
       value: Pedra (1)
@@ -1129,17 +1125,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd1ed65d4d973242a920168c971259b, type: 3}
---- !u!114 &198418740 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1256855069302740652, guid: cfd1ed65d4d973242a920168c971259b, type: 3}
-  m_PrefabInstance: {fileID: 198418739}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &202679189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1420,10 +1405,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um peda\xE7o de pano"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Talvez seja poss\xEDvel criar uma atadura improvisada"
 --- !u!114 &279846114
 MonoBehaviour:
@@ -3229,10 +3214,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um ba\xFA"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Parece \xFAtil, mas est\xE1 fora de alcance"
 --- !u!114 &792718614
 MonoBehaviour:
@@ -31618,10 +31603,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Um vaso
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Nada dentro
 --- !u!114 &1162792095
 MonoBehaviour:
@@ -32186,10 +32171,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um peda\xE7o de corda desgastada"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Isso pode ser \xFAtil para criar uma armadilha"
 --- !u!114 &1266310028
 MonoBehaviour:
@@ -34011,55 +33996,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1548245230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851859168876615348}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 0, g: 0, b: 1, a: 1}
-  outlineWidth: 4
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
-  outlineMaskMaterial: {fileID: 0}
-  outlineFillMaterial: {fileID: 0}
---- !u!114 &1548245231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851859168876615348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac12d4c40bc86640a30774baa8844f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanciaMinima: 2
-  corDoOutline: {r: 0, g: 0, b: 1, a: 1}
-  larguraDoOutline: 4
-  modoDoOutline: 1
-  corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  dialogue:
-    dialogues:
-    - title: Detetive
-      image: {fileID: 21300000, guid: 0d1348cdc55bba745b09b69bf6a5750e, type: 3}
-      sentence: "Ai! Minha cabe\xE7a est\xE1 doendo"
-    - title: Detetive
-      image: {fileID: 21300000, guid: 0d1348cdc55bba745b09b69bf6a5750e, type: 3}
-      sentence: Estou preso em uma cela
-    - title: Detetive
-      image: {fileID: 21300000, guid: 0d1348cdc55bba745b09b69bf6a5750e, type: 3}
-      sentence: "Vejo alguns itens por aqui, eles podem ser \xFAteis para me ajudar
-        a escapar"
 --- !u!1001 &1555261613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34401,10 +34337,10 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Um saco de giz
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Talvez eu possa usar isso para desenhar algo?
 --- !u!114 &1667449469
 MonoBehaviour:
@@ -35504,13 +35440,13 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Uma Cadeira
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Um guarda provavelmente deve ficar sentado aqui
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "A cadeira est\xE1 forrada de couro, talvez posso usar isso para
         alguma coisa?"
 --- !u!114 &1718043769
@@ -39746,13 +39682,13 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um frasco de po\xE7\xE3o"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Parece n\xE3o ter efeito sozinho"
     - title: Detetive
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: Mas aposto que posso combinar isso com alguma outra coisa
 --- !u!114 &2124207730
 MonoBehaviour:
@@ -41070,21 +41006,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1893001698115095455
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851859168876615348}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5619296551135356345}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962917902799139142
 GameObject:
   m_ObjectHideFlags: 0
@@ -42075,19 +41996,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &4756888922367664831
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851859168876615348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4777129219414633889
 GameObject:
   m_ObjectHideFlags: 0
@@ -42504,8 +42412,7 @@ Transform:
   m_LocalPosition: {x: 220.02, y: -3.64, z: 54.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1893001698115095455}
+  m_Children: []
   m_Father: {fileID: 1257392644}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42934,6 +42841,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257392644}
     m_Modifications:
+    - target: {fileID: 12735049560206142, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+    - target: {fileID: 1886557759415495192, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+    - target: {fileID: 4143093076249654581, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
     - target: {fileID: 6355046285955453910, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -42982,6 +42901,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sala_Hexagonal
       objectReference: {fileID: 0}
+    - target: {fileID: 7121422213765437841, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
+    - target: {fileID: 7644685854788571769, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
+      propertyPath: dialogue.dialogues.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d30b39f3c9ad074cb02ba482eadd75c, type: 3}
 --- !u!4 &6355046286867706860 stripped
@@ -43042,6 +42969,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1230925129372381673, guid: 1f94564871f0a904997a752d331c3814, type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287364299807672107, guid: 1f94564871f0a904997a752d331c3814, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287364299959313642, guid: 1f94564871f0a904997a752d331c3814, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3590178259265158596, guid: 1f94564871f0a904997a752d331c3814, type: 3}
@@ -43635,25 +43570,6 @@ Transform:
   m_Father: {fileID: 7051339207254645907}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7851859168876615348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1893001698115095455}
-  - component: {fileID: 4756888922367664831}
-  - component: {fileID: 1548245230}
-  - component: {fileID: 1548245231}
-  m_Layer: 0
-  m_Name: Dialogue Trigger Enter Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &7870064448785931089
 Transform:
   m_ObjectHideFlags: 0
