@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7038433a2731d714cb8ec0b923bd3f55, type: 3}
   m_Name: Quest Fantasma
   m_EditorClassIdentifier: 
-  objectives: []
+  objectives:
+  - {fileID: 11400000, guid: cf161ed5f12bd3b4a8d8f0a07c16767c, type: 2}
+  - {fileID: 11400000, guid: c5ec5f5b32e86be4fbf7dd6ab05a4305, type: 2}
+  - {fileID: 11400000, guid: ae0d5b0974661d24eb41b955381bbcfc, type: 2}
   requiredQuests: []
   rewards: []
-  _isCompleted: 0
+  _isCompleted: 1

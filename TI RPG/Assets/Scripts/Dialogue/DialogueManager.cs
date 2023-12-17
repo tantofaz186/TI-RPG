@@ -28,7 +28,6 @@ public class DialogueManager : MonoBehaviourSingletonPersistent<DialogueManager>
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting Dialogue");
         Time.timeScale = 0;
         dialoguePanel.SetActive(true);
         sentences.Clear();
