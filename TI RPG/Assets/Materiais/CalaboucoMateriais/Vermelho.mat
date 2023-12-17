@@ -21,15 +21,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Vermelho
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4fd1bb34d86f42043986532eac9d40f2, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -52,6 +51,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DiamondTex:
+        m_Texture: {fileID: 2800000, guid: 04e782d5746383f4a9b788e2c4ccd7bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -102,21 +105,26 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmitBool: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.54
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Opacity: 0.253
     - _Parallax: 0.02
+    - _ParallaxAmp: 2.75
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Smooth: 0.603
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Steps: 3.32
     - _Surface: 0
     - _UVSec: 0
     - _UseAoMap: 0
@@ -130,8 +138,13 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.8018868, g: 0.28368637, b: 0.28368637, a: 1}
     - _Color: {r: 0.8018868, g: 0.28368634, b: 0.28368634, a: 1}
+    - _ColorEmission: {r: 191.74902, g: 18.07059, b: 18.07059, a: 0}
+    - _Cor: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.60382754, g: 0.06480328, b: 0.06480328, a: 1}
+    - _NotEmissionColor: {r: 13.751055, g: 1.2324055, b: 1.2324055, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 3.34, g: 3.39, b: 0, a: 0}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
