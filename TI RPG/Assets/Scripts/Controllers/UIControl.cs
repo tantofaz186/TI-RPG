@@ -14,7 +14,7 @@ public class UIControl : MonoBehaviourSingletonPersistent<UIControl>
     public GameObject medidores;
     public GameObject inventory;
 
-    private bool inventoryOpen = true;
+    private bool inventoryOpen;
 
     private void Start()
     {
