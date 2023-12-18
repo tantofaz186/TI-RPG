@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5865538692504737459}
   - component: {fileID: 7406538784227121430}
   - component: {fileID: 4696612852940811740}
+  - component: {fileID: 7646492298537960493}
   m_Layer: 0
   m_Name: Parede2x4
   m_TagString: Untagged
@@ -86,6 +87,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7646492298537960493
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497925642426616841}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 4, z: 0.39999998}
+  m_Center: {x: -1, y: 2, z: -0.000000037252903}
 --- !u!1001 &1982428139706195309
 PrefabInstance:
   m_ObjectHideFlags: 0
