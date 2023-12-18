@@ -17,5 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5ec5f5b32e86be4fbf7dd6ab05a4305, type: 2}
   - {fileID: 11400000, guid: ae0d5b0974661d24eb41b955381bbcfc, type: 2}
   requiredQuests: []
-  rewards: []
+  rewards:
+  - item: {fileID: 11400000, guid: 9588cdd83e5504845852173b340ca78b, type: 2}
+    removeOnComplete: 0
+  - item: {fileID: 11400000, guid: 5ee0ddd1b9db99e4792ccfe2ab8b6ca4, type: 2}
+    removeOnComplete: 1
   _isCompleted: 0
