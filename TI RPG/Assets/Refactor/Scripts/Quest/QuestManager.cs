@@ -4,6 +4,7 @@ using System.Linq;
 using Controllers;
 using Rpg.Crafting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,7 +17,9 @@ namespace Refactor.Scripts.Quest
 
         private void OnEnable()
         {
-            StartCoroutine(RegisterQuests());
+            quests.ForEach(q => q.IsCompleted = false);
+            StartCoroutine(RegisterFirstQuest());
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         private void OnDisable()
@@ -28,12 +31,32 @@ namespace Refactor.Scripts.Quest
             }
         }
 
+        private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+        {
+            if (arg0.buildIndex == 2)
+            {
+                StartCoroutine(RegisterQuests());
+            }
+        }
+
+        private IEnumerator RegisterFirstQuest()
+        {
+            yield return new WaitUntil(() => DialogueManager.Instance != null);
+            yield return new WaitUntil(() => PlayerInventory.Instance != null);
+            yield return new WaitForEndOfFrame();
+            foreach (Quest quest in quests.Where(q => q.objectives[0].GetType() == typeof(LoadSceneObjective)))
+            {
+                quest._OnEnable();
+                quest.OnComplete += OnQuestComplete;
+            }
+        }
+
         private IEnumerator RegisterQuests()
         {
             yield return new WaitUntil(() => DialogueManager.Instance != null);
             yield return new WaitUntil(() => PlayerInventory.Instance != null);
             yield return new WaitForEndOfFrame();
-            foreach (Quest quest in quests)
+            foreach (Quest quest in quests.Where(q => !q.IsCompleted))
             {
                 quest._OnEnable();
                 quest.OnComplete += OnQuestComplete;
@@ -54,8 +77,24 @@ namespace Refactor.Scripts.Quest
                 }
             }
         }
+
+        #if UNITY_EDITOR
+        private void OnValidate()
+        {
+            quests = GetAllInstances<Quest>().ToList();
+        }
+
+        private IEnumerable<T> GetAllInstances<T>() where T : ScriptableObject
+        {
+            return AssetDatabase.FindAssets($"t: {typeof(T).Name}").ToList()
+                .Select(AssetDatabase.GUIDToAssetPath)
+                .Select(AssetDatabase.LoadAssetAtPath<T>);
+        }
+        #endif
     }
+
     #if UNITY_EDITOR
+
     [CustomEditor(typeof(QuestManager))]
     public class QuestManagerEditor : Editor
     {
@@ -77,5 +116,6 @@ namespace Refactor.Scripts.Quest
                 .Select(AssetDatabase.LoadAssetAtPath<T>);
         }
     }
+
     #endif
 }

@@ -22,7 +22,7 @@ namespace Refactor.Scripts.Quest
         public bool IsCompleted
         {
             get => _isCompleted;
-            private set => _isCompleted = value;
+            set => _isCompleted = value;
         }
 
         public bool CanBeStarted => requiredQuests.All(quest => quest.IsCompleted);

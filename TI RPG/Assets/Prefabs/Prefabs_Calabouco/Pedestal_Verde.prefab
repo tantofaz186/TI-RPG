@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6866413787757427506}
   - component: {fileID: 3445443121780678682}
   - component: {fileID: 6580564520553236367}
+  - component: {fileID: 4122056092033805048}
   m_Layer: 0
   m_Name: Pedestal_Verde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7997099752409111591
 Transform:
@@ -71,7 +72,7 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 21300000, guid: 0eea088dcd9d48c47979b81b142cfaff, type: 3}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um pilar emanando verde e com um espa\xE7o para colocar algum item"
 --- !u!114 &6580564520553236367
 MonoBehaviour:
@@ -713,6 +714,21 @@ MonoBehaviour:
     - {x: 0.5315377, y: 0.6594968, z: 0.53153694}
   outlineMaskMaterial: {fileID: 0}
   outlineFillMaterial: {fileID: 0}
+--- !u!114 &4122056092033805048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 4bf3ff6ee00502347becce4325fb0918, type: 2}
+  materialOn: {fileID: 2100000, guid: d67b3cab6a40b904b91c4e28638c5dcf, type: 2}
+  materialOff: {fileID: 2100000, guid: 01a6728f84945214fbb21b908c698758, type: 2}
 --- !u!1001 &817189836991222392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -782,7 +798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
@@ -860,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
@@ -934,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca30e5607075e834dbf3045b09b497db, type: 3}

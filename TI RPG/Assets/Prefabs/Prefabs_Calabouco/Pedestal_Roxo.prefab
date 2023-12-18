@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5722527454015023967}
   - component: {fileID: 715442617373919291}
   - component: {fileID: 4764754135955139902}
+  - component: {fileID: 4964319607883194160}
   m_Layer: 0
   m_Name: Pedestal_Roxo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7997099752409111591
 Transform:
@@ -711,8 +712,23 @@ MonoBehaviour:
   dialogue:
     dialogues:
     - title: Detetive
-      image: {fileID: 21300000, guid: 0eea088dcd9d48c47979b81b142cfaff, type: 3}
+      image: {fileID: 21300000, guid: 4c53d6b70d1eb5d4393a3f7a23950d7c, type: 3}
       sentence: "Um pilar emanando roxo e com um espa\xE7o para colocar algum item"
+--- !u!114 &4964319607883194160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116600377266397125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: dcaba381aafdcb747b447e28da6ec070, type: 2}
+  materialOn: {fileID: 2100000, guid: 88fe1b2a72b7f0240897bf6b6dcf2361, type: 2}
+  materialOff: {fileID: 2100000, guid: 048d86a3beead3c46ad4ea0dd69d36b4, type: 2}
 --- !u!1001 &817189836991222392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -771,14 +787,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 88fe1b2a72b7f0240897bf6b6dcf2361, type: 2}
+      objectReference: {fileID: 2100000, guid: 048d86a3beead3c46ad4ea0dd69d36b4, type: 2}
     - target: {fileID: 919132149155446097, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
       propertyPath: m_Name
       value: Pedestal_Cristal
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7277cdf383f7b4b9e009256e17929b, type: 3}
@@ -845,14 +865,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 88fe1b2a72b7f0240897bf6b6dcf2361, type: 2}
+      objectReference: {fileID: 2100000, guid: 048d86a3beead3c46ad4ea0dd69d36b4, type: 2}
     - target: {fileID: 919132149155446097, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
       propertyPath: m_Name
       value: Pedestal_Emission
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9514ba467bd6840469e3d7cbac250185, type: 3}
@@ -921,44 +945,15 @@ PrefabInstance:
       value: Pedestal_Low
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
---- !u!1 &8554420514666549390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
-  m_PrefabInstance: {fileID: 8824242664679321055}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &2512993651658414546
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554420514666549390}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4243859074866752783, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
---- !u!114 &6851792832421930133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554420514666549390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd0f6b463a141a4c8f49e1852c593d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peca: {fileID: 0}
-  ativado: 0
 --- !u!4 &9078333869412043316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca30e5607075e834dbf3045b09b497db, type: 3}
