@@ -17,17 +17,32 @@ public class Porta : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        PlayerInventory.Instance.onAddItem += OnChaveAdded;
+    }
+
+    private void OnDisable()
+    {
+        PlayerInventory.Instance.onAddItem -= OnChaveAdded;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") || !PlayerInventory.Instance.HasItem(chave)) return;
-        DesativaNav();
+        if (!other.CompareTag("Player")) return;
         portaAudio.Play();
+    }
+
+    private void OnChaveAdded(Item obj)
+    {
+        if (obj != chave) return;
+        estaBloqueada = false;
+        DesativaNav();
     }
 
     private void DesativaNav()
     {
+        PlayerInventory.Instance.onAddItem -= OnChaveAdded;
         transform.GetChild(2).gameObject.SetActive(false);
-        Destroy(chave);
-        chave = null;
     }
 }

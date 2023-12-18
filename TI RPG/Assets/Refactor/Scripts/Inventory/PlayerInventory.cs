@@ -37,6 +37,7 @@ namespace Rpg.Crafting
         public int firstContainerSlot = 4;
         public bool shouldIgnoreCrafting;
         public event Action<Item> onCraftItem;
+        public event Action<Item> onAddItem;
 
         #region Callbacks
 
@@ -245,6 +246,7 @@ namespace Rpg.Crafting
             }
 
             contents[slot] = item;
+            onAddItem?.Invoke(item);
             hasChangedItems?.Invoke();
             return true;
         }
