@@ -357,7 +357,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 0, g: 0, b: 1, a: 1}
   outlineWidth: 4
-  precomputeOutline: 0
+  precomputeOutline: 1
   bakeKeys: []
   bakeValues: []
   outlineMaskMaterial: {fileID: 0}
@@ -381,7 +381,6 @@ MonoBehaviour:
   corDoGizmos: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   anim: {fileID: 1209653844}
   playerPosition: {fileID: 6484523358747956704}
-  trigger: 0
 --- !u!65 &4644378854691947443
 BoxCollider:
   m_ObjectHideFlags: 0
