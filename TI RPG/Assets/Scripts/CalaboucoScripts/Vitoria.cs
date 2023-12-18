@@ -5,16 +5,12 @@ using Controllers;
 
 public class Vitoria : MonoBehaviour
 {
-    public GameObject chave;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == chave)
-        {
             Debug.Log("Venceu");
             VitoriaController.Instance.Ganhou();
-        }
     }
 
 

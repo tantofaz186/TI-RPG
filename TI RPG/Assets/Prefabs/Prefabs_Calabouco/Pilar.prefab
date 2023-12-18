@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4592941025607723929}
   - component: {fileID: 581734087507944508}
   - component: {fileID: 3456032622255624438}
+  - component: {fileID: 797198980358627311}
   m_Layer: 0
   m_Name: Pilar
   m_TagString: Untagged
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &797198980358627311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816439133230526755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65000015, y: 4.0000005, z: 0.65000015}
+  m_Center: {x: -0.0000002384186, y: 2.0000002, z: 0.0000010579824}
 --- !u!1001 &3374910418544021697
 PrefabInstance:
   m_ObjectHideFlags: 0
